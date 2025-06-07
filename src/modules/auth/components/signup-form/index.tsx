@@ -1,7 +1,7 @@
 import {  useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { loginSchema,  signupSchema,  type LoginPayload } from '../../schemas/authSchema'
+import {   signupSchema,  type LoginPayload, type SignupPayload } from '../../schemas/authSchema'
 
 import { Button } from '@/components/ui/button'
 import InputComponent from '@/components/ui/form/input-component'
@@ -26,10 +26,10 @@ const SignUpForm = () => {
 
   const { mutate, isPending } = useUserLogin()
 
-  const onSubmit = (formData: LoginPayload) => {
+  const onSubmit = (formData: SignupPayload) => {
     mutate(formData, {
       onSuccess: (data) => {
-        console.log('Login successful:', data)
+        console.log('SignUp Successfully:', data)
         dispatch(setUserData(data.data?.user as User))
         navigate('/')
       },

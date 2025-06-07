@@ -28,7 +28,7 @@ const LoginForm: React.FC = () => {
     const onSubmit = (formData: LoginPayload) => {
         mutate(formData, {
             onSuccess: (data) => {
-                console.log('Login successful:', data)
+                console.log('Login Successfully:', data)
                 dispatch(setUserData(data.data?.user as User))
                 navigate('/')
             },
@@ -114,7 +114,7 @@ const LoginForm: React.FC = () => {
                         Don’t have an account? 
                         <Link
                             to="/"
-                            className='text-primary font-bold'
+                            className='text-[#9333EA] font-bold'
                             onClick={(e) => isPending && e.preventDefault()}
                         >
                             Sign Up

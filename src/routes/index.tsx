@@ -4,6 +4,8 @@ import AuthLayout from "../layouts/AuthLayout";
 import LoginPage from "../modules/auth/pages/login";
 import RootLayout from "@/layouts/RootLayout";
 import SignUpPage from "@/modules/auth/pages/Signup";
+import ResetPassword from "@/modules/auth/pages/ResetPassword";
+import ForgetPassword from "@/modules/auth/pages/ForgetPassword";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
                     {
                         path:'signup',
                         element:<SignUpPage/>
+                    },
+                    {
+                        path:'forgetpassword',
+                        element:<ForgetPassword />
+                    },
+                    {
+                        path:'resetpassword',
+                        element:<ResetPassword/>
                     }
                 ]
             }      

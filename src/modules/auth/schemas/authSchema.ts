@@ -6,6 +6,8 @@ const passwordSchema = z.string()
     .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
     .regex(/[0-9]/, 'Password must contain at least one number')
     .regex(/[^a-zA-Z0-9]/, 'Password must contain at least one special character')
+
+    
 const emailPasswordSchema = z.object({
     email: z.string().email('Invalid email address'),
     password: passwordSchema
@@ -34,7 +36,7 @@ export const verifySchema = z.object({
 }).strict();
 
 export const forgotPasswordSchema = z.object({
-    email: z.string().email('Invalid email address'),
+    email: z.string().email('No account found with that email'),
 }).strict();
 
 export const resetPasswordSchema = emailPasswordSchema;

@@ -5,7 +5,7 @@ import { EyeOff } from "lucide-react";
 import Icon from "../../icons";
 
 interface InputComponentProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "value"> {
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "value">  {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   error: string | null | undefined;
@@ -18,9 +18,9 @@ interface InputComponentProps
 
 const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
   ({ leftIcon, rightIcon, wrapperClassName, inputClassName, togglePassword = false,
-    type = "text", value, onChange, className, error,
-    ...props
-  }, ref
+      type = "text", value, onChange, className, error,
+      ...props
+    }, ref
   ) => {
     const [showPassword, setShowPassword] = React.useState(false);
     const isPasswordType = type === "password" && togglePassword;
@@ -29,13 +29,12 @@ const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
       <div className="flex flex-col gap-1 min-h-16">
         <div
           className={cn(
-            "flex items-center border text-[#E5E7EB] bg-transparent",
+            "flex items-center borde-[#6366F1] bg-transparent",
             "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
-            "focus-within:border-[#E5E7EB]",
-            "border-border rounded-2xl py-3.5 px-3 max-h-11",
+            "border-border focus-within:border-primary",
+            "rounded-2xl py-3.5 px-3 max-h-11",
             wrapperClassName
           )}
-
         >
           {leftIcon && (
             <span>{leftIcon}</span>
@@ -57,12 +56,12 @@ const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
 
           {isPasswordType ? (
             <button
-              type="button"
-              onClick={() => setShowPassword((prev) => !prev)}
-              className="text-muted focus:outline-none"
+            type="button"
+            onClick={() => setShowPassword((prev) => !prev)}
+            className="text-muted focus:outline-none"
             >
-              {showPassword ?
-                <EyeOff size={20} fill="#9333EA" stroke="#ffffff" /> :
+              {showPassword ? 
+                <EyeOff size={20} fill="#9333EA" stroke="#ffffff" /> : 
                 <Icon name="eyeIcon" width={20} height={20} />
               }
             </button>
@@ -74,7 +73,7 @@ const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
             )
           )}
         </div>
-        <div
+        <div 
           className={cn(
             "flex h-full w-full items-center gap-1  py-0.5 flex-1",
             error ? "opacity-100" : "opacity-0",
