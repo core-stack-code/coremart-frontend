@@ -3,6 +3,7 @@ import DefaultPage from "../pages/DefaultPage";
 import AuthLayout from "../layouts/AuthLayout";
 import LoginPage from "../modules/auth/pages/login";
 import RootLayout from "@/layouts/RootLayout";
+import SignUpPage from "@/modules/auth/pages/Signup";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
                     {
                         index: true,
                         element: <LoginPage />
+                    },
+                    {
+                        path:'signup',
+                        element:<SignUpPage/>
                     }
                 ]
             }      

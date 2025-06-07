@@ -6,19 +6,22 @@ const passwordSchema = z.string()
     .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
     .regex(/[0-9]/, 'Password must contain at least one number')
     .regex(/[^a-zA-Z0-9]/, 'Password must contain at least one special character')
-
 const emailPasswordSchema = z.object({
     email: z.string().email('Invalid email address'),
     password: passwordSchema
 }).strict();
 
 
-
 export const signupSchema = z.object({
-    name: z.string().min(1, 'Name is required'),
-    email: z.string().email('Invalid email address'),
+    name: z.string().min(0,),
+    email: z.string().email('Email already exists '),
     password: passwordSchema,
-}).strict();
+    confirmPassword: z.string(),
+    
+}).refine((data) => data.password === data.confirmPassword,{
+ path: ['confirmPassword'],
+    message: 'Passwords do not match',
+})
   
 export const loginSchema = emailPasswordSchema.extend({
     isRememberMe: z.boolean().optional(),

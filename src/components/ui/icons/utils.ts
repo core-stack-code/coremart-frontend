@@ -4,6 +4,7 @@ import MailIcon from "./mail-icon";
 import CrossIcon from "./cross-icon";
 import CheckBoxIcon from "./check-box-icon";
 import GithubIcon from "./github-icon";
+import UserIcon from "./user-icon";
 
 export const CUSTOM_ICON_MAP = {
     mailIcon: MailIcon,
@@ -12,4 +13,5 @@ export const CUSTOM_ICON_MAP = {
     crossIcon: CrossIcon,
     checkBoxIcon: CheckBoxIcon,
     githubIcon: GithubIcon,
+    userIcon:UserIcon
 }

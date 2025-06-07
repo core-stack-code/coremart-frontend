@@ -96,7 +96,7 @@ const LoginForm: React.FC = () => {
                 </div>
                 <Button 
                     type='submit'
-                    className='w-full h-11 bg-primary text-white rounded-2xl'
+                    className='w-full h-11 bg-[#9333EA] text-white rounded-2xl'
                     variant='default'
                 >
                     {isPending ? "Loading..." : "Sign In"}
