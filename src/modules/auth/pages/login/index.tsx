@@ -3,18 +3,25 @@ import LoginForm from '../../components/login-form'
 
 const LoginPage: React.FC = () => {
     return (
-        <div className='w-full h-full flex justify-between px-40'>
-            <div className='w-105 min-w-105 h-full flex flex-col gap-15 pl-5'>
-                <div className='w-full max-w-90 flex flex-col gap-2 text-5xl font-bold text-[#9333EA]'>
-                    <p>Hey,</p> 
+
+        <div className="min-h-screen w-full flex flex-col md:flex-row items-center md:items-start justify-between px-4 sm:px-6 md:px-20 lg:px-40 py-10 md:py-0">
+            <div className="w-full md:w-1/3 flex flex-col gap-10">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#9333EA]">
+                    <p>Hey,</p>
                     <p>Welcome Back</p>
                 </div>
                 <LoginForm />
             </div>
-            <div className='w-180 hidden md:block'>
-                <img src='/login-section.svg' alt='Login Section' className='w-full h-full object-fill' />
+
+            <div className="hidden min-[770px]:block md:w-180 lg:w-180 h-full">
+                <img
+                    src="/login-section.svg"
+                    alt="Login Section"
+                    className="w-full h-full object-contain min-[850px]:block"
+                />
             </div>
         </div>
+
     )
 }
 
