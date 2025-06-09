@@ -7,7 +7,13 @@ const passwordSchema = z.string()
     .regex(/[0-9]/, 'Password must contain at least one number')
     .regex(/[^a-zA-Z0-9]/, 'Password must contain at least one special character')
 
-    
+
+
+const optSchema = z.string()
+  .min(6, "OTP must be 6 digits")
+  .max(6, "OTP must be 6 digits")
+  .regex(/^\d+$/, "OTP must contain only numbers");
+
 const emailPasswordSchema = z.object({
     email: z.string().email('Invalid email address'),
     password: passwordSchema
@@ -19,21 +25,22 @@ export const signupSchema = z.object({
     email: z.string().email('Email already exists '),
     password: passwordSchema,
     confirmPassword: z.string(),
-    
-}).refine((data) => data.password === data.confirmPassword,{
- path: ['confirmPassword'],
+
+}).refine((data) => data.password === data.confirmPassword, {
+    path: ['confirmPassword'],
     message: 'Passwords do not match',
 })
-  
+
 export const loginSchema = emailPasswordSchema.extend({
     isRememberMe: z.boolean().optional(),
 }).strict();
 
 export const verifySchema = z.object({
-    otp: z.number(),
-    email: z.string().email('Invalid email address'),
+    otp: optSchema,
+    email: z.string(),
     isRememberMe: z.boolean().optional(),
 }).strict();
+
 
 export const forgotPasswordSchema = z.object({
     email: z.string().email('No account found with that email'),

@@ -6,6 +6,7 @@ import RootLayout from "@/layouts/RootLayout";
 import SignUpPage from "@/modules/auth/pages/Signup";
 import ResetPassword from "@/modules/auth/pages/ResetPassword";
 import ForgetPassword from "@/modules/auth/pages/ForgetPassword";
+import OTPVerify from "@/modules/auth/pages/OTPVerify";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
                     {
                         path:'resetpassword',
                         element:<ResetPassword/>
+                    },
+                    {
+                        path:'otp',
+                        element:<OTPVerify/>
                     }
                 ]
             }      

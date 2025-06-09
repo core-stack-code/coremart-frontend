@@ -5,7 +5,7 @@ import { EyeOff } from "lucide-react";
 import Icon from "../../icons";
 
 interface InputComponentProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "value">  {
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "value"> {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   error: string | null | undefined;
@@ -18,9 +18,9 @@ interface InputComponentProps
 
 const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
   ({ leftIcon, rightIcon, wrapperClassName, inputClassName, togglePassword = false,
-      type = "text", value, onChange, className, error,
-      ...props
-    }, ref
+    type = "text", value, onChange, className, error,
+    ...props
+  }, ref
   ) => {
     const [showPassword, setShowPassword] = React.useState(false);
     const isPasswordType = type === "password" && togglePassword;
@@ -56,12 +56,12 @@ const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
 
           {isPasswordType ? (
             <button
-            type="button"
-            onClick={() => setShowPassword((prev) => !prev)}
-            className="text-muted focus:outline-none"
+              type="button"
+              onClick={() => setShowPassword((prev) => !prev)}
+              className="text-muted focus:outline-none"
             >
-              {showPassword ? 
-                <EyeOff size={20} fill="#9333EA" stroke="#ffffff" /> : 
+              {showPassword ?
+                <EyeOff size={20} fill="#9333EA" stroke="#ffffff" /> :
                 <Icon name="eyeIcon" width={20} height={20} />
               }
             </button>
@@ -73,7 +73,7 @@ const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
             )
           )}
         </div>
-        <div 
+        <div
           className={cn(
             "flex h-full w-full items-center gap-1  py-0.5 flex-1",
             error ? "opacity-100" : "opacity-0",
