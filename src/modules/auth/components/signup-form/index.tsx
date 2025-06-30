@@ -1,7 +1,7 @@
 import {  useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import {   signupSchema,  type LoginPayload, type SignupPayload } from '../../schemas/authSchema'
+import {   signupSchema, type SignupPayload } from '../../schemas/authSchema'
 
 import { Button } from '@/components/ui/button'
 import InputComponent from '@/components/ui/form/input-component'
@@ -117,7 +117,7 @@ const SignUpForm = () => {
           >
             {isPending ? "Loading..." : "Continue"}
           </Button>
-          <div className='w-full flex items-center justify-center'>
+          <div className='w-full h-full flex items-center justify-center'>
             <div className='w-fit h-full flex flex-col gap-2'>
               <span className='text-xs text-primary'>Or sign in with</span>
               <div className='py-2.5 px-6 rounded-2xl border border-border flex items-center justify-center'>

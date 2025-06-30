@@ -1,23 +1,35 @@
-import OTPVerifyForm from '../../components/OTPVerify-Form'
+import OTPVerifyForm from "../../components/OTPVerify-Form";
 
 const OTPVerify = () => {
   return (
     <>
-     <div className="w-full h-full flex justify-between px-40">
-                <div className='w-150 min-w-105 h-full flex flex-col gap-15 pl-5'>
-                    <div className='w-full max-w-150 flex flex-col gap-2 text-5xl '>
-                        <p className="text-5xl font-bold text-[#9333EA]">Enter Verification Code</p>
-                        <p className="w-full text-lg  text-[#6366F1]">We send 6-digit code tp your ds******@gmail.com.</p>
-                        <p className="w-full text-lg  text-[#6366F1]">Enter it here!</p>
-                    </div>
-                    <OTPVerifyForm/>
-                </div>
-                <div className="w-180 mt-0 pt-0 hidden md:block">
-                    <img src="/OTP-Section.svg" alt="Forget Password Section" className="w-full h-150 object-fill" />
-                </div>
-            </div>
-    </>
-  )
-}
+      <div className="min-h-screen w-full flex flex-col md:flex-row items-center justify-center md:justify-between px-4 sm:px-6 md:px-10 lg:px-10 xl:px-20">
+        <div className="w-full lg:w-auto flex flex-col gap-10 items-start md:items-start text-start md:text-left ">
+          <div className="w-full max-w-[600px] flex flex-col">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#9333EA]">
+              Enter Verification Code
+            </p>
+            <p className="text-base sm:text-lg text-[#6366F1]">
+              We sent a 6-digit code to your ds******@gmail.com
+            </p>
+            <p className="text-base sm:text-lg text-[#6366F1]">
+              Enter it here!
+            </p>
+          </div>
+          <OTPVerifyForm />
+        </div>
 
-export default OTPVerify
+        <div className="hidden min-[855px]:block md:w-[600px] lg:w-[600px] h-full">
+          <img
+            src="/OTP-Section.svg"
+            alt="Forget Password Section"
+            className="w-full h-auto lg:w-[500px] xl:w-full object-contain"
+          />
+        </div>
+      </div>
+
+    </>
+  );
+};
+
+export default OTPVerify;

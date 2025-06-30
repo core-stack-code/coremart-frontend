@@ -3,17 +3,17 @@ import SignUpForm from "../../components/signup-form"
 const SignUpPage = () => {
     return (
         <>
-            <div className="w-full h-full flex justify-between px-40">
-                <div className='w-105 min-w-105 h-full flex flex-col gap-15 pl-5'>
-                    <div className='w-full max-w-90 flex flex-col gap-2 text-5xl '>
+            <div className=" min-h-screen w-full flex flex-col md:flex-row items-center justify-center md:justify-between px-4 sm:px-6 md:px-10 lg:px-10 xl:px-20">
+                <div className="w-full lg:w-1/3 flex flex-col gap-6 items-center md:items-start text-center md:text-left  mt-10 md:mt-25">
+                    <div className='w-full flex flex-col gap-2 text-5xl max-w-xl '>
                         <p className="text-5xl font-bold text-[#9333EA]">Getting Started</p>
-                        <p className="w-150 text-lg mt-2 text-[#6366F1]">Create an account and verify your details to start shopping.</p>
+                        <p className="text-lg mt-2 text-[#6366F1]">Create an account and verify your details to start shopping.</p>
                         <p className="text-lg text-[#6366F1]">Have an account?<a href="/" className="text-xl  text-[#9333EA] font-bold underline ">Login in here</a></p>
                     </div>
                     <SignUpForm />
                 </div>
-                <div className="w-180 mt-0 pt-0 hidden md:block">
-                    <img src="/Signup-Section.svg" alt="Signup Section" className="w-full h-150 object-fill" />
+                <div className=" hidden min-[855px]:block :md:block md:w-full lg:w-[600px] h-full ">
+                    <img src="/Signup-Section.svg" alt="Signup Section" className="w-full h-full object-contain" />
                 </div>
             </div>
         </>

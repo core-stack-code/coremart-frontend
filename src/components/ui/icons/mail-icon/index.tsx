@@ -2,8 +2,8 @@ import React from "react";
 import type { SVGProps } from "react";
 
 const MailIcon: React.FC<SVGProps<SVGSVGElement>> = ({
-    width = 24,
-    height = 24,
+    width =13,
+    height = 11,
     fill = "none",
     stroke = "#9333EA",
     ...props
