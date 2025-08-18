@@ -55,16 +55,16 @@ const OTPVerifyForm = () => {
               )}
             />
           </div>
-          <p className=" text-[#6366F1]">
+          <p className=" text-[var(--color-muted)]">
             Didn’t receive CODE?
-            <a href="/" className="  text-[#9333EA] font-bold underline ">
+            <a href="/" className="text-[var(--color-primary)] font-bold underline ">
               Resend
             </a>
           </p>
           <div className="flex flex-row justify-center gap-3">
             <Button
               type="button"
-              className="w-50 h-11 sm:w-[50%] md:w-[50%] lg:w-[50%] bg-[#6366F1] text-white rounded-2xl"
+              className="w-50 h-11 sm:w-[50%] md:w-[50%] lg:w-[50%] bg-[var(--color-secondary)] text-[var(--color-background)] rounded-2xl"
               variant="default"
               onClick={() => navigate(-1)}
             >
@@ -72,7 +72,7 @@ const OTPVerifyForm = () => {
             </Button>
             <Button
               type="submit"
-              className="w-50 h-11 sm:w-[50%] md:w-[50%] lg:w-[50%] bg-[#9333EA] text-white rounded-2xl"
+              className="w-50 h-11 sm:w-[50%] md:w-[50%] lg:w-[50%] bg-[var(--color-primary)] text-[var(--color-background)] rounded-2xl"
               variant="default"
             >
               {isPending ? "Loading..." : "Sign Up"}

@@ -14,10 +14,10 @@ const productListIcon: React.FC<SVGProps<SVGSVGElement>> = ({
             height={height}
             viewBox="0 0 25 28"
             stroke={stroke}
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
             xmlns="http://www.w3.org/2000/svg"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             {...props}
         >
             <path

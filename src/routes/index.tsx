@@ -8,21 +8,30 @@ import ResetPassword from "@/modules/auth/pages/ResetPassword";
 import ForgetPassword from "@/modules/auth/pages/ForgetPassword";
 import OTPVerify from "@/modules/auth/pages/OTPVerify";
 import HeaderLayout from "@/layouts/HeaderLayout";
-import ProductCategory from "@/modules/Product/pages/Product-Category";
-import FilterPanel from "@/modules/Product/pages/Product-List";
-import ProductDetails from "@/modules/Product/pages/Product-Details";
-import AddToCart from "@/modules/Product/pages/Add-To-Cart";
+import ProductCategory from "@/modules/Products/pages/Product-Category";
+import ProductDetails from "@/modules/Products/pages/Product-Details";
+import ProductList from "@/modules/Products/pages/Product-List";
+import About from "@/modules/Products/pages/About";
+import Contact from "@/modules/Products/pages/Contact";
+import Home from "@/modules/Products/pages/Home";
+import Whislist from "@/modules/Products/pages/Whislist";
+import Saved from "@/modules/Products/pages/Saved";
+import OrderHistory from "@/modules/Products/pages/Order-Histrory";
+import CheckOut from "@/modules/Products/pages/Order-Checkout";
+import YourCart from "@/modules/Products/pages/Your-Cart";
+import Profile from "@/modules/Users/pages/Profile";
+
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <RootLayout />,
-        errorElement: <DefaultPage pageName="Error Page" />, // this should be with layout
+        errorElement: <DefaultPage/>, // this should be with layout
         children: [
             {
                 path: 'auth',
                 element: <AuthLayout />,
-                errorElement: <DefaultPage pageName="Auth Error Page" />, // wihtout layout
+                errorElement: <DefaultPage/>, // wihtout layout
                 children: [
                     {
                         index: true,
@@ -49,23 +58,62 @@ const router = createBrowserRouter([
             {
                 path: 'product',
                 element: <HeaderLayout />,
-                errorElement: <DefaultPage pageName="Product Error Page" />,
+                errorElement: <DefaultPage/>,
                 children: [
+                    {
+                        path:'home',
+                        element:<Home/>
+                    },
                     {
                         path: 'category',
                         element: <ProductCategory />
                     },
                     {
                         path: 'productlist',
-                        element: <FilterPanel />
+                        element: <ProductList />
                     },
                     {
-                        path: 'productdetails',
+                        path: '/product/:productid',
                         element: <ProductDetails />
                     },
                     {
-                        path: 'addtocart',
-                        element: <AddToCart />
+                        path: 'whislist',
+                        element: <Whislist/>
+                    },
+                    {
+                        path:'about',
+                        element:<About/>
+                    },
+                    {
+                        path:'contact',
+                        element:<Contact/>
+                    },
+                    {
+                        path:'saved',
+                        element:<Saved/>
+                    },
+                    {
+                     path:'orderhistory',
+                     element:<OrderHistory/>   
+                    },
+                    {
+                        path:'checkout',
+                        element: <CheckOut/>
+                    },
+                    {
+                        path:'addtocart',
+                        element:<YourCart/>
+                    }
+                ]
+            },
+            {
+                path:'user',
+                element: <HeaderLayout />,
+                errorElement: <DefaultPage/>,
+                children: [
+                    {
+                        path:'profile',
+                        element:<Profile/>
                     }
                 ]
             }

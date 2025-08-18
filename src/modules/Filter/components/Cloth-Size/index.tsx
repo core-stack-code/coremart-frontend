@@ -6,10 +6,10 @@ interface ClothSizeProps {
   toggleOption: (category: "size", value: string) => void
 }
 
+
+const Size = ["XS", "S", "M", "XXL", "L", "XL", "SL"]
+
 const ClothSize: React.FC<ClothSizeProps> = ({ filters, toggleOption }) => {
-
-
-  const Size = ["XS", "S", "M", "XXL", "L", "XL", "SL"]
 
   return (
     <>
@@ -53,14 +53,14 @@ const ClothSize: React.FC<ClothSizeProps> = ({ filters, toggleOption }) => {
                   {selected ? (
                     <button
                       onClick={() => toggleOption("size", size)}
-                      className="w-10 h-10 text-sm font-bold rounded-full bg-white text-[#9333EA] border border-[#9333EA] shadow-[0_0_8px_rgba(0,0,0,0.3)] z-10 transition-all duration-300 flex items-center justify-center"
+                      className="w-10 h-10 text-sm font-bold rounded-full bg-white text-[var(--color-primary)] border border-[var(--color-border)] shadow-[0_0_8px_rgba(0,0,0,0.3)] z-10 transition-all duration-300 flex items-center justify-center"
                     >
                       {size}
                     </button>
                   ) : (
                     <button
                       onClick={() => toggleOption("size", size)}
-                      className="text-sm font-bold text-[#9333EA] transition-all duration-300"
+                      className="text-sm font-bold text-[var(--color-primary)] transition-all duration-300"
                     >
                       {size}
                     </button>

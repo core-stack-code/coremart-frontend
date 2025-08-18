@@ -1,13 +1,14 @@
-import React from 'react'
 
-interface DefaultPageProps {
-    pageName: string
-}
 
-const DefaultPage: React.FC<DefaultPageProps> = ({ pageName }) => {
+const DefaultPage = () => {
   return (
-    <div className='w-full h-full min-h-screen flex items-center justify-center'>
-      <h1 className='text-2xl font-bold'>{pageName}</h1>
+    <div className='w-full h-full min-h-screen flex flex-col items-center justify-center text-[var(--color-primary)]'>
+      <div>
+        <h1 className='text-[250px]'>404</h1>
+      </div>
+      <div>
+        <h1 className='text-[80px]'>Not Found</h1>
+      </div>
     </div>
   )
 }

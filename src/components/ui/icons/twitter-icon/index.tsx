@@ -21,17 +21,17 @@ const TwitterIcon: React.FC<SVGProps<SVGSVGElement>> = ({
                d="M4 4L15.733 20H20L8.267 4H4Z"
                 fill="#ffffff"
                 stroke="#9333EA"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
               d="M4 20L10.768 13.232M13.228 10.772L20 4"
                 // fill="#ffffff"
                 stroke="#9333EA"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
         </svg>
     );

@@ -6,13 +6,13 @@ const OTPVerify = () => {
       <div className="min-h-screen w-full flex flex-col md:flex-row items-center justify-center md:justify-between px-4 sm:px-6 md:px-10 lg:px-10 xl:px-20">
         <div className="w-full lg:w-auto flex flex-col gap-10 items-start md:items-start text-start md:text-left ">
           <div className="w-full max-w-[600px] flex flex-col">
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#9333EA]">
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-primary)]">
               Enter Verification Code
             </p>
-            <p className="text-base sm:text-lg text-[#6366F1]">
+            <p className="text-base sm:text-lg text-[var(--color-info)]">
               We sent a 6-digit code to your ds******@gmail.com
             </p>
-            <p className="text-base sm:text-lg text-[#6366F1]">
+            <p className="text-base sm:text-lg text-[var(--color-info)]">
               Enter it here!
             </p>
           </div>

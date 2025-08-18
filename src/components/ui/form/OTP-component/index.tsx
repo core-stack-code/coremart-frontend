@@ -62,8 +62,8 @@ const OtpInput: React.FC<OtpInputProps> = ({
             onChange={(e) => handleChange(e.target.value, idx)}
             onKeyDown={(e) => handleKeyDown(e, idx)}
             className={cn(
-              "w-12 h-12 text-center border border-border rounded-xl text-lg outline-none",
-              "focus:border-[#6366F1] focus:ring-2 focus:ring-[#6366F1]/30",
+              "w-12 h-12 text-center border border-[var(--color-border)] rounded-xl text-lg outline-none",
+              "focus:border-[var(--color-border)] focus:ring focus:ring-[var(--color-primary)]",
               inputClassName
             )}
           />

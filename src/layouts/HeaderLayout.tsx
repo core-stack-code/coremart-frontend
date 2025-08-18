@@ -1,13 +1,13 @@
-import Hamburger from "@/modules/Header/Components/Hamburger";
-import MobileViewHamburger from "@/modules/Header/Components/MobileViewHamburger";
-import Navbar from "@/modules/Header/Components/Navbar";
-import Notification from "@/modules/Header/Components/Notification";
-import Profile from "@/modules/Header/Components/Profile";
-import SearchBar from "@/modules/Header/Components/SearchBar";
-import Whislist from "@/modules/Header/Components/Whislist";
+import Hamburger from "@/components/ui/header/Hamburger-Component/Hamburger";
+import MobileViewHamburger from "@/components/ui/header/Mobile-Hamburger-Component/MobileViewHamburger";
+import Navbar from "@/components/ui/header/Navbar-Component/Navbar";
+import Profile from "@/components/ui/header/Profile-Component/Profile";
+import SearchBar from "@/components/ui/header/SearchBar-Component/SearchBar";
+import Whislist from "@/components/ui/header/Whislist-Component/Whislist";
 import { useState } from "react"
 import { Outlet } from "react-router-dom"
 import FooterLayout from "./FooterLayout";
+import Icon from "@/components/ui/icons";
 
 const HeaderLayout = () => {
 
@@ -23,14 +23,14 @@ const HeaderLayout = () => {
             </div>
             <Hamburger isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
           </div>
-  
-            <Navbar />
-        
-            <SearchBar />
+
+          <Navbar />
+
+          <SearchBar />
 
           <div className="flex items-center gap-10">
             <Whislist />
-            <Notification />
+            <Icon name="notificationIcon" width={18} height={22} className=" text-gray-600 cursor-pointer" />
             <Profile />
           </div>
         </div>

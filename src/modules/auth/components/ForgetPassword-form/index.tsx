@@ -64,7 +64,7 @@ const ForgetPasswordForm = () => {
         <div className='flex justify-center'>
           <Button
             type='button'
-            className='w-50 h-11 lg:w-40 xl:w-50 bg-[#6366F1] text-white rounded-2xl'
+            className='w-50 h-11 lg:w-40 xl:w-50 bg-[var(--color-secondary)] text-[var(--color-background)] rounded-2xl'
             variant='default'
             onClick={() => navigate(-1)}
           >
@@ -72,7 +72,7 @@ const ForgetPasswordForm = () => {
           </Button>
           <Button
             type='submit'
-            className='w-50 h-11 lg:w-40 xl:w-50 ml-6 bg-[#9333EA] text-white rounded-2xl'
+            className='w-50 h-11 lg:w-40 xl:w-50 ml-6 bg-[var(--color-primary)] text-[var(--color-background)] rounded-2xl'
             variant='default'
           >
             {isPending ? "Loading..." : "Continue"}

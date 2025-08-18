@@ -15,9 +15,9 @@ const WhislistIcon: React.FC<SVGProps<SVGSVGElement>> = ({
       viewBox="0 0 20 18"
       fill={fill}
       stroke={stroke}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >

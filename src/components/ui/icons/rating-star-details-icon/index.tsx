@@ -15,7 +15,7 @@ const DetailsRatingStarIcon: React.FC<SVGProps<SVGSVGElement>> = ({
             viewBox="0 0 29 29"
             fill={fill}
             xmlns="http://www.w3.org/2000/svg"
-            stroke-width="2"
+            strokeWidth="2"
             {...props}
         >
             <path

@@ -15,44 +15,42 @@ const HeaderWhisListWithOpenIcon: React.FC<SVGProps<SVGSVGElement>> = ({
             viewBox="0 0 33 32"
             fill={fill}
             xmlns="http://www.w3.org/2000/svg"
-
-
             {...props}
         >
             <path
                 d="M1 29C1 29.5304 1.21071 30.0391 1.58579 30.4142C1.96086 30.7893 2.46957 31 3 31C3.53043 31 4.03914 30.7893 4.41421 30.4142C4.78929 30.0391 5 29.5304 5 29C5 28.4696 4.78929 27.9609 4.41421 27.5858C4.03914 27.2107 3.53043 27 3 27C2.46957 27 1.96086 27.2107 1.58579 27.5858C1.21071 27.9609 1 28.4696 1 29Z"
                 fill="#ffffff"
                 stroke="#9333EA"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
 
             <path
                 d="M12 29C12 29.5304 12.2107 30.0391 12.5858 30.4142C12.9609 30.7893 13.4696 31 14 31C14.5304 31 15.0391 30.7893 15.4142 30.4142C15.7893 30.0391 16 29.5304 16 29C16 28.4696 15.7893 27.9609 15.4142 27.5858C15.0391 27.2107 14.5304 27 14 27C13.4696 27 12.9609 27.2107 12.5858 27.5858C12.2107 27.9609 12 28.4696 12 29Z"
                 fill="#ffffff"
                 stroke="#9333EA"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
 
             <path
                 d="M14 27H3V13H1"
                 fill="#ffffff"
                 stroke="#9333EA"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
 
             <path
                 d="M3 15L17 16L16 23H3"
                 fill="#ffffff"
                 stroke="#9333EA"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
 
             <path

@@ -29,6 +29,19 @@ import DetailsRatingStarIcon from "./rating-star-details-icon";
 import SimilarProductIcon from "./similar-product-icon";
 import HeaderWhisListWithoutOpenIcon from "./header-Whislist/without-open";
 import HeaderWhisListWithOpenIcon from "./header-Whislist/with-open";
+import AboutServiceIcon from "./about-icon/customer-service";
+import AboutDeliveryIcon from "./about-icon/delivery";
+import AboutGuaranteeIcon from "./about-icon/gaurantee";
+import HomeADIcon from "./Home";
+import CategoriesIcon from "./categories";
+import SeeAllArrowIcon from "./see-all-arrow-icon";
+import CloseIcon from "./close-icon";
+import DeleteIcon from "./delete-icon";
+import OrderShippedBadge from "../Badges/Order-Badges/Shipped";
+import OrderDeliveredBadge from "../Badges/Order-Badges/Delivered";
+import OrderCanceledBadge from "../Badges/Order-Badges/Canceled";
+
+
 
 export const CUSTOM_ICON_MAP = {
     mailIcon: MailIcon,
@@ -61,5 +74,16 @@ export const CUSTOM_ICON_MAP = {
     starIcon: StarIcon,
     detailsIcon: DetailsIcon,
     detailsratingstarIcon: DetailsRatingStarIcon,
-    similarproductIcon: SimilarProductIcon
+    similarproductIcon: SimilarProductIcon,
+    aboutdeliveryIcon:AboutDeliveryIcon,
+    aboutserviceIcon:AboutServiceIcon,
+    aboutguaranteeIcon:AboutGuaranteeIcon,
+    homeadIcon:HomeADIcon,
+    categoriesIcon:CategoriesIcon,
+    seeallarrowIcon:SeeAllArrowIcon,
+    closeIcon:CloseIcon,
+    deleteIcon:DeleteIcon,
+    ordershippedBadge:OrderShippedBadge,
+    orderdeliveredBadge:OrderDeliveredBadge,
+    ordercanceledBadge:OrderCanceledBadge,
 }

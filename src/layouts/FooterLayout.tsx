@@ -1,7 +1,7 @@
 import Icon from "@/components/ui/icons"
-import ContactUsFooterLinks from "@/modules/Footer/component/Contact Links"
-import FooterLinks from "@/modules/Footer/component/Shop Account Customer Links"
-import TermsConditionFooter from "@/modules/Footer/component/Terms Condition"
+import ContactUsFooterLinks from "@/components/ui/Footer/Contact-Links-Component"
+import FooterLinks from "@/components/ui/Footer/Shop-Account-Customer-Links-Component"
+import TermsConditionFooter from "@/components/ui/Footer/Terms-Condition-Component"
 
 
 const FooterLayout = () => {
@@ -9,60 +9,48 @@ const FooterLayout = () => {
         <>
             <div className="w-[80%] mx-auto">
                 <footer className="bg-white text-gray-700 px-6 md:px-16 py-10 border-t border-gray-300">
-                    <div className="flex flex-col md:flex-row justify-between gap-10">
+                    <div className="flex flex-col md:flex-row justify-start gap-10 px-4 sm:px-6 lg:px-12">
                         {/* Left Logo + Text */}
-                        <div className=" space-y-4 max-w-full">
+                        <div className="space-y-4 w-full md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left">
                             <img src='/New-Logo.svg' alt='Logo' className='w-20 h-auto object-contain' />
-                            <div >
-                                <p className="text-sm">Fashion made easy for everyone, everywhere.</p>
-                                <div className="flex gap-4 text-purple-600 text-xl">
-                                    <Icon name="instagramIcon" width={24} height={24} />
-                                    <Icon name="facebookIcon" width={24} height={24} />
-                                    <Icon name="linkdinIcon" width={24} height={24} />
-                                    <Icon name="twitterIcon" width={24} height={24} />
-                                </div>
+                            <p className="text-sm max-w-xs">Fashion made easy for everyone, everywhere.</p>
+                            <div className="flex gap-4 text-purple-600 text-xl justify-center md:justify-start">
+                                <Icon name="instagramIcon" width={24} height={24} />
+                                <Icon name="facebookIcon" width={24} height={24} />
+                                <Icon name="linkdinIcon" width={24} height={24} />
+                                <Icon name="twitterIcon" width={24} height={24} />
                             </div>
                         </div>
 
-                        {/* Links */}
-                        <div className=" grid grid-cols-2 ms:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 text-sm">
-                            <div>
-                                <h4 className="font-semibold mb-2">Shop Categories</h4>
-                                {/* <ul className="space-y-1 flex flex-col">
-                                    <a href="#" className="hover:text-purple-600 hover:underline">Men</a>
-                                    <a href="#" className="hover:text-purple-600 hover:underline">Women</a>
-                                    <a href="#" className="hover:text-purple-600 hover:underline">Kids</a>
-                                    <a href="#" className="hover:text-purple-600 hover:underline">New Arrivals</a>
-                                    <a href="#" className="hover:text-purple-600 hover:underline">Sale</a>
-                                </ul> */}
+                        {/* Right Section - Links */}
+                        <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm mt-10 md:mt-0">
+                            <div className="flex flex-col gap-10 items-center md:items-start">
+                                <h4 className="font-semibold">Shop Categories</h4>
                                 <FooterLinks />
                             </div>
 
-
-                            <div>
-                                <h4 className="font-semibold mb-2">Customer Account</h4>
-                                <FooterLinks />
-
-                            </div>
-
-
-                            <div>
-                                <h4 className="font-semibold mb-2">Customer Support</h4>
+                            <div className="flex flex-col gap-10 items-center md:items-start">
+                                <h4 className="font-semibold">Customer Account</h4>
                                 <FooterLinks />
                             </div>
 
+                            <div className="flex flex-col gap-10 items-center md:items-start">
+                                <h4 className="font-semibold">Customer Support</h4>
+                                <FooterLinks />
+                            </div>
 
-                            <div>
-                                <h4 className="font-semibold mb-2">Contacts us</h4>
+                            <div className="flex flex-col gap-10 items-center md:items-start">
+                                <h4 className="font-semibold">Contact Us</h4>
                                 <ContactUsFooterLinks />
                             </div>
                         </div>
                     </div>
 
+
                     {/* Bottom Bar */}
                     <div className="mt-10 border-t border-gray-300 pt-4 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
                         <span>Copyright © 2025 CoreStack</span>
-                       <TermsConditionFooter/>
+                        <TermsConditionFooter />
                     </div>
                 </footer>
             </div>

@@ -112,7 +112,7 @@ const SignUpForm = () => {
           </div>
           <Button
             type='submit'
-            className='w-full h-11 bg-[#9333EA] text-white rounded-2xl'
+            className='w-full h-11 bg-[var(--color-primary)] text-white rounded-2xl'
             variant='default'
           >
             {isPending ? "Loading..." : "Continue"}
@@ -120,7 +120,7 @@ const SignUpForm = () => {
           <div className='w-full h-full flex items-center justify-center'>
             <div className='w-fit h-full flex flex-col gap-2'>
               <span className='text-xs text-primary'>Or sign in with</span>
-              <div className='py-2.5 px-6 rounded-2xl border border-border flex items-center justify-center'>
+              <div className='py-2.5 px-6 rounded-2xl border flex items-center justify-center'>
                 <Icon name="githubIcon" width={25} height={25} />
               </div>
             </div>

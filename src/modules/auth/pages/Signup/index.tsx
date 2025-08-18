@@ -7,8 +7,8 @@ const SignUpPage = () => {
                 <div className="w-full lg:w-1/3 flex flex-col gap-6 items-center md:items-start text-center md:text-left  mt-10 md:mt-25">
                     <div className='w-full flex flex-col gap-2 text-5xl max-w-xl '>
                         <p className="text-5xl font-bold text-[#9333EA]">Getting Started</p>
-                        <p className="text-lg mt-2 text-[#6366F1]">Create an account and verify your details to start shopping.</p>
-                        <p className="text-lg text-[#6366F1]">Have an account?<a href="/" className="text-xl  text-[#9333EA] font-bold underline ">Login in here</a></p>
+                        <p className="text-lg mt-2 text-[var(--color-info)]">Create an account and verify your details to start shopping.</p>
+                        <p className="text-lg text-[var(--color-info)]">Have an account? <a href="/" className="text-xl  text-[var(--color-primary)] font-bold underline ">Login in here</a></p>
                     </div>
                     <SignUpForm />
                 </div>

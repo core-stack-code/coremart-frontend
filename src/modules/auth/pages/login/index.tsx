@@ -6,7 +6,7 @@ const LoginPage: React.FC = () => {
 
         <div className=" min-h-screen w-full h-full flex flex-col md:flex-row items-center justify-center md:justify-between px-4 sm:px-6 md:px-20">
             <div className=" h-auto w-1/2 sm:w-1/2 md:w-1/3 flex flex-col gap-10 items-center md:items-start text-center md:text-left">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#9333EA]">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--color-primary)]">
                     <p>Hey,</p>
                     <p>Welcome Back</p>
                 </div>
