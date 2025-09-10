@@ -6,15 +6,15 @@ import { Button } from '@/components/ui/button'
 import InputComponent from '@/components/ui/form/input-component'
 import Icon from '@/components/ui/icons'
 import { useUserLogin } from '../../apis/mutations'
-// import { useAppDispatch } from '@/hooks/redux'
-// import { setUserData } from '@/store/slices/userSlice'
-// import type { User } from '@/modules/user/apis/types'
+import { useAppDispatch } from '@/hooks/redux'
+import { setUserData } from '@/store/slices/userSlice'
+import type { User } from '@/modules/user/apis/types'
 import { forgetPasswordFormDefaultValues } from '../../schemas/defaultValus'
 
 
 const ForgetPasswordForm = () => {
 
-  // const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch()
   const navigate = useNavigate();
 
   const { handleSubmit, control } = useForm({
@@ -22,20 +22,19 @@ const ForgetPasswordForm = () => {
     defaultValues: forgetPasswordFormDefaultValues
   })
 
-  const { isPending } = useUserLogin()
+  const { mutate, isPending } = useUserLogin()
 
   const onSubmit = (formData: ForgotPasswordPayload) => {
-    console.log('Form Data:', formData)
-    // mutate(formData, {
-    //   onSuccess: (data) => {
-    //     console.log('Email Send Successfully:', data)
-    //     dispatch(setUserData(data.data?.user as User))
-    //     navigate('/')
-    //   },
-    //   onError: (error) => {
-    //     console.error('Login failed:', error)
-    //   }
-    // })
+    mutate(formData, {
+      onSuccess: (data) => {
+        console.log('Email Send Successfully:', data)
+        dispatch(setUserData(data.data?.user as User))
+        navigate('/')
+      },
+      onError: (error) => {
+        console.error('Login failed:', error)
+      }
+    })
   }
 
 
@@ -62,10 +61,10 @@ const ForgetPasswordForm = () => {
             )}
           />
         </div>
-        <div className='flex justify-evenly'>
+        <div className='flex'>
           <Button
             type='button'
-            className='w-50 h-11 lg:w-40 xl:w-50 bg-[var(--color-secondary)] text-[var(--color-background)] rounded-2xl'
+            className='w-50 h-11 bg-[#6366F1] text-white rounded-2xl'
             variant='default'
             onClick={() => navigate(-1)}
           >
@@ -73,7 +72,7 @@ const ForgetPasswordForm = () => {
           </Button>
           <Button
             type='submit'
-            className='w-50 h-11 lg:w-40 xl:w-50 ml-6 bg-[var(--color-primary)] text-[var(--color-background)] rounded-2xl'
+            className='w-50 h-11 ml-6 bg-[#9333EA] text-white rounded-2xl'
             variant='default'
           >
             {isPending ? "Loading..." : "Continue"}

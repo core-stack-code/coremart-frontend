@@ -1,8 +1,10 @@
+import { Log } from '@/lib/utils'
 import React from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 
 const RootLayout: React.FC = () => {
     const location = useLocation()
+    Log('here location in root', location.pathname)
 
     return (
         <div className='flex w-full h-full flex-col'>

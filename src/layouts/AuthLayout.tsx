@@ -1,7 +1,9 @@
+import { Log } from '@/lib/utils'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
 const AuthLayout: React.FC = () => {
+  Log('some radom shit', 123)
   return (
     <div className='w-full h-full bg-background flex flex-col'>
       <div className='w-full h-fit pl-10 mt-3 '>

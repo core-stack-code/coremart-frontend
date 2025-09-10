@@ -2,17 +2,18 @@ import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { loginSchema, type LoginPayload } from '../../schemas/authSchema'
-
-import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
-import InputComponent from '@/components/ui/form/input-component'
-import Icon from '@/components/ui/icons'
-import { loginFormDefaultValues } from '../../schemas/defaultValus'
-import { useUserLogin } from '../../apis/mutations'
 import { useAppDispatch } from '@/hooks/redux'
 import { setUserData } from '@/store/slices/userSlice'
+import { loginSchema, type LoginPayload } from '../../schemas/authSchema'
+import { loginFormDefaultValues } from '../../schemas/defaultValus'
 import type { User } from '@/modules/user/apis/types'
+
+import InputComponent from '@/components/ui/form/input-component'
+import Icon from '@/components/ui/icons'
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
+import { useUserLogin } from '../../apis/mutations'
+
 
 const LoginForm: React.FC = () => {
     const dispatch = useAppDispatch()
@@ -111,6 +112,7 @@ const LoginForm: React.FC = () => {
                         </div>
                     </div>
                 </div>
+<<<<<<< Updated upstream
                 <div className='w-full flex justify-start items-center'>
                     <p className='text-xs text-primary text-center'>
                         Don’t have an account? 
@@ -122,6 +124,17 @@ const LoginForm: React.FC = () => {
                             Sign Up
                         </NavLink>
                     </p>
+=======
+                <div className='w-full flex justify-start items-center gap-1 text-xs text-primary text-center'>
+                    <span>Don’t have an account? </span>
+                    <Link
+                        to="/"
+                        className='text-primary font-bold'
+                        onClick={(e) => isPending && e.preventDefault()}
+                    >
+                        Sign Up
+                    </Link>
+>>>>>>> Stashed changes
                 </div>
             </div>
         </form>

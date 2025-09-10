@@ -12,10 +12,11 @@ export const signupFormDefaultValues: SignupPayload = {
     confirmPassword: ""
 }
 
-export const forgetPasswordFormDefaultValues: ForgotPasswordPayload = {
+export const forgetPasswordFormDefaultValues : ForgotPasswordPayload={
     email: ""
 }
 
+<<<<<<< Updated upstream
 export const resetPasswordFormDefaultValues: ResetPasswordPayload = {
     password: "",
     confirmPassword: "",
@@ -25,6 +26,11 @@ export const verifyFromDefaultsValues: VerifyPayload = {
     otp: "",
     email: "",
     isRememberMe: false
+=======
+export const resetPasswordFormDefaultValues : ResetPasswordPayload={
+    email:"",
+    password:""
+>>>>>>> Stashed changes
 }
 
 

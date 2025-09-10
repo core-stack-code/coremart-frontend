@@ -3,9 +3,9 @@ import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import {   signupSchema, type SignupPayload } from '../../schemas/authSchema'
 
-import { Button } from '@/components/ui/button'
-import InputComponent from '@/components/ui/form/input-component'
 import Icon from '@/components/ui/icons'
+import InputComponent from '@/components/ui/form/input-component'
+import { Button } from '@/components/ui/button'
 import { signupFormDefaultValues } from '../../schemas/defaultValus'
 import { useUserLogin } from '../../apis/mutations'
 import { useAppDispatch } from '@/hooks/redux'
@@ -14,8 +14,6 @@ import type { User } from '@/modules/user/apis/types'
 
 
 const SignUpForm = () => {
-
-
   const dispatch = useAppDispatch()
   const navigate = useNavigate();
 
