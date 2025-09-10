@@ -27,8 +27,6 @@ const LoginForm: React.FC = () => {
     const { mutate, isPending } = useUserLogin()
 
     const onSubmit = (formData: LoginPayload) => {
-        debugger
-        console.log(formData)
         mutate(formData, {
             onSuccess: (data) => {
                 console.log('Login Successfully:', data)
@@ -112,7 +110,6 @@ const LoginForm: React.FC = () => {
                         </div>
                     </div>
                 </div>
-<<<<<<< Updated upstream
                 <div className='w-full flex justify-start items-center'>
                     <p className='text-xs text-primary text-center'>
                         Don’t have an account? 
@@ -124,17 +121,6 @@ const LoginForm: React.FC = () => {
                             Sign Up
                         </NavLink>
                     </p>
-=======
-                <div className='w-full flex justify-start items-center gap-1 text-xs text-primary text-center'>
-                    <span>Don’t have an account? </span>
-                    <Link
-                        to="/"
-                        className='text-primary font-bold'
-                        onClick={(e) => isPending && e.preventDefault()}
-                    >
-                        Sign Up
-                    </Link>
->>>>>>> Stashed changes
                 </div>
             </div>
         </form>

@@ -18,11 +18,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { reviewSchema, type ProductReviewPayLoad } from '../../Schemas/productSchema';
 import { productReviewDefaultValues } from '../../Schemas/defaultValues';
 import TextareaComponent from '@/components/ui/form/textare-component';
+import { useParams } from 'react-router-dom';
 
 
 
 
 const ProductDetails = () => {
+    const params = useParams()
+    console.log(params)
 
     const [reviewOpen, setReviewOpen] = useState(true)
 

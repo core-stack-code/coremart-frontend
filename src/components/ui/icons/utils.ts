@@ -57,9 +57,6 @@ import OrderDeliveredBadge from "./Order-Badges/Delivered";
 import OrderCanceledBadge from "./Order-Badges/Canceled";
 import PaidIcon from "./paid-icon";
 
-
-
-
 export const CUSTOM_ICON_MAP = {
     mailIcon: MailIcon,
     lockIcon: LockIcon,
@@ -102,7 +99,7 @@ export const CUSTOM_ICON_MAP = {
     deleteIcon:DeleteIcon,
     ordershippedBadge:OrderShippedBadge,
     orderdeliveredBadge:OrderDeliveredBadge,
-    ordercanceledBadge:OrderCanceledBadge,
+    ordercanceledBadge: OrderCanceledBadge,
     dashboardsliderdashboardIcon:DashboardSliderDashBoardIcon,
     dashboardsliderproductsIcon:DashboardSliderProductsIcon,
     dashboardsliderorderlistsIcon:DashboardSliderOrderListsIcon,
@@ -119,5 +116,4 @@ export const CUSTOM_ICON_MAP = {
     profitupIcon:ProfitUPIcon,
     profitdownIcon:ProfitDownIcon,
     paidIcon:PaidIcon
-
 }

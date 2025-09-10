@@ -18,6 +18,10 @@ export const cardType = {
     recommendedRecent: "RecommendedRecent"
 }
 
+interface ProductCardProps {
+    rightBadge?: string
+}
+
 
 
 const Home = () => {

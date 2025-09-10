@@ -66,7 +66,7 @@ const ProductCardGrid: React.FC<ProductCardGridProps> = ({ item, cardType }) => 
 
         {/* For Image and naviagte */}
 
-        <NavLink to={'/product/:productid'}>
+        <NavLink to={`/product/${product.slug}`} className="w-full h-64 p-4 flex justify-center items-center">
           <div className="bg-[var(--color-muted)] rounded-[var(--border-radius)]  flex justify-center items-center h-64">
             <img
               src={product.image}

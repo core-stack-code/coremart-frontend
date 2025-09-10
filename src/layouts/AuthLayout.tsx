@@ -1,15 +1,13 @@
-import { Log } from '@/lib/utils'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
 const AuthLayout: React.FC = () => {
-  Log('some radom shit', 123)
   return (
-    <div className='w-full h-full bg-background flex flex-col'>
-      <div className='w-full h-fit pl-10 mt-3 '>
+    <div className='w-full h-full min-h-screen flex flex-col bg-background px-24'>
+      <div className='w-full pt-8 flex items-center justify-start'>
         <img src='/New-Logo.svg' alt='Logo' className='w-20 h-auto object-fill' />
       </div>
-      <main className='w-full h-full'>
+      <main className='w-full h-full flex justify-between pt-12'>
         <Outlet />
       </main>
     </div>
