@@ -61,7 +61,7 @@ const ForgetPasswordForm = () => {
             )}
           />
         </div>
-        <div className='flex justify-center'>
+        <div className='flex justify-evenly'>
           <Button
             type='button'
             className='w-50 h-11 lg:w-40 xl:w-50 bg-[var(--color-secondary)] text-[var(--color-background)] rounded-2xl'

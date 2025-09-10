@@ -33,6 +33,7 @@ const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
             "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
             "border-border focus-within:border-primary",
             "rounded-2xl py-3.5 px-3 max-h-11",
+            "border border-[var(--color-border)]",
             wrapperClassName
           )}
         >

@@ -16,7 +16,6 @@ export const cardType = {
     trendingOffer: "TrendingOffer",
     trendingProduct: "TrendingProduct",
     recommendedRecent: "RecommendedRecent"
-
 }
 
 

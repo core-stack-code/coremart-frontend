@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button'
-import AddAddressForm from '@/components/ui/form/Add-Address-Form'
-import EditAddressForm from '@/components/ui/form/Edit-Address-Form'
+import AddAddressForm from '@/modules/Products/components/Order-Checkout/Add-Address-Form'
 import { useState } from 'react'
 
 
@@ -8,7 +7,14 @@ const MyAddress = () => {
 
 
     const [editAddress, setEditAddress] = useState(false)
-    const [addAddress, setAddAddress] = useState(false)
+    const [Address, setAddress] = useState(false)
+    const [buttonType, setButtonType] = useState("")
+
+
+    const handleValueCheck = (e: React.MouseEvent<HTMLButtonElement>) => {
+        setButtonType(e.currentTarget.value)
+        console.log(e.currentTarget.value)
+    }
 
 
     return (
@@ -23,17 +29,14 @@ const MyAddress = () => {
 
                 {
                     editAddress ?
-                        <EditAddressForm setEditAddress={setEditAddress} /> : null
+                        // <EditAddressForm setEditAddress={setEditAddress} /> : null
+                        <AddAddressForm setAddress={setAddress} setEditAddress={setEditAddress} buttonType={buttonType} /> : null
                 }
 
                 {
-                    addAddress ? 
-                    <AddAddressForm/> : null
+                    Address ?
+                        <AddAddressForm setAddress={setAddress} setEditAddress={setAddress} buttonType={buttonType} /> : null
                 }
-
-
-
-
 
 
                 <div className="w-2/4 h-fit p-4 space-y-5 ">
@@ -53,7 +56,8 @@ const MyAddress = () => {
                                             <p className="">United States</p>
                                         </div>
                                         <div className="flex gap-3">
-                                            <Button className="bg-[var(--color-primary)] text-[var(--color-background)] hover:bg-[var(--color-primary-hover)]" onClick={() => setEditAddress(true)}>Edit</Button>
+                                            <Button value="Edit" className="bg-[var(--color-primary)] text-[var(--color-background)] hover:bg-[var(--color-primary-hover)]" onClick={(e) => { handleValueCheck(e), setEditAddress(true) }}>Edit</Button>
+
                                             <Button className="bg-[var(--color-error)] text-[var(--color-background)]">Delete</Button>
                                         </div>
                                     </div>
@@ -65,8 +69,8 @@ const MyAddress = () => {
             </div>
 
             {
-                !editAddress && !addAddress?
-                    <Button className="bg-[var(--color-primary)] text-[var(--color-background)] hover:bg-[var(--color-primary-hover)]" onClick={() => setAddAddress(true)}>Add Address</Button> : null
+                !editAddress && !Address ?
+                    <Button value="AddAddress" className="bg-[var(--color-primary)] text-[var(--color-background)] hover:bg-[var(--color-primary-hover)]" onClick={(e) => { handleValueCheck(e), setAddress(true) }}>Add Address</Button> : null
             }
 
         </div>

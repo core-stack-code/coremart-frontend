@@ -1,27 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { verifySchema, type VerifyPayload } from "../../schemas/authSchema";
+import { otpVerifySchema, type OtpVerifyPayload } from "../../schemas/authSchema";
 import { Button } from "@/components/ui/button";
 import { useUserLogin } from "../../apis/mutations";
 import { useAppDispatch } from "@/hooks/redux";
 import { setUserData } from "@/store/slices/userSlice";
 import type { User } from "@/modules/user/apis/types";
-import { verifyFromDefaultsValues } from "../../schemas/defaultValus";
-import OtpInput from "@/components/ui/form/OTP-component";
+import { otpDefaultsValues} from "../../schemas/defaultValus";
+import  { InputOTPPattern } from "@/components/ui/form/OTP-component";
 
 const OTPVerifyForm = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const { handleSubmit, control } = useForm({
-    resolver: zodResolver(verifySchema),
-    defaultValues: verifyFromDefaultsValues,
+    resolver: zodResolver(otpVerifySchema),
+    defaultValues: otpDefaultsValues,
   });
 
   const { mutate, isPending } = useUserLogin();
 
-  const onSubmit = (formData: VerifyPayload) => {
+  const onSubmit = (formData: OtpVerifyPayload) => {
     mutate(formData, {
       onSuccess: (data) => {
         console.log("OTP Send Successfully:", data);
@@ -43,15 +43,8 @@ const OTPVerifyForm = () => {
               name="otp"
               control={control}
               disabled={isPending}
-              render={({ field, fieldState }) => (
-                <OtpInput
-                  {...field}
-                  length={6}
-                  value={field.value}
-                  onChange={field.onChange}
-                  error={fieldState.error?.message}
-                  wrapperClassName="w-full "
-                />
+              render={() => (
+                <InputOTPPattern/>
               )}
             />
           </div>

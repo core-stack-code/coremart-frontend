@@ -37,9 +37,26 @@ import CategoriesIcon from "./categories";
 import SeeAllArrowIcon from "./see-all-arrow-icon";
 import CloseIcon from "./close-icon";
 import DeleteIcon from "./delete-icon";
-import OrderShippedBadge from "../Badges/Order-Badges/Shipped";
-import OrderDeliveredBadge from "../Badges/Order-Badges/Delivered";
-import OrderCanceledBadge from "../Badges/Order-Badges/Canceled";
+import DashboardSliderDashBoardIcon from "./Dashboard-Slider/dashboard-icon";
+import DashboardSliderProductsIcon from "./Dashboard-Slider/products-icon";
+import DashboardSliderOrderListsIcon from "./Dashboard-Slider/order-lists-icon";
+import DashboardSliderCustomersIcon from "./Dashboard-Slider/customers-icon";
+import DashboardSliderCategoriesIcon from "./Dashboard-Slider/categories-icon";
+import DashboardSliderInventoryIcon from "./Dashboard-Slider/inventory-icon";
+import DashboardSliderMessagesIcon from "./Dashboard-Slider/messages-icon";
+import DashboardSliderReportsIcon from "./Dashboard-Slider/reports-icon";
+import dashboardSliderSettingsIcon from "./Dashboard-Slider/settings-icon";
+import dashboardSliderLogoutIcon from "./Dashboard-Slider/logout-icon";
+import TotaUserIcon from "./total-user";
+import TotalOrderIcon from "./total-order";
+import TotalSalesIcon from "./total-sales";
+import ProfitUPIcon from "./profit-up-icon";
+import ProfitDownIcon from "./profit-down-icon";
+import OrderShippedBadge from "./Order-Badges/Shipped";
+import OrderDeliveredBadge from "./Order-Badges/Delivered";
+import OrderCanceledBadge from "./Order-Badges/Canceled";
+import PaidIcon from "./paid-icon";
+
 
 
 
@@ -86,4 +103,21 @@ export const CUSTOM_ICON_MAP = {
     ordershippedBadge:OrderShippedBadge,
     orderdeliveredBadge:OrderDeliveredBadge,
     ordercanceledBadge:OrderCanceledBadge,
+    dashboardsliderdashboardIcon:DashboardSliderDashBoardIcon,
+    dashboardsliderproductsIcon:DashboardSliderProductsIcon,
+    dashboardsliderorderlistsIcon:DashboardSliderOrderListsIcon,
+    dashboardslidercustomersIcon:DashboardSliderCustomersIcon,
+    dashboardslidercategoriesIcon:DashboardSliderCategoriesIcon,
+    dashboardsliderinventoryIcon:DashboardSliderInventoryIcon,
+    dashboardslidermessagesIcon:DashboardSliderMessagesIcon,
+    dashboardsliderreportsIcon:DashboardSliderReportsIcon,
+    dashboardslidersettingsIcon:dashboardSliderSettingsIcon,
+    dashboardsliderlogoutIcon:dashboardSliderLogoutIcon,
+    totaluserIcon:TotaUserIcon,
+    totalorderIcon:TotalOrderIcon,
+    totalsalesIcon:TotalSalesIcon,
+    profitupIcon:ProfitUPIcon,
+    profitdownIcon:ProfitDownIcon,
+    paidIcon:PaidIcon
+
 }

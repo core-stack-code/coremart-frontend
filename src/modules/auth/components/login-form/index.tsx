@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { loginSchema, type LoginPayload } from '../../schemas/authSchema'
@@ -26,6 +26,8 @@ const LoginForm: React.FC = () => {
     const { mutate, isPending } = useUserLogin()
 
     const onSubmit = (formData: LoginPayload) => {
+        debugger
+        console.log(formData)
         mutate(formData, {
             onSuccess: (data) => {
                 console.log('Login Successfully:', data)
@@ -112,13 +114,13 @@ const LoginForm: React.FC = () => {
                 <div className='w-full flex justify-start items-center'>
                     <p className='text-xs text-primary text-center'>
                         Don’t have an account? 
-                        <Link
-                            to="/"
+                        <NavLink
+                            to="/auth/signup"
                             className='text-[#9333EA] font-bold'
                             onClick={(e) => isPending && e.preventDefault()}
                         >
                             Sign Up
-                        </Link>
+                        </NavLink>
                     </p>
                 </div>
             </div>

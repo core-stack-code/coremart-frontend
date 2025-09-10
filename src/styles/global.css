@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* @import "tw-animate-css"; */
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -87,16 +87,18 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
 
   --color-success: #10B981;
   --color-error: #EF4444;
-  --color-warning: #F59E0B; 
+  --color-warning: #F59E0B;
   --color-info: #3B82F6;
   --color-stock: #10B981;
-  --color-outofstock : #EF4444;
-  --color-star :#FFD700;
-  --color-whislist : #EF4444;
+  --color-outofstock: #EF4444;
+  --color-star: #FFD700;
+  --color-whislist: #EF4444;
   --color-discount: #EF4444;
-  --color-surface : #F9F9F9;
+  --color-surface: #F9F9F9;
+  --color-profitup: #00B69B;
+  --color-profitdown: #F93C65;
 
-  --border-radius : 20px;
+  --border-radius: 20px;
 
 
 
@@ -187,8 +189,8 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
-

@@ -12,6 +12,17 @@ const ProductList = () => {
 
     const [gridView, setGridView] = useState(true)
     const [listView, setListView] = useState(false)
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const itemsPerPage = 12;
+    
+
+    // Calculate start and end index
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems =  ProductCard.data.cart.items.slice(indexOfFirstItem, indexOfLastItem);
+
+    const totalPages = Math.ceil( ProductCard.data.cart.items.length / itemsPerPage);
 
 
     return (
@@ -52,44 +63,40 @@ const ProductList = () => {
                 <div className="w-full lg:w-auto xl:w-full  flex sm:px-5 md:px-8 lg:px-8 xl:px-25 h-screen overflow-hidden">
 
                     <FilterLayout />
+                    <div className="flex flex-col flex-grow overflow-hidden">
 
-                    <div className="flex-grow overflow-y-auto overflow-hidden scrollbar-hide scroll-smooth">
-
-                        {
-                            gridView && (
-                                <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 
-                               min-[1400px]:grid-cols-3 xl:grid-cols-3 place-items-center  mx-auto gap-7 py-2">
-                                    {
-                                        ProductCard.data.cart.items.map((productcard, index) => {
-                                            return (
-                                                <ProductCardGrid key={index} item={productcard} cardType={cardType.recommendedRecent} />
-                                            )
-                                        })
-                                    }
+                        <div className="flex-grow overflow-y-auto scrollbar-hidden scroll-smooth">
+                            {gridView && (
+                                <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 min-[1400px]:grid-cols-3 xl:grid-cols-3 place-items-center mx-auto gap-7">
+                                    {currentItems.map((productcard, index) => (
+                                        <ProductCardGrid
+                                            key={index}
+                                            item={productcard}
+                                            cardType={cardType.recommendedRecent}
+                                        />
+                                    ))}
                                 </div>
-                            )
-                        }
+                            )}
 
-
-
-                        {
-                            listView && (
-                                <div className=" w-full flex flex-col mx-auto gap-7 overflow-y-auto overflow-hidden scrollbar-hide scroll-smooth">
-                                    {
-                                        ProductCard.data.cart.items.map((productcard, index) => {
-                                            return (
-                                                <ProductCardList key={index} item={productcard} />
-
-                                            )
-                                        })
-                                    }
+                            {listView && (
+                                <div className="w-full flex flex-col mx-auto gap-7">
+                                    {currentItems.map((productcard, index) => (
+                                        <ProductCardList key={index} item={productcard} />
+                                    ))}
                                 </div>
-                            )
-                        }
+                            )}
+                        </div>
 
-                        <Paggination />
 
+                        <div className="sticky bottom-0 bg-white shadow-md">
+                            <Paggination
+                                totalPages={totalPages}
+                                currentPage={currentPage}
+                                setCurrentPage={setCurrentPage}
+                            />
+                        </div>
                     </div>
+
                 </div>
             </div>
         </>

@@ -64,7 +64,7 @@ const ResetPasswordForm = () => {
                             )}
                         />
                         <Controller
-                            name='password'
+                            name='confirmPassword'
                             control={control}
                             disabled={isPending}
                             render={({ field, fieldState }) => (

@@ -1,15 +1,16 @@
 import Icon from '@/components/ui/icons'
+import { NavLink } from 'react-router-dom'
 
-const ContactUsFooterLinks = () => {
+const ContactUsFooterNavLinks = () => {
     return (
         <>
             <ul className="space-y-2 text-sm">
-                <a href="#" className="hover:text-purple-600 hover:underline flex items-center gap-2"><Icon name="mailIcon" width={20} height={19} /> contact@company.com</a>
-                <a href="#" className="hover:text-purple-600 hover:underline flex items-center gap-2"><Icon name="phoneIcon" width={20} height={19} /> +91 1234567890</a>
-                <a href="#" className="hover:text-purple-600 hover:underline flex items-center gap-2"><Icon name="locationIcon" width={20} height={19} />  Gujarat, India</a>
+                <NavLink to={''} className="hover:text-purple-600 hover:underline flex items-center gap-2"><Icon name="mailIcon" width={20} height={19} /> contact@company.com</NavLink>
+                <NavLink to={''} className="hover:text-purple-600 hover:underline flex items-center gap-2"><Icon name="phoneIcon" width={20} height={19} /> +91 1234567890</NavLink>
+                <NavLink to={''} className="hover:text-purple-600 hover:underline flex items-center gap-2"><Icon name="locationIcon" width={20} height={19} />  Gujarat, India</NavLink>
             </ul>
         </>
     )
 }
 
-export default ContactUsFooterLinks
+export default ContactUsFooterNavLinks

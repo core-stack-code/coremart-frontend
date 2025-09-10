@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icons"
 
 const lala = [
@@ -120,16 +121,19 @@ const YourCart = () => {
 
 
 
-            <div className=" w-[85%] mx-auto my-9">
+            <div className="w-[85%] mx-auto my-9">
 
-                <h2 className="text-2xl font-semibold mb-1">Your Cart</h2>
-                <p className="text-[var(--color-muted)] mb-6">{lala.length} items in your cart.</p>
+                <div className="flex flex-col gap-3">
+                    <h2 className="text-2xl font-semibold mb-1">Your Cart</h2>
+                    <p className="text-[var(--color-muted)] mb-6">{lala.length} items in your cart.</p>
+                </div>
 
-                {/* <div className="flex flex-col lg:flex-row gap-8"> */}
+
+
 
 
                 <div className="flex flex-col lg:flex-row gap-6">
-                    {/* Left - Cart Table */}
+
                     <div className="w-full border-[var(--color-border)] border rounded-[var(--border-radius)] p-4 overflow-x-auto">
                         <div className="grid grid-cols-[auto_130px_130px_130px]  font-bold pb-4 px-2 gap-14">
                             <p >Product</p>
@@ -144,19 +148,32 @@ const YourCart = () => {
                                     className="grid grid-cols-[auto_130px_130px_130px] items-center py-4 px-2 gap-14"
                                 >
                                     {/* Product */}
-                                    <div className="shadow-[0_0_10px_rgba(0,0,0,0.2)] rounded-[var(--border-radius)] flex items-center gap-4 h-35 p-3">
-                                        {/* <div className="h-35  bg-white rounded-xl "> */}
+                                    <div className="shadow-[0_0_10px_rgba(0,0,0,0.2)] rounded-[var(--border-radius)] flex items-center gap-4 h-45 p-3">
+
                                         <img src={item.image} alt="Product" className="w-28 h-full object-cover rounded-[var(--border-radius)]" />
-                                        {/* </div> */}
-                                        <div>
-                                            <p className="font-semibold">{item.title}</p>
-                                            <p className="text-[var(--color-muted)]">{item.desc}</p>
-                                            <p className="text-[var(--color-muted)] text-sm">
-                                                Size: <span className="text-black font-medium">{item.size}</span>
-                                            </p>
-                                            <p className="text-[var(--color-muted)] text-sm">
-                                                Color: <span className="text-black font-medium">{item.color}</span>
-                                            </p>
+
+
+                                        <div className="w-full flex flex-col gap-4">
+                                            <div className="flex flex-col gap-2">
+                                                <p className="text-[var(--color-muted)] text-[15px]">WOMEN</p>
+                                                <p className="text-[12px]">Party One Piece</p>
+                                            </div>
+                                            <div className="text-[12px] space-y-2">
+                                                <p>
+                                                    <span className="text-[var(--color-muted)]">Size :</span>{" "}
+                                                    <span className="text-gray-700">Small XL</span>
+                                                </p>
+                                                <p>
+                                                    <span className="text-[var(--color-muted)]">Color :</span>{" "}
+                                                    <span className="text-gray-700">Black</span>
+                                                </p>
+                                            </div>
+                                            <div className="flex justify-end">
+                                                <Button className="rounded-full border border-[var(--color-primary)] text-sm font-medium text-purple-600 transition hover:bg-[var(--color-primary)]/5">
+                                                    Save for later
+                                                </Button>
+                                            </div>
+
                                         </div>
                                     </div>
 
@@ -165,19 +182,19 @@ const YourCart = () => {
 
                                     {/* Quantity */}
                                     <div className=" w-auto flex items-center justify-center gap-4 rounded-[10px] shadow-[0_0_10px_rgba(0,0,0,0.2)]">
-                                        <button
+                                        <Button
                                             // onClick={() => updateQuantity(item.id, "dec")}
                                             className=" text-[var(--color-primary)] font-bold"
                                         >
                                             -
-                                        </button>
+                                        </Button>
                                         <span className="px-3 py-1  text-sm">{item.quantity}</span>
-                                        <button
+                                        <Button
                                             // onClick={() => updateQuantity(item.id, "inc")}
                                             className="text-[var(--color-primary)] font-bold"
                                         >
                                             +
-                                        </button>
+                                        </Button>
                                     </div>
 
                                     {/* Total */}
@@ -193,7 +210,7 @@ const YourCart = () => {
                     <div className="w-full lg:w-1/3 border-[var(--color-border)] border-2 rounded-[var(--border-radius)] p-6 h-fit">
                         <h3 className="text-lg font-bold mb-4">Cart Total</h3>
                         <div className="flex flex-col gap-15 text-sm">
-                            <div>
+                            <div className="flex flex-col gap-3">
                                 <div className="flex justify-between text-[var(--color-muted)]">
                                     <span >Subtotal</span>
                                     <span className="font-bold">₹ 5000</span>
@@ -203,8 +220,7 @@ const YourCart = () => {
                                     <span className="font-bold">-₹ 200</span>
                                 </div>
                             </div>
-                            <div>
-
+                            <div className="flex flex-col gap-3">
                                 <hr className="text-[var(--color-muted)]" />
                                 <div className="flex justify-between text-[var(--color-muted)]">
                                     <span >Cart total</span>
@@ -212,9 +228,9 @@ const YourCart = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className="mt-6 w-full py-1 rounded-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-background)] ">
+                        <Button className="mt-6 w-full py-1 rounded-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-background)] ">
                             Checkout
-                        </button>
+                        </Button>
                     </div>
 
 

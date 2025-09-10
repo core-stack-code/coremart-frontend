@@ -1,4 +1,4 @@
-import type { ForgotPasswordPayload, LoginPayload, ResetPasswordPayload, SignupPayload, VerifyPayload } from "./authSchema";
+import type { ForgotPasswordPayload, LoginPayload, OtpVerifyPayload, ResetPasswordPayload, SignupPayload, VerifyPayload } from "./authSchema";
 
 export const loginFormDefaultValues: LoginPayload = {
     email: "",
@@ -17,12 +17,17 @@ export const forgetPasswordFormDefaultValues: ForgotPasswordPayload = {
 }
 
 export const resetPasswordFormDefaultValues: ResetPasswordPayload = {
-    email: "",
-    password: ""
+    password: "",
+    confirmPassword: "",
 }
 
 export const verifyFromDefaultsValues: VerifyPayload = {
     otp: "",
     email: "",
     isRememberMe: false
+}
+
+
+export const otpDefaultsValues : OtpVerifyPayload = {
+    otp: "",
 }

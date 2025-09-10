@@ -35,7 +35,7 @@ const ProductCardList: React.FC<ProductCardListProps> = ({ item }) => {
 
   return (
     <>
-      <div className=" w-full flex rounded-2xl overflow-hidden border-[#E5E7EB] border-2 relative">
+      <div className="w-full flex rounded-2xl overflow-hidden border-[#E5E7EB] border-2 relative">
 
         <div className="absolute top-3 right-3 text-red-500 text-lg">
           <button onClick={() => {

@@ -10,10 +10,14 @@ import Size from '../../components/Product-Details/Product-Size'
 import { cardType } from '../Home';
 import { Button } from '@/components/ui/button';
 import BreadCrumbs from '../../components/Product-Details/Bread-Crumb';
-import { Textarea } from '@/components/ui/textarea';
-import { Input } from '@/components/ui/input';
 import ProductCard from '@/./utils/Main/Product-card.json'
 import '@/./App.css'
+import { Controller, useForm } from 'react-hook-form';
+import InputComponent from '@/components/ui/form/input-component';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { reviewSchema, type ProductReviewPayLoad } from '../../Schemas/productSchema';
+import { productReviewDefaultValues } from '../../Schemas/defaultValues';
+import TextareaComponent from '@/components/ui/form/textare-component';
 
 
 
@@ -21,6 +25,18 @@ import '@/./App.css'
 const ProductDetails = () => {
 
     const [reviewOpen, setReviewOpen] = useState(true)
+
+
+    const { handleSubmit, control } = useForm({
+        resolver: zodResolver(reviewSchema),
+        defaultValues: productReviewDefaultValues 
+    })
+
+
+ 
+    const onSubmit =(formData: ProductReviewPayLoad) => {
+        console.log(formData)
+    }
 
     return (
         <>
@@ -160,43 +176,73 @@ const ProductDetails = () => {
 
                             <div className='flex justify-end my-2'>
                                 <Button className='rounded-[var(--border-radius)] text-[var(--color-background)] text-sm px-4 py-2 bg-[var(--color-primary)] cursor-pointer' onClick={() => setReviewOpen(false)}>Add Review</Button>
-
                             </div>
-
                             {
                                 !reviewOpen ?
-                                    <div className='border flex flex-col rounded-[var(--border-radius)] border-[var(--color-border)] p-4 gap-3'>
-                                        <div className='flex justify-end'>
-                                            <Button className='cursor-pointer' onClick={() => setReviewOpen(true)}>
-                                                <Icon name='closeIcon' width={12} height={12} />
-                                            </Button>
-                                        </div>
-                                        <div className='flex flex-col'>
-                                            <span>Overall Rating</span>
-                                            <div className='flex gap-1'>
+                                    <form
+                                        onSubmit={handleSubmit(onSubmit)}
+                                    >
 
-                                                {[1, 2, 3, 4, 5].map((index) => {
-                                                    return (
-                                                        <Icon name='starIcon' width={30} height={30} key={index} />
+                                        <div className='border flex flex-col rounded-[var(--border-radius)] border-[var(--color-border)] p-4 gap-3'>
+                                            <div className='flex justify-end'>
+                                                <Button className='cursor-pointer' onClick={() => setReviewOpen(true)}>
+                                                    <Icon name='closeIcon' width={12} height={12} />
+                                                </Button>
+                                            </div>
+                                            <div className='flex flex-col'>
+                                                <span>Overall Rating</span>
+                                                <div className='flex gap-1'>
+
+                                                    {[1, 2, 3, 4, 5].map((index) => {
+                                                        return (
+                                                            <Icon name='starIcon' width={30} height={30} key={index} />
+                                                        )
+                                                    })}
+                                                </div>
+                                            </div>
+                                            <div className='flex flex-col gap-2'>
+                                                <span>Review Title </span>
+                                                <Controller
+                                                    name='reviewTitle'
+                                                    control={control}
+                                                    render={({ field, fieldState }) => {
+                                                        return (
+                                                            <InputComponent
+                                                                {...field}
+                                                                type='text'
+                                                                placeholder='Add Review Title'
+                                                                error={fieldState.error?.message}
+                                                                wrapperClassName='w-full'
+                                                            />
+                                                        )
+                                                    }}
+                                                />
+                                            </div>
+                                            <div className='flex flex-col gap-2'>
+                                                <span>Product Review</span>
+                                                <Controller
+                                                name='productReview'
+                                                control={control}
+                                                render={({field, fieldState}) => {
+                                                    return(
+                                                        <TextareaComponent
+                                                        {...field}
+                                                        name="productreview" 
+                                                        id="productreview" 
+                                                        placeholder='Add product review'
+                                                        error={fieldState.error?.message}
+                                                        wrapperClassName='w-full h-[100px]'
+                                                        />
                                                     )
-                                                })}
+                                                }}
+                                                />
+                                            </div>
+
+                                            <div className="flex justify-end">
+                                                <Button type='submit' className="bg-[var(--color-primary)] rounded-[var(--border-radius)] px-10 py-2 text-[var(--color-background)] cursor-pointer" >Submit</Button>
                                             </div>
                                         </div>
-                                        <div className='flex flex-col gap-2'>
-                                            <span>Review Title </span>
-                                            <Input className='w-full border-[var(--color-border)] border rounded-[var(--border-radius)] px-4 py-1 focus:outline-none focus:ring focus:ring-[var(--color-primary)]' type='text' placeholder='Add review title' />
-                                        </div>
-                                        <div className='flex flex-col gap-2'>
-                                            <span>Product Review</span>
-                                            <Textarea className="w-full h-[100px]" name="productreview" id="productreview" placeholder='Add product review' />
-
-
-                                        </div>
-
-                                        <div className="flex justify-end">
-                                            <button className="bg-[var(--color-primary)] rounded-[var(--border-radius)] px-10 py-2 text-[var(--color-background)] cursor-pointer">Submit</button>
-                                        </div>
-                                    </div>
+                                    </form>
                                     : null
                             }
 
@@ -205,7 +251,7 @@ const ProductDetails = () => {
                                     <Reviews key={index} review={review} />
                                 ))}
                                 <div className='flex justify-center'>
-                                    <button className="bg-[var(--color-primary)] rounded-[var(--border-radius)] px-10 py-2 text-[var(--color-background)] cursor-pointer">View All</button>
+                                    <Button className="bg-[var(--color-primary)] rounded-[var(--border-radius)] px-10 py-2 text-[var(--color-background)] cursor-pointer">View All</Button>
                                 </div>
                             </div>
 

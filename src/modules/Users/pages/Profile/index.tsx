@@ -1,8 +1,5 @@
 import { Button } from "@/components/ui/button"
 import PersonalInfo from "../../components/Profile/Personal-Info"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Input } from "@/components/ui/input"
 import MyAddress from "../../components/Profile/My-Address"
 
 const Profile = () => {
@@ -13,10 +10,6 @@ const Profile = () => {
                 <h1 className="font-bold text-2xl sm:text-2xl md:text-2xl">My profile</h1>
 
                 <PersonalInfo />
-
-
-
-
 
 
 
@@ -42,11 +35,6 @@ const Profile = () => {
 
 
                 <MyAddress/>
-
-
-
-
-
 
 
 

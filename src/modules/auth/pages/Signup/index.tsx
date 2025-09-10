@@ -1,3 +1,4 @@
+import { Link} from 'react-router-dom'
 import SignUpForm from "../../components/signup-form"
 
 const SignUpPage = () => {
@@ -8,7 +9,7 @@ const SignUpPage = () => {
                     <div className='w-full flex flex-col gap-2 text-5xl max-w-xl '>
                         <p className="text-5xl font-bold text-[#9333EA]">Getting Started</p>
                         <p className="text-lg mt-2 text-[var(--color-info)]">Create an account and verify your details to start shopping.</p>
-                        <p className="text-lg text-[var(--color-info)]">Have an account? <a href="/" className="text-xl  text-[var(--color-primary)] font-bold underline ">Login in here</a></p>
+                        <p className="text-lg text-[var(--color-info)]">Have an account? <Link to={'/auth/'} className="text-xl  text-[var(--color-primary)] font-bold underline ">Login in here</Link></p>
                     </div>
                     <SignUpForm />
                 </div>

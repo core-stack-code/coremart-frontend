@@ -20,18 +20,21 @@ import OrderHistory from "@/modules/Products/pages/Order-Histrory";
 import CheckOut from "@/modules/Products/pages/Order-Checkout";
 import YourCart from "@/modules/Products/pages/Your-Cart";
 import Profile from "@/modules/Users/pages/Profile";
+import DashBoardLayout from "@/layouts/DashBoardLayout";
+import Dashboard from "@/modules/DashBoard/pages";
+import TrackingOrder from "@/modules/Products/pages/Tracking-Order";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <RootLayout />,
-        errorElement: <DefaultPage/>, // this should be with layout
+        errorElement: <DefaultPage />, // this should be with layout
         children: [
             {
                 path: 'auth',
                 element: <AuthLayout />,
-                errorElement: <DefaultPage/>, // wihtout layout
+                errorElement: <DefaultPage />, // wihtout layout
                 children: [
                     {
                         index: true,
@@ -58,11 +61,11 @@ const router = createBrowserRouter([
             {
                 path: 'product',
                 element: <HeaderLayout />,
-                errorElement: <DefaultPage/>,
+                errorElement: <DefaultPage />,
                 children: [
                     {
-                        path:'home',
-                        element:<Home/>
+                        path: 'home',
+                        element: <Home />
                     },
                     {
                         path: 'category',
@@ -78,42 +81,57 @@ const router = createBrowserRouter([
                     },
                     {
                         path: 'whislist',
-                        element: <Whislist/>
+                        element: <Whislist />
                     },
                     {
-                        path:'about',
-                        element:<About/>
+                        path: 'about',
+                        element: <About />
                     },
                     {
-                        path:'contact',
-                        element:<Contact/>
+                        path: 'contact',
+                        element: <Contact />
                     },
                     {
-                        path:'saved',
-                        element:<Saved/>
+                        path: 'saved',
+                        element: <Saved />
                     },
                     {
-                     path:'orderhistory',
-                     element:<OrderHistory/>   
+                        path: 'orderhistory',
+                        element: <OrderHistory />
                     },
                     {
-                        path:'checkout',
-                        element: <CheckOut/>
+                        path: 'checkout',
+                        element: <CheckOut />
                     },
                     {
-                        path:'addtocart',
-                        element:<YourCart/>
+                        path: 'addtocart',
+                        element: <YourCart />
+                    },
+                    {
+                        path:'trackingorder',
+                        element:<TrackingOrder/>
                     }
                 ]
             },
             {
-                path:'user',
+                path: 'user',
                 element: <HeaderLayout />,
-                errorElement: <DefaultPage/>,
+                errorElement: <DefaultPage />,
                 children: [
                     {
-                        path:'profile',
-                        element:<Profile/>
+                        path: 'profile',
+                        element: <Profile />
+                    }
+                ]
+            },
+            {
+                path: 'dashboard',
+                element: <DashBoardLayout />,
+                errorElement: <DefaultPage />,
+                children: [
+                    {
+                        path: '',
+                        element: <Dashboard />
                     }
                 ]
             }

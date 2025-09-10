@@ -1,5 +1,6 @@
 import Icon from '@/components/ui/icons'
 import CounteDownTimer from '../Count-Down-Timer'
+import { Button } from '@/components/ui/button'
 
 interface CardHeaderProps {
     label: string,
@@ -20,9 +21,9 @@ const CardHeader: React.FC<CardHeaderProps> = ({ label, arrowName }) => {
                     <span className="text-[var(--color-muted)] text-[16px]">{arrowName}</span>
                     {
                         arrowName ?
-                            <button className='cursor-pointer'>
+                            <Button className='cursor-pointer'>
                                 <Icon name="seeallarrowIcon" width={30} height={30} />
-                            </button>
+                            </Button>
 
                             : null
                     }
