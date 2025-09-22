@@ -82,7 +82,8 @@ const Home = () => {
                         {
                             category.map((topwearitem, index) => {
                                 return (
-                                    <AllWear key={index}
+                                    <AllWear 
+                                        key={index}
                                         item={topwearitem}
                                         label={label}
                                         setLabel={setLabel} />
@@ -96,7 +97,7 @@ const Home = () => {
 
                 <div className="flex flex-col gap-y-3">
                     <div>
-                        <CardHeader label={'New Arrivals'} arrowName={'See All'} />
+                        <CardHeader label='New Arrivals' arrowName='See All' />
                     </div>
                     <div className="flex justify-start">
                         <div className="grid gap-26 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

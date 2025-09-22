@@ -1,3 +1,8 @@
+import { 
+    Menu,
+    Search,
+} from "lucide-react"
+
 import EyeIcon from "./eye-icon";
 import LockIcon from "./lock-icon";
 import MailIcon from "./mail-icon";
@@ -56,6 +61,11 @@ import OrderShippedBadge from "./order-badges/shipped";
 import OrderDeliveredBadge from "./order-badges/delivered";
 import OrderCanceledBadge from "./order-badges/canceled";
 import PaidIcon from "./paid-icon";
+
+export const LUCIDE_ICON_MAP = {
+    menuIcon: Menu,
+    searchIconLucide: Search
+}
 
 export const CUSTOM_ICON_MAP = {
     mailIcon: MailIcon,

@@ -1,11 +1,12 @@
+import type { CategoryTypes } from "@/lib/helper/testData";
 
 interface CategoryProps {
     item: {
     image_url: string;
     category_name: string;
   };
-  label: string;
-  setLabel: (label: string) => void;
+  label: CategoryTypes;
+  setLabel: (label: CategoryTypes) => void;
 }
 
 const AllWear: React.FC<CategoryProps> = ({ item, label, setLabel }) => {
@@ -17,7 +18,7 @@ const AllWear: React.FC<CategoryProps> = ({ item, label, setLabel }) => {
     <>
       <div
       className="flex-shrink-0 w-auto p-2 text-center cursor-pointer"
-      onClick={() => setLabel(category_name)}
+      onClick={setLabel(category_name)}
     >
       <div
         className={`

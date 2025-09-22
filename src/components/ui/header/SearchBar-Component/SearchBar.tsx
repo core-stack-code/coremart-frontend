@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Icon from "../../icons"
 
 const SearchBar = () => {
 
@@ -11,10 +12,7 @@ const SearchBar = () => {
       <div className="relative w-[280px] sm:w-[200px] md:w-[240px] xl:w-[280px] rounded-[20px] border-border border-2">
 
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-              d="M21 21l-4.35-4.35M17.5 10.5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+          <Icon name="searchIconLucide" width={16} height={16} />
         </div>
         <input
           type="text"

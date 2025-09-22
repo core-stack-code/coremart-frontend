@@ -14,5 +14,5 @@ export const Log = (text: string, data: any): void => {
     font-weight: bold;
   `
 
-  // console.log(`%c${text}`, style, data)
+  console.log(`%c${text}`, style, data)
 }

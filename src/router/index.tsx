@@ -1,10 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import RootLayout from "@/layouts/RootLayout";
+import ErrorPage from "@/pages/ErrorPage";
+import HomePage from "@/pages/HomePage";
+
+
 import ProductCategory from "@/modules/products/pages/product_category";
 import ProductDetails from "@/modules/products/pages/product_details";
 import ProductList from "@/modules/products/pages/product_list";
-import Home from "@/modules/products/pages/home";
-import ErrorPage from "@/pages/ErrorPage";
 import OrderHistory from "@/modules/order/pages/order_histrory";
 import CheckOut from "@/modules/order/pages/order_checkout";
 import TrackingOrder from "@/modules/order/pages/tracking_order";
@@ -13,9 +16,9 @@ import Contact from "@/modules/contact/pages/contact/index";
 import AuthLayout from "@/layouts/AuthLayout";
 import SignUpPage from "@/modules/auth/pages/singup";
 import LoginPage from "@/modules/auth/pages/login";
-import ForgetPassword from "@/modules/auth/pages/forgetpassword";
-import ResetPassword from "@/modules/auth/pages/resetpassword";
-import OTPVerify from "@/modules/auth/pages/otpverify";
+import ForgetPassword from "@/modules/auth/pages/ForgetPassword";
+import ResetPassword from "@/modules/auth/pages/ResetPassword";
+import OTPVerify from "@/modules/auth/pages/OTPVerify";
 import Profile from "@/modules/me/pages/profile";
 import YourCart from "@/modules/me/pages/your_cart";
 import Whislist from "@/modules/me/pages/whislist";
@@ -28,7 +31,7 @@ const router = createBrowserRouter([
         element: <RootLayout />,
         errorElement: <ErrorPage />,
         children: [
-            { index: true, element: <Home /> },
+            { index: true, element: <HomePage /> },
             {
                 path: 'product',
                 children: [
@@ -63,34 +66,17 @@ const router = createBrowserRouter([
         element: <AuthLayout />,
         errorElement:<ErrorPage/>,
         children: [
-            {
-                index: true,
-                element: <LoginPage />
-            },
-            {
-                path: 'signup',
-                element: <SignUpPage />
-            },
-            {
-                path: 'forgetpassword',
-                element: <ForgetPassword />
-            },
-            {
-                path: 'resetpassword',
-                element: <ResetPassword />
-            },
-            {
-                path: 'otp',
-                element: <OTPVerify />
-            }
+            { index: true, element: <LoginPage />},
+            { path: 'signup', element: <SignUpPage /> },
+            { path: 'forgetpassword', element: <ForgetPassword /> },
+            { path: 'resetpassword', element: <ResetPassword /> },
+            { path: 'otp', element: <OTPVerify />}
         ]
     }
 ])
 
 const AppRouter = () => {
-    return (
-        <RouterProvider router={router} />
-    )
+    return <RouterProvider router={router} />
 }
 
 export default AppRouter
