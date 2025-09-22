@@ -78,7 +78,7 @@ const Carousel = () => {
     return (
         <>
             <div className="flex flex-col items-center justify-center w-full">
-                <div className="relative w-full w-full mx-auto p-10">
+                <div className="relative w-full mx-auto p-10">
                     <div
                         className="h-55 overflow-hidden flex justify-center items-center cursor-grab"
                         onWheel={handleWheel}
@@ -123,11 +123,11 @@ const Carousel = () => {
                         ))}
                     </div>
                     {/* Testimonial Text */}
-                    <div className="text-center mt-4 px-2 sm:px-4">
-                        <p className="text-[var(--color-muted)] text-sm sm:text-base italic">
+                    <div className="text-center mt-8 space-y-3 px-2 sm:px-4">
+                        <p className="text-muted text-sm sm:text-base italic">
                             "Amazing quality and fast delivery!"
                         </p>
-                        <p className="text-indigo-600 text-xs sm:text-sm font-semibold mt-1">
+                        <p className="text-secondary text-xs sm:text-sm font-semibold mt-1">
                             – Monkey D. Luffy
                         </p>
                     </div>

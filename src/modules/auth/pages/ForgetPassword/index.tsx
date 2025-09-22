@@ -1,9 +1,41 @@
+import AuthHeading from "../../components/auth-heading"
 import ForgetPasswordForm from "../../components/forget-password-form"
 
 const ForgetPassword = () => {
     return (
         <>
-            <div className="min-h-screen w-full flex flex-col md:flex-row items-center justify-center md:justify-between px-4 sm:px-6 md:px-10 lg:px-10 xl:px-20">
+
+            <div className='w-full h-full flex flex-col gap-16 max-w-102'>
+                <AuthHeading
+                    title="Forget Password?"
+                    description={(
+                        <div className='flex flex-col gap-0.5 text-secondary'>
+                            <span>Enter your registered email address and we’ll send you a link to reset your password.</span>
+                        </div>
+                    )}
+                />
+                <ForgetPasswordForm />
+            </div>
+            <div className='w-full h-full max-w-170'>
+                <img
+                   src="/forgetpassword-section.svg"
+                    alt="Login Section"
+                    className="w-full h-full object-contain"
+                />
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            {/* <div className="min-h-screen w-full flex flex-col md:flex-row items-center justify-center md:justify-between px-4 sm:px-6 md:px-10 lg:px-10 xl:px-20">
                 <div className="w-full lg:w-auto flex flex-col gap-10 items-start md:items-start text-start md:text-left ">
                     <div className="w-full max-w-[480px] flex flex-col gap-2">
                         <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-primary)]">
@@ -18,12 +50,12 @@ const ForgetPassword = () => {
 
                 <div className="hidden min-[855px]:block md:w-[600px] lg:w-[600px] h-full">
                     <img
-                        src="/ForgetPassword-Section.svg"
+                        src="/forgetpassword-section.svg"
                         alt="Forget Password Section"
                         className="w-full h-auto lg:w-[500px] xl:w-full object-contain"
                     />
                 </div>
-            </div>
+            </div> */}
 
         </>
     )

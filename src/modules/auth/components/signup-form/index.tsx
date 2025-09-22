@@ -110,7 +110,7 @@ const SignUpForm = () => {
           </div>
           <Button
             type='submit'
-            className='w-full h-11 bg-[var(--color-primary)] text-white rounded-2xl'
+            className='w-full h-11 bg-primary text-white rounded-2xl'
             variant='default'
           >
             {isPending ? "Loading..." : "Continue"}

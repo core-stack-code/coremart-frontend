@@ -1,30 +1,31 @@
-import { NavLink } from "react-router-dom"
-
+import { NavLink,} from "react-router-dom"
 
 
 
 export const NavigationItems = [
-  { label: 'Home', path: '/product/home' },
-  { label: 'Category', path: '/product/category' },
-  { label: 'Product List', path: '/product/productlist' },
-  { label: 'About', path: '/product/about' },
-  { label: 'Contact Us', path: '/product/contact' }
+  { label: 'Home', path: '/' },
+  { label: 'Category', path: 'product/category' },
+  { label: 'Product List', path: '/product' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact Us', path: '/contact' }
 ];
 
 
 
 const Navbar = () => {
 
+
+
   return (
     <>
    
-      <ul className="hidden lg:flex gap-10 font-medium">
+      <ul className="hidden lg:flex gap-8 font-medium">
 
         {
           NavigationItems.map((value, index) => {
             const {label, path} = value
             return (
-              <NavLink to={path} key={index} className={({ isActive }) => isActive ? "text-purple-600 underline underline-offset-4" : "text-gray-700"} >{label}</NavLink>
+              <NavLink to={path} end key={index} className={({ isActive }) => isActive ? "text-purple-600 underline underline-offset-4" : "text-gray-700"} >{label}</NavLink>
             )
           })
         }

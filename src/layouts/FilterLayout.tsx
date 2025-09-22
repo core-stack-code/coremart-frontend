@@ -1,7 +1,7 @@
 import Icon from "@/components/ui/icons"
-import BrandTypeStyle from "@/modules/Filter/components/Brand-Type-Style";
-import ClothPrice from "@/modules/Filter/components/Cloth-Price";
-import ClothSize from "@/modules/Filter/components/Cloth-Size";
+import BrandTypeStyle from "@/modules/filter/components/brand_type_style";
+import ClothPrice from "@/modules/filter/components/cloth_price";
+import ClothSize from "@/modules/filter/components/cloth_size";
 import { getFilters } from "@/store/slices/productSlice";
 import { useState } from "react";
 import { useDispatch } from "react-redux";

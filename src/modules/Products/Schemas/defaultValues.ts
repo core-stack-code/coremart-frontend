@@ -1,11 +1,5 @@
-import type { AddAddressPayLoad, ContactPayload, ProductReviewPayLoad } from "./productSchema";
+import type { ProductReviewPayLoad } from "./productSchema";
 
-export const contactFormDefaultValues: ContactPayload = {
-    name: "",
-    email: "",
-    contact: "",
-    message: ""
-}
 
 
 export const productReviewDefaultValues: ProductReviewPayLoad = {
@@ -13,12 +7,3 @@ export const productReviewDefaultValues: ProductReviewPayLoad = {
     productReview: ""
 }
 
-export const addAddressDafaultValues: AddAddressPayLoad = {
-    name: "",
-    contact: "",
-    address: "",
-    city: "",
-    state: "",
-    pincode: "",
-    country: ""
-}

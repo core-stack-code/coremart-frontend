@@ -1,5 +1,5 @@
 import Icon from '@/components/ui/icons'
-import CounteDownTimer from '../Count-Down-Timer'
+import CounteDownTimer from '../count-down-timer'
 import { Button } from '@/components/ui/button'
 
 interface CardHeaderProps {
@@ -18,7 +18,7 @@ const CardHeader: React.FC<CardHeaderProps> = ({ label, arrowName }) => {
                     }
                 </div>
                 <div className="flex justify-end items-center gap-2">
-                    <span className="text-[var(--color-muted)] text-[16px]">{arrowName}</span>
+                    <span className="text-muted text-[16px]">{arrowName}</span>
                     {
                         arrowName ?
                             <Button className='cursor-pointer'>

@@ -8,7 +8,7 @@ import { useAppDispatch } from "@/hooks/redux";
 import { setUserData } from "@/store/slices/userSlice";
 import type { User } from "@/modules/user/apis/types";
 import { otpDefaultsValues} from "../../schemas/defaultValus";
-import  { InputOTPPattern } from "@/components/ui/form/OTP-component";
+import  { InputOTPPattern } from "@/components/ui/form/otp-component";
 
 const OTPVerifyForm = () => {
   const dispatch = useAppDispatch();
@@ -48,16 +48,16 @@ const OTPVerifyForm = () => {
               )}
             />
           </div>
-          <p className=" text-[var(--color-muted)]">
+          <p className=" text-muted">
             Didn’t receive CODE?
-            <a href="/" className="text-[var(--color-primary)] font-bold underline ">
+            <a href="/" className="text-primary font-bold underline ">
               Resend
             </a>
           </p>
           <div className="flex flex-row justify-center gap-3">
             <Button
               type="button"
-              className="w-50 h-11 sm:w-[50%] md:w-[50%] lg:w-[50%] bg-[var(--color-secondary)] text-[var(--color-background)] rounded-2xl"
+              className="w-50 h-11 sm:w-[50%] md:w-[50%] lg:w-[50%] bg-secondary text-background rounded-2xl"
               variant="default"
               onClick={() => navigate(-1)}
             >
@@ -65,7 +65,7 @@ const OTPVerifyForm = () => {
             </Button>
             <Button
               type="submit"
-              className="w-50 h-11 sm:w-[50%] md:w-[50%] lg:w-[50%] bg-[var(--color-primary)] text-[var(--color-background)] rounded-2xl"
+              className="w-50 h-11 sm:w-[50%] md:w-[50%] lg:w-[50%] bg-primary text-background rounded-2xl"
               variant="default"
             >
               {isPending ? "Loading..." : "Sign Up"}

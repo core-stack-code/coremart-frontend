@@ -1,14 +1,12 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { loginSchema, resetPasswordSchema, type LoginPayload, type ResetPasswordPayload } from '../../schemas/authSchema'
+import { resetPasswordSchema, type ResetPasswordPayload } from '../../schemas/authSchema'
 
 import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
 import InputComponent from '@/components/ui/form/input-component'
 import Icon from '@/components/ui/icons'
-import { loginFormDefaultValues, resetPasswordFormDefaultValues } from '../../schemas/defaultValus'
+import { resetPasswordFormDefaultValues } from '../../schemas/defaultValus'
 import { useUserLogin } from '../../apis/mutations'
 import { useAppDispatch } from '@/hooks/redux'
 import { setUserData } from '@/store/slices/userSlice'
@@ -84,7 +82,7 @@ const ResetPasswordForm = () => {
                     </div>
                     <Button
                         type='submit'
-                        className='w-full h-11 bg-[#9333EA] text-white rounded-2xl'
+                        className='w-full h-11 bg-primary text-white rounded-2xl'
                         variant='default'
                     >
                         {isPending ? "Loading..." : "Continue"}
