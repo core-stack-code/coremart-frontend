@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import AddAddressForm from '@/modules/order/components/order_checkout/add-address-form'
+import AddAddressForm from '@/modules/order/components/order-checkout/add-address-form'
 import { useState } from 'react'
 
 

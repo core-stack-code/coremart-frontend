@@ -13,12 +13,12 @@ import { reviewSchema, type ProductReviewPayLoad } from '../../schemas/productSc
 import { productReviewDefaultValues } from '../../schemas/defaultValues';
 import TextareaComponent from '@/components/ui/form/textarea-component';
 import { useParams } from 'react-router-dom';
-import BreadCrumbs from '../../components/product_details/Bread-Crumb';
-import Details from '../../components/product_details/Product-Details';
-import Rating from '../../components/product_details/Product-Rating';
-import Reviews from '../../components/product_details/Product-Review';
-import ProductCardGrid from '../../components/product_category/Product Card';
-import Size from '../../components/product_details/Product-Size';
+import BreadCrumbs from '../../components/product-details/Bread-Crumb';
+import Size from '../../components/product-details/Product-Size';
+import Details from '../../components/product-details/Product-Details';
+import Rating from '../../components/product-details/Product-Rating';
+import Reviews from '../../components/product-details/Product-Review';
+import ProductCardGrid from '../../components/product-grid';
 
 
 

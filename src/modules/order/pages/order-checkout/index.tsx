@@ -1,15 +1,11 @@
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
-import AddAddressForm from "../../components/order_checkout/add-address-form"
-import ShippingPaymentMethod from "../../components/order_checkout/shipping-payment-method"
-import CheckoutProductCard from "../../components/order_checkout/checkout-productcard"
-import DeliveryDateTime from "../../components/order_checkout/delivery-date-time"
-import TotalAmonut from "../../../order/components/total_amount"
 import TextareaComponent from "@/components/ui/form/textarea-component"
-import { id } from "zod/v4/locales"
-
-
-
+import AddAddressForm from "../../components/order-checkout/add-address-form"
+import ShippingPaymentMethod from "../../components/order-checkout/shipping-payment-method"
+import DeliveryDateTime from "../../components/order-checkout/delivery-date-time"
+import CheckoutProductCard from "../../components/order-checkout/checkout-productcard"
+import TotalAmonut from "../../components/total-amount"
 
 
 const shippingMethod = [

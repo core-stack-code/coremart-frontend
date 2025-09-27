@@ -3,10 +3,10 @@ import FilterLayout from "@/layouts/FilterLayout";
 import { useState } from "react";
 import { cardType } from "../home";
 import ProductCard from '@/./utils/Main/Product-card.json'
-import Paggination from "../../components/product_list/Paggination";
-import SortedbyDropDown from "../../components/product_list/SortedBy-DropDown";
-import ProductGridCard from "../../components/product_category/Product Card";
-import ProductListCard from "../../components/product_category/Product List";
+import SortedbyDropDown from "../../components/product-list/SortedBy-DropDown";
+import ProductGridCard from "../../components/product-category/Product Card";
+import ProductListCard from "../../components/product-category/Product List";
+import Paggination from "../../components/product-list/Paggination";
 
 const ProductList = () => {
 

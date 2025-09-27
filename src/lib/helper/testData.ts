@@ -28,6 +28,9 @@ export const CATEGORY: ReadonlyArray<{ image_url: string; category_name: Categor
   },
 ];
 
+
+
+
 export const PRODUCT_CARD_RESPONSE = {
   status: 200,
   message: "Cart fetched successfully.",

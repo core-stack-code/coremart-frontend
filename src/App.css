@@ -12,3 +12,12 @@
 :active{
  color: '#9333EA' 
 }
+
+
+
+.mySwiper .swiper-wrapper {
+  margin-right: 0 !important; /* remove wrapper extra margin */
+}
+.mySwiper .swiper-slide:last-child {
+  margin-right: 0 !important; /* remove gap after last card */
+}

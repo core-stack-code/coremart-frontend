@@ -1,16 +1,18 @@
-import category from '@/utils/Category.json'
 import Icon from "@/components/ui/icons"
-import ProductCard from "@/modules/products/components/product_category/Product Card"
 import { cardType } from "../home"
 import { useState } from "react"
 import ProductCards from '@/./utils/Main/Product-card.json'
-import CategoryBanner from '../../components/product_category/Banner'
-import SortedbyDropDown from '../../components/product_list/SortedBy-DropDown'
-import AllWear from '../../components/product_category/All Wear'
+import CategoryBanner from '../../components/product-category/Banner'
+import SortedbyDropDown from '../../components/product-list/SortedBy-DropDown'
+import ProductCard from '../../components/product-card'
+import { CATEGORY, PRODUCT_CARD_RESPONSE, type CategoryTypes } from '@/lib/helper/testData'
+import CategorySlider from '../../components/category-slider'
+import { Swiper, SwiperSlide } from "swiper/react"
+import { FreeMode, Scrollbar } from "swiper/modules"
 
 const ProductCategory = () => {
 
-    const [label, setLabel] = useState('T-Shirts')
+    const [label, setLabel] = useState<CategoryTypes>("sportswear");
 
     return (
 
@@ -35,18 +37,17 @@ const ProductCategory = () => {
                         <Icon name="categoriesIcon" width={24} height={25} />
                         <h2 className="text-lg text-[var(--color-primary)] font-bold mb-4">Categories</h2>
                     </div>
-                    <div className="flex flex-row overflow-x-auto gap-15 scrollbar-hidden">
-                        {
-                            category.map((item, index) => {
-                                return (
-                                    <AllWear key={index}
-                                        item={item}
-                                        label={label}
-                                        setLabel={setLabel} />
-                                )
-
-                            })
-                        }
+                    <div className="flex flex-row  gap-22">
+                        {CATEGORY.map((topwearitem) => {
+                            return (
+                                <CategorySlider
+                                    key={topwearitem.category_name}
+                                    item={topwearitem}
+                                    label={label}
+                                    setLabel={(val) => setLabel(val)}
+                                />
+                            );
+                        })}
                     </div>
                 </div>
 
@@ -73,16 +74,24 @@ const ProductCategory = () => {
                         <h2 className=" text-lg  font-bold ">New Arrivals</h2>
                         <p className=" text-md text-[var(--color-muted)]">Check out our new arrivals. </p>
                     </div>
-                    <div className=" flex justify-start">
-                        {/* <div className="grid gap-16 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-5"> */}
-                        <div className="flex gap-26 overflow-x-auto scrollbar-hidden scroll-smooth">
-                            {
-                                ProductCards.data.cart.items.map((productcard, index) => {
-                                    return (
-                                        <ProductCard key={index} item={productcard} cardType={cardType.recommendedRecent} />
-                                    )
-                                })
-                            }
+                    <div className="w-full flex overflow-x-auto scrollbar-hidden scroll-smooth">
+                        <div>
+
+                            <Swiper
+                                slidesPerView="auto"
+                                spaceBetween={100}
+                                freeMode={true}
+                                grabCursor={true}
+                                modules={[FreeMode, Scrollbar]}
+                                className="mySwiper"
+                            >
+                                {PRODUCT_CARD_RESPONSE.data.cart.items.slice(0, 8).map((item) => (
+                                    <SwiperSlide key={item.product._id} className="!w-auto">
+                                        <ProductCard item={item} />
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+
                         </div>
                     </div>
                 </div>
@@ -93,16 +102,24 @@ const ProductCategory = () => {
                         <h2 className="text-lg  font-bold ">Trending Products</h2>
                         <p className=" text-md text-[var(--color-muted)]">Check out our Trending Products.</p>
                     </div>
-                    <div className="flex justify-start">
-                        {/* <div className="grid gap-16 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-5 overflow-x-auto gap-15 scrollbar-hidden scroll-smooth"> */}
-                        <div className="flex gap-26 overflow-x-auto scrollbar-hidden scroll-smooth">
-                            {
-                                ProductCards.data.cart.items.map((productcard, index) => {
-                                    return (
-                                        <ProductCard key={index} item={productcard} cardType={cardType.recommendedRecent} />
-                                    )
-                                })
-                            }
+                    <div className="w-full flex overflow-x-auto scrollbar-hidden scroll-smooth">
+                        <div>
+
+                            <Swiper
+                                slidesPerView="auto"
+                                spaceBetween={100}
+                                freeMode={true}
+                                grabCursor={true}
+                                modules={[FreeMode, Scrollbar]}
+                                className="mySwiper"
+                            >
+                                {PRODUCT_CARD_RESPONSE.data.cart.items.slice(0, 8).map((item) => (
+                                    <SwiperSlide key={item.product._id} className="!w-auto">
+                                        <ProductCard item={item} />
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+
                         </div>
                     </div>
                 </div>

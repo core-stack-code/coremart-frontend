@@ -2,13 +2,13 @@ import Icon from "@/components/ui/icons"
 import category from '@/./utils/Category.json'
 import CardHeader from "../../components/home/card-header"
 import DiscountLabel from "../../components/home/discount-ads"
-import ProductCard from "@/./modules/products/components/product_category/Product Card"
 import AboutusBadge from "@/components/ui/aboutus-badge"
 import Carousel from "../../components/home/carousel"
 import ProductCards from '@/./utils/Main/Product-card.json'
 import { useState } from "react"
-import CategoryBanner from "../../components/product_category/Banner"
-import AllWear from "../../components/product_category/All Wear"
+import AllWear from "../../components/product-category/All Wear"
+import ProductCard from "../../components/product-card"
+import CategoryBanner from "../../components/product-category/Banner"
 
 
 export const cardType = {
@@ -82,7 +82,7 @@ const Home = () => {
                         {
                             category.map((topwearitem, index) => {
                                 return (
-                                    <AllWear 
+                                    <AllWear
                                         key={index}
                                         item={topwearitem}
                                         label={label}

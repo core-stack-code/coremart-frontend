@@ -1,7 +1,7 @@
 import Icon from "@/components/ui/icons"
-import OrderItemsCard from "../../components/tracking_order/Order-Items-Card"
-import TrackingStatus from "../../components/tracking_order/Tracking-Status"
-import TotalOrderBill from "../../components/tracking_order/Total-Order-Bill"
+import OrderItemsCard from "../../components/tracking-order/order-items-card"
+import TotalOrderBill from "../../components/tracking-order/total-order-bill"
+import TrackingStatus from "../../components/tracking-order/tracking-status"
 
 
 
