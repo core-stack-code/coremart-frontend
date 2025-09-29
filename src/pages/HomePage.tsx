@@ -1,31 +1,23 @@
 import React, { useState } from "react";
 import Icon from "@/components/ui/icons";
 import { CATEGORY, PRODUCT_CARD_RESPONSE, type CategoryTypes } from "@/lib/helper/testData";
-import CardHeader from "@/modules/products/components/home/card-header";
-import DiscountLabel from "@/modules/products/components/home/discount-ads";
-import Carousel from "@/modules/products/components/home/carousel";
-import AboutusBadge from "@/components/ui/aboutus-badge";
-import CategorySlider from "@/modules/products/components/category-slider";
-import ProductGridCard from "@/modules/products/components/product-category/Product Card";
-import CategoryBanner from "@/modules/products/components/product-category/Banner";
 import HeroSection from "@/components/hero-section";
-import ProductCard from "@/modules/products/components/product-card";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Scrollbar } from "swiper/modules";
-
-const cardType = {
-    newArrivals: "NewArrivals",
-    trendingOffer: "TrendingOffer",
-    trendingProduct: "TrendingProduct",
-    recommendedRecent: "RecommendedRecent"
-}
+import CategorySlider from "@/modules/Products-1/components/category-slider";
+import CardHeader from "@/modules/Products-1/components/Home/card-header";
+import ProductCard from "@/modules/Products-1/components/product-card";
+import CategoryBanner from "@/modules/Products-1/components/product-category/Banner";
+import DiscountLabel from "@/modules/Products-1/components/Home/discount-dsa";
+import Carousel from "@/modules/Products-1/components/Home/carousel";
+import AboutusBadge from "@/components/ui/aboutus-badge";
 
 
 const HomePage: React.FC = () => {
     const [label, setLabel] = useState<CategoryTypes>("sportswear");
 
     return (
-        <>
+        <div className="w-full h-full flex flex-col">
             <div>
                 <HeroSection />
             </div>
@@ -231,7 +223,7 @@ const HomePage: React.FC = () => {
                 />
             </div>
 
-        </>
+        </div>
     )
 }
 

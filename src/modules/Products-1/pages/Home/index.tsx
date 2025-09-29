@@ -1,9 +1,9 @@
 import Icon from "@/components/ui/icons"
 import category from '@/./utils/Category.json'
-import CardHeader from "../../components/home/card-header"
-import DiscountLabel from "../../components/home/discount-ads"
+import CardHeader from "../../components/Home/card-header"
+import DiscountLabel from "../../components/Home/discount-dsa"
 import AboutusBadge from "@/components/ui/aboutus-badge"
-import Carousel from "../../components/home/carousel"
+import Carousel from "../../components/Home/carousel"
 import ProductCards from '@/./utils/Main/Product-card.json'
 import { useState } from "react"
 import AllWear from "../../components/product-category/All Wear"

@@ -3,24 +3,24 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "@/layouts/RootLayout";
 import ErrorPage from "@/pages/ErrorPage";
 import HomePage from "@/pages/HomePage";
-import About from "@/modules/about/pages/about";
-import Contact from "@/modules/contact/pages/contact/index";
-import AuthLayout from "@/layouts/AuthLayout";
-import SignUpPage from "@/modules/auth/pages/singup";
-import LoginPage from "@/modules/auth/pages/login";
+import ProductList from "@/modules/Products-1/pages/product-list";
+import ProductCategory from "@/modules/Products-1/pages/product-category";
+import ProductDetails from "@/modules/Products-1/pages/product-details";
+import YourCart from "@/modules/me/pages/your-cart";
 import Profile from "@/modules/me/pages/profile";
 import Whislist from "@/modules/me/pages/whislist";
 import Saved from "@/modules/me/pages/saved";
-import ForgetPassword from "@/modules/auth/pages/forgetpassword";
-import ResetPassword from "@/modules/auth/pages/resetpassword";
-import OTPVerify from "@/modules/auth/pages/otpverify";
-import ProductList from "@/modules/products/pages/product-list";
-import ProductCategory from "@/modules/products/pages/product-category";
-import ProductDetails from "@/modules/products/pages/product-details";
-import YourCart from "@/modules/me/pages/your-cart";
 import OrderHistory from "@/modules/order/pages/order-histrory";
 import CheckOut from "@/modules/order/pages/order-checkout";
 import TrackingOrder from "@/modules/order/pages/tracking-order";
+import About from "@/modules/about/pages/about";
+import AuthLayout from "@/layouts/AuthLayout";
+import LoginPage from "@/modules/auth/pages/login";
+import SignUpPage from "@/modules/auth/pages/singup";
+import ForgetPassword from "@/modules/auth/pages/ForgetPassword";
+import ResetPassword from "@/modules/auth/pages/ResetPassword";
+import OTPVerify from "@/modules/auth/pages/OTPVerify";
+import Contact from "@/modules/contact/pages/contact";
 
 
 const router = createBrowserRouter([

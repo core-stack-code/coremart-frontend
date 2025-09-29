@@ -1,5 +1,5 @@
 import Icon from '@/components/ui/icons'
-import CounteDownTimer from '../count-down-timer'
+import CounteDownTimer from '../count-down-tkimer'
 import { Button } from '@/components/ui/button'
 
 interface CardHeaderProps {

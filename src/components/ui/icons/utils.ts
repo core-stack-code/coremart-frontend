@@ -12,7 +12,7 @@ import GithubIcon from "./github-icon";
 import UserIcon from "./user-icon";
 import AddToCartIcon from "./add-to-cart-icon";
 import SearchIcon from "./search-icon";
-import WhisListIcon from "./productlist-whislist-icon";
+import WhisListIcon from "./productList-whislist-icon";
 import NotificationIcon from "./notification-icon";
 import ProfileIcon from "./profile-icon";
 import FacebookIcon from "./facebook-icon";
@@ -32,12 +32,12 @@ import StarIcon from "./rating-star-icon";
 import DetailsIcon from "./product-details-icon";
 import DetailsRatingStarIcon from "./rating-star-details-icon";
 import SimilarProductIcon from "./similar-product-icon";
-import HeaderWhisListWithoutOpenIcon from "./header-whislist/without-open";
-import HeaderWhisListWithOpenIcon from "./header-whislist/with-open";
+import HeaderWhisListWithoutOpenIcon from "./without-open";
+import HeaderWhisListWithOpenIcon from "./with-open";
 import AboutServiceIcon from "./about-icon/customer-service";
 import AboutDeliveryIcon from "./about-icon/delivery";
 import AboutGuaranteeIcon from "./about-icon/gaurantee";
-import HomeADIcon from "./home";
+import HomeADIcon from "./home-icon";
 import CategoriesIcon from "./categories-icon";
 import SeeAllArrowIcon from "./see-all-arrow-icon";
 import CloseIcon from "./close-icon";
@@ -57,17 +57,28 @@ import TotalOrderIcon from "./total-order";
 import TotalSalesIcon from "./total-sales";
 import ProfitUPIcon from "./profit-up-icon";
 import ProfitDownIcon from "./profit-down-icon";
-import OrderShippedBadge from "./order-badges/shipped";
-import OrderDeliveredBadge from "./order-badges/delivered";
-import OrderCanceledBadge from "./order-badges/canceled";
+import OrderShippedBadge from "./Order-Badges/shipped";
+import OrderDeliveredBadge from "./Order-Badges/delivered";
+import OrderCanceledBadge from "./Order-Badges/canceled";
 import PaidIcon from "./paid-icon";
 
+
+import LogoIcon from "./logo";
+import CartIcon from "./cart-icon";
+import BellIcon from "./bell-icon";
+
 export const LUCIDE_ICON_MAP = {
+    Search: Search,
     menuIcon: Menu,
-    searchIconLucide: Search
 }
 
 export const CUSTOM_ICON_MAP = {
+    logo: LogoIcon,
+    cart: CartIcon,
+    bell: BellIcon,
+    profile: ProfileIcon,
+
+
     mailIcon: MailIcon,
     lockIcon: LockIcon,
     eyeIcon: EyeIcon,

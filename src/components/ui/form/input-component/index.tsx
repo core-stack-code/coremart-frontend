@@ -8,7 +8,7 @@ interface InputComponentProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "value"> {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
-  error: string | null | undefined;
+  error?: string;
   wrapperClassName?: string;
   inputClassName?: string;
   togglePassword?: boolean;
@@ -26,7 +26,7 @@ const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
     const isPasswordType = type === "password" && togglePassword;
 
     return (
-      <div className="flex flex-col gap-1 min-h-16">
+      <div className="flex flex-col gap-1">
         <div
           className={cn(
             "flex items-center borde-[#6366F1] bg-transparent",
@@ -46,9 +46,9 @@ const InputComponent = React.forwardRef<HTMLInputElement, InputComponentProps>(
             type={isPasswordType ? (showPassword ? "text" : "password") : type}
             className={cn(
               "border-none bg-transparent focus-within:border-primary-focus flex-1",
-              "text-sm placeholder:text-muted",
+              "text-sm placeholder:text-muted  min-h-16",
               inputClassName,
-              className
+              className,
             )}
             value={value}
             onChange={(e) => onChange(e.target.value)}

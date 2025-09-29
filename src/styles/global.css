@@ -10,12 +10,13 @@
   --color-primary: #9333EA;
   --color-secondary: #6366F1;
   --color-accent: #A855F7;
-
+  
   --color-background: #FFFFFF;
   /* --color-surface: #F9FAFB; */
-
+  
   --color-foreground: #111827;
   --color-muted: #6B7280;
+  --color-muted-secondry: #263238;
 
   --color-border: #c7c8ca;
   --color-border-fallback: #D1D5DB;
@@ -134,6 +135,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
 
   --color-foreground: #1F2937;
   --color-muted: #6B7280;
+  --color-muted-secondry: #263238;
 
   --color-border: #E5E7EB;
   --color-border-fallback: #D1D5DB;
