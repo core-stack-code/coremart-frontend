@@ -1,9 +1,11 @@
 import type { Filters, Items } from "@/modules/product/apis/types"
+import type { Category } from "@/types/products";
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 
 
 
 interface ProductState {
+    category: Category;
     cart: {
         items: Items[]
     },
@@ -11,6 +13,7 @@ interface ProductState {
 }
 
 const initialState: ProductState = {
+    category: "casual",
     cart: {
         items: [
             {
@@ -48,9 +51,12 @@ const productSlice = createSlice({
         getCardDetails: (state, action: PayloadAction<Items>) => {
             console.log(action.payload)
             state.cart.items.push(action.payload)
+        },
+        setCategory: (state, action: PayloadAction<Category>) => {
+            state.category = action.payload
         }
     }
 })
 
-export const { getCardDetails, getFilters } = productSlice.actions
+export const { getCardDetails, getFilters, setCategory } = productSlice.actions
 export default productSlice.reducer

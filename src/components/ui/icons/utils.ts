@@ -1,6 +1,8 @@
 import { 
     Menu,
     Search,
+    CircleArrowRight,
+    Heart
 } from "lucide-react"
 
 import EyeIcon from "./eye-icon";
@@ -10,7 +12,6 @@ import CrossIcon from "./cross-icon";
 import CheckBoxIcon from "./check-box-icon";
 import GithubIcon from "./github-icon";
 import UserIcon from "./user-icon";
-import AddToCartIcon from "./add-to-cart-icon";
 import SearchIcon from "./search-icon";
 import WhisListIcon from "./productList-whislist-icon";
 import NotificationIcon from "./notification-icon";
@@ -28,7 +29,6 @@ import productListIcon from "./product-list-icon";
 import PaymentDiscountIcon from "./product-discount-icon/payment-discount-icon";
 import PurchaseDiscountIcon from "./product-discount-icon/purchase-discount-icon";
 import StockIcon from "./product-stock-icon";
-import StarIcon from "./rating-star-icon";
 import DetailsIcon from "./product-details-icon";
 import DetailsRatingStarIcon from "./rating-star-details-icon";
 import SimilarProductIcon from "./similar-product-icon";
@@ -37,9 +37,6 @@ import HeaderWhisListWithOpenIcon from "./with-open";
 import AboutServiceIcon from "./about-icon/customer-service";
 import AboutDeliveryIcon from "./about-icon/delivery";
 import AboutGuaranteeIcon from "./about-icon/gaurantee";
-import HomeADIcon from "./home-icon";
-import CategoriesIcon from "./categories-icon";
-import SeeAllArrowIcon from "./see-all-arrow-icon";
 import CloseIcon from "./close-icon";
 import DeleteIcon from "./delete-icon";
 import DashboardSliderDashBoardIcon from "./Dashboard-Slider/dashboard-icon";
@@ -66,10 +63,20 @@ import PaidIcon from "./paid-icon";
 import LogoIcon from "./logo";
 import CartIcon from "./cart-icon";
 import BellIcon from "./bell-icon";
+import ChatBubbleIcon from "./chat-bubble";
+import LeftArrowIcon from "./left-arrow";
+import RightArrowIcon from "./right-arrow";
+import CategoriesIcon from "./categories-icon";
+import AddCartIcon from "./add-cart-icon";
+import StarHalfIcon from "./star-half-icon";
+import StarIcon from "./star-icon";
+import StarOutlineIcon from "./star-outline-icon";
 
 export const LUCIDE_ICON_MAP = {
     Search: Search,
     menuIcon: Menu,
+    rightCircleArrow: CircleArrowRight,
+    heart: Heart,
 }
 
 export const CUSTOM_ICON_MAP = {
@@ -77,6 +84,14 @@ export const CUSTOM_ICON_MAP = {
     cart: CartIcon,
     bell: BellIcon,
     profile: ProfileIcon,
+    chatBubbleIcon: ChatBubbleIcon,
+    leftArrow: LeftArrowIcon,
+    rightArrow: RightArrowIcon,
+    categories: CategoriesIcon,
+    addCart: AddCartIcon,
+    starHalf: StarHalfIcon,
+    star: StarIcon,
+    starOutline: StarOutlineIcon,
 
 
     mailIcon: MailIcon,
@@ -86,7 +101,6 @@ export const CUSTOM_ICON_MAP = {
     checkBoxIcon: CheckBoxIcon,
     githubIcon: GithubIcon,
     userIcon: UserIcon,
-    addtocartIcon: AddToCartIcon,
     searchIcon: SearchIcon,
     whislistIcon: WhisListIcon,
     notificationIcon: NotificationIcon,
@@ -113,9 +127,6 @@ export const CUSTOM_ICON_MAP = {
     aboutdeliveryIcon:AboutDeliveryIcon,
     aboutserviceIcon:AboutServiceIcon,
     aboutguaranteeIcon:AboutGuaranteeIcon,
-    homeadIcon:HomeADIcon,
-    categoriesIcon:CategoriesIcon,
-    seeallarrowIcon:SeeAllArrowIcon,
     closeIcon:CloseIcon,
     deleteIcon:DeleteIcon,
     ordershippedBadge:OrderShippedBadge,

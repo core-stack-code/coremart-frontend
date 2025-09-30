@@ -3,39 +3,40 @@ import Icon from '../ui/icons'
 
 const HeroSection: React.FC = () => {
   return (
-    <>
-      <div className="flex">
-        <div className="flex flex-col justify-center w-full gap-5 text-center lg:text-left">
-          <div className="flex justify-center">
-            <Icon name="homeadIcon" width={224} height={124} />
-          </div>
-          <div>
-            <h1 className="text-3xl sm:text-4xl font-bold">
-              Style That <span className="text-primary"> Speaks </span>for You
-            </h1>
-            <p className="text-base sm:text-lg">
-              Coremart brings you fashion that fits your lifestyle
-            </p>
-          </div>
+    <div className="w-full h-full flex justify-between items-center">
+      <div className="flex flex-col items-start h-full w-full gap-8 mb-6">
+        <div className='w-full flex justify-start pl-50'>
+          <Icon name="chatBubbleIcon" />
         </div>
-
-        <div className="w-full relative flex  md:justify-center">
-          <img
-            src="/home.svg"
-            alt="Home"
-            className="w-136 h-136 object-fill  rounded-xl"
-          />
-
-          <div className="absolute top-[75%] left-[5%] sm:left-[-10%] md:left-[8%] lg:left-[-12%] xl:left-[9%] bg-white rounded-full w-[40px] h-[70px] sm:w-[80px] sm:h-[80px] lg:w-[80px] lg:h-[80px] flex justify-center items-center rotate-180 shadow-md">
-            <Icon name="seeallarrowIcon" width={70} height={70} />
-          </div>
-
-          <div className="absolute top-[45%] right-2 sm:right-[-10%] md:right-[9%] lg:right-[-10%] xl:right-[9%] bg-white rounded-full w-[40px] h-[70px] sm:w-[80px] sm:h-[80px] lg:w-[80px] lg:h-[80px] flex justify-center items-center shadow-md">
-            <Icon name="seeallarrowIcon" width={70} height={70} />
-          </div>
+        <div className='flex flex-col gap-1.5'>
+          <h2 className="text-4xl font-bold">
+            Style That <span className="text-primary"> Speaks </span>for You
+          </h2>
+          <p className="text-lg">
+            Coremart brings you fashion that fits your lifestyle
+          </p>
         </div>
       </div>
-    </>
+
+      <div className='relative min-w-124 min-h-148 max-w-125 max-h-148 mr-10'>
+        <div className="w-full h-full rounded-[2.5rem] ">
+          <img
+            src="/hero1.png"
+            alt="Home"
+            className="h-full w-full overflow-hidden object-cover rounded-[2.5rem] bg-black"
+          />
+        </div>
+
+        <div className="absolute bottom-[20%] left-[-2.5rem] border-4 border-white bg-sky-400 rounded-full flex justify-center items-center w-20 h-20 shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer hover:border-sky-100">
+          <Icon name="leftArrow" width={38} height={38} />
+        </div>
+
+        <div className="absolute top-[20%] right-[-2.5rem] border-4 border-white bg-sky-400 rounded-full flex justify-center items-center w-20 h-20 shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer hover:border-sky-100">
+          <Icon name="rightArrow" width={38} height={38} />
+        </div>
+
+      </div>
+    </div>
   )
 }
 

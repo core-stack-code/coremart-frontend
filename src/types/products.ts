@@ -1,3 +1,5 @@
+import type { categoryEnum } from "@/constants/product";
+
 export type ProductType = {
     _id: string,
     name: string,
@@ -13,3 +15,5 @@ export type ProductType = {
     viewCount: number,
     rating: number
 }
+
+export type Category = (typeof categoryEnum)[number];

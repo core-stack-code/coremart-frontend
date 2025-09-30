@@ -1,0 +1,1 @@
+export const categoryEnum = ['casual', 'formal', 'sportswear', 'sleepwear', 'outerwear', 'workoutwear'] as const;
