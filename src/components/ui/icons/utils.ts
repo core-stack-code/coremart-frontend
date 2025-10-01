@@ -2,7 +2,7 @@ import {
     Menu,
     Search,
     CircleArrowRight,
-    Heart
+    Heart,
 } from "lucide-react"
 
 import EyeIcon from "./eye-icon";
@@ -71,6 +71,9 @@ import AddCartIcon from "./add-cart-icon";
 import StarHalfIcon from "./star-half-icon";
 import StarIcon from "./star-icon";
 import StarOutlineIcon from "./star-outline-icon";
+import TruckIcon from "./truck-icon";
+import HeadphoneIcon from "./headphone-icon";
+import ShileldRightIcon from "./shield-right-icon";
 
 export const LUCIDE_ICON_MAP = {
     Search: Search,
@@ -92,6 +95,9 @@ export const CUSTOM_ICON_MAP = {
     starHalf: StarHalfIcon,
     star: StarIcon,
     starOutline: StarOutlineIcon,
+    truck: TruckIcon,
+    headphone: HeadphoneIcon,
+    shieldRight: ShileldRightIcon,
 
 
     mailIcon: MailIcon,
