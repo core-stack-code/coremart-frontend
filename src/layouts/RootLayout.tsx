@@ -1,7 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import FooterLayout from "./FooterLayout";
 import Header from "@/components/header";
+import { Separator } from "@/components/ui/separator";
+import Footer from "@/components/footer";
 
 
 const RootLayout: React.FC = () => {
@@ -13,9 +14,9 @@ const RootLayout: React.FC = () => {
         <main className="w-full h-full ">
           <Outlet />
         </main>
-
-        <FooterLayout />
       </div>
+      <Separator className="my-8" />
+      <Footer />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Navbar from '@/components/ui/navbar'
 import Icon from '../ui/icons'
 import SearchBar from '../search-bar'
+import CardPopover from '../cart-popover'
 
 
 const Header: React.FC = () => {
@@ -17,9 +18,10 @@ const Header: React.FC = () => {
           <SearchBar />
 
           <div className='flex gap-10 items-center'>
-            <Link to="/me/cart" className='text-muted hover:text-primary/60'>
+            <CardPopover />
+            {/* <Link to="/me/cart" className='text-muted hover:text-primary/60'>
               <Icon name="cart" width={20} height={20} fill='none' stroke='currentColor' />
-            </Link>
+            </Link> */}
 
             <Icon name="bell" width={20} height={20} className='text-muted hover:text-primary/60' stroke='none' />
 

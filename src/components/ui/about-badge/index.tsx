@@ -33,7 +33,7 @@ const ABOUT_BADGE_DATA: AboutBadeType[] = [
 
 const AboutBade: React.FC = () => {
     return (
-        <div className='w-full h-full flex items-center justify-between pt-12 pb-20'>
+        <div className='w-full h-full flex items-center justify-between py-12'>
             {ABOUT_BADGE_DATA.map((badge) => (
                 <div key={badge.id} className='flex flex-col gap-2.5 items-center'>
                     <div className='flex items-center justify-center border-[1rem] border-primary/30 rounded-full'>

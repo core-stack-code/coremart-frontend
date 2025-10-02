@@ -17,3 +17,23 @@ export type ProductType = {
 }
 
 export type Category = (typeof categoryEnum)[number];
+
+
+export type CartItemType = {
+    product: {
+        _id: string,
+        name: string,
+        slug: string,
+        category: string,
+        price: number,
+        image: string,
+    },
+    quantity: number
+    itemTotal: number
+}
+
+export interface CartType {
+    items: CartItemType[];
+    totalPrice: number;
+    totalQuantity: number;
+}

@@ -3,6 +3,8 @@ import {
     Search,
     CircleArrowRight,
     Heart,
+    PlusIcon,
+    MinusIcon,
 } from "lucide-react"
 
 import EyeIcon from "./eye-icon";
@@ -38,7 +40,6 @@ import AboutServiceIcon from "./about-icon/customer-service";
 import AboutDeliveryIcon from "./about-icon/delivery";
 import AboutGuaranteeIcon from "./about-icon/gaurantee";
 import CloseIcon from "./close-icon";
-import DeleteIcon from "./delete-icon";
 import DashboardSliderDashBoardIcon from "./Dashboard-Slider/dashboard-icon";
 import DashboardSliderProductsIcon from "./Dashboard-Slider/products-icon";
 import DashboardSliderOrderListsIcon from "./Dashboard-Slider/order-lists-icon";
@@ -74,6 +75,9 @@ import StarOutlineIcon from "./star-outline-icon";
 import TruckIcon from "./truck-icon";
 import HeadphoneIcon from "./headphone-icon";
 import ShileldRightIcon from "./shield-right-icon";
+import DeleteIcon from "./delete-icon";
+// import PlusIcon from "./plus-icon";
+// import MinusIcon from "./minus-icon";
 
 export const LUCIDE_ICON_MAP = {
     Search: Search,
@@ -98,6 +102,9 @@ export const CUSTOM_ICON_MAP = {
     truck: TruckIcon,
     headphone: HeadphoneIcon,
     shieldRight: ShileldRightIcon,
+    plus: PlusIcon,
+    minus: MinusIcon,
+    delete: DeleteIcon,
 
 
     mailIcon: MailIcon,
@@ -134,7 +141,6 @@ export const CUSTOM_ICON_MAP = {
     aboutserviceIcon:AboutServiceIcon,
     aboutguaranteeIcon:AboutGuaranteeIcon,
     closeIcon:CloseIcon,
-    deleteIcon:DeleteIcon,
     ordershippedBadge:OrderShippedBadge,
     orderdeliveredBadge:OrderDeliveredBadge,
     ordercanceledBadge: OrderCanceledBadge,

@@ -1,4 +1,4 @@
-import type { ProductType } from "@/types/products";
+import type { CartType, ProductType } from "@/types/products";
 
 export const categoryEnum = ['casual', 'formal', 'sportswear', 'sleepwear', 'outerwear', 'workoutwear'] as const;
 export type CategoryTypes = typeof categoryEnum[number]
@@ -125,6 +125,51 @@ export const PRODUCT_LIST: ProductType[] = [
     rating: 4.7,
   },
 ];
+
+
+export const CART: CartType =  {
+  // items: [],
+  items: [
+    {
+      product: {
+        _id: "68641dc25b4c4aae182f8e1b",
+        name: "Relaxed Pants",
+        slug: "relaxed-pants",
+        category: "outerwear",
+        price: 9234.95,
+        image: "https://picsum.photos/seed/yvcIOu/640/480?grayscale&blur=6",
+      },
+      quantity: 3,
+      itemTotal: 27704.85,
+    },
+    {
+      product: {
+        _id: "68641dc25b4c4aae182f8e85",
+        name: "Relaxed Shorts",
+        slug: "relaxed-shorts-3",
+        category: "outerwear",
+        price: 7745.69,
+        image: "https://picsum.photos/seed/PWzuGPv0O/640/480?grayscale&blur=2",
+      },
+      quantity: 6,
+      itemTotal: 46474.14,
+    },
+    {
+      product: {
+        _id: "68641dc25b4c4aae182f8f53",
+        name: "Essential Skirt",
+        slug: "essential-skirt-4",
+        category: "sportswear",
+        price: 5054.89,
+        image: "https://picsum.photos/seed/nshbtMD/640/480?grayscale&blur=1",
+      },
+      quantity: 2,
+      itemTotal: 10109.78,
+    },
+  ],
+  totalPrice: 84288.77,
+  totalQuantity: 11,
+};
 
 
 export const CATEGORY: ReadonlyArray<{ image_url: string; category_name: CategoryTypes }> = [
