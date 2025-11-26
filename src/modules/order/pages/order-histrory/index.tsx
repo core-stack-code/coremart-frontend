@@ -1,4 +1,5 @@
-import OrderHistoryCard from "../../components/order_history"
+import OrderHistoryCard from "../../components/order-history"
+
 
 
 const selectBadge = {

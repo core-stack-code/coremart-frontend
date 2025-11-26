@@ -50,8 +50,8 @@ const TestimonialSlider: React.FC = () => {
                     loop={true}
                     speed={700}
                     autoplay={{ delay: 3000, disableOnInteraction: false }}
-                    onSwiper={(s) => setActive(s.realIndex)}
-                    onSlideChange={(s) => setActive(s.realIndex)}
+                    onSwiper={(s) => setActive(s.realIndex % originalCount)}
+                    onSlideChange={(s) => setActive(s.realIndex % originalCount)}
                     modules={[Autoplay]}
                     className="w-full"
                 >

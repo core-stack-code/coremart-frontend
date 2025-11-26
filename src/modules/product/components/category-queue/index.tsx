@@ -49,7 +49,7 @@ const CategoryQueue: React.FC<{ isRedirect?: boolean }> = ({ isRedirect = false 
                                 )}
                                 onClick={() => handleCategoryChange(item.id)}
                             >
-                                <img src={`/src/assets/images/${item.image}`} alt={item.name} className='ww-full h-full rounded-full overflow-hidden object-cover' />
+                                <img src={`/src/assets/images/${item.image}`} alt={item.name} className='w-full h-full rounded-full overflow-hidden object-cover' />
                             </div>
                             <span className={cn('text-base font-medium', isSelected && "text-accent")}>{item.name}</span>
                         </div>

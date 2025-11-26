@@ -11,6 +11,7 @@ import NewArrivalsProducts from "@/modules/product/components/new-arrivals-produ
 import BestSellerProducts from "@/modules/product/components/best-seller-products";
 import RecommendedProducts from "@/modules/product/components/recommended-products";
 import RecentlyViewProducts from "@/modules/product/components/recently-view-products";
+import TrendingProducts from "@/modules/product/components/trending-products";
 
 
 const HomePage: React.FC = () => {
@@ -26,7 +27,8 @@ const HomePage: React.FC = () => {
 
                 <Banner />
 
-                <NewArrivalsProducts />
+                {/* <NewArrivalsProducts /> */}
+                <TrendingProducts/>
 
                 <BestSellerProducts />
 

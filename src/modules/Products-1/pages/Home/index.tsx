@@ -8,7 +8,6 @@ import ProductCards from '@/./utils/Main/Product-card.json'
 import { useState } from "react"
 import AllWear from "../../components/product-category/All Wear"
 import ProductCard from "../../components/product-card"
-import CategoryBanner from "../../components/product-category/Banner"
 
 
 export const cardType = {

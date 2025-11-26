@@ -15,7 +15,6 @@ import CheckBoxIcon from "./check-box-icon";
 import GithubIcon from "./github-icon";
 import UserIcon from "./user-icon";
 import SearchIcon from "./search-icon";
-import WhisListIcon from "./productList-whislist-icon";
 import NotificationIcon from "./notification-icon";
 import ProfileIcon from "./profile-icon";
 import FacebookIcon from "./facebook-icon";
@@ -40,24 +39,10 @@ import AboutServiceIcon from "./about-icon/customer-service";
 import AboutDeliveryIcon from "./about-icon/delivery";
 import AboutGuaranteeIcon from "./about-icon/gaurantee";
 import CloseIcon from "./close-icon";
-import DashboardSliderDashBoardIcon from "./Dashboard-Slider/dashboard-icon";
-import DashboardSliderProductsIcon from "./Dashboard-Slider/products-icon";
-import DashboardSliderOrderListsIcon from "./Dashboard-Slider/order-lists-icon";
-import DashboardSliderCustomersIcon from "./Dashboard-Slider/customers-icon";
-import DashboardSliderCategoriesIcon from "./Dashboard-Slider/categories-icon";
-import DashboardSliderInventoryIcon from "./Dashboard-Slider/inventory-icon";
-import DashboardSliderMessagesIcon from "./Dashboard-Slider/messages-icon";
-import DashboardSliderReportsIcon from "./Dashboard-Slider/reports-icon";
-import dashboardSliderSettingsIcon from "./Dashboard-Slider/settings-icon";
-import dashboardSliderLogoutIcon from "./Dashboard-Slider/logout-icon";
 import TotaUserIcon from "./total-user";
 import TotalOrderIcon from "./total-order";
 import TotalSalesIcon from "./total-sales";
 import ProfitUPIcon from "./profit-up-icon";
-import ProfitDownIcon from "./profit-down-icon";
-import OrderShippedBadge from "./Order-Badges/shipped";
-import OrderDeliveredBadge from "./Order-Badges/delivered";
-import OrderCanceledBadge from "./Order-Badges/canceled";
 import PaidIcon from "./paid-icon";
 
 
@@ -76,6 +61,21 @@ import TruckIcon from "./truck-icon";
 import HeadphoneIcon from "./headphone-icon";
 import ShileldRightIcon from "./shield-right-icon";
 import DeleteIcon from "./delete-icon";
+import OrderShippedBadge from "./order-badges/shipped";
+import OrderDeliveredBadge from "./order-badges/delivered";
+import OrderCanceledBadge from "./order-badges/canceled";
+import DashboardSliderDashBoardIcon from "./dashboard-slider/dashboard-icon";
+import DashboardSliderProductsIcon from "./dashboard-slider/products-icon";
+import DashboardSliderOrderListsIcon from "./dashboard-slider/order-lists-icon";
+import DashboardSliderCustomersIcon from "./dashboard-slider/customers-icon";
+import DashboardSliderCategoriesIcon from "./dashboard-slider/categories-icon";
+import DashboardSliderInventoryIcon from "./dashboard-slider/inventory-icon";
+import DashboardSliderMessagesIcon from "./dashboard-slider/messages-icon";
+import DashboardSliderReportsIcon from "./dashboard-slider/reports-icon";
+import dashboardSliderSettingsIcon from "./dashboard-slider/settings-icon";
+import dashboardSliderLogoutIcon from "./dashboard-slider/logout-icon";
+import ProfitDownIcon from "./profit-down-icon";
+import WhislistIcon from "./productlist-whislist-icon";
 // import PlusIcon from "./plus-icon";
 // import MinusIcon from "./minus-icon";
 
@@ -115,7 +115,7 @@ export const CUSTOM_ICON_MAP = {
     githubIcon: GithubIcon,
     userIcon: UserIcon,
     searchIcon: SearchIcon,
-    whislistIcon: WhisListIcon,
+    whislistIcon: WhislistIcon,
     notificationIcon: NotificationIcon,
     profileIcon: ProfileIcon,
     facebookIcon: FacebookIcon,

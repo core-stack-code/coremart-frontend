@@ -6,12 +6,13 @@ import { Button } from '../button';
 
 interface CardWrapperProps {
     children: React.ReactNode;
-    title: string;
+    title?: string;
+    subtitle?: string;
     redirectLink?: string;
 }
 
 
-const CardWrapper: React.FC<CardWrapperProps> = ({ children, title, redirectLink }) => {
+const CardWrapper: React.FC<CardWrapperProps> = ({ children, title, subtitle, redirectLink }) => {
     const navigate = useNavigate();
 
     const handleRedirect = () => {
@@ -23,7 +24,11 @@ const CardWrapper: React.FC<CardWrapperProps> = ({ children, title, redirectLink
     return (
         <div className='w-full flex flex-col gap-3'>
             <div className='flex items-center justify-between py-3'>
+                <div>
+
                 <h2 className='text-lg font-semibold'>{title}</h2>
+                  <p className=" text-md text-muted">{subtitle}</p>
+                </div>
                 {redirectLink && (
                     <div className='flex items-center gap-1 text-foreground hover:text-primary cursor-pointer'>
                         <Button variant="none" onClick={handleRedirect} className='text-xs'>

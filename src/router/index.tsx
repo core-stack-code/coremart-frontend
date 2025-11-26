@@ -17,10 +17,10 @@ import About from "@/modules/about/pages/about";
 import AuthLayout from "@/layouts/AuthLayout";
 import LoginPage from "@/modules/auth/pages/login";
 import SignUpPage from "@/modules/auth/pages/singup";
-import ForgetPassword from "@/modules/auth/pages/ForgetPassword";
-import ResetPassword from "@/modules/auth/pages/ResetPassword";
-import OTPVerify from "@/modules/auth/pages/OTPVerify";
 import Contact from "@/modules/contact/pages/contact";
+import ForgetPassword from "@/modules/auth/pages/forgetpassword";
+import ResetPassword from "@/modules/auth/pages/resetpassword";
+import OTPVerify from "@/modules/auth/pages/otpverify";
 
 
 const router = createBrowserRouter([

@@ -1,8 +1,10 @@
 import React from 'react'
-import type { ProductType } from '@/types/products'
+import type { CartType, ProductType } from '@/types/products'
 import Icon from '@/components/ui/icons'
 import AddCartButton from '../add-cart-btn'
 import Ratting from '../ratting'
+import { useDispatch } from 'react-redux'
+import { getCardDetails } from '@/store/slices/productSlice'
 
 type ProductCardType = "new" | "discount" | "ratting" | "normal"
 
@@ -12,15 +14,42 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal" }) => {
-    const isRightBade = cardType === "new" || cardType === "discount"
+
+    const disPatch = useDispatch();
+
+    const getCardData = () => {
+        const data = {
+            items: [
+                {
+                    product: {
+                        _id: product._id,
+                        name: product.name,
+                        slug: product.slug,
+                        category: product.category,
+                        price: product.price,
+                        image: product.images[0],
+                    },
+                    quantity: 0,
+                    itemTotal: 0,
+                }
+            ],
+            totalPrice: 0,
+            totalQuantity: 0
+
+        }
+
+        disPatch(getCardDetails(data))
+    }
+
+    const isRightBagde = cardType === "new" || cardType === "discount"
     const rightBadge = cardType === "new"
         ? "New"
         : ((product.price - 100) * 100) / 1000 // discount % logic (have to change)
 
     const getContent: Record<ProductCardType, React.ReactNode> = {
-        new : null,
-        discount : <DiscountSection  originalPrice={1000} price={product.price} />,
-        normal: <PirceBtnSections id={product._id} price={product.price} />,
+        new: null,
+        discount: <DiscountSection originalPrice={1000} price={product.price} />,
+        normal: <PriceBtnSections id={product._id} price={product.price} getCardData ={getCardData} />,
         ratting: <RateSection rate={product.rating} />
     }
 
@@ -28,17 +57,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal" 
         <div className='w-full max-h-fit min-h-fit flex items-center justify-center'>
             <div className='flex flex-col w-full h-full rounded-3xl'>
                 <div className='relative w-full h-70 rounded-3xl'>
-                    <img 
-                        src={'/hero1.png'} 
+                    <img
+                        src={product.images[0]}
                         alt={product.name}
                         className='w-full h-full object-cover rounded-t-3xl overflow-hidden'
                     />
 
                     <div className='absolute top-3 right-3 text-muted'>
-                        <Icon 
+                        <Icon
                             name='heart'
                             width={24}
-                            height={24} 
+                            height={24}
                             stroke={product.isFav ? "#EF4444" : 'currentColor'}
                             strokeWidth={2}
                             fill={product.isFav ? "#EF4444" : "none"}
@@ -46,7 +75,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal" 
                         />
                     </div>
 
-                   {isRightBade && (
+                    {isRightBagde && (
                         <div className='absolute top-3 left-3'>
                             <span className='bg-primary py-1.5 px-4 rounded-xl text-white text-xs flex items-center justify-center'>
                                 {rightBadge}
@@ -70,7 +99,7 @@ export default ProductCard
 
 
 
-const RateSection: React.FC<{ rate: number }> = function({ rate }) {
+const RateSection: React.FC<{ rate: number }> = function ({ rate }) {
     return (
         <div className='flex flex-col gap-1.5'>
             <p className='text-xs text-muted'>24 Reviews</p>
@@ -82,11 +111,11 @@ const RateSection: React.FC<{ rate: number }> = function({ rate }) {
     )
 }
 
-const PirceBtnSections: React.FC<{ price: number; id: string }> = function({ id, price }) {
+const PriceBtnSections: React.FC<{ price: number; id: string, getCardData: () => void}> = function ({ id, price, getCardData }) {
     return (
         <div className='flex items-center justify-between'>
             <span className='text-base font-semibold text-muted'>${price}</span>
-            <AddCartButton productId={id} />
+            <AddCartButton productId={id} getCardData={getCardData} />
         </div>
     )
 }
