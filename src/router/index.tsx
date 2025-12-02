@@ -18,9 +18,9 @@ import AuthLayout from "@/layouts/AuthLayout";
 import LoginPage from "@/modules/auth/pages/login";
 import SignUpPage from "@/modules/auth/pages/singup";
 import Contact from "@/modules/contact/pages/contact";
-import ForgetPassword from "@/modules/auth/pages/forgetpassword";
-import ResetPassword from "@/modules/auth/pages/resetpassword";
-import OTPVerify from "@/modules/auth/pages/otpverify";
+import ForgetPassword from "@/modules/auth/pages/forgot-password";
+import ResetPassword from "@/modules/auth/pages/rest-password";
+import OTPVerify from "@/modules/auth/pages/otp-verify";
 
 
 const router = createBrowserRouter([
