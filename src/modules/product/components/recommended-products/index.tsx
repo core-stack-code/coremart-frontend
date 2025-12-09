@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductSlider from '../product-slider';
 import { PRODUCT_LIST } from '@/lib/helper/testData';
-import ProductGrid from '../product-grid';
+import ProductCard from '../product-card';
 
 
 const RecommendedProducts: React.FC = () => {
@@ -10,8 +10,8 @@ const RecommendedProducts: React.FC = () => {
 
     return (
         <ProductSlider title="Recommended Products" products={data} redirectLink="/products">
-            {/* {(product) => <ProductCard product={product} />} */}
-            {() => <ProductGrid products={data}  columns={4} />}
+            {(product) => <ProductCard product={product} />}
+            {/* {() => <ProductGrid products={data}  columns={4} />} */}
         </ProductSlider>
     )
 }

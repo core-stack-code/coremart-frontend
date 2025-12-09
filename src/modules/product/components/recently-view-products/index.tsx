@@ -1,7 +1,7 @@
 import React from 'react'
 import { PRODUCT_LIST } from '@/lib/helper/testData'
 import ProductSlider from '../product-slider'
-import ProductGrid from '../product-grid'
+import ProductCard from '../product-card'
 
 const RecentlyViewProducts: React.FC = () => {
    const data = PRODUCT_LIST
@@ -9,7 +9,8 @@ const RecentlyViewProducts: React.FC = () => {
 
     return (
         <ProductSlider title="Recently Viewed" products={data} redirectLink="/products">
-            {() => <ProductGrid products={data} cardType="new" columns={4} />}
+             {(product) => <ProductCard product={product} />}
+            {/* {() => <ProductGrid products={data} cardType="new" columns={4} />} */}
         </ProductSlider>
     )
 }

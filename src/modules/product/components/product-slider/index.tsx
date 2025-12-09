@@ -1,6 +1,8 @@
 import React from 'react'
 import type { ProductType } from '@/types/products';
 import CardWrapper from '@/components/ui/card-wrapper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Scrollbar } from 'swiper/modules';
 
 interface ProductSliderProps {
     title?: string;
@@ -15,8 +17,8 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ title, subtitle, products
     return (
         <CardWrapper title={title} subtitle={subtitle} redirectLink={redirectLink}>
             <div className="w-full flex overflow-x-auto scrollbar-hidden scroll-smooth">
-                {children(products[0])}
-                {/* <Swiper
+                {/* {children(products[0])} */}
+                <Swiper
                     slidesPerView={4}
                     spaceBetween={70}
                     slidesPerGroup={4}
@@ -31,7 +33,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ title, subtitle, products
                             {children(product)}
                         </SwiperSlide>
                     ))}
-                </Swiper> */}
+                </Swiper>
             </div>
         </CardWrapper>
     )

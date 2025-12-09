@@ -1,5 +1,5 @@
 import { PRODUCT_LIST } from '@/lib/helper/testData'
-import ProductGrid from '@/modules/product/components/product-grid'
+import ProductCard from '@/modules/product/components/product-card'
 import ProductSlider from '@/modules/product/components/product-slider'
 
 const NewArrivalsProductsCategory = () => {
@@ -8,8 +8,8 @@ const NewArrivalsProductsCategory = () => {
 
   return (
         <ProductSlider title="New Arrivals" subtitle="Check out our new arrivals." products={data}>
-            {/* {(product) => <ProductCard product={product} cardType="new" />} */}
-            {() => <ProductGrid products={data} cardType='new' columns={4} />}
+            {(product) => <ProductCard product={product} cardType="new" />}
+            {/* {() => <ProductGrid products={data} cardType='new' columns={4} />} */}
         </ProductSlider>
   )
 }

@@ -1,7 +1,7 @@
-import DropDownMenu from "@/components/ui/drop-down"
+import SelectMenu from "@/components/ui/drop-down"
 import { useState } from "react"
 
-const SortedbyDropDown = () => {
+const SortedbySelectMenu = () => {
 
     const FilterOption = [
         { filterValue: "Low toHigh", filterName: "Price: Low to High", },
@@ -22,11 +22,11 @@ const SortedbyDropDown = () => {
               <div className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
                     <p className="text-[var(--color-muted)] whitespace-nowrap">Sorted By:</p>
 
-                    <DropDownMenu value={sortValue} options={ FilterOption} onValueChange={setSortValue} />
+                    <SelectMenu value={sortValue} options={ FilterOption} onValueChange={setSortValue} />
                 </div>
             </div>
         </>
     )
 }
 
-export default SortedbyDropDown
+export default SortedbySelectMenu

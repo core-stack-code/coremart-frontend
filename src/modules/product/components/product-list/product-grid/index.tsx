@@ -1,15 +1,18 @@
+import ProductCard from '../../product-card'
 import ProductGrid from '../../product-grid'
-import ProductSlider from '../../product-slider'
 import { PRODUCT_LIST } from '@/lib/helper/testData'
 
 const ProductGridList = () => {
     const data = PRODUCT_LIST
 
   return (
-     <ProductSlider products={data}>
-            {/* {(product) => <ProductCard product={product} cardType="new" />} */}
-            {() => <ProductGrid products={data} columns={3} rows={data.length} />}
-        </ProductSlider>
+            <ProductGrid  columns={3} className='gap-x-18 gap-y-15' >
+              {
+                data.map((product) => (
+                  <ProductCard key={product._id} product={product} cardType="normal" />
+                ))
+              }
+            </ProductGrid>
   )
 }
 

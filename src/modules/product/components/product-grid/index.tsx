@@ -37,44 +37,31 @@
 
 
 import React from "react";
-import type { ProductType } from "@/types/products";
-import ProductCard from "../product-card";
+import { cn } from "@/lib/utils";
 
 interface ProductGridProps {
-  products: ProductType[];
   columns?: number;   // how many cards per row
   rows?: number;      // how many rows to show
-  gap?: string;
-  cardType?: "new" | "discount" | "ratting" | "normal";
+  className?: string;
+  children: React.ReactNode;
 }
 
 const ProductGrid: React.FC<ProductGridProps> = ({
-  products,
-  columns = 4,
-  rows = 1, 
-  gap = "gap-x-18 gap-y-15",
-  cardType = "normal",
+  columns,
+  rows,
+  className,
+  children
 }) => {
 
-  const maxItems = rows ? rows * columns : products.length;
-  const visibleProducts = products.slice(0, maxItems);
 
   return (
-    <div
-      className={`
-        grid 
-        grid-cols-${columns}
-        ${gap}
-        w-full
-      `}
-    >
-      {visibleProducts.map((product) => (
-        <ProductCard
-          key={product._id}
-          product={product}
-          cardType={cardType}
-        />
-      ))}
+    <div className={cn(
+      "w-full grid", 
+      columns ? `grid-cols-${columns}` : "grid-cols-1",
+      rows && `grid-rows-${rows}`,
+      className,
+    )}>
+      {children}
     </div>
   );
 };

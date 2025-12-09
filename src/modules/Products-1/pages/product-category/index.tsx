@@ -1,9 +1,9 @@
-import NewArrivalsProductsCategory from '@/modules/category/components/new-arrivals-products'
-import SortedbyDropDown from '../../components/product-list/SortedBy-DropDown'
 import Banner from "@/modules/product/components/banner"
 import CategoryQueue from "@/modules/product/components/category-queue"
-import TopWearProrductCategory from '@/modules/category/components/top-wear-products'
+import TopWearProrductCategory from '@/modules/category/components/product-category-grid'
 import TrendingProductCategory from '@/modules/category/components/trending-products'
+import NewArrivalsProducts from '@/modules/product/components/new-arrivals-products'
+import SortedbySelectMenu from "../../components/product-list/SortedBy-DropDown"
 
 const ProductCategory = () => {
     return (
@@ -11,7 +11,7 @@ const ProductCategory = () => {
             <div className="w-full flex flex-col justify-center mx-auto items-center gap-4 ">
                 <Banner />
                 <div className="w-full flex flex-col py-5">
-                    <SortedbyDropDown />
+                    <SortedbySelectMenu />
                 </div>
             </div>
 
@@ -21,7 +21,7 @@ const ProductCategory = () => {
 
                 <TopWearProrductCategory />
 
-                <NewArrivalsProductsCategory />
+                <NewArrivalsProducts />
 
                 <TrendingProductCategory />
 

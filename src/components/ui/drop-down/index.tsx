@@ -8,12 +8,12 @@ interface DropDownMenuProps {
 }
 
 
-const DropDownMenu: React.FC<DropDownMenuProps> = ({ value, options, onValueChange }) => {
+const SelectMenu: React.FC<DropDownMenuProps> = ({ value, options, onValueChange }) => {
 
     if (onValueChange) { console.log(value) }
     return (
         <Select value={value} onValueChange={onValueChange}>
-            <SelectTrigger className="w-full sm:w-auto md:w-auto flex justify-between items-center rounded-[var(--border-radius)] border-border border-2 px-4 py-2 cursor-pointer">
+            <SelectTrigger className="w-full sm:w-auto md:w-45 flex justify-between items-center rounded-[var(--border-radius)] border-border border-2 px-4 py-2 cursor-pointer">
                 <SelectValue placeholder={value} />
             </SelectTrigger>
 
@@ -35,4 +35,4 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ value, options, onValueChan
     )
 }
 
-export default DropDownMenu
+export default SelectMenu

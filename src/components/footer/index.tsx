@@ -1,23 +1,47 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Icon, { type CombinedIconName } from '../ui/icons'
+import Icon from '../ui/icons'
 import FooterCategoryColumn from '../ui/footer-categories';
+import { Separator } from '../ui/separator';
+
+ 
+
+const shopItems: { text: string, redirect: string }[] = [
+    { text: 'casual', redirect: '/product/category' },
+    { text: 'formal', redirect: '/product/category' },
+    { text: 'sportswear', redirect: '/product/category' },
+    { text: 'sleepwear', redirect: '/product/category' },
+    { text: 'outerwear', redirect: '/product/category' },
+    { text: 'workoutwear', redirect: '/product/category' }
+];
+
+const CustomerAccountItems: { text: string, redirect: string }[] = [
+    { text: 'My Account', redirect: '/' },
+    { text: 'Order History', redirect: '/' },
+    { text: 'Whislist', redirect: '/' },
+    { text: 'Track Order', redirect: '/' },
+    { text: 'Returns & Exchanges', redirect: '/' }
+];
+
+const CustomerSupportItems: { text: string, redirect: string }[] = [
+    { text: 'Contact us', redirect: '/' },
+    { text: 'FAQs', redirect: '/' },
+    { text: 'Shipping Information', redirect: '/' },
+    { text: 'Return Policy', redirect: '/' }
+];
+
+
+const ContactItems: { text: string, redirect: string, icon: React.ReactNode }[] = [
+    { text: 'contact@gmail.com', redirect: '/', icon: <Icon name='mailIcon' width={18} height={18} /> },
+    { text: '+91 1234567890', redirect: '/', icon: <Icon name='phoneIcon' width={18} height={18} /> },
+    { text: 'Gujarat,india', redirect: '/', icon: <Icon name='locationIcon' width={23} height={23} /> }
+]
+
 
 const Footer: React.FC = () => {
 
-    const shopItems: string[] = ['Man', 'Woman', 'Kids', 'New Arrivals', 'sales'];
-    const CustomerAccountItems: string[] = ['My Account', 'Order History', 'Whislist', 'Track Order', 'Returns & Exchanges'];
-    const CustomerSupportItems: string[] = ['Contact us', 'FAQ', 'Shipping Information', 'Return Policy'];
-    const ContactItems: { icon: CombinedIconName, title: string, width: number, height: number}[] = [
-        { icon: 'mailIcon', title: 'contact@company.com', width: 18, height: 18 },
-        { icon: 'phoneIcon', title: '+91 1234567890', width: 18, height: 18 },
-        { icon: 'locationIcon', title: 'Gujarat,india', width: 23, height: 23 }
-    ]
-
-
     return (
         <>
-
             <div className='w-full flex flex-col justify-start px-30 mt-17'>
                 <div className='flex '>
                     <div>
@@ -48,8 +72,8 @@ const Footer: React.FC = () => {
 
                             <FooterCategoryColumn title='Customer Support' items={CustomerSupportItems} />
 
-                            <FooterCategoryColumn title='Contact Us' contactItems={ContactItems} />
-                            
+                            <FooterCategoryColumn title='Contact Us' items={ContactItems} />
+
                         </div>
                     </div>
 
@@ -60,10 +84,11 @@ const Footer: React.FC = () => {
                     <div className='px-3'>
                         <p>Copyright © 2025 CoreStack</p>
                     </div>
-                    <div className='flex gap-2'>
-                        <p>All Rights Reserved |</p>
+                    <div className='flex gap-2 h-4 '>
+                        <p>All Rights Reserved</p>
+                        <Separator orientation='vertical' className='h-full border border-muted' />
                         <p className='text-primary border-b'>Terms and Conditions</p>
-                        <p>|</p>
+                        <Separator orientation='vertical' className='h-full border border-muted' />
                         <p className='text-primary border-b'>Privacy Policy</p>
                     </div>
                 </div>

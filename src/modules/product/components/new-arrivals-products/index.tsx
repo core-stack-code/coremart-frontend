@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductSlider from '../product-slider'
 import { PRODUCT_LIST } from '@/lib/helper/testData'
-import ProductGrid from '../product-grid'
+import ProductCard from '../product-card'
 
 
 const NewArrivalsProducts: React.FC = () => {
@@ -10,8 +10,8 @@ const NewArrivalsProducts: React.FC = () => {
 
     return (
         <ProductSlider title="New Arrivals" products={data} redirectLink="/products">
-            {/* {(product) => <ProductCard product={product} cardType="new" />} */}
-            {() => <ProductGrid products={data} cardType="new" columns={4} />}
+            {(product) => <ProductCard product={product} cardType="new" />}
+            {/* {() => <ProductGrid products={data} cardType="new" columns={4} />} */}
         </ProductSlider>
 
     )
