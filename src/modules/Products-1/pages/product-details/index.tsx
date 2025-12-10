@@ -2,7 +2,6 @@ import Icon from '@/components/ui/icons'
 import { useState } from 'react';
 import review from '@/utils/Review.json'
 import rating from '@/utils/Rating.json'
-import { cardType } from '../home';
 import { Button } from '@/components/ui/button';
 import ProductCard from '@/./utils/Main/Product-card.json'
 import '@/./App.css'

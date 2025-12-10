@@ -1,9 +1,10 @@
 import Banner from "@/modules/product/components/banner"
 import CategoryQueue from "@/modules/product/components/category-queue"
-import TopWearProrductCategory from '@/modules/category/components/product-category-grid'
-import TrendingProductCategory from '@/modules/category/components/trending-products'
 import NewArrivalsProducts from '@/modules/product/components/new-arrivals-products'
-import SortedbySelectMenu from "../../components/product-list/SortedBy-DropDown"
+import SortedbySelectMenu from "@/modules/Products-1/components/product-list/SortedBy-DropDown"
+import TrendingProducts from "@/modules/product/components/trending-products"
+import ProrductCategoryGrid from "@/modules/category/components/product-category-grid"
+
 
 const ProductCategory = () => {
     return (
@@ -15,15 +16,18 @@ const ProductCategory = () => {
                 </div>
             </div>
 
-            <div className="mx-auto w-full md:w-full lg:w-full xl:w-full flex flex-col gap-16">
+            <div className="flex flex-col gap-7">
 
                 <CategoryQueue />
-
-                <TopWearProrductCategory />
+                <div>
+                    <h2 className='text-lg font-semibold'>Top Wear</h2>
+                    <p className=" text-md text-muted">Check out our top wear.</p>
+                </div>
+                <ProrductCategoryGrid />
 
                 <NewArrivalsProducts />
 
-                <TrendingProductCategory />
+                <TrendingProducts />
 
             </div>
         </>
