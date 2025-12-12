@@ -58,7 +58,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal" 
 
                     <div className='absolute top-3 right-3 text-muted'>
                         <Icon
-                            name='heart'
+                            name='Heart'
                             width={24}
                             height={24}
                             stroke={product.isFav ? "#EF4444" : 'currentColor'}

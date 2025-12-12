@@ -12,16 +12,16 @@ export const NavigationItems = [
 const Navbar = () => {
   return (
     <ul className="hidden lg:flex gap-7 font-normal text-lg">
-        {NavigationItems.map((nav, index) => (
-            <NavLink
-                key={index} 
-                to={nav.path} 
-                className={({ isActive }) => isActive ? "text-primary" : "text-muted-secondry hover:text-primary/60"} 
-                end 
-            >
-                {nav.label}
-            </NavLink>
-        ))}
+      {NavigationItems.map((nav, index) => (
+        <NavLink
+          key={index} 
+          to={nav.path} 
+          className={({ isActive }) => isActive ? "text-primary" : "text-muted-secondry hover:text-primary/60"} 
+          end 
+        >
+          {nav.label}
+        </NavLink>
+      ))}
     </ul>
   )
 }

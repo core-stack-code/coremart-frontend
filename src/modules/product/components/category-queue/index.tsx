@@ -25,7 +25,7 @@ const CategoryQueue: React.FC<{ isRedirect?: boolean }> = ({ isRedirect = false 
     const handleCategoryChange = (category: Category) => {
         dispatch(setCategory(category));
         if(isRedirect) {
-            navigate('/category');
+            navigate('/product/category');
         }
     }
 

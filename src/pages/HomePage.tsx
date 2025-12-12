@@ -21,13 +21,12 @@ const HomePage: React.FC = () => {
             <HeroSection />
 
             <div className="flex flex-col gap-8">
-                <CategoryQueue />
+                <CategoryQueue isRedirect />
         
                 <NewArrivalsProducts />
 
                 <Banner />
 
-                {/* <NewArrivalsProducts /> */}
                 <TrendingProducts/>
 
                 <BestSellerProducts />

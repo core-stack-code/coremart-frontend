@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Textfield from "../ui/form/textfield";
-import { Popover, PopoverTrigger } from "../ui/popover";
-import { PopoverContent } from "@radix-ui/react-popover";
+import { Popover, PopoverTrigger, PopoverContent } from "../ui/popover";
+
 
 const SearchBar: React.FC = () => {
     const [open, setOpen] = useState<boolean>(false);

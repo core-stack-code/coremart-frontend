@@ -1,5 +1,5 @@
 import type { Filters } from "@/modules/product/apis/types"
-import type { CartItemType, CartType, Category } from "@/types/products";
+import type { CartItemType, Category } from "@/types/products";
 import { createSlice, current, type PayloadAction } from "@reduxjs/toolkit"
 
 
@@ -79,7 +79,6 @@ const productSlice = createSlice({
 
             current(state.cart)
         },
-
         setCategory: (state, action: PayloadAction<Category>) => {
             state.category = action.payload
         }

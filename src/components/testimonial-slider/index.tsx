@@ -2,11 +2,11 @@ import React from 'react'
 import CardWrapper from '../ui/card-wrapper'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import { cn } from '@/lib/utils';
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import { cn } from '@/lib/utils';
 
 const testimonials = [
     { id: 1, name: "Alice", text: "Amazing product!" },

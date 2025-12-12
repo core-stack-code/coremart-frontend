@@ -16,11 +16,6 @@ import GithubIcon from "./github-icon";
 import UserIcon from "./user-icon";
 import SearchIcon from "./search-icon";
 import NotificationIcon from "./notification-icon";
-import ProfileIcon from "./profile-icon";
-import FacebookIcon from "./facebook-icon";
-import InstagramIcon from "./instagram-icon";
-import LinkdinIcon from "./linkdin-icon";
-import TwitterIcon from "./twitter-icon";
 import PhoneIcon from "./phone-icon";
 import LocationIcon from "./location-icon";
 import FilterIcon from "./filter-icon";
@@ -45,14 +40,6 @@ import TotalSalesIcon from "./total-sales";
 import ProfitUPIcon from "./profit-up-icon";
 import PaidIcon from "./paid-icon";
 
-
-import LogoIcon from "./logo";
-import CartIcon from "./cart-icon";
-import BellIcon from "./bell-icon";
-import ChatBubbleIcon from "./chat-bubble";
-import LeftArrowIcon from "./left-arrow";
-import RightArrowIcon from "./right-arrow";
-import CategoriesIcon from "./categories-icon";
 import AddCartIcon from "./add-cart-icon";
 import StarHalfIcon from "./star-half-icon";
 import StarIcon from "./star-icon";
@@ -60,30 +47,44 @@ import StarOutlineIcon from "./star-outline-icon";
 import TruckIcon from "./truck-icon";
 import HeadphoneIcon from "./headphone-icon";
 import ShileldRightIcon from "./shield-right-icon";
-import DeleteIcon from "./delete-icon";
-import OrderShippedBadge from "./order-badges/shipped";
-import OrderDeliveredBadge from "./order-badges/delivered";
-import OrderCanceledBadge from "./order-badges/canceled";
-import DashboardSliderDashBoardIcon from "./dashboard-slider/dashboard-icon";
-import DashboardSliderProductsIcon from "./dashboard-slider/products-icon";
-import DashboardSliderOrderListsIcon from "./dashboard-slider/order-lists-icon";
-import DashboardSliderCustomersIcon from "./dashboard-slider/customers-icon";
-import DashboardSliderCategoriesIcon from "./dashboard-slider/categories-icon";
-import DashboardSliderInventoryIcon from "./dashboard-slider/inventory-icon";
-import DashboardSliderMessagesIcon from "./dashboard-slider/messages-icon";
-import DashboardSliderReportsIcon from "./dashboard-slider/reports-icon";
-import dashboardSliderSettingsIcon from "./dashboard-slider/settings-icon";
-import dashboardSliderLogoutIcon from "./dashboard-slider/logout-icon";
-import ProfitDownIcon from "./profit-down-icon";
-import WhislistIcon from "./productlist-whislist-icon";
+// import OrderShippedBadge from "./order-badges/shipped";
+// import OrderDeliveredBadge from "./order-badges/delivered";
+// import OrderCanceledBadge from "./order-badges/canceled";
+// import DashboardSliderDashBoardIcon from "./dashboard-slider/dashboard-icon";
+// import DashboardSliderProductsIcon from "./dashboard-slider/products-icon";
+// import DashboardSliderOrderListsIcon from "./dashboard-slider/order-lists-icon";
+// import DashboardSliderCustomersIcon from "./dashboard-slider/customers-icon";
+// import DashboardSliderCategoriesIcon from "./dashboard-slider/categories-icon";
+// import DashboardSliderInventoryIcon from "./dashboard-slider/inventory-icon";
+// import DashboardSliderMessagesIcon from "./dashboard-slider/messages-icon";
+// import DashboardSliderReportsIcon from "./dashboard-slider/reports-icon";
+// import dashboardSliderSettingsIcon from "./dashboard-slider/settings-icon";
+// import dashboardSliderLogoutIcon from "./dashboard-slider/logout-icon";
+// import ProfitDownIcon from "./profit-down-icon";
+// import WhislistIcon from "./productlist-whislist-icon";
 // import PlusIcon from "./plus-icon";
 // import MinusIcon from "./minus-icon";
+
+import LogoIcon from "./customs/logo";
+import CartIcon from "./customs/cart-icon";
+import BellIcon from "./customs/bell-icon";
+import ProfileIcon from "./customs/profile-icon";
+import DeleteIcon from "./customs/delete-icon";
+import InstagramIcon from "./customs/instagram-icon";
+import FacebookIcon from "./customs/facebook-icon";
+import LinkdinIcon from "./customs/linkdin-icon";
+import TwitterIcon from "./customs/twitter-icon";
+import ChatBubbleIcon from "./customs/chat-bubble";
+import LeftArrowIcon from "./customs/left-arrow";
+import RightArrowIcon from "./customs/right-arrow";
+import CategoriesIcon from "./customs/categories-icon";
+
 
 export const LUCIDE_ICON_MAP = {
     Search: Search,
     menuIcon: Menu,
-    rightCircleArrow: CircleArrowRight,
-    heart: Heart,
+    CircleArrowRight: CircleArrowRight,
+    Heart: Heart,
 }
 
 export const CUSTOM_ICON_MAP = {
@@ -91,10 +92,16 @@ export const CUSTOM_ICON_MAP = {
     cart: CartIcon,
     bell: BellIcon,
     profile: ProfileIcon,
-    chatBubbleIcon: ChatBubbleIcon,
+    delete: DeleteIcon,
+    instagram: InstagramIcon,
+    facebook: FacebookIcon,
+    linkdin: LinkdinIcon,
+    twitter: TwitterIcon,
+    chatBubble: ChatBubbleIcon,
     leftArrow: LeftArrowIcon,
     rightArrow: RightArrowIcon,
     categories: CategoriesIcon,
+
     addCart: AddCartIcon,
     starHalf: StarHalfIcon,
     star: StarIcon,
@@ -104,9 +111,6 @@ export const CUSTOM_ICON_MAP = {
     shieldRight: ShileldRightIcon,
     plus: PlusIcon,
     minus: MinusIcon,
-    delete: DeleteIcon,
-
-
     mailIcon: MailIcon,
     lockIcon: LockIcon,
     eyeIcon: EyeIcon,
@@ -115,13 +119,7 @@ export const CUSTOM_ICON_MAP = {
     githubIcon: GithubIcon,
     userIcon: UserIcon,
     searchIcon: SearchIcon,
-    whislistIcon: WhislistIcon,
     notificationIcon: NotificationIcon,
-    profileIcon: ProfileIcon,
-    facebookIcon: FacebookIcon,
-    instagramIcon: InstagramIcon,
-    linkdinIcon: LinkdinIcon,
-    twitterIcon: TwitterIcon,
     phoneIcon: PhoneIcon,
     locationIcon: LocationIcon,
     filterIcon: FilterIcon,
@@ -141,23 +139,24 @@ export const CUSTOM_ICON_MAP = {
     aboutserviceIcon:AboutServiceIcon,
     aboutguaranteeIcon:AboutGuaranteeIcon,
     closeIcon:CloseIcon,
-    ordershippedBadge:OrderShippedBadge,
-    orderdeliveredBadge:OrderDeliveredBadge,
-    ordercanceledBadge: OrderCanceledBadge,
-    dashboardsliderdashboardIcon:DashboardSliderDashBoardIcon,
-    dashboardsliderproductsIcon:DashboardSliderProductsIcon,
-    dashboardsliderorderlistsIcon:DashboardSliderOrderListsIcon,
-    dashboardslidercustomersIcon:DashboardSliderCustomersIcon,
-    dashboardslidercategoriesIcon:DashboardSliderCategoriesIcon,
-    dashboardsliderinventoryIcon:DashboardSliderInventoryIcon,
-    dashboardslidermessagesIcon:DashboardSliderMessagesIcon,
-    dashboardsliderreportsIcon:DashboardSliderReportsIcon,
-    dashboardslidersettingsIcon:dashboardSliderSettingsIcon,
-    dashboardsliderlogoutIcon:dashboardSliderLogoutIcon,
     totaluserIcon:TotaUserIcon,
     totalorderIcon:TotalOrderIcon,
     totalsalesIcon:TotalSalesIcon,
     profitupIcon:ProfitUPIcon,
-    profitdownIcon:ProfitDownIcon,
     paidIcon:PaidIcon
+    // whislistIcon: WhislistIcon,
+    // ordershippedBadge:OrderShippedBadge,
+    // orderdeliveredBadge:OrderDeliveredBadge,
+    // ordercanceledBadge: OrderCanceledBadge,
+    // dashboardsliderdashboardIcon:DashboardSliderDashBoardIcon,
+    // dashboardsliderproductsIcon:DashboardSliderProductsIcon,
+    // dashboardsliderorderlistsIcon:DashboardSliderOrderListsIcon,
+    // dashboardslidercustomersIcon:DashboardSliderCustomersIcon,
+    // dashboardslidercategoriesIcon:DashboardSliderCategoriesIcon,
+    // dashboardsliderinventoryIcon:DashboardSliderInventoryIcon,
+    // dashboardslidermessagesIcon:DashboardSliderMessagesIcon,
+    // dashboardsliderreportsIcon:DashboardSliderReportsIcon,
+    // dashboardslidersettingsIcon:dashboardSliderSettingsIcon,
+    // dashboardsliderlogoutIcon:dashboardSliderLogoutIcon,
+    // profitdownIcon:ProfitDownIcon,
 }

@@ -3,8 +3,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "@/layouts/RootLayout";
 import ErrorPage from "@/pages/ErrorPage";
 import HomePage from "@/pages/HomePage";
+import ProductCategory from "@/modules/product/pages/ProductCategory";
+
 import ProductList from "@/modules/Products-1/pages/product-list";
-import ProductCategory from "@/modules/category/pages/product-category";
 import ProductDetails from "@/modules/Products-1/pages/product-details";
 import YourCart from "@/modules/me/pages/your-cart";
 import Profile from "@/modules/me/pages/profile";

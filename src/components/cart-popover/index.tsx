@@ -1,14 +1,16 @@
 import React from 'react'
-import Icon from '../ui/icons'
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
-import { cn } from '@/lib/utils';
 import { CART } from '@/lib/helper/testData';
-import AddSubButton from '../ui/add-sub-btn';
-import ListItem from '../ui/list-item';
+import { cn } from '@/lib/utils';
+
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import { Separator } from '../ui/separator';
 import { Button } from '../ui/button';
+import Icon from '../ui/icons'
+import AddSubButton from '../ui/add-sub-btn';
+import ListItem from '../ui/list-item';
 
-const CardPopover: React.FC = () => {
+
+const CartPopover: React.FC = () => {
     const [open, setOpen] = React.useState<boolean>(false);
     const isLoading = false;
 
@@ -64,7 +66,7 @@ const CardPopover: React.FC = () => {
         <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger 
                 className={cn(
-                    'hover:text-primary/60',
+                    'hover:text-primary/60 cursor-pointer',
                     open ? 'text-primary/60' : 'text-muted'
                 )}
             >
@@ -79,4 +81,4 @@ const CardPopover: React.FC = () => {
     )
 }
 
-export default CardPopover
+export default CartPopover

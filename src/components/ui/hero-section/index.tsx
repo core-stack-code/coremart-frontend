@@ -6,7 +6,7 @@ const HeroSection: React.FC = () => {
     <div className="w-full h-full flex justify-between items-center">
       <div className="flex flex-col items-start h-full w-full gap-8 mb-6">
         <div className='w-full flex justify-start pl-50'>
-          <Icon name="chatBubbleIcon" />
+          <Icon name="chatBubble" />
         </div>
         <div className='flex flex-col gap-1.5'>
           <h2 className="text-4xl font-bold">
