@@ -47,6 +47,8 @@ const productSlice = createSlice({
         // },
         getCardDetails: (state, action: PayloadAction<CartItemType>) => {
             const newItem = action.payload;
+            let totalPrice = 0;
+            let totalQty = 0;
 
             const existingItem = state.cart.items.find(
                 (item) => item.product._id === newItem.product._id
@@ -58,26 +60,59 @@ const productSlice = createSlice({
 
                 existingItem.itemTotal = existingItem.quantity * existingItem.product.price;
 
-                console.log("Item Updated:", current(state.cart));
+                state.cart.items.forEach((item) => {
+                    totalPrice += item.itemTotal;
+                    totalQty += item.quantity;
+                });
+
+                state.cart.totalPrice = totalPrice;
+                state.cart.totalQuantity = totalQty;
+
             } else {
 
                 state.cart.items.push(newItem);
 
-                console.log("Item Added:", current(state.cart));
+                state.cart.items.forEach((item) => {
+                    totalPrice += item.itemTotal;
+                    totalQty += item.quantity;
+                });
+
+                state.cart.totalPrice = totalPrice;
+                state.cart.totalQuantity = totalQty;
+
             }
 
-            let totalPrice = 0;
-            let totalQty = 0;
-
-            state.cart.items.forEach((item) => {
-                totalPrice += item.itemTotal;
-                totalQty += item.quantity;
-            });
-
-            state.cart.totalPrice = totalPrice;
-            state.cart.totalQuantity = totalQty;
-
-            current(state.cart)
+            console.log("Cart State:", current(state.cart));
+        },
+        increaseQuantity: (state, action: PayloadAction<string>) => {
+            const productId = action.payload;
+            const item = state.cart.items.find(item => item.product._id === productId);
+            if (item) {
+                item.quantity += 1;
+                item.itemTotal = item.quantity * item.product.price;
+                state.cart.totalQuantity += 1;
+                state.cart.totalPrice += item.product.price;
+            }
+        },
+        decreaseQuantity: (state, action: PayloadAction<string>) => {
+            const productId = action.payload;
+            const item = state.cart.items.find(item => item.product._id === productId);
+            if (item && item.quantity > 1) {
+                item.quantity -= 1;
+                item.itemTotal = item.quantity * item.product.price;
+                state.cart.totalQuantity -= 1;
+                state.cart.totalPrice -= item.product.price;
+            }
+        },
+        removeProduct: (state, action: PayloadAction<string>) => {
+            const productId = action.payload;
+            const itemIndex = state.cart.items.findIndex(item => item.product._id === productId);
+            if (itemIndex !== -1) {
+                const item = state.cart.items[itemIndex];
+                state.cart.totalQuantity -= item.quantity;
+                state.cart.totalPrice -= item.itemTotal;
+                state.cart.items.splice(itemIndex, 1);
+            }
         },
         setCategory: (state, action: PayloadAction<Category>) => {
             state.category = action.payload
@@ -85,5 +120,5 @@ const productSlice = createSlice({
     }
 })
 
-export const { getCardDetails, getFilters, setCategory } = productSlice.actions
+export const { getCardDetails, increaseQuantity, decreaseQuantity, removeProduct, getFilters, setCategory } = productSlice.actions
 export default productSlice.reducer

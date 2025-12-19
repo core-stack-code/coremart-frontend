@@ -12,7 +12,7 @@ const ListItem: React.FC<ListItemProps> = ({ deleteIcon, addSubBtn, product }) =
     return (
         <div className='w-full h-full p-1 rounded-xl border border-border flex items-center justify-between gap-2'>
             <div className='w-25 h-25 flex items-center justify-center rounded-md'>
-                <img src='/hero1.png' alt='cartitem' className='w-full h-full rounded-md object-cover' />
+                <img src={product.image} alt='cartitem' className='w-full h-full rounded-md object-cover' />
             </div>
             <div className='w-full h-25 flex flex-col gap-3 justify-between p-2'>
                 <div className='flex justify-between gap-2'>

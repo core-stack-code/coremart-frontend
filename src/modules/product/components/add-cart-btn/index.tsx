@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import Icon from '@/components/ui/icons'
-
+import { useToast } from '@/hooks/useToast'
 
 interface addCartButtonProps {
     productId: string,
@@ -11,8 +11,10 @@ interface addCartButtonProps {
 
 const AddCartButton: React.FC<addCartButtonProps> = ({ productId, getCardData  }) => {
 
+        const toast = useToast()
+
     return (
-        <Button variant="outline" size="sm" onClick={getCardData} className='rounded-rad' >
+        <Button variant="outline" size="sm" onClick={() => {getCardData(), toast.success("Product added to cart", "Jay")}} className='rounded-rad' >
             <Icon name='addCart' width={12} height={12} className='hover:text-white' />
             <span className='text-xs font-normal'>Add to Cart</span>
         </Button>

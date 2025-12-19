@@ -3,8 +3,8 @@ import type { CartItemType, ProductType } from '@/types/products'
 import Icon from '@/components/ui/icons'
 import AddCartButton from '../add-cart-btn'
 import Ratting from '../ratting'
-import { useDispatch } from 'react-redux'
 import { getCardDetails } from '@/store/slices/productSlice'
+import { useAppDispatch } from '@/hooks/redux'
 
 type ProductCardType = "new" | "discount" | "ratting" | "normal"
 
@@ -15,7 +15,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal" }) => {
 
-    const disPatch = useDispatch();
+    const disPatch = useAppDispatch();
 
     const getCardData = () => {
         const data: CartItemType = {

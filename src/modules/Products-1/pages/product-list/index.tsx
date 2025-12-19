@@ -5,7 +5,8 @@ import ProductCard from '@/./utils/Main/Product-card.json'
 import ProductListCard from "../../components/product-category/Product List";
 import Paggination from "../../components/product-list/Paggination";
 import ProductGridList from "@/modules/product/components/product-list/product-grid";
-import SortedbySelectMenu from "../../components/product-list/SortedBy-DropDown";
+import CategoryPageHeader from "@/modules/product/components/category-header";
+
 
 const ProductList = () => {
 
@@ -30,7 +31,8 @@ const ProductList = () => {
             <div className=" w-full flex flex-col">
                 <div className="flex flex-col sm:px-5 md:px-0 lg:px-0 xl:px-0 sm:flex-row sm:justify-end justify-center items-center py-2 gap-2">
 
-                    <SortedbySelectMenu />
+                    {/* <SortedbySelectMenu /> */}
+                    <CategoryPageHeader productCount={200} />
 
                     <div className="flex items-center gap-2">
                         <button

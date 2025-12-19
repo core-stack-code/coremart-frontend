@@ -3,8 +3,8 @@ import SelectField from '@/components/ui/form/select-field';
 import { CATEGORY_SORT_OPTIONS } from '@/constants/product';
 
 interface CategoryPageHeaderProps {
-    title: string;
-    subtitle: string;
+    title?: string;
+    subtitle?: string;
     productCount: number;
 
 }
