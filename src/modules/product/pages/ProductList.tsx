@@ -2,8 +2,8 @@ import Icon from "@/components/ui/icons";
 import FilterLayout from "@/layouts/FilterLayout";
 import { useState } from "react";
 import ProductCard from '@/./utils/Main/Product-card.json'
-import ProductListCard from "../../components/product-category/Product List";
-import Paggination from "../../components/product-list/Paggination";
+import ProductListCard from "../../Products-1/components/product-category/Product List";
+import Paggination from "../../Products-1/components/product-list/Paggination";
 import ProductGridList from "@/modules/product/components/product-list/product-grid";
 import CategoryPageHeader from "@/modules/product/components/category-header";
 

@@ -6,6 +6,15 @@ interface ActioonOption {
     action?: () => void;
 }
 
+type ToastType = "success" | "error" | "info" | "warning";
+
+const TOAST_STYLE_MAP: Record<ToastType, string> = {
+    success: "bg-green-600 text-white",
+    error: "bg-red-600 text-white",
+    info: "bg-blue-600 text-white",
+    warning: "bg-yellow-600 text-black",
+}
+
 export const useToast = () => {
     const loadingToastId = useRef<string | number | null>(null);
 
@@ -16,6 +25,8 @@ export const useToast = () => {
         action?: ActioonOption
     ) => {
         toast[type](title, {
+            unstyled: true,
+            className: `flex gap-3 px-4 py-3 rounded-md shadow-md ${TOAST_STYLE_MAP[type]}`,
             description: description,
             action: action?.actionLabel
                 ? {

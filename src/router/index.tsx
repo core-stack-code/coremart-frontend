@@ -1,11 +1,11 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import RootLayout from "@/layouts/RootLayout";
 import ErrorPage from "@/pages/ErrorPage";
 import HomePage from "@/pages/HomePage";
 import ProductCategory from "@/modules/product/pages/ProductCategory";
 
-import ProductList from "@/modules/Products-1/pages/product-list";
+import ProductList from "@/modules/product/pages/ProductList";
 import ProductDetails from "@/modules/Products-1/pages/product-details";
 import YourCart from "@/modules/me/pages/your-cart";
 import Profile from "@/modules/me/pages/profile";
@@ -35,7 +35,12 @@ const router = createBrowserRouter([
                 path: 'product',
                 children: [
                     { index: true, element: <ProductList /> },
-                    { path: 'category', element: <ProductCategory /> },
+                    { path: 'category', element: <Outlet/>, 
+                        children: [
+                            { index: true, element: <ProductCategory /> },
+                            { path: ':category', element: <ProductCategory /> },
+                        ]
+                     },
                     { path: ':slug', element: <ProductDetails /> },
                 ]
             },
