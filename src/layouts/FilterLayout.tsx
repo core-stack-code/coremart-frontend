@@ -63,11 +63,11 @@ const FilterLayout = () => {
 
   return (
     <>
-      <div className=" h-fit w-1/3 mx-5 md:mx-5 lg:mx-5 xl:mx-5 sm:w-1/3 md:w-1/3 lg:w-1/4 xl:w-auto h-[100%] bg-white p-4 border-[var(--color-border)] border rounded-2xl">
+      <div className=" h-fit w-1/3 mx-5 md:mx-5 lg:mx-5 xl:mx-5 sm:w-1/3 md:w-1/3 lg:w-1/4 xl:w-auto bg-white p-4 border-[var(--color-border)] border rounded-2xl">
 
         <div className="flex flex-row w-full justify-between">
           <h2 className="text-xl font-bold mb-6 ">Filter</h2>
-          <Icon name="filterIcon" width={23} height={23} />
+          <Icon name="filter" width={23} height={23} />
         </div>
 
         <ClothSize filters={filters} toggleOption={toggleOption} />

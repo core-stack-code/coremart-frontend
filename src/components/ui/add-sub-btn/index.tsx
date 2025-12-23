@@ -19,7 +19,7 @@ const AddSubButton: React.FC<AddSubButtonProps> = ({ count, addAction, subAction
                 onClick={subAction} 
                 className='bg-transparent hover:bg-transparent border-0 p-0 h-7'
             >
-                <Icon name='minus' width={8} height={8} strokeWidth={3}  className='text-primary hover:text-primary-hover' />
+                <Icon name='MinusIcon' width={8} height={8} strokeWidth={3}  className='text-primary hover:text-primary-hover' />
             </Button>
             <span className='text-xs font-medium'>{count}</span>
             <Button 
@@ -28,7 +28,7 @@ const AddSubButton: React.FC<AddSubButtonProps> = ({ count, addAction, subAction
                 onClick={addAction} 
                 className='bg-transparent hover:bg-transparent border-0 p-0 h-7'
             >
-                <Icon name='plus' width={8} height={8} strokeWidth={3} className='text-primary hover:text-primary-hover'  />
+                <Icon name='PlusIcon' width={8} height={8} strokeWidth={3} className='text-primary hover:text-primary-hover'  />
             </Button>
         </div>
     )

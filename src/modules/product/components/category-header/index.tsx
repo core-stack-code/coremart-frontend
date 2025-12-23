@@ -9,6 +9,9 @@ interface CategoryPageHeaderProps {
 
 }
 
+// have to add logic that handle sort value with URL query params
+// that work in category page and product list page both
+
 const CategoryPageHeader: React.FC<CategoryPageHeaderProps> = ({ productCount, title, subtitle }) => {
     const [sortValue, setSortValue] = useState<string>(CATEGORY_SORT_OPTIONS[1].value)
     // most probably have to lift this state up

@@ -1,97 +1,49 @@
+import React, { useState } from "react";
+
 import Icon from "@/components/ui/icons";
-import FilterLayout from "@/layouts/FilterLayout";
-import { useState } from "react";
-import ProductCard from '@/./utils/Main/Product-card.json'
-import ProductListCard from "../../Products-1/components/product-category/Product List";
-import Paggination from "../../Products-1/components/product-list/Paggination";
-import ProductGridList from "@/modules/product/components/product-list/product-grid";
 import CategoryPageHeader from "@/modules/product/components/category-header";
+import ProductFilter from "../components/product-filter";
+import ProductGridList from "../components/product-grid-list";
+import { Button } from "@/components/ui/button";
+
+export type ViewType = "grid" | "list";
 
 
-const ProductList = () => {
-
-    const [gridView, setGridView] = useState(true)
-    const [listView, setListView] = useState(false)
-    const [currentPage, setCurrentPage] = useState(1);
-
-    const itemsPerPage = 12;
-
-
-    // Calculate start and end index
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = ProductCard.data.cart.items.slice(indexOfFirstItem, indexOfLastItem);
-
-    const totalPages = Math.ceil(ProductCard.data.cart.items.length / itemsPerPage);
-
+const ProductList: React.FC = () => {
+    const [view, setView] = useState<ViewType>('grid');
 
     return (
-
-        <>
-            <div className=" w-full flex flex-col">
-                <div className="flex flex-col sm:px-5 md:px-0 lg:px-0 xl:px-0 sm:flex-row sm:justify-end justify-center items-center py-2 gap-2">
-
-                    {/* <SortedbySelectMenu /> */}
-                    <CategoryPageHeader productCount={200} />
-
-                    <div className="flex items-center gap-2">
-                        <button
-                            className="hover:cursor-pointer"
-                            onClick={() => { setGridView(true); setListView(false) }}
-                        >
-                            <Icon
-                                name="productgridIcon"
-                                width={27}
-                                height={28}
-                                stroke={gridView ? "var(--color-primary)" : "#000000"}
-                            />
-                        </button>
-                        <button
-                            className="hover:cursor-pointer"
-                            onClick={() => { setGridView(false); setListView(true) }}
-                        >
-                            <Icon
-                                name="productlistIcon"
-                                width={28}
-                                height={28}
-                                stroke={listView ? "var(--color-primary)" : "#000000"}
-                            />
-                        </button>
-                    </div>
-                </div>
-
-                <div className="w-full lg:w-auto xl:w-full flex h-screen overflow-hidden">
-
-                    <FilterLayout />
-                    <div className="flex flex-col flex-grow overflow-hidden">
-
-                        <div className="flex-grow overflow-y-auto scrollbar-hidden scroll-smooth">
-                            {gridView && (
-                                <ProductGridList />
-                            )}
-
-                            {listView && (
-                                <div className="w-full flex flex-col mx-auto gap-7">
-                                    {currentItems.map((productcard, index) => (
-                                        <ProductListCard key={index} item={productcard} />
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-
-
-                        <div className="sticky bottom-0 bg-white shadow-md">
-                            <Paggination
-                                totalPages={totalPages}
-                                currentPage={currentPage}
-                                setCurrentPage={setCurrentPage}
-                            />
-                        </div>
-                    </div>
-
+        <div className="w-full flex flex-col gap-8 pt-8">
+            <div className="w-full flex items-center justify-end gap-4">
+                <CategoryPageHeader productCount={200} />
+                <div className="flex items-center gap-2">
+                    <Button 
+                        variant={view === "grid" ? "default" : "outline"}
+                        size="icon"
+                        type="button"
+                        onClick={() => setView("grid")}
+                    >
+                        <Icon name="LayoutGrid"/>
+                    </Button>
+                    <Button 
+                        variant={view === "list" ? "default" : "outline"}
+                        size="icon"
+                        type="button"
+                        onClick={() => setView("list")}
+                    >
+                        <Icon name="List"/>
+                    </Button>
                 </div>
             </div>
-        </>
+            <div className="w-full grid grid-cols-4 gap-8">
+                <div className="col-span-1">
+                    <ProductFilter />
+                </div>
+                <div className="col-span-3">
+                    <ProductGridList view={view} />
+                </div>
+            </div>
+        </div>
     );
 }
 

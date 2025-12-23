@@ -14,7 +14,7 @@ const Hamburger: React.FC<HamburgerProps> = ({ isMenuOpen, setIsMenuOpen }) => {
       aria-expanded={isMenuOpen}
     >
       <span className="sr-only">Open main menu</span>
-      <Icon name="menuIcon" width={24} height={24} />
+      <Icon name="Menu" width={24} height={24} />
     </button>
   )
 }

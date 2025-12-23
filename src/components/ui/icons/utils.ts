@@ -5,6 +5,8 @@ import {
     Heart,
     PlusIcon,
     MinusIcon,
+    LayoutGrid,
+    List
 } from "lucide-react"
 
 import EyeIcon from "./eye-icon";
@@ -18,7 +20,6 @@ import SearchIcon from "./search-icon";
 import NotificationIcon from "./notification-icon";
 import PhoneIcon from "./phone-icon";
 import LocationIcon from "./location-icon";
-import FilterIcon from "./filter-icon";
 import DropDownArrowIcon from "./drop-down-arrow-icon";
 import ProductGridIcon from "./product-grid-icon";
 import productListIcon from "./product-list-icon";
@@ -78,13 +79,18 @@ import ChatBubbleIcon from "./customs/chat-bubble";
 import LeftArrowIcon from "./customs/left-arrow";
 import RightArrowIcon from "./customs/right-arrow";
 import CategoriesIcon from "./customs/categories-icon";
+import FilterIcon from "./customs/filter-icon";
 
 
 export const LUCIDE_ICON_MAP = {
-    Search: Search,
-    menuIcon: Menu,
-    CircleArrowRight: CircleArrowRight,
-    Heart: Heart,
+    Search,
+    Menu,
+    CircleArrowRight,
+    Heart,
+    LayoutGrid,
+    PlusIcon,
+    MinusIcon,
+    List
 }
 
 export const CUSTOM_ICON_MAP = {
@@ -101,6 +107,7 @@ export const CUSTOM_ICON_MAP = {
     leftArrow: LeftArrowIcon,
     rightArrow: RightArrowIcon,
     categories: CategoriesIcon,
+    filter: FilterIcon,
 
     addCart: AddCartIcon,
     starHalf: StarHalfIcon,
@@ -109,8 +116,6 @@ export const CUSTOM_ICON_MAP = {
     truck: TruckIcon,
     headphone: HeadphoneIcon,
     shieldRight: ShileldRightIcon,
-    plus: PlusIcon,
-    minus: MinusIcon,
     mailIcon: MailIcon,
     lockIcon: LockIcon,
     eyeIcon: EyeIcon,
@@ -122,7 +127,6 @@ export const CUSTOM_ICON_MAP = {
     notificationIcon: NotificationIcon,
     phoneIcon: PhoneIcon,
     locationIcon: LocationIcon,
-    filterIcon: FilterIcon,
     dropdownarrowIcon: DropDownArrowIcon,
     productgridIcon: ProductGridIcon,
     productlistIcon: productListIcon,

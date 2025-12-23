@@ -36,7 +36,7 @@ const Paggination = ({ totalPages, currentPage, setCurrentPage }: PaginationProp
   const pageNumbers = getPageNumbers();
 
   return (
-    <div className="flex justify-center items-center mx-auto space-x-2 mt-6 mb-6 text-sm font-medium">
+    <div className="flex justify-center items-center mx-auto space-x-2 text-sm font-medium">
       <Pagination>
         <PaginationContent>
           {/* Previous Button */}
