@@ -53,6 +53,11 @@ const ProductGrid: React.FC<ProductGridProps> = ({
   children
 }) => {
 
+  const maxItems  = rows && columns ? rows* columns : undefined;
+
+  const childrenArray = React.Children.toArray(children);
+
+  const visibleChildrenArray = maxItems ? childrenArray.slice(0, maxItems) : childrenArray;
 
   return (
     <div className={cn(
@@ -61,7 +66,8 @@ const ProductGrid: React.FC<ProductGridProps> = ({
       rows && `grid-rows-${rows}`,
       className,
     )}>
-      {children}
+      {/* {children} */}
+      {visibleChildrenArray}
     </div>
   );
 };

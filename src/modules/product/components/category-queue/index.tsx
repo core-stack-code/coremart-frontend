@@ -1,7 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '@/hooks/redux';
-import { setCategory } from '@/store/slices/productSlice';
+import { useNavigate, useParams } from 'react-router-dom';
 import type { Category } from '@/types/products';
 
 import Icon from '@/components/ui/icons'
@@ -18,15 +16,22 @@ const CATEGORY: { id: Category; name: string; image: string }[] = [
 
 
 const CategoryQueue: React.FC<{ isRedirect?: boolean }> = ({ isRedirect = false }) => {
-    const category = useAppSelector(state => state.product.category);
+    // const category = useAppSelector(state => state.product.category);
     const navigate = useNavigate()
-    const dispatch = useAppDispatch();
+    // const dispatch = useAppDispatch();
+    const slugcategory = useParams()
+    console.log(slugcategory.category);
+
+    // const handleCategoryChange = (category: Category) => {
+    //     dispatch(setCategory(category));
+    //     if(isRedirect) {
+    //         navigate('/product/category');
+    //     }
+    // }
+
 
     const handleCategoryChange = (category: Category) => {
-        dispatch(setCategory(category));
-        if(isRedirect) {
-            navigate('/product/category');
-        }
+        navigate(`/product/category/${category}`);
     }
 
     return (
@@ -37,11 +42,11 @@ const CategoryQueue: React.FC<{ isRedirect?: boolean }> = ({ isRedirect = false 
             </div>
             <div className='w-full flex justify-between'>
                 {CATEGORY.map((item) => {
-                    const isSelected = category === item.id;
+                    const isSelected = slugcategory.category === item.id;
 
-                    return(
+                    return (
                         <div key={item.id} className='flex flex-col items-center gap-3 hover:text-accent/70'>
-                            <div 
+                            <div
                                 className={cn(
                                     'w-35 h-35 rounded-full flex items-center justify-center border-4 border-white',
                                     'shadow-[0_-6px_12px_rgba(0,0,0,0.1),0_6px_12px_rgba(0,0,0,0.1)] hover:shadow-accent/70 cursor-pointer',

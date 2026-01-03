@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter,  RouterProvider } from "react-router-dom";
 
 import RootLayout from "@/layouts/RootLayout";
 import ErrorPage from "@/pages/ErrorPage";
@@ -22,6 +22,7 @@ import Contact from "@/modules/contact/pages/contact";
 import ForgetPassword from "@/modules/auth/pages/forgot-password";
 import ResetPassword from "@/modules/auth/pages/rest-password";
 import OTPVerify from "@/modules/auth/pages/otp-verify";
+import CategoryLayout from "@/layouts/CategoryLayout";
 
 
 const router = createBrowserRouter([
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
                 path: 'product',
                 children: [
                     { index: true, element: <ProductList /> },
-                    { path: 'category', element: <Outlet/>, 
+                    { path: 'category', element: <CategoryLayout/>, 
                         children: [
                             { index: true, element: <ProductCategory /> },
                             { path: ':category', element: <ProductCategory /> },

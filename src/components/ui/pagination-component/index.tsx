@@ -15,7 +15,7 @@ type PaginationProps = {
 };
 
 const Paggination = ({ totalPages, currentPage, setCurrentPage }: PaginationProps) => {
-  const maxVisiblePages = 5;
+  const maxVisiblePages = 4;
 
   const getPageNumbers = () => {
     let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));

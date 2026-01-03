@@ -46,8 +46,8 @@ const Footer: React.FC = () => {
     const navigate = useNavigate();
 
     const handleCategoryRedirect = useCallback((cate: Category) => {
-        dispatch(setCategory(cate));
-        navigate("/product/category");
+        // dispatch(setCategory(cate));
+        navigate(`/product/category/${cate}`);
     }, [dispatch, navigate]);
 
     const shopItems: FooterLink[] = useMemo(() => [

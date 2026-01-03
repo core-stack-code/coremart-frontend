@@ -1,4 +1,4 @@
-import { 
+import {
     Menu,
     Search,
     CircleArrowRight,
@@ -6,7 +6,11 @@ import {
     PlusIcon,
     MinusIcon,
     LayoutGrid,
-    List
+    List,
+    Check,
+    X,
+    Info,
+    TriangleAlert
 } from "lucide-react"
 
 import EyeIcon from "./eye-icon";
@@ -90,7 +94,11 @@ export const LUCIDE_ICON_MAP = {
     LayoutGrid,
     PlusIcon,
     MinusIcon,
-    List
+    List,
+    Check,
+    X,
+    Info,
+    TriangleAlert
 }
 
 export const CUSTOM_ICON_MAP = {
@@ -139,15 +147,15 @@ export const CUSTOM_ICON_MAP = {
     detailsIcon: DetailsIcon,
     detailsratingstarIcon: DetailsRatingStarIcon,
     similarproductIcon: SimilarProductIcon,
-    aboutdeliveryIcon:AboutDeliveryIcon,
-    aboutserviceIcon:AboutServiceIcon,
-    aboutguaranteeIcon:AboutGuaranteeIcon,
-    closeIcon:CloseIcon,
-    totaluserIcon:TotaUserIcon,
-    totalorderIcon:TotalOrderIcon,
-    totalsalesIcon:TotalSalesIcon,
-    profitupIcon:ProfitUPIcon,
-    paidIcon:PaidIcon
+    aboutdeliveryIcon: AboutDeliveryIcon,
+    aboutserviceIcon: AboutServiceIcon,
+    aboutguaranteeIcon: AboutGuaranteeIcon,
+    closeIcon: CloseIcon,
+    totaluserIcon: TotaUserIcon,
+    totalorderIcon: TotalOrderIcon,
+    totalsalesIcon: TotalSalesIcon,
+    profitupIcon: ProfitUPIcon,
+    paidIcon: PaidIcon
     // whislistIcon: WhislistIcon,
     // ordershippedBadge:OrderShippedBadge,
     // orderdeliveredBadge:OrderDeliveredBadge,

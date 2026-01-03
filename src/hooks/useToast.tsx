@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { toast } from "sonner"
+import Icon from "@/components/ui/icons";
 
 interface ActioonOption {
     actionLabel?: string;
@@ -9,24 +10,33 @@ interface ActioonOption {
 type ToastType = "success" | "error" | "info" | "warning";
 
 const TOAST_STYLE_MAP: Record<ToastType, string> = {
-    success: "bg-green-600 text-white",
-    error: "bg-red-600 text-white",
-    info: "bg-blue-600 text-white",
-    warning: "bg-yellow-600 text-black",
+    success: "bg-green-50 border-green-400 text-green-900",
+    error: "bg-red-50 border-red-400 text-red-900",
+    info: "bg-blue-50 border-blue-400 text-blue-900",
+    warning: "bg-yellow-50 border-yellow-400 text-yellow-900",
 }
+
+const TOAST_ICON_MAP: Record<ToastType, React.ReactNode> = {
+    success: <Icon name='Check' width={25} height={25} stroke="green" strokeWidth={2} />,
+    error: <Icon name='X' width={25} height={25} stroke="red" strokeWidth={2}/>,
+    info: <Icon name='Info' width={25} height={25} stroke="blue" strokeWidth={2}/>,
+    warning: <Icon name='TriangleAlert' width={25} height={25} stroke="yellow" strokeWidth={2}  />,
+}
+
 
 export const useToast = () => {
     const loadingToastId = useRef<string | number | null>(null);
 
     const base = (
         type: "success" | "error" | "info" | "warning",
-        title: string, 
-        description?: string, 
+        title: string,
+        description?: string,
         action?: ActioonOption
     ) => {
         toast[type](title, {
             unstyled: true,
-            className: `flex gap-3 px-4 py-3 rounded-md shadow-md ${TOAST_STYLE_MAP[type]}`,
+            icon: TOAST_ICON_MAP[type],
+            className: `flex gap-2 px-4 py-3 flex items-center rounded-lg border-2 font-semibold text-black shadow-md ${TOAST_STYLE_MAP[type]}`,
             description: description,
             action: action?.actionLabel
                 ? {
@@ -48,7 +58,7 @@ export const useToast = () => {
     const info = (
         title: string, description?: string, action?: ActioonOption
     ) => base("info", title, description, action);
-    
+
     const warning = (
         title: string, description?: string, action?: ActioonOption
     ) => base("warning", title, description, action);

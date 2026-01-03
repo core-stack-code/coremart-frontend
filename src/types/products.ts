@@ -13,7 +13,8 @@ export type ProductType = {
     isFav: boolean,
     sold: number
     viewCount: number,
-    rating: number
+    rating: number,
+    description: string,
 }
 
 export type Category = (typeof categoryEnum)[number];
@@ -27,6 +28,7 @@ export type CartItemType = {
         category: string,
         price: number,
         image: string,
+        description: string,
     },
     quantity: number
     itemTotal: number

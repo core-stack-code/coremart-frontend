@@ -26,6 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal" 
                 category: product.category,
                 price: product.price,
                 image: product.images[0],
+                description: product.description,
             },
             quantity: 1,
             itemTotal: product.price * 1

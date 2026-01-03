@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer from './slices/userSlice';
 import productReducer from './slices/productSlice'
+import paginationReducer from './slices/paginationSlice';
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
-    product: productReducer
+    product: productReducer,
+    pagination: paginationReducer
   },
 });
 

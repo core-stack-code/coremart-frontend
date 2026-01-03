@@ -1,7 +1,18 @@
-import type { Filters } from "@/modules/product/apis/types"
+import type { Size } from "@/modules/product/components/product-filter";
 import type { CartItemType, Category } from "@/types/products";
 import { createSlice, current, type PayloadAction } from "@reduxjs/toolkit"
 
+
+
+
+export interface FilterState {
+    size: Size;
+    brand: string;
+    type: string;
+    style: string;
+    minPrice: number;
+    maxPrice: number;
+}
 
 
 interface ProductState {
@@ -11,8 +22,10 @@ interface ProductState {
         totalPrice: number;
         totalQuantity: number;
     },
-    filter: object
+    filter: FilterState
 }
+
+
 
 const initialState: ProductState = {
     category: "casual",
@@ -22,11 +35,12 @@ const initialState: ProductState = {
         totalQuantity: 0
     },
     filter: {
-        size: '',
-        brand: '',
-        type: '',
-        style: '',
-        price: '',
+        size: 'L',
+        brand: "Puma",
+        type: "T-Shirts",
+        style: "Party Wear",
+        minPrice: 0,
+        maxPrice: 30000
     },
 }
 
@@ -34,17 +48,9 @@ const productSlice = createSlice({
     name: "product",
     initialState,
     reducers: {
-        getFilters: (state, action: PayloadAction<Filters>) => {
-            console.log(action.payload)
-            state.filter = { ...action.payload }
+        setFilters: (state, action: PayloadAction<FilterState>) => {
+            state.filter = action.payload
         },
-        // getCardDetails: (state, action: PayloadAction<CartType>) => {
-        //     debugger
-        //     console.log(action.payload)
-        //     state.cart.items.push(action.payload)
-        //     state.cart.totalPrice =  action.payload.totalPrice
-        //     state.cart.totalQuantity =  action.payload.totalQuantity
-        // },
         getCardDetails: (state, action: PayloadAction<CartItemType>) => {
             const newItem = action.payload;
             let totalPrice = 0;
@@ -120,5 +126,5 @@ const productSlice = createSlice({
     }
 })
 
-export const { getCardDetails, increaseQuantity, decreaseQuantity, removeProduct, getFilters, setCategory } = productSlice.actions
+export const { setFilters, getCardDetails, increaseQuantity, decreaseQuantity, removeProduct, setCategory } = productSlice.actions
 export default productSlice.reducer
