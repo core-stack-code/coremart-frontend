@@ -4,9 +4,9 @@ import RootLayout from "@/layouts/RootLayout";
 import ErrorPage from "@/pages/ErrorPage";
 import HomePage from "@/pages/HomePage";
 import ProductCategory from "@/modules/product/pages/ProductCategory";
-
 import ProductList from "@/modules/product/pages/ProductList";
-import ProductDetails from "@/modules/Products-1/pages/product-details";
+
+import ProductDetails from "@/modules/product/pages/ProductDetailPage";
 import YourCart from "@/modules/me/pages/your-cart";
 import Profile from "@/modules/me/pages/profile";
 import Whislist from "@/modules/me/pages/whislist";
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
                             { index: true, element: <ProductCategory /> },
                             { path: ':category', element: <ProductCategory /> },
                         ]
-                     },
+                    },
                     { path: ':slug', element: <ProductDetails /> },
                 ]
             },
