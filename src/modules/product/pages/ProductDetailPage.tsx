@@ -3,6 +3,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Log } from '@/lib/utils';
 import ProductDetailComponent from '../components/product-detail-component';
+import SimilarProduct from '../components/similar-product';
 
 
 const ProductDetails: React.FC = () => {
@@ -15,9 +16,11 @@ const ProductDetails: React.FC = () => {
     // error componet if product not found or other error
 
     return (
-        <ProductDetailComponent />
-        // similar product component
-
+        <>
+            <ProductDetailComponent />
+            {/* similar product component */}
+            <SimilarProduct />
+        </>
         // ---------------------------------------------------------------------
         // <>
         //     <div className="mx-auto w-full">

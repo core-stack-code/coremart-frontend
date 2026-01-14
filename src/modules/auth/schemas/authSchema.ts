@@ -54,12 +54,12 @@ export const resetPasswordSchema = z.object({
     password: passwordSchema,
     confirmPassword: z.string().min(1, "Passwords does not match")
 }).refine((data) => data.password == data.confirmPassword, {
-     path: ["confirmPassword"],
+    path: ["confirmPassword"],
     message: "Passwords does not match"
 });
 
 export const otpVerifySchema = z.object({
-    otp:optSchema
+    otp: optSchema
 })
 
 
