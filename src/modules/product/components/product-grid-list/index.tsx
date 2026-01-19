@@ -28,6 +28,7 @@ const ProductGridList: React.FC<ProductGridListProps> = ({ view }) => {
 
     const { currentPage, itemPerPage, totalPages } = useAppSelector((state) => state.pagination);
 
+    
     useEffect(() => {
         const params = new URLSearchParams(searchParam);
         const page = params.get('page');
@@ -38,8 +39,7 @@ const ProductGridList: React.FC<ProductGridListProps> = ({ view }) => {
         params.set('page', currentPage.toString());
         setSearchParams(params);
     }, [])
-
-
+    
     const filters = useAppSelector((state) => state.product.filter);
 
     const debouncedPage = useDebounce(currentPage, 500);
