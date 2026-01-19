@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import type { Category } from '@/types/products';
-
-import Icon from '@/components/ui/icons'
 import { cn } from '@/lib/utils'
+import Icon from '@/components/ui/icons'
+
 
 const CATEGORY: { id: Category; name: string; image: string }[] = [
     { id: 'casual', name: 'Casual', image: 'category1.svg' },
@@ -15,12 +15,9 @@ const CATEGORY: { id: Category; name: string; image: string }[] = [
 ]
 
 
-const CategoryQueue: React.FC<{ isRedirect?: boolean }> = ({ isRedirect = false }) => {
-    // const category = useAppSelector(state => state.product.category);
+const CategoryQueue: React.FC<{ isRedirect?: boolean }> = () => {
     const navigate = useNavigate()
-    // const dispatch = useAppDispatch();
     const slugcategory = useParams()
-    console.log(slugcategory.category);
 
     // const handleCategoryChange = (category: Category) => {
     //     dispatch(setCategory(category));
@@ -31,7 +28,7 @@ const CategoryQueue: React.FC<{ isRedirect?: boolean }> = ({ isRedirect = false 
 
 
     const handleCategoryChange = (category: Category) => {
-        navigate(`/product/category/${category}`);
+        navigate(`/category/${category}`);
     }
 
     return (

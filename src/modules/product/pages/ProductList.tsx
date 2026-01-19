@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Icon from "@/components/ui/icons";
-import CategoryPageHeader from "@/modules/product/components/category-header";
+import CategoryPageHeader from "@/modules/category/components/category-header";
 import ProductFilter from "../components/product-filter";
 import ProductGridList from "../components/product-grid-list";
 import { Button } from "@/components/ui/button";

@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../icons'
+import Icon from '@/components/ui/icons'
 
 const HeroSection: React.FC = () => {
   return (

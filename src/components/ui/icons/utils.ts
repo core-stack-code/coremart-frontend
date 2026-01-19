@@ -10,7 +10,8 @@ import {
     Check,
     X,
     Info,
-    TriangleAlert
+    TriangleAlert,
+    Loader2
 } from "lucide-react"
 
 import EyeIcon from "./eye-icon";
@@ -98,7 +99,8 @@ export const LUCIDE_ICON_MAP = {
     Check,
     X,
     Info,
-    TriangleAlert
+    TriangleAlert,
+    Loader2
 }
 
 export const CUSTOM_ICON_MAP = {
