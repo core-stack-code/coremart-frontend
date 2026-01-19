@@ -5,17 +5,27 @@ import AddCartButton from '../add-cart-btn'
 import Ratting from '../ratting'
 import { getCardDetails } from '@/store/slices/productSlice'
 import { useAppDispatch } from '@/hooks/redux'
+import { useNavigate } from 'react-router-dom'
+import { cn } from '@/lib/utils'
 
 type ProductCardType = "new" | "discount" | "ratting" | "normal"
 
 interface ProductCardProps {
     product: ProductType
     cardType?: ProductCardType
+    isRedirect?: boolean
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal" }) => {
-
+const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal", isRedirect = false }) => {
+    const navigate = useNavigate();
     const disPatch = useAppDispatch();
+
+    const handleRedirect = () => {
+        if (isRedirect) {
+            navigate(`/product/${product.slug}`);
+        }
+    }
+
 
     const getCardData = () => {
         const data: CartItemType = {
@@ -48,7 +58,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal" 
     }
 
     return (
-        <div className='w-full max-h-fit min-h-fit flex items-center justify-center'>
+        <div 
+            onClick={handleRedirect}
+            className={cn(
+                'w-full max-h-fit min-h-fit flex items-center justify-center',
+                isRedirect && 'cursor-pointer hover:shadow-lg rounded-3xl transition-shadow duration-200'
+            )}
+        >
             <div className='flex flex-col w-full h-full rounded-3xl'>
                 <div className='relative w-full h-70 rounded-3xl'>
                     <img

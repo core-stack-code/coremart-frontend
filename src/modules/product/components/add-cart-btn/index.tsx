@@ -9,7 +9,7 @@ interface addCartButtonProps {
 }
 
 
-const AddCartButton: React.FC<addCartButtonProps> = ({ productId, getCardData }) => {
+const AddCartButton: React.FC<addCartButtonProps> = ({ getCardData }) => {
 
     const toast = useToast()
 

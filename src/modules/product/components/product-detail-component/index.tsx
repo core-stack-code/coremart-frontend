@@ -1,13 +1,13 @@
-import Icon from '@/components/ui/icons'
 import React, { useState } from 'react'
-import type { Size } from '../product-filter'
 import { cn } from '@/lib/utils'
-import AddCartButton from '../add-cart-btn'
-import ProductReviewList from '../product-review-list'
-import { Button } from '@/components/ui/button'
-import ProductReviewForm from '../product-review-form'
-import ProductReviewComponent from '../product-review-component'
+import type { Size } from '../product-filter'
 
+import Icon from '@/components/ui/icons'
+import AddCartButton from '../add-cart-btn'
+import ProductReviewList from '@/modules/review/components/product-review-list'
+import ProductReviewForm from '@/modules/review/components/review-form'
+import ProductReviewComponent from '@/modules/review/components/product-review'
+import { Button } from '@/components/ui/button'
 
 const size: Size[] = ['S', 'M', 'L', 'XL', 'XXL']
 
@@ -28,7 +28,6 @@ const productDetails = [
 
 
 const ProductDetailComponent: React.FC = () => {
-
     const [selectedSize, setSelectedSize] = useState<Size>('L')
     const [openReviewForm, setOpenReviewForm] = useState<boolean>(false)
 
@@ -43,19 +42,15 @@ const ProductDetailComponent: React.FC = () => {
                     />
                 </div>
                 <div className='w-full flex'>
-                    {
-                        [1, 2, 3].map((index) => {
-                            return (
-                                <div className='w-full h-38 flex'>
-                                    <img
-                                        key={index}
-                                        src='/details.svg'
-                                        alt='not found'
-                                        className='w-full h-full object-cover' />
-                                </div>
-                            )
-                        })
-                    }
+                    {[1, 2, 3].map((index) => (
+                        <div className='w-full h-38 flex'>
+                            <img
+                                key={index}
+                                src='/details.svg'
+                                alt='not found'
+                                className='w-full h-full object-cover' />
+                        </div>
+                    ))}
                 </div>
             </div>
             <div className='w-full flex flex-col gap-4'>
@@ -85,21 +80,17 @@ const ProductDetailComponent: React.FC = () => {
                     </div>
                     <h1 className='font-bold'>Size</h1>
                     <div className='flex flex-wrap gap-3'>
-
-                        {size.map((size, index) => {
-                            return (
-                                <button
-                                    key={index}
-                                    className={cn(
-                                        'border border-primary px-8 py-1 rounded-xl     hover:bg-primary hover:text-white cursor-pointer',
-                                        selectedSize === size ? 'bg-primary text-white' : 'text-primary'
-                                    )}
-                                    onClick={() => setSelectedSize(size)}>
-                                    {size}
-                                </button>
-                            )
-                        })
-                        }
+                        {size.map((size, index) => (
+                            <button
+                                key={index}
+                                className={cn(
+                                    'border border-primary px-8 py-1 rounded-xl     hover:bg-primary hover:text-white cursor-pointer',
+                                    selectedSize === size ? 'bg-primary text-white' : 'text-primary'
+                                )}
+                                onClick={() => setSelectedSize(size)}>
+                                {size}
+                            </button>
+                        ))}
                     </div>
 
                     <div className='flex justify-between mt-3'>
@@ -111,16 +102,12 @@ const ProductDetailComponent: React.FC = () => {
                     <div className='flex flex-col gap-8 border border-border rounded-2xl px-10 py-6'>
                         <h1 className='text-primary text-lg font-bold'>Product Details</h1>
                         <div className='flex flex-col gap-4'>
-
-                            {productDetails.map((product, index) => {
-                                return (
-                                    <div key={index} className='flex items-center text-md text-gray-500'>
-                                        <p className='w-full font-bold'>{product.name}</p>
-                                        <p className='w-full'>{product.value}</p>
-                                    </div>
-                                )
-                            })
-                            }
+                            {productDetails.map((product, index) => (
+                                <div key={index} className='flex items-center text-md text-gray-500'>
+                                    <p className='w-full font-bold'>{product.name}</p>
+                                    <p className='w-full'>{product.value}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

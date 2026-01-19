@@ -76,7 +76,7 @@ const ProductGridList: React.FC<ProductGridListProps> = ({ view }) => {
                 {view === 'grid' ? (
                     <ProductGrid columns={3} className="gap-8">
                         {paginatedData.map((product) => (
-                            <ProductCard key={product._id} product={product} cardType="normal" />
+                            <ProductCard key={product._id} product={product} cardType="normal" isRedirect />
                         ))}
                     </ProductGrid>
                 ) : (

@@ -31,7 +31,7 @@ const ABOUT_BADGE_DATA: AboutBadeType[] = [
 ]
 
 
-const AboutBade: React.FC = () => {
+const AboutBadge: React.FC = () => {
     return (
         <div className='w-full h-full flex items-center justify-between py-12'>
             {ABOUT_BADGE_DATA.map((badge) => (
@@ -52,4 +52,4 @@ const AboutBade: React.FC = () => {
     )
 }
 
-export default AboutBade
+export default AboutBadge

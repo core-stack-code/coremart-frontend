@@ -10,7 +10,6 @@ interface ProductListCardProps {
 }
 
 const ProductListCard: React.FC<ProductListCardProps> = ({ product }) => {
-
      const disPatch = useAppDispatch();
     
         const getCardData = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import CardWrapper from '../ui/card-wrapper'
+import CardWrapper from '@/components/ui/card-wrapper'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { cn } from '@/lib/utils';
@@ -20,10 +20,9 @@ const testimonials = [
 
 const TestimonialSlider: React.FC = () => {
     const visible = 5;
-    const minNeeded = visible * 2; // safe number for loop
+    const minNeeded = visible * 2;
     const originalCount = testimonials.length;
 
-    // Duplicate the array until we have enough slides for a smooth loop
     const slides = React.useMemo(() => {
         const base = testimonials.map((t, i) => ({ ...t, originalIndex: i }));
         let s = [...base];
@@ -33,7 +32,6 @@ const TestimonialSlider: React.FC = () => {
 
     const [active, setActive] = React.useState<number>(0);
 
-    // compute minimal circular distance between two indices
     const circularDistance = (a: number, b: number, n: number) => {
         const diff = Math.abs(a - b);
         return Math.min(diff, n - diff);
@@ -56,16 +54,9 @@ const TestimonialSlider: React.FC = () => {
                     className="w-full"
                 >
                     {slides.map((sld, idx) => {
-                        // `sld.originalIndex` is 0..originalCount-1
                         const dist = circularDistance(sld.originalIndex, active, originalCount);
 
-                        // Opacity mapping (kept as-is)
                         const opacity = dist === 0 ? 1 : dist === 1 ? 0.75 : dist === 2 ? 0.45 : 0.2;
-
-                        // NEW: Scale mapping per your request:
-                        // dist 0 -> 100% (1.0)
-                        // dist 1 ->  90% (0.9)
-                        // dist 2 ->  80% (0.8)
                         const scale = dist === 0 ? 1 : dist === 1 ? 0.9 : dist === 2 ? 0.8 : 0.75;
 
                         const style: React.CSSProperties = {
@@ -74,7 +65,7 @@ const TestimonialSlider: React.FC = () => {
                             transition: "opacity 300ms ease, transform 300ms ease",
                         };
 
-                         const textSize =
+                        const textSize =
                             dist === 0 ? "text-base" : dist === 1 ? "text-sm" : "text-xs";
                         const nameSize =
                             dist === 0 ? "text-sm" : dist === 1 ? "text-xs" : "text-[0.625rem]";

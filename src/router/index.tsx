@@ -3,10 +3,12 @@ import { createBrowserRouter,  RouterProvider } from "react-router-dom";
 import RootLayout from "@/layouts/RootLayout";
 import ErrorPage from "@/pages/ErrorPage";
 import HomePage from "@/pages/HomePage";
-import ProductCategory from "@/modules/product/pages/ProductCategory";
-import ProductList from "@/modules/product/pages/ProductList";
+import CategoryLandingPage from "@/modules/category/pages/CategoryLandingPage";
+import CategoryPage from "@/modules/category/pages/CategoryPage";
 
+import ProductList from "@/modules/product/pages/ProductList";
 import ProductDetails from "@/modules/product/pages/ProductDetailPage";
+
 import YourCart from "@/modules/me/pages/your-cart";
 import Profile from "@/modules/me/pages/profile";
 import Whislist from "@/modules/me/pages/whislist";
@@ -22,7 +24,6 @@ import Contact from "@/modules/contact/pages/contact";
 import ForgetPassword from "@/modules/auth/pages/forgot-password";
 import ResetPassword from "@/modules/auth/pages/rest-password";
 import OTPVerify from "@/modules/auth/pages/otp-verify";
-import CategoryLayout from "@/layouts/CategoryLayout";
 
 
 const router = createBrowserRouter([
@@ -36,13 +37,14 @@ const router = createBrowserRouter([
                 path: 'product',
                 children: [
                     { index: true, element: <ProductList /> },
-                    { path: 'category', element: <CategoryLayout/>, 
-                        children: [
-                            { index: true, element: <ProductCategory /> },
-                            { path: ':category', element: <ProductCategory /> },
-                        ]
-                    },
                     { path: ':slug', element: <ProductDetails /> },
+                ]
+            },
+            {
+                path: 'category',
+                children: [
+                    { index: true, element: <CategoryLandingPage /> },
+                    { path: ':category', element: <CategoryPage /> },
                 ]
             },
             {

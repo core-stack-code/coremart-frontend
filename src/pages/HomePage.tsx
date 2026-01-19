@@ -1,11 +1,11 @@
 import React from "react";
 
-import HeroSection from "@/components/ui/hero-section";
-import CategoryQueue from "@/modules/product/components/category-queue";
-import Banner from "@/modules/product/components/banner";
-import NormalCard from "@/components/ui/normal-card";
-import TestimonialSlider from "@/components/testimonial-slider";
-import AboutBade from "@/components/ui/about-badge";
+import HeroSection from "@/modules/home/components/hero-section";
+import CategoryQueue from "@/modules/category/components/category-queue";
+import Banner from "@/modules/home/components/banner";
+import NormalCard from "@/modules/home/components/normal-card";
+import TestimonialSlider from "@/modules/home/components/testimonial-slider";
+import AboutBadge from "@/components/ui/about-badge";
 
 import NewArrivalsProducts from "@/modules/product/components/new-arrivals-products";
 import BestSellerProducts from "@/modules/product/components/best-seller-products";
@@ -39,7 +39,7 @@ const HomePage: React.FC = () => {
 
                 <RecentlyViewProducts />
 
-                <AboutBade />
+                <AboutBadge />
             </div>
         </div>
     )
