@@ -1,7 +1,7 @@
 import React from "react";
 import type { SVGProps } from "react";
 
-const DetailsRatingStarIcon: React.FC<SVGProps<SVGSVGElement>> = ({
+const RatingReviewStarIcon: React.FC<SVGProps<SVGSVGElement>> = ({
     width = 29,
     height = 29,
     fill = "none",
@@ -28,4 +28,4 @@ const DetailsRatingStarIcon: React.FC<SVGProps<SVGSVGElement>> = ({
     );
 };
 
-export default DetailsRatingStarIcon
+export default RatingReviewStarIcon

@@ -48,7 +48,7 @@ const CartPopover: React.FC = () => {
                             </div>
                             <div className='flex gap-1'>
                                 <span className='text-sm font-normal text-muted'>Total amount:</span>
-                                <span className='text-sm font-medium text-muted'>₹{cartProduct.totalPrice}</span>
+                                <span className='text-sm font-medium text-muted'>₹{cartProduct.totalPrice.toFixed(2)}</span>
                             </div>
                         </div>
                     </div>

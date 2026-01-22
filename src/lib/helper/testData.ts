@@ -1,7 +1,8 @@
-import type { CartType, ProductType } from "@/types/products";
+import type { CartType, ProductDetailsType, ProductType } from "@/types/products";
 
 export const categoryEnum = ['casual', 'formal', 'sportswear', 'sleepwear', 'outerwear', 'workoutwear'] as const;
 export type CategoryTypes = typeof categoryEnum[number]
+
 
 export const PRODUCT_LIST: ProductType[] = [
   {
@@ -756,7 +757,6 @@ export const PRODUCT_LIST: ProductType[] = [
 ];
 
 
-
 export const CART: CartType = {
   // items: [],
   items: [
@@ -1447,4 +1447,97 @@ export const PRODUCT_CARD_RESPONSE = {
 };
 
 
+export const PRODUCT_DETAIL: ProductDetailsType[] = [
+  {
+    id: "68641dc25b4c4aae182f8e04",
+    name: "Essential Shorts",
+    slug: "essential-shorts",
+    description: "Audax comburo tristis sophismata. Sufficio atqui demoror suscipio ambulo. Attero arguo careo ulterius comitatus expedita.\n    This sleek outfit is ideal for winter wear.",
+    brand: "Puma",
+    price: 3973.99,
+    sizes: ["M", "XXL", "L", "XS", "S", "XL", "XXXL"],
+    category: "workoutwear",
+    dressType: "sweater",
+    images: [
+      // "/Details-Image/45.jpg",
+      // "/Details-Image/46.jpg",
+      // "/Details-Image/47.jpg",
+      // "/Details-Image/48.jpg"
+    ],
+    stock: 71,
+    sold: 2,
+    rating: 7.8,
+    numReviews: 100,
+    attributes: {
+      stretchability: "non-stretchable",
+      material: "silk",
+      closure: "button",
+      sleeveLength: "long",
+      washCare: "dry clean only"
+    },
+    isActive: true,
+    createdAt: new Date("2025-06-28T18:30:01.204Z"),
+    updatedAt: new Date("2025-07-01T18:10:51.580Z")
+  }
+]
 
+
+
+
+
+
+
+
+
+
+
+
+
+export const productSpecification = [
+    { name: "Product Name", value: "Urban Wild Fox Graphic T-Shirt" },
+    { name: "Brand", value: "Nike" },
+    { name: "Color", value: "White" },
+    { name: "Material", value: "100% Cotton" },
+    { name: "Fit", value: "Regular Fit" },
+    { name: "Pattern", value: "Multi-color graphic print" },
+    { name: "Collar", value: "Rounded" },
+    { name: "Suitable for", value: "Casual wear" },
+    {
+        name: "Description",
+        value: "Audax comburo tristis sophismata. Sufficio atqui demoror suscipio ambulo. Attero arguo careo ulterius comitatus expedita.This sleek outfit is ideal for winter wear.",
+    }
+];
+
+
+
+
+export const reviews = [
+    {
+        rating: 2,
+        title: "Cool and unique design!",
+        comment:
+            "Really loved the fox illustration—it’s different from the usual prints. Got compliments the first day I wore it. Fits perfectly too!",
+        author: "Sachit Dabhi"
+    },
+    {
+        rating: 3,
+        title: "Nice but print could be sharper",
+        comment:
+            "Design is cool, but I expected the colors to pop a bit more in real life. Still a decent tee for everyday use.",
+        author: "Jay Moteriya"
+    },
+    {
+        rating: 4,
+        title: "Great quality fabric",
+        comment:
+            "The cotton feels soft and breathable. Print looks durable after a couple of washes. Wish they had more colors though.",
+        author: "Maulik Koli"
+    },
+    {
+        rating: 5,
+        title: "Love the fox theme!",
+        comment:
+            "As an animal lover, this was an instant buy. The detailing in the design is amazing and it fits true to size.",
+        author: "Kunjesh Patadiya"
+    }
+];

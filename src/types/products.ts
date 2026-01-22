@@ -1,4 +1,6 @@
 import type { categoryEnum } from "@/constants/product";
+import type { Size } from "@/modules/product/components/product-filter";
+import { boolean } from "zod";
 
 export type ProductType = {
     _id: string,
@@ -38,4 +40,33 @@ export interface CartType {
     items: CartItemType[];
     totalPrice: number;
     totalQuantity: number;
+}
+
+
+export interface ProductDetailsType {
+    id: string,
+    name: string,
+    slug: string,
+    description: string,
+    brand: string,
+    price: number,
+    sizes: string[],
+    category: string,
+    dressType: string,
+    images: string[],
+    stock: number,
+    sold: number,
+    rating: number,
+    numReviews: number,
+    attributes: {
+        stretchability: string,
+        material: string,
+        closure: string,
+        sleeveLength: string,
+        washCare: string
+    },
+    isActive: boolean,
+    createdAt: Date,
+    updatedAt: Date
+
 }

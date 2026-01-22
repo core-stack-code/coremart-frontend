@@ -1,7 +1,7 @@
 import React from "react";
 import type { SVGProps } from "react";
 
-const DetailsIcon: React.FC<SVGProps<SVGSVGElement>> = ({
+const DetailsSpecificationIcon: React.FC<SVGProps<SVGSVGElement>> = ({
     width = 30,
     height = 30,
     fill = "none",
@@ -40,4 +40,4 @@ const DetailsIcon: React.FC<SVGProps<SVGSVGElement>> = ({
     );
 };
 
-export default DetailsIcon
+export default DetailsSpecificationIcon

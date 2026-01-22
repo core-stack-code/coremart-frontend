@@ -11,7 +11,8 @@ import {
     X,
     Info,
     TriangleAlert,
-    Loader2
+    Loader2,
+    PackageIcon
 } from "lucide-react"
 
 import EyeIcon from "./eye-icon";
@@ -31,8 +32,7 @@ import productListIcon from "./product-list-icon";
 import PaymentDiscountIcon from "./product-discount-icon/payment-discount-icon";
 import PurchaseDiscountIcon from "./product-discount-icon/purchase-discount-icon";
 import StockIcon from "./product-stock-icon";
-import DetailsIcon from "./product-details-icon";
-import DetailsRatingStarIcon from "./rating-star-details-icon";
+import DetailsSpecificationIcon from "./product-specification-icon";
 import SimilarProductIcon from "./similar-product-icon";
 import HeaderWhisListWithoutOpenIcon from "./without-open";
 import HeaderWhisListWithOpenIcon from "./with-open";
@@ -85,6 +85,8 @@ import LeftArrowIcon from "./customs/left-arrow";
 import RightArrowIcon from "./customs/right-arrow";
 import CategoriesIcon from "./customs/categories-icon";
 import FilterIcon from "./customs/filter-icon";
+import OutOfStockIcon from "./out-of-stock-icon";
+import RatingReviewStarIcon from "./rating-review-star-icon";
 
 
 export const LUCIDE_ICON_MAP = {
@@ -100,7 +102,8 @@ export const LUCIDE_ICON_MAP = {
     X,
     Info,
     TriangleAlert,
-    Loader2
+    Loader2,
+    PackageIcon
 }
 
 export const CUSTOM_ICON_MAP = {
@@ -146,8 +149,8 @@ export const CUSTOM_ICON_MAP = {
     purchasediscountIcon: PurchaseDiscountIcon,
     stockIcon: StockIcon,
     starIcon: StarIcon,
-    detailsIcon: DetailsIcon,
-    detailsratingstarIcon: DetailsRatingStarIcon,
+    detailsSpecificationIcon: DetailsSpecificationIcon,
+    ratingReviewStarIcon: RatingReviewStarIcon,
     similarproductIcon: SimilarProductIcon,
     aboutdeliveryIcon: AboutDeliveryIcon,
     aboutserviceIcon: AboutServiceIcon,
@@ -157,7 +160,8 @@ export const CUSTOM_ICON_MAP = {
     totalorderIcon: TotalOrderIcon,
     totalsalesIcon: TotalSalesIcon,
     profitupIcon: ProfitUPIcon,
-    paidIcon: PaidIcon
+    paidIcon: PaidIcon,
+    outStockIcon : OutOfStockIcon
     // whislistIcon: WhislistIcon,
     // ordershippedBadge:OrderShippedBadge,
     // orderdeliveredBadge:OrderDeliveredBadge,
