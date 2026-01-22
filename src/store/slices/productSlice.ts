@@ -22,7 +22,8 @@ interface ProductState {
         totalPrice: number;
         totalQuantity: number;
     },
-    filter: FilterState
+    filter: FilterState,
+    image: string
 }
 
 
@@ -42,6 +43,7 @@ const initialState: ProductState = {
         minPrice: 0,
         maxPrice: 30000
     },
+    image: "/Details-Image/45.jpg"
 }
 
 const productSlice = createSlice({
@@ -122,9 +124,12 @@ const productSlice = createSlice({
         },
         setCategory: (state, action: PayloadAction<Category>) => {
             state.category = action.payload
+        },
+        setImage: (state, action: PayloadAction<string>) => {
+            state.image = action.payload
         }
     }
 })
 
-export const { setFilters, getCardDetails, increaseQuantity, decreaseQuantity, removeProduct, setCategory } = productSlice.actions
+export const { setFilters, getCardDetails, increaseQuantity, decreaseQuantity, removeProduct, setCategory, setImage } = productSlice.actions
 export default productSlice.reducer

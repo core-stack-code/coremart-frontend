@@ -1459,10 +1459,10 @@ export const PRODUCT_DETAIL: ProductDetailsType[] = [
     category: "workoutwear",
     dressType: "sweater",
     images: [
-      // "/Details-Image/45.jpg",
-      // "/Details-Image/46.jpg",
-      // "/Details-Image/47.jpg",
-      // "/Details-Image/48.jpg"
+      "/Details-Image/45.jpg",
+      "/Details-Image/46.jpg",
+      "/Details-Image/47.jpg",
+      "/Details-Image/48.jpg"
     ],
     stock: 71,
     sold: 2,
