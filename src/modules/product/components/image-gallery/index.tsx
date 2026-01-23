@@ -13,24 +13,30 @@ const ImageGallery: React.FC<imageGalleryProps> = ({ images }) => {
     const selectImage = useAppSelector((state) => state.product.image)
 
     return (
-        <div className='w-full flex flex-col gap-10'>
-            <div className='w-full h-140'>
+        <div className='w-full flex flex-col gap-6'>
+            <div className='w-full h-140 rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow'>
                 <img
                     src={selectImage}
                     alt='not found'
                     className='w-full h-full object-cover'
                 />
             </div>
-            <div className='w-full flex gap-4'>
+            <div className='w-full flex gap-4 justify-center'>
                 {images.map((image, index) => (
-                    <button onClick={() => dispatch(setImage(image))} >
-                        <div className='w-full h-45 px-6'>
-                            <img
-                                key={index}
-                                src={image}
-                                alt='not found'
-                                className={cn('w-full h-full object-cover')} />
-                        </div>
+                    <button 
+                        key={index}
+                        onClick={() => dispatch(setImage(image))} 
+                        className={cn(
+                            'w-28 h-28 rounded-2xl overflow-hidden border-2 transition-all duration-200',
+                            selectImage === image 
+                                ? 'border-primary shadow-md scale-105' 
+                                : 'border-border hover:border-primary/50 hover:shadow-sm hover:scale-102'
+                        )}
+                    >
+                        <img
+                            src={image}
+                            alt='not found'
+                            className='w-full h-full object-cover' />
                     </button>
                 ))}
             </div>

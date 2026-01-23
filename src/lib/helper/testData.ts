@@ -1447,8 +1447,7 @@ export const PRODUCT_CARD_RESPONSE = {
 };
 
 
-export const PRODUCT_DETAIL: ProductDetailsType[] = [
-  {
+export const PRODUCT_DETAIL: ProductDetailsType = {
     id: "68641dc25b4c4aae182f8e04",
     name: "Essential Shorts",
     slug: "essential-shorts",
@@ -1478,8 +1477,7 @@ export const PRODUCT_DETAIL: ProductDetailsType[] = [
     isActive: true,
     createdAt: new Date("2025-06-28T18:30:01.204Z"),
     updatedAt: new Date("2025-07-01T18:10:51.580Z")
-  }
-]
+}
 
 
 

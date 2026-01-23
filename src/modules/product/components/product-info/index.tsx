@@ -40,36 +40,52 @@ const ProductInfo: React.FC<productInfoProps> = ({ product }) => {
     }
 
     return (
-        <div className='flex flex-col gap-5'>
-            <h1 className='text-xl font-bold'>Urban Wild: Illustrated Graphic T-shirt by Nike</h1>
-            <p className='text-lg'>T-Shirt</p>
-
-            <ProductMeta
-                rating={product.rating}
-                reviewnumber={product.numReviews}
-                sold={product.sold}
-            />
-
-            <div className='grid grid-cols-4 text-muted'>
-                <ProductAttributes label='Brand' value={product.brand} />
-                <ProductAttributes label='Color' value='White' />
+        <div className='flex flex-col gap-6'>
+            {/* Product Title & Category */}
+            <div className='flex flex-col gap-3'>
+                <h1 className='text-4xl font-bold text-foreground leading-tight'>Urban Wild: Illustrated Graphic T-shirt by Nike</h1>
+                <p className='text-lg text-muted font-medium'>T-Shirt</p>
             </div>
 
-            <StockStatus isOutOfStock={isOutOfStock} />
-
-            <div className='flex gap-2 items-center text-muted'>
-                <p>Total Price : </p>
-                <p className='text-xl text-accent font-bold'>₹ {product.price}</p>
+            {/* Rating & Meta Section */}
+            <div className='border border-border rounded-2xl p-4 bg-surface'>
+                <ProductMeta
+                    rating={product.rating}
+                    reviewnumber={product.numReviews}
+                    sold={product.sold}
+                />
             </div>
 
+            {/* Attributes & Stock Section */}
+            <div className='flex flex-col gap-4'>
+                <div className='flex items-center gap-6 text-base text-muted'>
+                    <ProductAttributes label='Brand' value={product.brand} />
+                    <ProductAttributes label='Color' value='White' />
+                </div>
+                <StockStatus isOutOfStock={isOutOfStock} />
+            </div>
+
+            {/* Price Section */}
+            <div className='border border-border rounded-2xl p-5 bg-surface'>
+                <div className='flex items-baseline gap-3'>
+                    <span className='text-lg text-muted font-medium'>Total Price:</span>
+                    <span className='text-4xl text-primary font-bold'>₹{product.price}</span>
+                </div>
+            </div>
+
+            {/* Size Selection */}
             <SizeSelection sizes={product.sizes} />
 
-            <div className='grid grid-cols-3 gap-10'>
-                <Button variant='outline' className='rounded-rad' size='sm' disabled={isOutOfStock}>Save for later</Button>
-                <AddCartButton productId={product.id} getCardData={() => { getDetailsData() }} />
-                <Button variant='default' className='rounded-rad text-white' size='sm' disabled={isOutOfStock}>Buy Now</Button>
+            {/* Action Buttons */}
+            <div className='flex flex-col gap-3'>
+                <div className='grid grid-cols-2 gap-3'>
+                    <Button variant='outline' className='rounded-rad h-12 text-lg font-medium' disabled={isOutOfStock}>Save for later</Button>
+                    <AddCartButton productId={product.id} getCardData={() => { getDetailsData() }} />
+                </div>
+                <Button variant='default' className='rounded-rad text-white h-12 text-lg font-semibold' disabled={isOutOfStock}>Buy Now</Button>
             </div>
 
+            {/* Product Specification */}
             <ProductSpecification />
 
         </div>

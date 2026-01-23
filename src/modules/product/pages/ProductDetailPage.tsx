@@ -11,17 +11,15 @@ const ProductDetails: React.FC = () => {
     const param = useParams();
     Log("param", param);
 
-    const product  = PRODUCT_DETAIL
-
     // loading componet till api fetch
 
     // error componet if product not found or other error
 
     return (
-        <>
-            <ProductDetailComponent product={product[0]} />
+        <div className="w-full flex flex-col gap-8 py-8">
+            <ProductDetailComponent product={PRODUCT_DETAIL} />
             <SimilarProduct />
-        </>
+        </div>
     )
 }
 

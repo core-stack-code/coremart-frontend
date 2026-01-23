@@ -17,19 +17,19 @@ const ProductReviewComponent: React.FC<productRevirwComponentProps> = ({ rating,
 
     return (
         <>
-            <div className='px-5'>
-                <div className='flex items-center gap-3'>
-                    <Icon name='ratingReviewStarIcon' width={24} height={24} />
-                    <h1 className='text-primary text-lg font-bold'>Reviews & Rating</h1>
+            <div>
+                <div className='flex items-center gap-2 mb-6'>
+                    <Icon name='ratingReviewStarIcon' width={26} height={26} />
+                    <h2 className='text-primary text-xl font-semibold'>Reviews & Rating</h2>
                 </div>
 
-                <div className='grid grid-cols-2 py-5'>
-                    <div className='w-auto flex flex-col justify-center items-start'>
-                        <div className='flex gap-3'>
-                            <p className='text-4xl'>{rating}</p>
+                <div className='grid grid-cols-2 gap-8'>
+                    <div className='flex flex-col justify-center items-start gap-3 bg-surface rounded-2xl p-5 border border-border'>
+                        <div className='flex gap-3 items-center'>
+                            <p className='text-5xl font-bold text-primary'>{rating}</p>
                             <Icon name='star' width={40} height={40} />
                         </div>
-                        <p>{rating} Rating & {reviewCount} Reviews</p>
+                        <p className='text-base text-muted font-medium'>{reviewCount} Reviews</p>
                     </div>
 
                     <RatingDistributionBar />
@@ -37,14 +37,14 @@ const ProductReviewComponent: React.FC<productRevirwComponentProps> = ({ rating,
                 </div>
 
                 {/* review form */}
-                <div className='flex justify-end'>
+                <div className='flex justify-end mt-4'>
                     <Button
-                        size='sm'
+                        size='default'
                         variant='default'
                         onClick={() => setOpenReviewForm((pre) => !pre)}
-                        className='text-white'
+                        className='text-white rounded-rad px-6 text-base font-medium'
                     >
-                        Add Review
+                        Write a Review
                     </Button>
                 </div>
             </div>

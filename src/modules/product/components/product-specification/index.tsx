@@ -5,16 +5,16 @@ import React from 'react'
 
 const ProductSpecification: React.FC = () => {
     return (
-        <div className='flex flex-col gap-8 border border-border rounded-2xl px-8 py-4'>
-            <div className='flex gap-3 items-center'>
-                <Icon name='detailsSpecificationIcon' width={24} height={24} />
-                <h1 className='text-primary text-lg font-bold'>Product Details</h1>
+        <div className='flex flex-col gap-5 border border-border rounded-3xl p-6 bg-white shadow-sm'>
+            <div className='flex gap-2 items-center pb-2 border-b border-border'>
+                <Icon name='detailsSpecificationIcon' width={26} height={26} />
+                <h2 className='text-primary text-xl font-semibold'>Product Details</h2>
             </div>
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-3.5'>
                 {productSpecification.map((product, index) => (
-                    <div key={index} className='grid grid-cols-2 items-center text-md text-muted'>
-                        <p className='font-bold'>{product.name}</p>
-                        <p>{product.value}</p>
+                    <div key={index} className='grid grid-cols-5 gap-4 text-base'>
+                        <p className='font-semibold text-foreground col-span-2'>{product.name}:</p>
+                        <p className='text-muted col-span-3'>{product.value}</p>
                     </div>
                 ))}
             </div>

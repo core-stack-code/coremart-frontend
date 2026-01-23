@@ -7,9 +7,9 @@ interface metaItemProps {
 
 const MetaItem: React.FC<metaItemProps> = ({ label, value }) => {
     return (
-        <div className='flex gap-2'>
-            <p>{value}</p>
-            <span>{label}</span>
+        <div className='flex gap-1.5 items-center'>
+            <p className='font-semibold text-foreground'>{value}</p>
+            <span className='text-muted'>{label}</span>
         </div>
     )
 }

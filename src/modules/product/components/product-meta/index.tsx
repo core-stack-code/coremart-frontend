@@ -11,7 +11,7 @@ interface productMetaProps {
 
 const ProductMeta: React.FC<productMetaProps> = ({ rating, reviewnumber, sold }) => {
     return (
-        <div className='grid grid-cols-3 items-center text-muted'>
+        <div className='grid grid-cols-3 items-center gap-4 text-base'>
             <RatingBadge label='Rating' rating={rating} />
             <MetaItem label='Reviews' value={reviewnumber} />
             <MetaItem label='Sold' value={sold} />

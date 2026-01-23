@@ -14,30 +14,34 @@ interface productDetailsProps {
 const ProductDetailComponent: React.FC<productDetailsProps> = ({ product }) => {
 
     return (
-        <div className='w-full mt-2 grid grid-cols-2 gap-10'>
+        <div className='w-full grid grid-cols-2 gap-8'>
 
             <ImageGallery images={product.images} />
 
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-6'>
 
                 {/* left details component */}
                 <ProductInfo product={product} />
 
-                <div className='flex flex-col gap-3 border border-border rounded-2xl px-4 py-6'>
+                <div className='flex flex-col gap-6 border border-border rounded-3xl p-6 bg-white shadow-sm'>
 
                     <ProductReviewComponent rating={product.rating} reviewCount={product.numReviews} />
 
                     <hr className='border-border' />
 
                     {/* review list */}
-                    <div className='flex flex-col gap-7 items-center px-4'>
-                        {
-                            reviews.map((review, index) => {
-                                return (<ProductReviewList key={index} review={review} />)
-                            })
-                        }
+                    <div className='flex flex-col gap-6'>
+                        <div className='flex flex-col gap-5'>
+                            {
+                                reviews.map((review, index) => {
+                                    return (<ProductReviewList key={index} review={review} />)
+                                })
+                            }
+                        </div>
 
-                        <Button variant={'default'} className='text-white' >View All</Button>
+                        <div className='flex justify-center pt-2'>
+                            <Button variant={'outline'} size='default' className='rounded-rad min-w-40 border-primary text-primary hover:bg-primary hover:text-white text-base font-medium' >View All Reviews</Button>
+                        </div>
                     </div>
                 </div>
             </div>

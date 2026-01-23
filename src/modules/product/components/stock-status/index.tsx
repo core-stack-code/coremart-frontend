@@ -9,13 +9,13 @@ const StockStatus: React.FC<stockStatusProps> = ({ isOutOfStock }) => {
     return (
         isOutOfStock ? (
             <div className='flex gap-2 items-center text-error'>
-                <Icon name='outStockIcon' width={20} height={20} strokeWidth={1} />
-                <p>Out Of Stock</p>
+                <Icon name='outStockIcon' width={22} height={22} strokeWidth={1} />
+                <p className='text-base font-semibold'>Out Of Stock</p>
             </div>
         ) : (
             <div className='flex gap-2 items-center text-success'>
-                <Icon name='PackageIcon' width={20} height={20} strokeWidth={1} />
-                <p>In Stock</p>
+                <Icon name='PackageIcon' width={22} height={22} strokeWidth={1} />
+                <p className='text-base font-semibold'>In Stock</p>
             </div>
         )
     )

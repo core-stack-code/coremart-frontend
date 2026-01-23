@@ -16,17 +16,17 @@ interface productReviewListProps {
 
 const ProductReviewList: React.FC<productReviewListProps> = ({ review }) => {
     return (
-        <div className='flex flex-col gap-3'>
+        <div className='flex flex-col gap-3 p-4 rounded-2xl bg-surface border border-border hover:shadow-sm transition-shadow'>
             <div className='flex gap-1'>
-                {Array(review.rating).fill(null).map((index) => {
+                {Array(review.rating).fill(null).map((_, index) => {
                     return (
-                        <Icon key={index} name='star' width={24} height={24} />
+                        <Icon key={index} name='star' width={18} height={18} />
                     )
                 })}
             </div>
-            <p className='text-muted font-bold'>{review.title}</p>
-            <p className='text-muted'>{review.comment}</p>
-            <p className='text-secondary'>{review.author}</p>
+            <p className='text-base font-semibold text-foreground'>{review.title}</p>
+            <p className='text-base text-muted leading-relaxed'>{review.comment}</p>
+            <p className='text-sm text-secondary font-medium mt-1'>{review.author}</p>
         </div>
     )
 }
