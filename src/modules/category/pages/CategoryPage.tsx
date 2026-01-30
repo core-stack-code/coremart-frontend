@@ -1,4 +1,4 @@
-import Banner from '@/modules/home/components/banner'
+import Banner from '@/components/sections/banner'
 import React from 'react'
 import CategoryQueue from '../components/category-queue'
 import ProrductCategoryGrid from '@/modules/category/components/product-category-grid'

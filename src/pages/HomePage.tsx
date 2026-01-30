@@ -1,11 +1,11 @@
 import React from "react";
 
-import HeroSection from "@/modules/home/components/hero-section";
+import HeroSection from "@/components/sections/hero-section";
 import CategoryQueue from "@/modules/category/components/category-queue";
-import Banner from "@/modules/home/components/banner";
-import NormalCard from "@/modules/home/components/normal-card";
-import TestimonialSlider from "@/modules/home/components/testimonial-slider";
-import AboutBadge from "@/components/ui/about-badge";
+import Banner from "@/components/sections/banner";
+import NormalCard from "@/components/sections/normal-card";
+import TestimonialSlider from "@/components/sections/testimonial-slider";
+import AboutBadge from "@/components/sections/about-badge";
 
 import NewArrivalsProducts from "@/modules/product/components/new-arrivals-products";
 import BestSellerProducts from "@/modules/product/components/best-seller-products";

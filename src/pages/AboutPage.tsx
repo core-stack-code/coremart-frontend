@@ -1,5 +1,5 @@
-import AboutBadge from "@/components/ui/about-badge"
-import AboutInfo from "../components/about-info"
+import AboutBadge from "@/components/sections/about-badge"
+import AboutInfo from "@/components/sections/about-info"
 
 const About:React.FC = () => {
     return (

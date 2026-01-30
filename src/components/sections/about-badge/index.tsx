@@ -1,6 +1,6 @@
 import React from 'react'
-import type { CombinedIconName } from '../icons';
-import Icon from '../icons';
+import type { CombinedIconName } from '../../ui/icons';
+import Icon from '../../ui/icons';
 
 type AboutBadeType = {
     id: number;

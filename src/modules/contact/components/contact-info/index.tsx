@@ -1,8 +1,7 @@
-import Icon from '@/components/ui/icons'
 import React from 'react'
+import Icon from '@/components/ui/icons'
 
-
-const info = {
+const INFO = {
     phone: '+91 1234567890',
     email: 'coremart@corestack.com',
 }
@@ -22,7 +21,7 @@ const ContactInfo: React.FC = () => {
                     <p className="text-black text-lg font-bold">Call to us</p>
                     <p>We are available 24/7.</p>
                     <a>
-                        <span className='hover:text-primary hover:border-b'>{info.phone}</span>
+                        <span className='hover:text-primary hover:border-b'>{INFO.phone}</span>
                     </a>
                 </div>
             </div>
@@ -40,7 +39,7 @@ const ContactInfo: React.FC = () => {
                     <p>Fill out our form and we will contact you within 24 hours.</p>
                     <a>
                         <span className='hover:text-primary hover:border-b' >
-                            {info.email}
+                            {INFO.email}
                         </span>
                     </a>
                 </div>

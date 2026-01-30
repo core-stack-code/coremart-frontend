@@ -1,8 +1,8 @@
-import ContactInfo from "../components/contact-info"
-import ContactForm from "../components/contact-form"
+import React from "react"
+import ContactInfo from "./components/contact-info"
+import ContactForm from "./components/contact-form"
 
-
-const Contact:React.FC = () => {
+const Contact: React.FC = () => {
   return (
     <div className="w-full py-10">
       <h1 className="font-semibold text-4xl pb-8">Contact Us</h1>
