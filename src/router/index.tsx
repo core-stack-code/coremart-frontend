@@ -1,4 +1,4 @@
-import { createBrowserRouter,  RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import RootLayout from "@/layouts/RootLayout";
 import ErrorPage from "@/pages/ErrorPage";
@@ -9,18 +9,18 @@ import CategoryPage from "@/modules/category/pages/CategoryPage";
 import ProductList from "@/modules/product/pages/ProductList";
 import ProductDetails from "@/modules/product/pages/ProductDetailPage";
 
-import YourCart from "@/modules/me/pages/your-cart";
-import Profile from "@/modules/me/pages/profile";
-import Whislist from "@/modules/me/pages/whislist";
-import Saved from "@/modules/me/pages/saved";
+import YourCart from "@/modules/me/pages/YourCartPage";
+import Profile from "@/modules/me/pages/ProfilePage";
+import Whislist from "@/modules/me/pages/WhisListPage";
+import Saved from "@/modules/me/pages/SavedPage";
 import OrderHistory from "@/modules/order/pages/order-histrory";
 import CheckOut from "@/modules/order/pages/order-checkout";
 import TrackingOrder from "@/modules/order/pages/tracking-order";
-import About from "@/modules/about/pages/about";
+import About from "@/modules/about/pages/AboutPage";
 import AuthLayout from "@/layouts/AuthLayout";
 import LoginPage from "@/modules/auth/pages/login";
 import SignUpPage from "@/modules/auth/pages/singup";
-import Contact from "@/modules/contact/pages/contact";
+import Contact from "@/modules/contact/pages/ContactPage";
 import ForgetPassword from "@/modules/auth/pages/forgot-password";
 import ResetPassword from "@/modules/auth/pages/rest-password";
 import OTPVerify from "@/modules/auth/pages/otp-verify";
@@ -71,13 +71,13 @@ const router = createBrowserRouter([
     {
         path: '/auth',
         element: <AuthLayout />,
-        errorElement:<ErrorPage/>,
+        errorElement: <ErrorPage />,
         children: [
-            { index: true, element: <LoginPage />},
+            { index: true, element: <LoginPage /> },
             { path: 'signup', element: <SignUpPage /> },
             { path: 'forgetpassword', element: <ForgetPassword /> },
             { path: 'resetpassword', element: <ResetPassword /> },
-            { path: 'otp', element: <OTPVerify />}
+            { path: 'otp', element: <OTPVerify /> }
         ]
     }
 ])

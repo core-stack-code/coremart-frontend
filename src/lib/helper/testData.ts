@@ -19,8 +19,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 320,
     viewCount: 1450,
     rating: 4.5,
+    color: "White",
+    size: "M",
     description:
-      "This classic white shirt from Zara is designed for effortless everyday styling and long-lasting comfort. Crafted using breathable fabric, it offers a clean silhouette suitable for both casual and semi-formal occasions. The soft texture ensures all-day wearability, while the tailored fit enhances your overall look. Pair it with jeans, chinos, or layered outfits for a timeless wardrobe essential that never goes out of style.",
+      "This classic white shirt from Zara is designed for effortless everyday styling and long-lasting comfort. Crafted using breathable fabric, it offers a clean silhouette suitable for both casual and semi-formal occasions.",
   },
   {
     _id: "2",
@@ -36,8 +38,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 780,
     viewCount: 2850,
     rating: 4.7,
+    color: "Blue",
+    size: "L",
     description:
-      "Levi’s slim fit jeans are crafted for a modern silhouette with superior comfort and durability. Made from high-quality denim, they provide excellent stretch while retaining shape throughout the day. These jeans are perfect for casual outings, workwear styling, or weekend wear. Designed to complement sneakers, boots, or formal shoes, they deliver a versatile look that adapts easily to multiple fashion needs.",
+      "Levi’s slim fit jeans are crafted for a modern silhouette with superior comfort and durability. Made from high-quality denim, they provide excellent stretch while retaining shape throughout the day.",
   },
   {
     _id: "3",
@@ -53,8 +57,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 150,
     viewCount: 1200,
     rating: 4.3,
+    color: "Black",
+    size: "XL",
     description:
-      "This black leather jacket from H&M delivers a bold and confident style statement. Designed with a sleek finish and comfortable inner lining, it offers warmth and durability without compromising on style. Ideal for layering during cooler seasons, it pairs effortlessly with jeans or boots. The structured design and premium look make it suitable for casual evenings, travel, and urban fashion styling.",
+      "This black leather jacket from H&M delivers a bold and confident style statement. Designed with a sleek finish and comfortable inner lining, it offers warmth and durability without compromising on style.",
   },
   {
     _id: "4",
@@ -70,8 +76,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 600,
     viewCount: 3000,
     rating: 4.8,
+    color: "Floral Print",
+    size: "S",
     description:
-      "The summer floral dress from Forever 21 features a vibrant design that captures fresh seasonal style. Made from lightweight and breathable fabric, it ensures comfort even on warm days. The flattering fit and flowing silhouette enhance movement and elegance. Perfect for casual outings, vacations, or daytime events, this dress adds a cheerful and stylish touch to any wardrobe.",
+      "The summer floral dress from Forever 21 features a vibrant design that captures fresh seasonal style. Made from lightweight and breathable fabric, it ensures comfort even on warm days.",
   },
   {
     _id: "5",
@@ -87,8 +95,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 850,
     viewCount: 5200,
     rating: 4.6,
+    color: "Grey/Neon",
+    size: "L",
     description:
-      "Nike running sneakers are engineered for performance, comfort, and everyday athletic use. Featuring cushioned soles and breathable materials, they provide excellent support during workouts and long walks. The lightweight construction reduces foot fatigue while ensuring stability and grip. Designed for runners and fitness enthusiasts, these sneakers blend sporty aesthetics with functionality for active lifestyles.",
+      "Nike running sneakers are engineered for performance, comfort, and everyday athletic use. Featuring cushioned soles and breathable materials, they provide excellent support.",
   },
   {
     _id: "6",
@@ -104,8 +114,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 220,
     viewCount: 1750,
     rating: 4.4,
+    color: "Beige",
+    size: "XXL",
     description:
-      "This woolen winter coat from Mango offers superior warmth with a refined and elegant look. Crafted from high-quality wool fabric, it provides insulation during colder months while maintaining breathability. The structured design complements both casual and formal outfits. Ideal for winter travel and daily wear, this coat combines comfort, durability, and timeless seasonal style.",
+      "This woolen winter coat from Mango offers superior warmth with a refined and elegant look. Crafted from high-quality wool fabric, it provides insulation during colder months.",
   },
   {
     _id: "7",
@@ -121,8 +133,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 410,
     viewCount: 2100,
     rating: 4.5,
+    color: "Navy Blue",
+    size: "XL",
     description:
-      "Raymond’s formal blazer is tailored for a sharp and professional appearance. Made with premium fabric, it offers a structured fit while remaining comfortable for long hours. Suitable for office wear, meetings, and formal events, this blazer enhances confidence and sophistication. Its versatile design pairs well with trousers or formal shirts, making it an essential piece for business wardrobes.",
+      "Raymond’s formal blazer is tailored for a sharp and professional appearance. Made with premium fabric, it offers a structured fit while remaining comfortable for long hours.",
   },
   {
     _id: "8",
@@ -138,8 +152,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 940,
     viewCount: 4300,
     rating: 4.7,
+    color: "Black",
+    size: "M",
     description:
-      "This graphic T-shirt from Uniqlo is designed for casual comfort and modern street style. Crafted from soft cotton fabric, it ensures breathability and all-day ease. The bold graphic print adds personality to everyday outfits, making it perfect for relaxed outings. Easy to pair with jeans or shorts, this T-shirt offers a trendy yet comfortable wardrobe staple.",
+      "This graphic T-shirt from Uniqlo is designed for casual comfort and modern street style. Crafted from soft cotton fabric, it ensures breathability and all-day ease.",
   },
   {
     _id: "9",
@@ -155,8 +171,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 410,
     viewCount: 1800,
     rating: 4.4,
+    color: "Light Blue",
+    size: "L",
     description:
-      "Wrangler’s casual blue denim shirt offers rugged durability with a relaxed everyday fit. Crafted from premium denim fabric, it delivers comfort, breathability, and long-lasting wear. Ideal for casual outings, travel, and layering, this shirt pairs perfectly with jeans or chinos for a timeless denim-on-denim style.",
+      "Wrangler’s casual blue denim shirt offers rugged durability with a relaxed everyday fit. Crafted from premium denim fabric, it delivers comfort and breathability.",
   },
   {
     _id: "10",
@@ -172,8 +190,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 760,
     viewCount: 3900,
     rating: 4.6,
+    color: "Red",
+    size: "M",
     description:
-      "Puma’s cotton polo T-shirt blends sporty elegance with everyday comfort. Made from soft breathable cotton, it ensures a relaxed feel throughout the day. Its classic collar design makes it suitable for casual outings, office wear, and weekend styling.",
+      "Puma’s cotton polo T-shirt blends sporty elegance with everyday comfort. Made from soft breathable cotton, it ensures a relaxed feel throughout the day.",
   },
   {
     _id: "11",
@@ -189,8 +209,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 520,
     viewCount: 2400,
     rating: 4.5,
+    color: "Khaki",
+    size: "L",
     description:
-      "Allen Solly slim fit chinos are designed for a polished and professional appearance. Made from premium cotton fabric, they provide excellent comfort and durability. Suitable for office wear, meetings, and semi-formal occasions.",
+      "Allen Solly slim fit chinos are designed for a polished and professional appearance. Made from premium cotton fabric, they provide excellent comfort.",
   },
   {
     _id: "12",
@@ -206,8 +228,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 890,
     viewCount: 4700,
     rating: 4.7,
+    color: "Charcoal",
+    size: "XL",
     description:
-      "This Adidas hooded sweatshirt offers warmth, comfort, and modern athletic styling. Crafted from soft fleece fabric, it is perfect for workouts, travel, and casual everyday wear.",
+      "This Adidas hooded sweatshirt offers warmth, comfort, and modern athletic styling. Crafted from soft fleece fabric, it is perfect for workouts or travel.",
   },
   {
     _id: "14",
@@ -223,8 +247,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 640,
     viewCount: 2800,
     rating: 4.6,
+    color: "Black",
+    size: "L",
     description:
-      "Van Heusen black trousers are tailored for a crisp and professional look. Made from premium fabric, they ensure comfort during long office hours and formal events.",
+      "Van Heusen black trousers are tailored for a crisp and professional look. Made from premium fabric, they ensure comfort during long office hours.",
   },
   {
     _id: "15",
@@ -240,8 +266,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 980,
     viewCount: 5100,
     rating: 4.8,
+    color: "White",
+    size: "M",
     description:
-      "Converse canvas sneakers deliver timeless street style with unmatched comfort. Lightweight design and durable sole make them ideal for daily wear and casual outings.",
+      "Converse canvas sneakers deliver timeless street style with unmatched comfort. Lightweight design and durable sole make them ideal for daily wear.",
   },
   {
     _id: "16",
@@ -257,8 +285,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 560,
     viewCount: 2100,
     rating: 4.3,
+    color: "Red/Black",
+    size: "S",
     description:
-      "Roadster checked casual shirt delivers a rugged yet modern look ideal for everyday wear. Made from breathable cotton fabric, it ensures comfort and durability throughout the day. Perfect for casual outings and weekend styling.",
+      "Roadster checked casual shirt delivers a rugged yet modern look ideal for everyday wear. Made from breathable cotton fabric.",
   },
   {
     _id: "17",
@@ -274,8 +304,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 880,
     viewCount: 4600,
     rating: 4.6,
+    color: "Yellow",
+    size: "XS",
     description:
-      "This printed summer T-shirt from H&M offers lightweight comfort and vibrant style. Soft cotton fabric keeps you cool while the trendy print enhances everyday casual outfits.",
+      "This printed summer T-shirt from H&M offers lightweight comfort and vibrant style. Soft cotton fabric keeps you cool during warm days.",
   },
   {
     _id: "18",
@@ -291,8 +323,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 740,
     viewCount: 3300,
     rating: 4.5,
+    color: "Olive Green",
+    size: "L",
     description:
-      "HRX relaxed fit joggers are designed for maximum comfort and flexibility. Ideal for workouts, travel, or lounging, they offer breathable fabric and a modern athletic fit.",
+      "HRX relaxed fit joggers are designed for maximum comfort and flexibility. Ideal for workouts, travel, or lounging.",
   },
   {
     _id: "19",
@@ -308,8 +342,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 310,
     viewCount: 1700,
     rating: 4.4,
+    color: "Dark Grey",
+    size: "S",
     description:
-      "Marks & Spencer pencil skirt is tailored for professional elegance. Crafted from premium fabric, it offers a flattering fit suitable for office wear and formal meetings.",
+      "Marks & Spencer pencil skirt is tailored for professional elegance. Crafted from premium fabric, it offers a flattering fit.",
   },
   {
     _id: "20",
@@ -325,8 +361,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 450,
     viewCount: 2500,
     rating: 4.5,
+    color: "Blue",
+    size: "XXL",
     description:
-      "Decathlon windcheater jacket provides protection against wind while remaining lightweight and breathable. Ideal for outdoor activities, travel, and daily use.",
+      "Decathlon windcheater jacket provides protection against wind while remaining lightweight and breathable.",
   },
   {
     _id: "21",
@@ -342,8 +380,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 1200,
     viewCount: 5200,
     rating: 4.7,
+    color: "Multi-color",
+    size: "M",
     description:
-      "Puma ankle length socks offer superior comfort and durability for daily wear. Made from breathable material, they provide all-day freshness and support.",
+      "Puma ankle length socks offer superior comfort and durability for daily wear. Made from breathable material.",
   },
   {
     _id: "22",
@@ -359,8 +399,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 670,
     viewCount: 2900,
     rating: 4.6,
+    color: "White",
+    size: "L",
     description:
-      "Louis Philippe formal white cotton shirt is crafted for a refined professional look. Soft fabric and tailored fit make it ideal for office and formal occasions.",
+      "Louis Philippe formal white cotton shirt is crafted for a refined professional look. Soft fabric and tailored fit.",
   },
   {
     _id: "23",
@@ -376,8 +418,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 540,
     viewCount: 2300,
     rating: 4.3,
+    color: "Tan",
+    size: "L",
     description:
-      "Bata slip-on loafers combine everyday comfort with a classic casual design. Lightweight construction and cushioned soles ensure easy all-day wear.",
+      "Bata slip-on loafers combine everyday comfort with a classic casual design. Lightweight and cushioned soles.",
   },
   {
     _id: "24",
@@ -393,8 +437,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 480,
     viewCount: 2600,
     rating: 4.6,
+    color: "Maroon",
+    size: "XL",
     description:
-      "Manyavar ethnic printed kurta showcases traditional craftsmanship with a modern touch. Comfortable fabric and elegant prints make it ideal for festive occasions.",
+      "Manyavar ethnic printed kurta showcases traditional craftsmanship with a modern touch. Elegant prints for festive occasions.",
   },
   {
     _id: "25",
@@ -410,8 +456,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 620,
     viewCount: 3100,
     rating: 4.4,
+    color: "Denim Blue",
+    size: "S",
     description:
-      "Forever 21 high waist denim shorts deliver trendy summer style with a flattering fit. Durable denim fabric ensures comfort and long-lasting wear.",
+      "Forever 21 high waist denim shorts deliver trendy summer style with a flattering fit.",
   },
   {
     _id: "26",
@@ -427,8 +475,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 980,
     viewCount: 4100,
     rating: 4.5,
+    color: "White",
+    size: "M",
     description:
-      "Jockey round neck cotton vest offers unmatched comfort and breathability. Ideal for daily wear, it ensures softness and long-lasting durability.",
+      "Jockey round neck cotton vest offers unmatched comfort and breathability for daily wear.",
   },
   {
     _id: "27",
@@ -444,8 +494,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 390,
     viewCount: 2200,
     rating: 4.6,
+    color: "Silver",
+    size: "M",
     description:
-      "Titan classic analog wrist watch combines elegance with precision craftsmanship. Designed for formal and everyday wear, it enhances sophisticated style.",
+      "Titan classic analog wrist watch combines elegance with precision craftsmanship.",
   },
   {
     _id: "28",
@@ -461,8 +513,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 860,
     viewCount: 4400,
     rating: 4.7,
+    color: "Black/White",
+    size: "L",
     description:
-      "Nike sports training shorts are built for performance and flexibility. Lightweight fabric and moisture-wicking technology support intense workouts.",
+      "Nike sports training shorts are built for performance and flexibility during intense workouts.",
   },
   {
     _id: "29",
@@ -478,8 +532,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 510,
     viewCount: 2600,
     rating: 4.4,
+    color: "Forest Green",
+    size: "XL",
     description:
-      "Wildcraft canvas backpack offers durability and spacious storage for daily use. Ideal for travel, college, and casual outings.",
+      "Wildcraft canvas backpack offers durability and spacious storage for daily use.",
   },
   {
     _id: "30",
@@ -495,8 +551,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 690,
     viewCount: 3200,
     rating: 4.5,
+    color: "Blue/White",
+    size: "L",
     description:
-      "U.S. Polo Assn. striped casual polo T-shirt blends classic design with modern comfort. Ideal for everyday wear and casual outings.",
+      "U.S. Polo Assn. striped casual polo T-shirt blends classic design with modern comfort.",
   },
   {
     _id: "31",
@@ -512,8 +570,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 430,
     viewCount: 2000,
     rating: 4.3,
+    color: "Dark Brown",
+    size: "L",
     description:
-      "Woodland leather formal belt offers premium quality and durability. Perfectly complements formal trousers and office attire.",
+      "Woodland leather formal belt offers premium quality and durability for formal attire.",
   },
   {
     _id: "32",
@@ -529,8 +589,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 780,
     viewCount: 3500,
     rating: 4.6,
+    color: "Pink",
+    size: "M",
     description:
-      "Zivame comfort fit night pajamas provide soft fabric and relaxed design for restful sleep. Ideal for everyday nightwear.",
+      "Zivame comfort fit night pajamas provide soft fabric and relaxed design for restful sleep.",
   },
   {
     _id: "33",
@@ -546,8 +608,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 260,
     viewCount: 1800,
     rating: 4.7,
+    color: "Gold/Green",
+    size: "M",
     description:
-      "Ray-Ban classic aviator sunglasses provide iconic style with superior UV protection. Ideal for everyday outdoor use.",
+      "Ray-Ban classic aviator sunglasses provide iconic style with superior UV protection.",
   },
   {
     _id: "34",
@@ -563,8 +627,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 350,
     viewCount: 1900,
     rating: 4.4,
+    color: "Cream",
+    size: "M",
     description:
-      "Fabindia cotton scarf offers breathable comfort with traditional patterns. Perfect for casual and ethnic styling.",
+      "Fabindia cotton scarf offers breathable comfort with traditional patterns.",
   },
   {
     _id: "35",
@@ -580,8 +646,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 480,
     viewCount: 2600,
     rating: 4.6,
+    color: "Black",
+    size: "L",
     description:
-      "Clarks formal leather shoes combine elegance with lasting comfort. Ideal for office wear and formal occasions.",
+      "Clarks formal leather shoes combine elegance with lasting comfort for formal occasions.",
   },
   {
     _id: "36",
@@ -597,8 +665,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 520,
     viewCount: 2300,
     rating: 4.4,
+    color: "Salmon",
+    size: "XL",
     description:
-      "Marks & Spencer casual linen shirt offers breathable comfort and effortless summer style. Ideal for warm-weather outings.",
+      "Marks & Spencer casual linen shirt offers breathable comfort and effortless summer style.",
   },
   {
     _id: "37",
@@ -614,8 +684,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 640,
     viewCount: 3100,
     rating: 4.6,
+    color: "Black",
+    size: "M",
     description:
-      "Under Armour compression tights enhance muscle support and performance during intense workouts. Designed for active lifestyles.",
+      "Under Armour compression tights enhance muscle support and performance during workouts.",
   },
   {
     _id: "38",
@@ -631,8 +703,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 920,
     viewCount: 4100,
     rating: 4.2,
+    color: "Navy/Grey",
+    size: "L",
     description:
-      "Sparx casual flip flops offer lightweight comfort and easy everyday wear. Ideal for home, travel, and casual outings.",
+      "Sparx casual flip flops offer lightweight comfort and easy everyday wear.",
   },
   {
     _id: "39",
@@ -648,8 +722,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 560,
     viewCount: 2700,
     rating: 4.5,
+    color: "Blue Print",
+    size: "S",
     description:
-      "Biba printed rayon kurti features vibrant patterns and a comfortable fit. Ideal for daily ethnic wear and casual occasions.",
+      "Biba printed rayon kurti features vibrant patterns and a comfortable fit for daily wear.",
   },
   {
     _id: "40",
@@ -665,8 +741,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 410,
     viewCount: 2400,
     rating: 4.6,
+    color: "Dark Indigo",
+    size: "L",
     description:
-      "Levi’s slim fit denim jacket offers iconic styling with modern comfort. Perfect for layering and everyday casual looks.",
+      "Levi’s slim fit denim jacket offers iconic styling with modern comfort for everyday looks.",
   },
   {
     _id: "41",
@@ -682,8 +760,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 710,
     viewCount: 3400,
     rating: 4.5,
+    color: "Grey",
+    size: "XL",
     description:
-      "Uniqlo crew neck sweatshirt provides warmth and minimalist style. Ideal for layering during cooler days.",
+      "Uniqlo crew neck sweatshirt provides warmth and minimalist style, ideal for layering.",
   },
   {
     _id: "42",
@@ -699,8 +779,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 280,
     viewCount: 1600,
     rating: 4.4,
+    color: "Light Grey",
+    size: "L",
     description:
-      "Blackberrys formal grey waistcoat adds elegance and structure to formal outfits. Ideal for weddings and office events.",
+      "Blackberrys formal grey waistcoat adds elegance and structure to formal outfits.",
   },
   {
     _id: "43",
@@ -716,8 +798,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 540,
     viewCount: 2600,
     rating: 4.3,
+    color: "Camo Print",
+    size: "M",
     description:
-      "Superdry casual printed shorts offer bold style and relaxed comfort. Perfect for summer outings and casual wear.",
+      "Superdry casual printed shorts offer bold style and relaxed comfort for summer.",
   },
   {
     _id: "44",
@@ -733,8 +817,10 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 830,
     viewCount: 3900,
     rating: 4.6,
+    color: "Black",
+    size: "L",
     description:
-      "Reebok running track pants provide flexibility, breathability, and comfort for workouts and casual wear.",
+      "Reebok running track pants provide flexibility and comfort for workouts.",
   },
   {
     _id: "45",
@@ -750,12 +836,12 @@ export const PRODUCT_LIST: ProductType[] = [
     sold: 690,
     viewCount: 3100,
     rating: 4.4,
+    color: "Brown",
+    size: "S",
     description:
-      "Fastrack casual leather wallet features compact design with premium finish. Ideal for everyday use and gifting.",
+      "Fastrack casual leather wallet features compact design with a premium finish.",
   },
-
 ];
-
 
 export const CART: CartType = {
   // items: [],
@@ -766,6 +852,8 @@ export const CART: CartType = {
         name: "Relaxed Pants",
         slug: "relaxed-pants",
         category: "outerwear",
+        color: "Black",
+        size: "L",
         price: 9234.95,
         image: "https://picsum.photos/seed/yvcIOu/640/480?grayscale&blur=6",
         description: "Comfortable and stylish relaxed pants perfect for casual wear.",
@@ -779,6 +867,8 @@ export const CART: CartType = {
         name: "Relaxed Shorts",
         slug: "relaxed-shorts-3",
         category: "outerwear",
+        color: "Black",
+        size: "L",
         price: 7745.69,
         image: "https://picsum.photos/seed/PWzuGPv0O/640/480?grayscale&blur=2",
         description: "Comfortable and stylish relaxed pants perfect for casual wear.",
@@ -792,6 +882,8 @@ export const CART: CartType = {
         name: "Essential Skirt",
         slug: "essential-skirt-4",
         category: "sportswear",
+        color: "Black",
+        size: "L",
         price: 5054.89,
         image: "https://picsum.photos/seed/nshbtMD/640/480?grayscale&blur=1",
         description: "Comfortable and stylish relaxed pants perfect for casual wear.",
@@ -1448,94 +1540,467 @@ export const PRODUCT_CARD_RESPONSE = {
 
 
 export const PRODUCT_DETAIL: ProductDetailsType = {
-    id: "68641dc25b4c4aae182f8e04",
-    name: "Essential Shorts",
-    slug: "essential-shorts",
-    description: "Audax comburo tristis sophismata. Sufficio atqui demoror suscipio ambulo. Attero arguo careo ulterius comitatus expedita.\n    This sleek outfit is ideal for winter wear.",
-    brand: "Puma",
-    price: 3973.99,
-    sizes: ["M", "XXL", "L", "XS", "S", "XL", "XXXL"],
-    category: "workoutwear",
-    dressType: "sweater",
-    images: [
-      "/Details-Image/45.jpg",
-      "/Details-Image/46.jpg",
-      "/Details-Image/47.jpg",
-      "/Details-Image/48.jpg"
-    ],
-    stock: 71,
-    sold: 2,
-    rating: 7.8,
-    numReviews: 100,
-    attributes: {
-      stretchability: "non-stretchable",
-      material: "silk",
-      closure: "button",
-      sleeveLength: "long",
-      washCare: "dry clean only"
-    },
-    isActive: true,
-    createdAt: new Date("2025-06-28T18:30:01.204Z"),
-    updatedAt: new Date("2025-07-01T18:10:51.580Z")
+  id: "68641dc25b4c4aae182f8e04",
+  name: "Essential Shorts",
+  slug: "essential-shorts",
+  description: "Audax comburo tristis sophismata. Sufficio atqui demoror suscipio ambulo. Attero arguo careo ulterius comitatus expedita.\n    This sleek outfit is ideal for winter wear.",
+  brand: "Puma",
+  price: 3973.99,
+  sizes: ["M", "XXL", "L", "XS", "S", "XL", "XXXL"],
+  category: "workoutwear",
+  dressType: "sweater",
+  images: [
+    "/Details-Image/45.jpg",
+    "/Details-Image/46.jpg",
+    "/Details-Image/47.jpg",
+    "/Details-Image/48.jpg"
+  ],
+  stock: 71,
+  sold: 2,
+  rating: 7.8,
+  numReviews: 100,
+  attributes: {
+    stretchability: "non-stretchable",
+    material: "silk",
+    closure: "button",
+    sleeveLength: "long",
+    washCare: "dry clean only"
+  },
+  isActive: true,
+  createdAt: new Date("2025-06-28T18:30:01.204Z"),
+  updatedAt: new Date("2025-07-01T18:10:51.580Z")
 }
 
 
 
-
-
-
-
-
-
-
-
+export const WHISLIST_PRODUCT:ProductType[] = [
+  {
+    _id: "1",
+    name: "Classic White Shirt",
+    slug: "classic-white-shirt",
+    brand: "Zara",
+    price: 1999,
+    category: "Shirts",
+    dressType: "Casual",
+    images: ["/Main-Product-Card/1.jpg"],
+    createdAt: "2025-09-30T08:00:00.000Z",
+    isFav: false,
+    sold: 320,
+    viewCount: 1450,
+    rating: 4.5,
+    color: "White",
+    size: "M",
+    description:
+      "This classic white shirt from Zara is designed for effortless everyday styling and long-lasting comfort. Crafted using breathable fabric, it offers a clean silhouette suitable for both casual and semi-formal occasions.",
+  },
+  {
+    _id: "2",
+    name: "Slim Fit Jeans",
+    slug: "slim-fit-jeans",
+    brand: "Levi's",
+    price: 3499,
+    category: "Pants",
+    dressType: "Denim",
+    images: ["/Main-Product-Card/2.jpeg"],
+    createdAt: "2025-09-29T12:00:00.000Z",
+    isFav: true,
+    sold: 780,
+    viewCount: 2850,
+    rating: 4.7,
+    color: "Blue",
+    size: "L",
+    description:
+      "Levi’s slim fit jeans are crafted for a modern silhouette with superior comfort and durability. Made from high-quality denim, they provide excellent stretch while retaining shape throughout the day.",
+  },
+  {
+    _id: "3",
+    name: "Black Leather Jacket",
+    slug: "black-leather-jacket",
+    brand: "H&M",
+    price: 5999,
+    category: "Jackets",
+    dressType: "Leather",
+    images: ["/Main-Product-Card/3.jpg"],
+    createdAt: "2025-09-28T10:30:00.000Z",
+    isFav: false,
+    sold: 150,
+    viewCount: 1200,
+    rating: 4.3,
+    color: "Black",
+    size: "XL",
+    description:
+      "This black leather jacket from H&M delivers a bold and confident style statement. Designed with a sleek finish and comfortable inner lining, it offers warmth and durability without compromising on style.",
+  },
+  {
+    _id: "4",
+    name: "Summer Floral Dress",
+    slug: "summer-floral-dress",
+    brand: "Forever 21",
+    price: 2499,
+    category: "Dresses",
+    dressType: "Casual",
+    images: ["/Main-Product-Card/4.jpg"],
+    createdAt: "2025-09-27T16:45:00.000Z",
+    isFav: true,
+    sold: 600,
+    viewCount: 3000,
+    rating: 4.8,
+    color: "Floral Print",
+    size: "S",
+    description:
+      "The summer floral dress from Forever 21 features a vibrant design that captures fresh seasonal style. Made from lightweight and breathable fabric, it ensures comfort even on warm days.",
+  },
+  {
+    _id: "5",
+    name: "Running Sneakers",
+    slug: "running-sneakers",
+    brand: "Nike",
+    price: 4999,
+    category: "Shoes",
+    dressType: "Sportswear",
+    images: ["/Main-Product-Card/5.webp"],
+    createdAt: "2025-09-26T09:15:00.000Z",
+    isFav: false,
+    sold: 850,
+    viewCount: 5200,
+    rating: 4.6,
+    color: "Grey/Neon",
+    size: "L",
+    description:
+      "Nike running sneakers are engineered for performance, comfort, and everyday athletic use. Featuring cushioned soles and breathable materials, they provide excellent support.",
+  },
+  {
+    _id: "7",
+    name: "Formal Blazer",
+    slug: "formal-blazer",
+    brand: "Raymond",
+    price: 5499,
+    category: "Suits",
+    dressType: "Formal",
+    images: ["/Main-Product-Card/7.jpg"],
+    createdAt: "2025-09-24T18:30:00.000Z",
+    isFav: true,
+    sold: 410,
+    viewCount: 2100,
+    rating: 4.5,
+    color: "Navy Blue",
+    size: "XL",
+    description:
+      "Raymond’s formal blazer is tailored for a sharp and professional appearance. Made with premium fabric, it offers a structured fit while remaining comfortable for long hours.",
+  },
+  {
+    _id: "8",
+    name: "Graphic T-Shirt",
+    slug: "graphic-tshirt",
+    brand: "Uniqlo",
+    price: 1499,
+    category: "T-Shirts",
+    dressType: "Casual",
+    images: ["/Main-Product-Card/8.jpg"],
+    createdAt: "2025-09-23T11:10:00.000Z",
+    isFav: false,
+    sold: 940,
+    viewCount: 4300,
+    rating: 4.7,
+    color: "Black",
+    size: "M",
+    description:
+      "This graphic T-shirt from Uniqlo is designed for casual comfort and modern street style. Crafted from soft cotton fabric, it ensures breathability and all-day ease.",
+  },
+  {
+    _id: "9",
+    name: "Casual Blue Denim Shirt",
+    slug: "casual-blue-denim-shirt",
+    brand: "Wrangler",
+    price: 2599,
+    category: "Shirts",
+    dressType: "Casual",
+    images: ["/Main-Product-Card/9.jpg"],
+    createdAt: "2025-09-22T09:00:00.000Z",
+    isFav: false,
+    sold: 410,
+    viewCount: 1800,
+    rating: 4.4,
+    color: "Light Blue",
+    size: "L",
+    description:
+      "Wrangler’s casual blue denim shirt offers rugged durability with a relaxed everyday fit. Crafted from premium denim fabric, it delivers comfort and breathability.",
+  },
+  {
+    _id: "10",
+    name: "Cotton Polo T-Shirt",
+    slug: "cotton-polo-tshirt",
+    brand: "Puma",
+    price: 1799,
+    category: "T-Shirts",
+    dressType: "Casual",
+    images: ["/Main-Product-Card/10.jpg"],
+    createdAt: "2025-09-21T11:15:00.000Z",
+    isFav: true,
+    sold: 760,
+    viewCount: 3900,
+    rating: 4.6,
+    color: "Red",
+    size: "M",
+    description:
+      "Puma’s cotton polo T-shirt blends sporty elegance with everyday comfort. Made from soft breathable cotton, it ensures a relaxed feel throughout the day.",
+  },
+  {
+    _id: "11",
+    name: "Slim Fit Chinos",
+    slug: "slim-fit-chinos",
+    brand: "Allen Solly",
+    price: 2899,
+    category: "Pants",
+    dressType: "Formal",
+    images: ["/Main-Product-Card/11.jpg"],
+    createdAt: "2025-09-20T14:30:00.000Z",
+    isFav: false,
+    sold: 520,
+    viewCount: 2400,
+    rating: 4.5,
+    color: "Khaki",
+    size: "L",
+    description:
+      "Allen Solly slim fit chinos are designed for a polished and professional appearance. Made from premium cotton fabric, they provide excellent comfort.",
+  },
+  {
+    _id: "12",
+    name: "Hooded Sweatshirt",
+    slug: "hooded-sweatshirt",
+    brand: "Adidas",
+    price: 3299,
+    category: "Hoodies",
+    dressType: "Casual",
+    images: ["/Main-Product-Card/12.webp"],
+    createdAt: "2025-09-19T10:45:00.000Z",
+    isFav: true,
+    sold: 890,
+    viewCount: 4700,
+    rating: 4.7,
+    color: "Charcoal",
+    size: "XL",
+    description:
+      "This Adidas hooded sweatshirt offers warmth, comfort, and modern athletic styling. Crafted from soft fleece fabric, it is perfect for workouts or travel.",
+  },
+  {
+    _id: "14",
+    name: "Classic Black Trousers",
+    slug: "classic-black-trousers",
+    brand: "Van Heusen",
+    price: 3199,
+    category: "Pants",
+    dressType: "Formal",
+    images: ["/Main-Product-Card/14.jpg"],
+    createdAt: "2025-09-17T09:40:00.000Z",
+    isFav: true,
+    sold: 640,
+    viewCount: 2800,
+    rating: 4.6,
+    color: "Black",
+    size: "L",
+    description:
+      "Van Heusen black trousers are tailored for a crisp and professional look. Made from premium fabric, they ensure comfort during long office hours.",
+  },
+  {
+    _id: "15",
+    name: "Canvas Casual Sneakers",
+    slug: "canvas-casual-sneakers",
+    brand: "Converse",
+    price: 3999,
+    category: "Shoes",
+    dressType: "Casual",
+    images: ["/Main-Product-Card/15.jpg"],
+    createdAt: "2025-09-16T12:20:00.000Z",
+    isFav: false,
+    sold: 980,
+    viewCount: 5100,
+    rating: 4.8,
+    color: "White",
+    size: "M",
+    description:
+      "Converse canvas sneakers deliver timeless street style with unmatched comfort. Lightweight design and durable sole make them ideal for daily wear.",
+  },
+  {
+    _id: "16",
+    name: "Checked Casual Shirt",
+    slug: "checked-casual-shirt",
+    brand: "Roadster",
+    price: 1899,
+    category: "Shirts",
+    dressType: "Casual",
+    images: ["/Main-Product-Card/16.jpg"],
+    createdAt: "2025-09-15T10:00:00.000Z",
+    isFav: false,
+    sold: 560,
+    viewCount: 2100,
+    rating: 4.3,
+    color: "Red/Black",
+    size: "S",
+    description:
+      "Roadster checked casual shirt delivers a rugged yet modern look ideal for everyday wear. Made from breathable cotton fabric.",
+  },
+  {
+    _id: "17",
+    name: "Printed Summer T-Shirt",
+    slug: "printed-summer-tshirt",
+    brand: "H&M",
+    price: 1299,
+    category: "T-Shirts",
+    dressType: "Casual",
+    images: ["/Main-Product-Card/17.jpg"],
+    createdAt: "2025-09-14T11:20:00.000Z",
+    isFav: true,
+    sold: 880,
+    viewCount: 4600,
+    rating: 4.6,
+    color: "Yellow",
+    size: "XS",
+    description:
+      "This printed summer T-shirt from H&M offers lightweight comfort and vibrant style. Soft cotton fabric keeps you cool during warm days.",
+  },
+  {
+    _id: "18",
+    name: "Relaxed Fit Joggers",
+    slug: "relaxed-fit-joggers",
+    brand: "HRX",
+    price: 2199,
+    category: "Joggers",
+    dressType: "Sportswear",
+    images: ["/Main-Product-Card/18.jpg"],
+    createdAt: "2025-09-13T08:45:00.000Z",
+    isFav: false,
+    sold: 740,
+    viewCount: 3300,
+    rating: 4.5,
+    color: "Olive Green",
+    size: "L",
+    description:
+      "HRX relaxed fit joggers are designed for maximum comfort and flexibility. Ideal for workouts, travel, or lounging.",
+  },
+  {
+    _id: "19",
+    name: "Office Wear Pencil Skirt",
+    slug: "office-wear-pencil-skirt",
+    brand: "Marks & Spencer",
+    price: 2999,
+    category: "Skirts",
+    dressType: "Formal",
+    images: ["/Main-Product-Card/19.jpg"],
+    createdAt: "2025-09-12T14:10:00.000Z",
+    isFav: true,
+    sold: 310,
+    viewCount: 1700,
+    rating: 4.4,
+    color: "Dark Grey",
+    size: "S",
+    description:
+      "Marks & Spencer pencil skirt is tailored for professional elegance. Crafted from premium fabric, it offers a flattering fit.",
+  },
+  {
+    _id: "20",
+    name: "Lightweight Windcheater Jacket",
+    slug: "lightweight-windcheater-jacket",
+    brand: "Decathlon",
+    price: 3499,
+    category: "Jackets",
+    dressType: "Sportswear",
+    images: ["/Main-Product-Card/20.jpg"],
+    createdAt: "2025-09-11T09:30:00.000Z",
+    isFav: false,
+    sold: 450,
+    viewCount: 2500,
+    rating: 4.5,
+    color: "Blue",
+    size: "XXL",
+    description:
+      "Decathlon windcheater jacket provides protection against wind while remaining lightweight and breathable.",
+  },
+  {
+    _id: "21",
+    name: "Ankle Length Socks Pack",
+    slug: "ankle-length-socks-pack",
+    brand: "Puma",
+    price: 699,
+    category: "Accessories",
+    dressType: "Casual",
+    images: ["/Main-Product-Card/21.jpg"],
+    createdAt: "2025-09-10T07:50:00.000Z",
+    isFav: false,
+    sold: 1200,
+    viewCount: 5200,
+    rating: 4.7,
+    color: "Multi-color",
+    size: "M",
+    description:
+      "Puma ankle length socks offer superior comfort and durability for daily wear. Made from breathable material.",
+  },
+  {
+    _id: "22",
+    name: "Formal White Cotton Shirt",
+    slug: "formal-white-cotton-shirt",
+    brand: "Louis Philippe",
+    price: 2699,
+    category: "Shirts",
+    dressType: "Formal",
+    images: ["/Main-Product-Card/22.jpg"],
+    createdAt: "2025-09-09T10:40:00.000Z",
+    isFav: true,
+    sold: 670,
+    viewCount: 2900,
+    rating: 4.6,
+    color: "White",
+    size: "L",
+    description:
+      "Louis Philippe formal white cotton shirt is crafted for a refined professional look. Soft fabric and tailored fit.",
+  }
+]
 
 
 export const productSpecification = [
-    { name: "Product Name", value: "Urban Wild Fox Graphic T-Shirt" },
-    { name: "Brand", value: "Nike" },
-    { name: "Color", value: "White" },
-    { name: "Material", value: "100% Cotton" },
-    { name: "Fit", value: "Regular Fit" },
-    { name: "Pattern", value: "Multi-color graphic print" },
-    { name: "Collar", value: "Rounded" },
-    { name: "Suitable for", value: "Casual wear" },
-    {
-        name: "Description",
-        value: "Audax comburo tristis sophismata. Sufficio atqui demoror suscipio ambulo. Attero arguo careo ulterius comitatus expedita.This sleek outfit is ideal for winter wear.",
-    }
+  { name: "Product Name", value: "Urban Wild Fox Graphic T-Shirt" },
+  { name: "Brand", value: "Nike" },
+  { name: "Color", value: "White" },
+  { name: "Material", value: "100% Cotton" },
+  { name: "Fit", value: "Regular Fit" },
+  { name: "Pattern", value: "Multi-color graphic print" },
+  { name: "Collar", value: "Rounded" },
+  { name: "Suitable for", value: "Casual wear" },
+  {
+    name: "Description",
+    value: "Audax comburo tristis sophismata. Sufficio atqui demoror suscipio ambulo. Attero arguo careo ulterius comitatus expedita.This sleek outfit is ideal for winter wear.",
+  }
 ];
 
 
 
-
 export const reviews = [
-    {
-        rating: 2,
-        title: "Cool and unique design!",
-        comment:
-            "Really loved the fox illustration—it’s different from the usual prints. Got compliments the first day I wore it. Fits perfectly too!",
-        author: "Sachit Dabhi"
-    },
-    {
-        rating: 3,
-        title: "Nice but print could be sharper",
-        comment:
-            "Design is cool, but I expected the colors to pop a bit more in real life. Still a decent tee for everyday use.",
-        author: "Jay Moteriya"
-    },
-    {
-        rating: 4,
-        title: "Great quality fabric",
-        comment:
-            "The cotton feels soft and breathable. Print looks durable after a couple of washes. Wish they had more colors though.",
-        author: "Maulik Koli"
-    },
-    {
-        rating: 5,
-        title: "Love the fox theme!",
-        comment:
-            "As an animal lover, this was an instant buy. The detailing in the design is amazing and it fits true to size.",
-        author: "Kunjesh Patadiya"
-    }
+  {
+    rating: 2,
+    title: "Cool and unique design!",
+    comment:
+      "Really loved the fox illustration—it’s different from the usual prints. Got compliments the first day I wore it. Fits perfectly too!",
+    author: "Sachit Dabhi"
+  },
+  {
+    rating: 3,
+    title: "Nice but print could be sharper",
+    comment:
+      "Design is cool, but I expected the colors to pop a bit more in real life. Still a decent tee for everyday use.",
+    author: "Jay Moteriya"
+  },
+  {
+    rating: 4,
+    title: "Great quality fabric",
+    comment:
+      "The cotton feels soft and breathable. Print looks durable after a couple of washes. Wish they had more colors though.",
+    author: "Maulik Koli"
+  },
+  {
+    rating: 5,
+    title: "Love the fox theme!",
+    comment:
+      "As an animal lover, this was an instant buy. The detailing in the design is amazing and it fits true to size.",
+    author: "Kunjesh Patadiya"
+  }
 ];

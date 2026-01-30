@@ -9,6 +9,7 @@ import AddSubButton from '../ui/add-sub-btn';
 import ListItem from '../ui/list-item';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { decreaseQuantity, increaseQuantity, removeProduct } from '@/store/slices/productSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 const CartPopover: React.FC = () => {
@@ -17,6 +18,7 @@ const CartPopover: React.FC = () => {
 
     const cartProduct = useAppSelector(state => state.product.cart);
     const disPatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const getContent = () => {
         if (isLoading) {
@@ -35,8 +37,8 @@ const CartPopover: React.FC = () => {
                     {cartProduct.items.map(({ product, quantity }) => (
                         <ListItem
                             key={product._id}
-                            deleteIcon={<Icon name='delete' width={12} height={12} className='text-error hover:text-error/60 cursor-pointer'  stroke='currentColor' fill='none' onClick={() => disPatch(removeProduct(product._id))} />}
-                            addSubBtn={<AddSubButton count={quantity} addAction={() => {disPatch(increaseQuantity(product._id))}} subAction={() => {disPatch(decreaseQuantity(product._id))}} />}
+                            deleteIcon={<Icon name='delete' width={12} height={12} className='text-error hover:text-error/60 cursor-pointer' stroke='currentColor' fill='none' onClick={() => disPatch(removeProduct(product._id))} />}
+                            addSubBtn={<AddSubButton count={quantity} addAction={() => { disPatch(increaseQuantity(product._id)) }} subAction={() => { disPatch(decreaseQuantity(product._id)) }} />}
                             product={product}
                         />
                     ))}
@@ -54,7 +56,7 @@ const CartPopover: React.FC = () => {
                     </div>
                     <Separator />
                     <div className='w-full px-2 flex justify-between gap-4'>
-                        <Button variant='outline' size='sm' className='w-30'>
+                        <Button variant='outline' size='sm' className='w-30' onClick={() => navigate('/me/cart')}>
                             View Cart
                         </Button>
                         <Button variant='default' size='sm' className='w-30'>
@@ -68,7 +70,7 @@ const CartPopover: React.FC = () => {
 
     return (
         <Popover open={open} onOpenChange={setOpen}>
-            <PopoverTrigger 
+            <PopoverTrigger
                 className={cn(
                     'hover:text-primary/60 cursor-pointer',
                     open ? 'text-primary/60' : 'text-muted'
@@ -77,9 +79,9 @@ const CartPopover: React.FC = () => {
                 <Icon name="cart" width={20} height={20} fill='none' stroke='currentColor' />
             </PopoverTrigger>
             <PopoverContent className='rounded-2xl p-2 w-full'>
-               <div className='w-full h-full flex flex-col gap-2'>
+                <div className='w-full h-full flex flex-col gap-2'>
                     {getContent()}
-               </div>
+                </div>
             </PopoverContent>
         </Popover>
     )
