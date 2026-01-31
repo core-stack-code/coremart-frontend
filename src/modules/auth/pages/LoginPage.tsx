@@ -1,6 +1,7 @@
 import React from 'react'
-import LoginForm from '../../components/login-form'
-import AuthHeading from '../../components/auth-heading'
+import LoginForm from '../components/login-form'
+import AuthHeading from '../components/auth-heading'
+import { Typography } from '@/components/ui/typography'
 
 const LoginPage: React.FC = () => {
     return (
@@ -9,8 +10,8 @@ const LoginPage: React.FC = () => {
                 <AuthHeading
                     title={ (
                         <div className='flex flex-col gap-1'>
-                            <span>Hey,</span>
-                            <span>Welcome Back</span>
+                            <Typography variant='h1'>Hey,</Typography>
+                            <Typography variant='h1'>Welcome Back</Typography>
                         </div>
                     )}
                 />

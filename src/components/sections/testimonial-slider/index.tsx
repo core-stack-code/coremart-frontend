@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import { Typography } from '@/components/ui/typography';
 
 const testimonials = [
     { id: 1, name: "Alice", text: "Amazing product!" },
@@ -41,55 +42,55 @@ const TestimonialSlider: React.FC = () => {
         <CardWrapper title="Testimonials" >
             <div className="w-full py-12 flex items-center justify-center border border-border rounded-3xl">
                 <div className="w-full max-w-5xl">
-                <Swiper
-                    centeredSlides
-                    slidesPerView={visible}
-                    spaceBetween={60}
-                    loop={true}
-                    speed={700}
-                    autoplay={{ delay: 3000, disableOnInteraction: false }}
-                    onSwiper={(s) => setActive(s.realIndex % originalCount)}
-                    onSlideChange={(s) => setActive(s.realIndex % originalCount)}
-                    modules={[Autoplay]}
-                    className="w-full"
-                >
-                    {slides.map((sld, idx) => {
-                        const dist = circularDistance(sld.originalIndex, active, originalCount);
+                    <Swiper
+                        centeredSlides
+                        slidesPerView={visible}
+                        spaceBetween={60}
+                        loop={true}
+                        speed={700}
+                        autoplay={{ delay: 3000, disableOnInteraction: false }}
+                        onSwiper={(s) => setActive(s.realIndex % originalCount)}
+                        onSlideChange={(s) => setActive(s.realIndex % originalCount)}
+                        modules={[Autoplay]}
+                        className="w-full"
+                    >
+                        {slides.map((sld, idx) => {
+                            const dist = circularDistance(sld.originalIndex, active, originalCount);
 
-                        const opacity = dist === 0 ? 1 : dist === 1 ? 0.75 : dist === 2 ? 0.45 : 0.2;
-                        const scale = dist === 0 ? 1 : dist === 1 ? 0.9 : dist === 2 ? 0.8 : 0.75;
+                            const opacity = dist === 0 ? 1 : dist === 1 ? 0.75 : dist === 2 ? 0.45 : 0.2;
+                            const scale = dist === 0 ? 1 : dist === 1 ? 0.9 : dist === 2 ? 0.8 : 0.75;
 
-                        const style: React.CSSProperties = {
-                            opacity,
-                            transform: `scale(${scale})`,
-                            transition: "opacity 300ms ease, transform 300ms ease",
-                        };
+                            const style: React.CSSProperties = {
+                                opacity,
+                                transform: `scale(${scale})`,
+                                transition: "opacity 300ms ease, transform 300ms ease",
+                            };
 
-                        const textSize =
-                            dist === 0 ? "text-base" : dist === 1 ? "text-sm" : "text-xs";
-                        const nameSize =
-                            dist === 0 ? "text-sm" : dist === 1 ? "text-xs" : "text-[0.625rem]";
+                            const textSize =
+                                dist === 0 ? "text-base" : dist === 1 ? "text-sm" : "text-xs";
+                            const nameSize =
+                                dist === 0 ? "text-sm" : dist === 1 ? "text-xs" : "text-[0.625rem]";
 
-                        return (
-                            <SwiperSlide key={`${sld.id}-${idx}`}>
-                                <div style={style} className="flex flex-col items-center justify-center gap-6">
-                                    <div className="w-40 h-40 flex items-center rounded-full justify-center overflow-hidden">
-                                        <img src="/hero1.png" alt={sld.name} className="w-full h-full object-cover" />
+                            return (
+                                <SwiperSlide key={`${sld.id}-${idx}`}>
+                                    <div style={style} className="flex flex-col items-center justify-center gap-6">
+                                        <div className="w-40 h-40 flex items-center rounded-full justify-center overflow-hidden">
+                                            <img src="/hero1.png" alt={sld.name} className="w-full h-full object-cover" />
+                                        </div>
+                                        <div className="flex flex-col gap-1 items-center">
+                                            <Typography className={cn(
+                                                " whitespace-nowrap min-w-60 text-center",
+                                                textSize
+                                            )}>
+                                                "{sld.text}"
+                                            </Typography>
+                                            <Typography className={cn(" text-secondary", nameSize)}>— {sld.name}</Typography>
+                                        </div>
                                     </div>
-                                    <div className="flex flex-col gap-1 items-center">
-                                        <span className={cn(
-                                            "text-foreground text-base font-normal whitespace-nowrap min-w-60 text-center",
-                                            textSize
-                                        )}>
-                                            "{sld.text}"
-                                        </span>
-                                        <span className={cn("text-sm font-normal text-secondary", nameSize)}>— {sld.name}</span>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        );
-                    })}
-                </Swiper>
+                                </SwiperSlide>
+                            );
+                        })}
+                    </Swiper>
                 </div>
             </div>
         </CardWrapper>

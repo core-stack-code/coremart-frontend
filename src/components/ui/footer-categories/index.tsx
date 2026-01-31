@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import type { FooterLink } from '@/components/footer';
 import { cn } from '@/lib/utils';
 import Icon from '../icons';
+import { Typography } from '../typography';
 
 interface FooterCategoryColumnProps {
   title: string;
@@ -13,7 +14,7 @@ interface FooterCategoryColumnProps {
 const FooterCategoryColumn: React.FC<FooterCategoryColumnProps> = ({ title, items }) => {
   return (
     <div className='flex flex-col gap-7'>
-      <p className='font-xs font-semibold'>{title}</p>
+      <Typography className='font-semibold'>{title}</Typography>
 
       <div className='flex flex-col gap-4 text-muted'>
         {items.map((item, index) => (

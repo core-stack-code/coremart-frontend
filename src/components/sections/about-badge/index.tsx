@@ -1,6 +1,7 @@
 import React from 'react'
 import type { CombinedIconName } from '../../ui/icons';
 import Icon from '../../ui/icons';
+import { Typography } from '@/components/ui/typography';
 
 type AboutBadeType = {
     id: number;
@@ -41,10 +42,10 @@ const AboutBadge: React.FC = () => {
                             <Icon name={badge.iconName} width={46} height={46} />
                         </div>
 
-                     </div>   
+                    </div>
                     <div className='flex flex-col items-center gap-1'>
-                        <span className='capitalize font-bold text-xl text-black'>{badge.title}</span>
-                        <span className='text-sm text-black font-normal'>{badge.subtitles}</span>
+                        <Typography variant='large' className='capitalize font-bold text-xl'>{badge.title}</Typography>
+                        <Typography className='text-sm'>{badge.subtitles}</Typography>
                     </div>
                 </div>
             ))}

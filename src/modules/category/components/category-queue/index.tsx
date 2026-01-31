@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import type { Category } from '@/types/products';
 import { cn } from '@/lib/utils'
 import Icon from '@/components/ui/icons'
+import { Typography } from '@/components/ui/typography';
 
 
 const CATEGORY: { id: Category; name: string; image: string }[] = [
@@ -35,7 +36,7 @@ const CategoryQueue: React.FC<{ isRedirect?: boolean }> = () => {
         <div className='w-full flex flex-col gap-4'>
             <div className='w-full flex gap-5 items-center'>
                 <Icon name='categories' width={24} height={24} />
-                <span className='text-lg font-bold text-primary'>Categories</span>
+                <Typography variant='lead' className='font-bold text-primary'>Categories</Typography>
             </div>
             <div className='w-full flex justify-between'>
                 {CATEGORY.map((item) => {
@@ -53,7 +54,7 @@ const CategoryQueue: React.FC<{ isRedirect?: boolean }> = () => {
                             >
                                 <img src={`/src/assets/images/${item.image}`} alt={item.name} className='w-full h-full rounded-full overflow-hidden object-cover' />
                             </div>
-                            <span className={cn('text-base font-medium', isSelected && "text-accent")}>{item.name}</span>
+                            <Typography className={cn('text-muted font-medium', isSelected && "text-accent")}>{item.name}</Typography>
                         </div>
                     )
                 })}

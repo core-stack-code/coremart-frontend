@@ -5,6 +5,7 @@ import CartProductCard from '../cart-product-card';
 import AddSubButton from '@/components/ui/add-sub-btn';
 import { useAppDispatch } from '@/hooks/redux';
 import { decreaseQuantity, increaseQuantity } from '@/store/slices/productSlice';
+import { Typography } from '@/components/ui/typography';
 
 interface cartProductListProps {
     cartItems: CartType;
@@ -18,11 +19,11 @@ const CartProductList: React.FC<cartProductListProps> = ({ cartItems }) => {
         <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row gap-15">
             <div className="w-full border border-border rounded-rad p-4 ">
                 <div className="grid grid-cols-2 font-bold">
-                    <p>Product</p>
+                    <Typography >Product</Typography>
                     <div className="grid grid-cols-3 items-center">
-                        <p className="mx-auto">Price</p>
-                        <p className="mx-auto">Quantity</p>
-                        <p className="mx-auto">Total Price</p>
+                        <Typography className="mx-auto">Price</Typography>
+                        <Typography className="mx-auto">Quantity</Typography>
+                        <Typography className="mx-auto">Total Price</Typography>
                     </div>
                 </div>
 
@@ -33,13 +34,13 @@ const CartProductList: React.FC<cartProductListProps> = ({ cartItems }) => {
 
                         <div className=" grid grid-cols-3 items-center">
 
-                            <p className="mx-auto">$ {cartProduct.product.price}</p>
+                            <Typography className="mx-auto">$ {cartProduct.product.price}</Typography>
 
                             <div className="mx-auto">
-                                <AddSubButton count={cartProduct.quantity} addAction={() => {disPatch(increaseQuantity(cartProduct.product._id))}} subAction={() => {disPatch(decreaseQuantity(cartProduct.product._id))}} />
+                                <AddSubButton count={cartProduct.quantity} addAction={() => { disPatch(increaseQuantity(cartProduct.product._id)) }} subAction={() => { disPatch(decreaseQuantity(cartProduct.product._id)) }} />
                             </div>
 
-                            <p className="mx-auto">$ {cartProduct.product.price * cartProduct.quantity}</p>
+                            <Typography className="mx-auto">$ {cartProduct.product.price * cartProduct.quantity}</Typography>
                         </div>
                     </div>
                 ))}

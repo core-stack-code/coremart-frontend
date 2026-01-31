@@ -1,3 +1,4 @@
+import { Typography } from '@/components/ui/typography'
 import React from 'react'
 
 const ProfileInfo: React.FC = () => {
@@ -9,7 +10,7 @@ const ProfileInfo: React.FC = () => {
                     alt="Profile not found"
                     className="w-32 h-32 object-cover rounded-full"
                 />
-                <p className="font-bold text-2xl">Sachit Dabhi</p>
+                <Typography variant='large' >Sachit Dabhi</Typography>
             </div>
 
 
@@ -17,19 +18,19 @@ const ProfileInfo: React.FC = () => {
 
                 <div className="flex gap-6">
                     <div className="flex flex-col gap-2">
-                        <p className="text-muted">Full Name</p>
-                        <p>Sachit Dabhi</p>
+                        <Typography variant='small'>Full Name</Typography>
+                        <Typography >Sachit Dabhi</Typography>
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <p className="text-muted">Phone Number</p>
-                        <p>+91 1234567890</p>
+                        <Typography variant='small'>Phone Number</Typography>
+                        <Typography>+91 1234567890</Typography>
                     </div>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <p className="text-muted">Email Address</p>
-                    <p>corestack@gmail.com</p>
+                    <Typography variant='small'>Email Address</Typography>
+                    <Typography>corestack@gmail.com</Typography>
                 </div>
             </div>
         </div>

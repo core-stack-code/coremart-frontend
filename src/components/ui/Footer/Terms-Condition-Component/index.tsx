@@ -1,13 +1,14 @@
 import { NavLink } from "react-router-dom"
+import { Typography } from "../../typography"
 
 
 const TermsConditionFooter = () => {
   return (
     <>
       <div>
-        <span className="text-muted ">All Rights Reserved | </span>
+        <Typography className="text-muted ">All Rights Reserved | </Typography>
         <NavLink to={''} className="text-primary hover:underline">Terms and Conditions</NavLink>
-        <span className="text-[#6F6C90] "> | </span>
+        <Typography className="text-muted "> | </Typography>
         <NavLink to={''} className="text-primary hover:underline">Privacy Policy</NavLink>
       </div>
     </>

@@ -1,5 +1,6 @@
-import AuthHeading from "../../components/auth-heading"
-import ResetPasswordForm from "../../components/reset-password-form"
+import { Typography } from "@/components/ui/typography"
+import AuthHeading from "../components/auth-heading"
+import ResetPasswordForm from "../components/reset-password-form"
 
 const ResetPassword = () => {
     return (
@@ -9,8 +10,8 @@ const ResetPassword = () => {
                     title="Reset Password"
                     description={(
                         <div className='flex flex-col gap-0.5 text-secondary'>
-                            <span>Create a new password to regain access to</span>
-                            <span>your account.</span>
+                            <Typography>Create a new password to regain access to</Typography>
+                            <Typography>your account.</Typography>
                         </div>
                     )}
                 />

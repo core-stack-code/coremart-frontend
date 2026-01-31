@@ -2,6 +2,7 @@ import { useAppSelector } from "@/hooks/redux"
 import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import CartProductList from "../components/cart-product-list"
+import { Typography } from "@/components/ui/typography"
 
 
 const YourCart = () => {
@@ -14,7 +15,7 @@ const YourCart = () => {
     const getContent = () => {
         if (isCartEmpty) {
             return (<div className="w-full min-h-50 flex flex-col gap-5 justify-center items-center border border-border rounded-rad text-muted">
-                <h1>Your Cart is Empty</h1>
+                <Typography variant='large'>Your Cart is Empty</Typography>
                 <Button variant='outline' size='lg' onClick={() => navigate('/')}>Go To Shopping</Button>
             </div>)
         } else {
@@ -25,8 +26,8 @@ const YourCart = () => {
     return (
         <div className="flex flex-col gap-7">
             <div className="flex flex-col gap-3">
-                <h2 className="text-xl font-semibold">Your Cart</h2>
-                {!isCartEmpty && <p className="text-muted">{cartProducts.items.length} items in your cart.</p>}
+                <Typography variant='h4' className="text-xl font-semibold">Your Cart</Typography>
+                {!isCartEmpty && <Typography className="text-muted">{cartProducts.items.length} items in your cart.</Typography>}
             </div>
             {getContent()}
         </div>

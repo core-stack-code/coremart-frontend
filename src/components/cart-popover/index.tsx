@@ -10,6 +10,7 @@ import ListItem from '../ui/list-item';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { decreaseQuantity, increaseQuantity, removeProduct } from '@/store/slices/productSlice';
 import { useNavigate } from 'react-router-dom';
+import { Typography } from '../ui/typography';
 
 
 const CartPopover: React.FC = () => {
@@ -27,7 +28,7 @@ const CartPopover: React.FC = () => {
         else if (cartProduct.items.length === 0) {
             return (
                 <div className='w-full min-w-70 flex items-center justify-center text-sm font-normal text-muted min-h-20'>
-                    <span>Your cart is empty</span>
+                    <Typography variant='muted'>Your cart is empty</Typography>
                 </div>
             )
         }
@@ -45,12 +46,12 @@ const CartPopover: React.FC = () => {
                     <div className='w-full flex flex-col gap-2 px-2'>
                         <div className='w-full flex items-center justify-between'>
                             <div className='flex gap-1'>
-                                <span className='text-sm font-normal text-muted'>Total quantity:</span>
-                                <span className='text-sm font-medium text-muted'>{cartProduct.totalQuantity}</span>
+                                <Typography variant='muted'>Total quantity:</Typography>
+                                <Typography variant='muted' className='font-semibold'>{cartProduct.totalQuantity}</Typography>
                             </div>
                             <div className='flex gap-1'>
-                                <span className='text-sm font-normal text-muted'>Total amount:</span>
-                                <span className='text-sm font-medium text-muted'>₹{cartProduct.totalPrice.toFixed(2)}</span>
+                                <Typography variant='muted'>Total amount:</Typography>
+                                <Typography variant='muted' className='font-semibold'>₹{cartProduct.totalPrice.toFixed(2)}</Typography>
                             </div>
                         </div>
                     </div>

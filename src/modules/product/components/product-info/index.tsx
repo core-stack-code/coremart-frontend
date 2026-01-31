@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { useAppDispatch } from '@/hooks/redux'
 import { getCardDetails } from '@/store/slices/productSlice'
 import ProductSpecification from '../product-specification'
+import { Typography } from '@/components/ui/typography'
 
 
 interface productInfoProps {
@@ -30,6 +31,8 @@ const ProductInfo: React.FC<productInfoProps> = ({ product }) => {
                 category: product.category,
                 price: product.price,
                 image: product.images[0],
+                color: 'White',
+                size: product.sizes[0],
                 description: product.description,
             },
             quantity: 1,
@@ -43,8 +46,8 @@ const ProductInfo: React.FC<productInfoProps> = ({ product }) => {
         <div className='flex flex-col gap-6'>
             {/* Product Title & Category */}
             <div className='flex flex-col gap-3'>
-                <h1 className='text-4xl font-bold text-foreground leading-tight'>Urban Wild: Illustrated Graphic T-shirt by Nike</h1>
-                <p className='text-lg text-muted font-medium'>T-Shirt</p>
+                <Typography variant='h4' className='font-bold text-foreground'>Urban Wild: Illustrated Graphic T-shirt by Nike</Typography>
+                <Typography variant='large' className='text-muted'>T-Shirt</Typography>
             </div>
 
             {/* Rating & Meta Section */}
@@ -68,8 +71,8 @@ const ProductInfo: React.FC<productInfoProps> = ({ product }) => {
             {/* Price Section */}
             <div className='border border-border rounded-2xl p-5 bg-surface'>
                 <div className='flex items-baseline gap-3'>
-                    <span className='text-lg text-muted font-medium'>Total Price:</span>
-                    <span className='text-4xl text-primary font-bold'>₹{product.price}</span>
+                    <Typography variant='large' className=' text-muted '>Total Price:</Typography>
+                    <Typography variant='h2' className='text-primary font-bold'>₹{product.price}</Typography>
                 </div>
             </div>
 

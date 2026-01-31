@@ -1,5 +1,6 @@
 import type { CartItemType } from '@/types/products'
 import React from 'react'
+import { Typography } from '../typography'
 
 interface ListItemProps {
     deleteIcon?: React.ReactNode
@@ -17,15 +18,15 @@ const ListItem: React.FC<ListItemProps> = ({ deleteIcon, addSubBtn, product }) =
             <div className='w-full h-25 flex flex-col gap-3 justify-between p-2'>
                 <div className='flex justify-between gap-2'>
                     <div className='flex flex-col gap-2'>
-                        <span className='text-sm font-normal text-foreground max-w-40 line-clamp-2'>{product.name}</span>
-                        <span className='text-xs font-normal text-muted'>{product.category}</span>
+                        <Typography variant='muted' className='text-foreground max-w-40 '>{product.name}</Typography>
+                        <Typography variant='muted'>{product.category}</Typography>
                     </div>
                     {deleteIcon}
                 </div>
                 <div className='flex items-center justify-between gap-2'>
                     <div className='flex items-center gap-1'>
-                        <span className='text-xs font-normal text-muted'>Price : </span>
-                        <span className='text-xs font-medium text-primary'>₹{product.price}</span>
+                        <Typography variant='muted'>Price : </Typography>
+                        <Typography variant='muted' className='font-semibold text-primary'>₹{product.price}</Typography>
                     </div>
                     {addSubBtn}
                 </div>

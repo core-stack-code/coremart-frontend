@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import Icon from '@/components/ui/icons'
+import { Typography } from '@/components/ui/typography'
 import { useAppDispatch } from '@/hooks/redux'
 import AddCartButton from '@/modules/product/components/add-cart-btn'
 import { getCardDetails } from '@/store/slices/productSlice'
@@ -53,12 +54,12 @@ const WhislistSavedCard: React.FC<WhislistSavedCardProps> = ({ product, variant 
             <div className="w-full flex flex-col gap-4 px-3 py-3">
                 <div className="flex justify-between items-start gap-3">
                     <div className="flex flex-col gap-1">
-                        <h3 className="text-lg font-medium text-foreground">
+                        <Typography variant='large'>
                             {product.name}
-                        </h3>
-                        <p className="text-base text-muted">
+                        </Typography>
+                        <Typography  className="text-muted">
                             {product.category}
-                        </p>
+                        </Typography>
                     </div>
 
                     <Icon
@@ -74,12 +75,12 @@ const WhislistSavedCard: React.FC<WhislistSavedCardProps> = ({ product, variant 
 
                 <div className="flex gap-2 text-sm">
                     <div className="flex flex-col gap-1 text-muted">
-                        <span>Brand :</span>
-                        <span>Color :</span>
+                        <Typography variant='small'>Size :</Typography>
+                        <Typography variant='small'>Color :</Typography>
                     </div>
                     <div className="flex flex-col gap-1 text-foreground font-medium">
-                        <span>{product.brand}</span>
-                        <span>{product.color}</span>
+                        <Typography variant='small' className='text-black'>{product.size}</Typography>
+                        <Typography variant='small' className='text-black'>{product.color}</Typography>
                     </div>
                 </div>
 

@@ -1,11 +1,12 @@
 import React from "react"
 import ContactInfo from "./components/contact-info"
 import ContactForm from "./components/contact-form"
+import { Typography } from "@/components/ui/typography"
 
 const Contact: React.FC = () => {
   return (
-    <div className="w-full py-10">
-      <h1 className="font-semibold text-4xl pb-8">Contact Us</h1>
+    <div className="w-full flex flex-col gap-6 py-10">
+      <Typography variant='h1' className="font-semibold">Contact Us</Typography>
 
       <div className="w-full flex justify-between gap-10">
 

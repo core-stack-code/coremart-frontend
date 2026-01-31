@@ -1,5 +1,6 @@
 import React from 'react'
 import Icon from '@/components/ui/icons'
+import { Typography } from '@/components/ui/typography'
 
 const HeroSection: React.FC = () => {
   return (
@@ -9,12 +10,12 @@ const HeroSection: React.FC = () => {
           <Icon name="chatBubble" />
         </div>
         <div className='flex flex-col gap-1.5'>
-          <h2 className="text-4xl font-bold">
+          <Typography variant="h2" className="font-bold">
             Style That <span className="text-primary"> Speaks </span>for You
-          </h2>
-          <p className="text-lg">
+          </Typography>
+          <Typography variant='large'>
             Coremart brings you fashion that fits your lifestyle
-          </p>
+          </Typography>
         </div>
       </div>
 

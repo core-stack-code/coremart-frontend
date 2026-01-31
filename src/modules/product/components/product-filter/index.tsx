@@ -8,6 +8,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useDebounce } from '@/hooks/debounce';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { setFilters } from '@/store/slices/productSlice';
+import { Typography } from '@/components/ui/typography';
 
 const SIZE = ['XS', 'S', 'M', 'L', 'XL', 'XXL'] as const;
 export type Size = typeof SIZE[number];
@@ -107,11 +108,11 @@ const ProductFilter: React.FC = () => {
     return (
         <div className='w-full rounded-xl border border-border px-4 py-6 flex flex-col gap-6'>
             <div className='flex items-center justify-between'>
-                <span className='font-medium text-lg'>Filter</span>
+                <Typography variant='large'>Filters</Typography>
                 <Icon name='filter' width={18} height={18} />
             </div>
             <div className='flex flex-col gap-3'>
-                <span className='text-sm'>Size</span>
+                <Typography>Size</Typography>
                 <div className='w-full rounded-2xl bg-primary/10 flex justify-between items-center'>
                     {SIZE.map((size) => (
                         <Button variant="none" key={size}
@@ -133,7 +134,7 @@ const ProductFilter: React.FC = () => {
             </div>
             {SELECT_OPTIONS.map((option) => (
                 <div className='flex flex-col gap-3' key={option.label}>
-                    <span className='text-sm'>{option.label}</span>
+                    <Typography>{option.label}</Typography>
                     <div className='flex gap-2 items-center flex-wrap'>
                         {option.options.map((opt) => (
                             <Button
@@ -152,7 +153,7 @@ const ProductFilter: React.FC = () => {
                 </div>
             ))}
             <div className='flex flex-col gap-3'>
-                <span className='text-sm'>Size</span>
+                <Typography>Price</Typography>
                 <SliderComponent
                     onChange={(val) => {
                         setFilter(prev => ({

@@ -13,6 +13,7 @@ import Icon from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { useUserLogin } from '../../apis/mutations'
+import { Typography } from '@/components/ui/typography'
 
 
 const LoginForm: React.FC = () => {
@@ -40,7 +41,7 @@ const LoginForm: React.FC = () => {
     }
 
     return (
-        <form 
+        <form
             className='w-full h-full'
             onSubmit={handleSubmit(onSubmit)}
         >
@@ -95,32 +96,32 @@ const LoginForm: React.FC = () => {
                         <a href="#" className='text-xs text-primary'>Forgot password?</a>
                     </div>
                 </div>
-                <Button 
+                <Button
                     type='submit'
-                    className='w-full h-11 bg-[var(--color-primary)] text-white rounded-2xl'
+                    className='w-full h-11 bg-primary text-white rounded-2xl'
                     variant='default'
                 >
                     {isPending ? "Loading..." : "Sign In"}
                 </Button>
                 <div className='w-full flex items-center justify-center'>
                     <div className='w-fit h-full flex flex-col gap-2'>
-                        <span className='text-xs text-primary'>Or sign in with</span>
+                        <Typography className='text-primary'>Or sign in with</Typography>
                         <div className='py-2.5 px-6 rounded-2xl border border-border flex items-center justify-center'>
                             <Icon name="githubIcon" width={25} height={25} />
                         </div>
                     </div>
                 </div>
                 <div className='w-full flex justify-start items-center'>
-                    <p className='text-xs text-primary text-center'>
-                        Don’t have an account? 
+                    <Typography className='text-primary text-center'>
+                        Don’t have an account?
                         <NavLink
                             to="/auth/signup"
-                            className='text-[#9333EA] font-bold'
+                            className='text-primary font-bold'
                             onClick={(e) => isPending && e.preventDefault()}
                         >
                             Sign Up
                         </NavLink>
-                    </p>
+                    </Typography>
                 </div>
             </div>
         </form>

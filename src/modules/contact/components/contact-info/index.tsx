@@ -1,5 +1,6 @@
 import React from 'react'
 import Icon from '@/components/ui/icons'
+import { Typography } from '@/components/ui/typography'
 
 const INFO = {
     phone: '+91 1234567890',
@@ -18,10 +19,10 @@ const ContactInfo: React.FC = () => {
                     </div>
                 </div>
                 <div className="text-muted text-base flex flex-col gap-2">
-                    <p className="text-black text-lg font-bold">Call to us</p>
-                    <p>We are available 24/7.</p>
+                    <Typography variant='large' className="text-black">Call to us</Typography>
+                    <Typography>We are available 24/7.</Typography>
                     <a>
-                        <span className='hover:text-primary hover:border-b'>{INFO.phone}</span>
+                        <Typography variant='link' className='hover:text-primary hover:border-b'>{INFO.phone}</Typography>
                     </a>
                 </div>
             </div>
@@ -35,12 +36,12 @@ const ContactInfo: React.FC = () => {
                     </div>
                 </div>
                 <div className="text-muted text-base flex flex-col gap-3">
-                    <p className="text-black text-lg font-bold">Write to us</p>
-                    <p>Fill out our form and we will contact you within 24 hours.</p>
+                    <Typography variant='large' className="text-black text-lg font-bold">Write to us</Typography>
+                    <Typography>Fill out our form and we will contact you within 24 hours.</Typography>
                     <a>
-                        <span className='hover:text-primary hover:border-b' >
+                        <Typography variant='link' className='hover:text-primary hover:border-b' >
                             {INFO.email}
-                        </span>
+                        </Typography>
                     </a>
                 </div>
             </div>

@@ -53,7 +53,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
   children
 }) => {
 
-  const maxItems  = rows && columns ? rows* columns : undefined;
+  const maxItems = rows && columns ? rows * columns : undefined;
 
   const childrenArray = React.Children.toArray(children);
 
@@ -61,7 +61,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
 
   return (
     <div className={cn(
-      "w-full grid", 
+      "w-full grid",
       columns ? `grid-cols-${columns}` : "grid-cols-1",
       rows && `grid-rows-${rows}`,
       className,

@@ -1,3 +1,4 @@
+import { Typography } from "@/components/ui/typography"
 import { cn } from "@/lib/utils"
 import { NavLink } from "react-router-dom"
 
@@ -13,7 +14,7 @@ const WhislistSavedNavbar = () => {
                             : "text-muted-secondry hover:text-primary/60"
                     )}
             >
-                <p className="text-xl mb-2">Your Wishlist</p>
+                <Typography variant='large' className="mb-2">Your Wishlist</Typography>
             </NavLink>
             <NavLink
                 to="/me/saved"
@@ -24,7 +25,7 @@ const WhislistSavedNavbar = () => {
                             : "text-muted-secondry hover:text-primary/60"
                     )}
             >
-                <p className="text-xl mb-2">Saved Products</p>
+                <Typography variant='large' className="mb-2">Saved Products</Typography>
             </NavLink>
         </div>
     )

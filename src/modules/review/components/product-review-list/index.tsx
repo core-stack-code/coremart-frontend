@@ -1,4 +1,5 @@
 import Icon from '@/components/ui/icons'
+import { Typography } from '@/components/ui/typography'
 import React from 'react'
 
 
@@ -24,9 +25,9 @@ const ProductReviewList: React.FC<productReviewListProps> = ({ review }) => {
                     )
                 })}
             </div>
-            <p className='text-base font-semibold text-foreground'>{review.title}</p>
-            <p className='text-base text-muted leading-relaxed'>{review.comment}</p>
-            <p className='text-sm text-secondary font-medium mt-1'>{review.author}</p>
+            <Typography className='text-foreground'>{review.title}</Typography>
+            <Typography variant='muted'>{review.comment}</Typography>
+            <Typography variant='muted' className='text-secondary mt-1'>{review.author}</Typography>
         </div>
     )
 }

@@ -1,3 +1,4 @@
+import { Typography } from '@/components/ui/typography'
 import React from 'react'
 
 interface metaItemProps {
@@ -8,8 +9,8 @@ interface metaItemProps {
 const MetaItem: React.FC<metaItemProps> = ({ label, value }) => {
     return (
         <div className='flex gap-1.5 items-center'>
-            <p className='font-semibold text-foreground'>{value}</p>
-            <span className='text-muted'>{label}</span>
+            <Typography className='font-semibold text-foreground'>{value}</Typography>
+            <Typography className='text-muted'>{label}</Typography>
         </div>
     )
 }

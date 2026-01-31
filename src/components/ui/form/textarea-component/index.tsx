@@ -3,6 +3,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import Icon from "../../icons";
 import { Textarea } from "../../textarea";
+import { Typography } from "../../typography";
 
 
 
@@ -37,8 +38,8 @@ const TextareaComponent = React.forwardRef<HTMLTextAreaElement, TextAreaComponen
             )}
           >
             <Icon name="crossIcon" width={9} height={9} fill="#EF4444" />
-            <p className="text-xs text-error transition-opacity duration-300 ease-in-out">              {error}
-            </p>
+            <Typography variant='small' className="text-error transition-opacity duration-300 ease-in-out">              {error}
+            </Typography>
           </div>
         </div>
       </>

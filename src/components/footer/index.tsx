@@ -7,6 +7,7 @@ import { CATEGORY_ENUM_MAP } from '@/constants/product';
 import Icon, { type CombinedIconName } from '../ui/icons'
 import FooterCategoryColumn from '../ui/footer-categories';
 import { Separator } from '../ui/separator';
+import { Typography } from '../ui/typography';
 
 
 export type FooterLink = {
@@ -95,11 +96,11 @@ const Footer: React.FC = () => {
                             <p>Copyright © 2025 CoreStack</p>
                         </div>
                         <div className='flex gap-2 h-4 '>
-                            <p>All Rights Reserved</p>
+                            <Typography>All Rights Reserved</Typography>
                             <Separator orientation='vertical' className='h-full' />
-                            <p className='text-primary border-b cursor-pointer'>Terms and Conditions</p>
+                            <Typography className='text-primary border-b cursor-pointer'>Terms and Conditions</Typography>
                             <Separator orientation='vertical' className='h-full' />
-                            <p className='text-primary border-b cursor-pointer'>Privacy Policy</p>
+                            <Typography className='text-primary border-b cursor-pointer'>Privacy Policy</Typography>
                         </div>
                     </div>
                 </div>

@@ -19,11 +19,11 @@ import OrderHistory from "@/modules/order/pages/order-histrory";
 import CheckOut from "@/modules/order/pages/order-checkout";
 import TrackingOrder from "@/modules/order/pages/tracking-order";
 import AuthLayout from "@/layouts/AuthLayout";
-import LoginPage from "@/modules/auth/pages/login";
-import SignUpPage from "@/modules/auth/pages/singup";
-import ForgetPassword from "@/modules/auth/pages/forgot-password";
-import ResetPassword from "@/modules/auth/pages/rest-password";
-import OTPVerify from "@/modules/auth/pages/otp-verify";
+import LoginPage from "@/modules/auth/pages/LoginPage";
+import SignUpPage from "@/modules/auth/pages/SingupPage";
+import ForgetPassword from "@/modules/auth/pages/ForgetPasswordPage";
+import ResetPassword from "@/modules/auth/pages/ResetPasswordPage";
+import OTPVerify from "@/modules/auth/pages/OTPVerifyPage";
 
 
 const router = createBrowserRouter([

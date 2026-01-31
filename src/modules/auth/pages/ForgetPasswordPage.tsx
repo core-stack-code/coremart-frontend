@@ -1,5 +1,6 @@
-import AuthHeading from "../../components/auth-heading"
-import ForgetPasswordForm from "../../components/forget-password-form"
+import { Typography } from "@/components/ui/typography"
+import AuthHeading from "../components/auth-heading"
+import ForgetPasswordForm from "../components/forget-password-form"
 
 const ForgetPassword = () => {
     return (
@@ -10,7 +11,7 @@ const ForgetPassword = () => {
                     title="Forget Password?"
                     description={(
                         <div className='flex flex-col gap-0.5 text-secondary'>
-                            <span>Enter your registered email address and we’ll send you a link to reset your password.</span>
+                            <Typography>Enter your registered email address and we’ll send you a link to reset your password.</Typography>
                         </div>
                     )}
                 />
@@ -18,7 +19,7 @@ const ForgetPassword = () => {
             </div>
             <div className='w-full h-full max-w-170'>
                 <img
-                   src="/forgetpassword-section.svg"
+                    src="/forgetpassword-section.svg"
                     alt="Login Section"
                     className="w-full h-full object-contain"
                 />

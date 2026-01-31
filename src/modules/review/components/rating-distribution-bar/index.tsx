@@ -1,4 +1,5 @@
 import Icon from '@/components/ui/icons';
+import { Typography } from '@/components/ui/typography';
 import { cn } from '@/lib/utils';
 import React from 'react'
 
@@ -22,7 +23,7 @@ const RatingDistributionBar: React.FC = () => {
                     return (
                         <div key={star} className="flex items-center gap-3">
                             <div className="flex items-center gap-2">
-                                <span className="font-medium">{star}</span>
+                                <Typography className='text-black'>{star}</Typography>
                                 <Icon name='star' width={18} height={18} />
                             </div>
 
@@ -36,9 +37,9 @@ const RatingDistributionBar: React.FC = () => {
                                 />
                             </div>
 
-                            <span className="w-12 text-right text-sm text-gray-600">
+                            <Typography variant='muted' className="w-12 text-left ">
                                 {count}
-                            </span>
+                            </Typography>
                         </div>
                     );
                 })}

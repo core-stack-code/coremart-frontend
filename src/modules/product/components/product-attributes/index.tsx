@@ -1,3 +1,4 @@
+import { Typography } from '@/components/ui/typography'
 import React from 'react'
 
 interface productAttributesProps {
@@ -8,8 +9,8 @@ interface productAttributesProps {
 const ProductAttributes: React.FC<productAttributesProps> = ({ label, value }) => {
     return (
         <div className='flex gap-2 items-center'>
-            <span className='text-muted'>{label}:</span>
-            <span className='text-foreground font-semibold'>{value}</span>
+            <Typography className='text-muted'>{label}:</Typography>
+            <Typography className='text-foreground font-semibold'>{value}</Typography>
         </div>
     )
 }

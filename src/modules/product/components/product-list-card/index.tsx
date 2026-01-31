@@ -4,31 +4,34 @@ import AddCartButton from '../add-cart-btn'
 import Icon from '@/components/ui/icons'
 import { useAppDispatch } from '@/hooks/redux'
 import { getCardDetails } from '@/store/slices/productSlice'
+import { Typography } from '@/components/ui/typography'
 
 interface ProductListCardProps {
     product: ProductType
 }
 
 const ProductListCard: React.FC<ProductListCardProps> = ({ product }) => {
-     const disPatch = useAppDispatch();
-    
-        const getCardData = () => {
-            const data: CartItemType = {
-                product: {
-                    _id: product._id,
-                    name: product.name,
-                    slug: product.slug,
-                    category: product.category,
-                    price: product.price,
-                    image: product.images[0],
-                    description: product.description,
-                },
-                quantity: 1,
-                itemTotal: product.price * 1
-            };
-    
-            disPatch(getCardDetails(data))
-        }
+    const disPatch = useAppDispatch();
+
+    const getCardData = () => {
+        const data: CartItemType = {
+            product: {
+                _id: product._id,
+                name: product.name,
+                slug: product.slug,
+                category: product.category,
+                price: product.price,
+                image: product.images[0],
+                color: product.color,
+                size: product.size,
+                description: product.description,
+            },
+            quantity: 1,
+            itemTotal: product.price * 1
+        };
+
+        disPatch(getCardDetails(data))
+    }
 
 
     return (
@@ -43,7 +46,7 @@ const ProductListCard: React.FC<ProductListCardProps> = ({ product }) => {
             <div className=' w-full flex flex-col gap-2 py-5 px-3'>
                 <div className='flex justify-between items-start gap-2'>
                     <div className='w-full flex justify-between items-center '>
-                        <h3 className='text-base font-medium text-foreground' >{product.name}</h3>
+                        <Typography variant='large'>{product.name}</Typography>
                         <Icon
                             name='Heart'
                             width={24}
@@ -55,11 +58,11 @@ const ProductListCard: React.FC<ProductListCardProps> = ({ product }) => {
                         />
                     </div>
                 </div>
-                <p className='text-xs text-muted'>{product.category}</p>
+                <Typography variant='small'>{product.brand}</Typography>
                 <div className='max-w-155 flex flex-col gap-3'>
-                    <p className='text-sm line-clamp-3 tracking-wide! leading-5! text-gray-500 text-justify'>{product.description}</p>
+                    <Typography variant='small' className='line-clamp-3 tracking-wide! leading-5!'>{product.description}</Typography>
                     <div className='flex items-center gap-4 mt-auto pt-2'>
-                        <h3 className='text-xl font-bold text-purple-600' >$ {product.price}</h3>
+                        <Typography variant='large' className='font-semibold text-primary'>$ {product.price}</Typography>
                         <AddCartButton productId={product._id} getCardData={getCardData} />
                     </div>
                 </div>

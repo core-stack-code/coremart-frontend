@@ -1,4 +1,5 @@
 import Icon from '@/components/ui/icons'
+import { Typography } from '@/components/ui/typography'
 import React from 'react'
 
 interface ratingBadgeProps {
@@ -15,8 +16,8 @@ const RatingBadge: React.FC<ratingBadgeProps> = ({ label, rating }) => {
           <Icon name='starHalf' width={20} height={20} /> :
           <Icon name='star' width={20} height={20} />
       }
-      <span className='font-semibold text-foreground'>{rating}</span>
-      <span className='text-muted'>{label}</span>
+      <Typography variant='small' className='font-semibold text-foreground'>{rating}</Typography>
+      <Typography variant='small' className='text-muted'>{label}</Typography>
     </div>
   )
 }

@@ -9,6 +9,7 @@ import { setUserData } from "@/store/slices/userSlice";
 import type { User } from "@/modules/user/apis/types";
 import { otpDefaultsValues} from "../../schemas/defaultValus";
 import  { InputOTPPattern } from "@/components/ui/form/otp-component";
+import { Typography } from "@/components/ui/typography";
 
 const OTPVerifyForm = () => {
   const dispatch = useAppDispatch();
@@ -48,12 +49,12 @@ const OTPVerifyForm = () => {
               )}
             />
           </div>
-          <p className=" text-muted">
+          <Typography>
             Didn’t receive CODE?
             <a href="/" className="text-primary font-bold underline ">
               Resend
             </a>
-          </p>
+          </Typography>
           <div className="flex flex-row justify-center gap-3">
             <Button
               type="button"

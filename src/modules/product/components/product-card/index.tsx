@@ -7,6 +7,7 @@ import { getCardDetails } from '@/store/slices/productSlice'
 import { useAppDispatch } from '@/hooks/redux'
 import { useNavigate } from 'react-router-dom'
 import { cn } from '@/lib/utils'
+import { Typography } from '@/components/ui/typography'
 
 type ProductCardType = "new" | "discount" | "ratting" | "normal"
 
@@ -60,7 +61,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal",
     }
 
     return (
-        <div 
+        <div
             onClick={handleRedirect}
             className={cn(
                 'w-full max-h-fit min-h-fit flex items-center justify-center',
@@ -89,16 +90,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal",
 
                     {isRightBagde && (
                         <div className='absolute top-3 left-3'>
-                            <span className='bg-primary py-1.5 px-4 rounded-xl text-white text-xs flex items-center justify-center'>
+                            <Typography className='bg-primary py-1.5 px-4 rounded-xl text-white text-xs flex items-center justify-center'>
                                 {rightBadge}
-                            </span>
+                            </Typography>
                         </div>
                     )}
                 </div>
                 <div className='flex h-full flex-col gap-3 p-3.5 border-b border-x border-border rounded-b-3xl bg-white'>
                     <div className='flex flex-col gap-2'>
-                        <h3 className='text-base font-medium text-foreground'>{product.name}</h3>
-                        <p className='text-xs text-muted'>{product.category}</p>
+                        <Typography variant='large'>{product.name}</Typography>
+                        <Typography variant='small'>{product.category}</Typography>
                     </div>
                     {getContent[cardType]}
                 </div>
@@ -114,10 +115,10 @@ export default ProductCard
 const RateSection: React.FC<{ rate: number }> = function ({ rate }) {
     return (
         <div className='flex flex-col gap-1.5'>
-            <p className='text-xs text-muted'>24 Reviews</p>
+            <Typography>{rate}</Typography>
             <div className='flex w-full items-center gap-2'>
                 <Ratting rate={rate} />
-                <p className='text-xs text-muted'>({rate}/5)</p>
+                <Typography variant='muted'>({rate}/5)</Typography>
             </div>
         </div>
     )
@@ -126,7 +127,7 @@ const RateSection: React.FC<{ rate: number }> = function ({ rate }) {
 const PriceBtnSections: React.FC<{ price: number; id: string, getCardData: () => void }> = function ({ id, price, getCardData }) {
     return (
         <div className='flex items-center justify-between'>
-            <span className='text-base font-semibold text-muted'>${price}</span>
+            <Typography variant='small' className='font-semibold text-primary'>${price}</Typography>
             <AddCartButton productId={id} getCardData={getCardData} />
         </div>
     )
@@ -137,12 +138,12 @@ const DiscountSection: React.FC<{ price: number; originalPrice: number }> = ({ p
     return (
         <div className='flex items-center justify-between'>
             <div className='flex items-center gap-2'>
-                <span className='text-base font-semibold text-accent'>${price}</span>
-                <span className='text-base font-thin text-muted line-through'>${originalPrice}</span>
+                <Typography variant='small' className='font-semibold text-accent'>${price}</Typography>
+                <Typography variant='small' className='font-thin text-muted line-through'>${originalPrice}</Typography>
             </div>
-            <span className='text-[0.625rem] bg-primary/30 text-primary py-1.5 px-2 rounded-xl font-normal'>
+            <Typography variant='small' className='text-[0.625rem] bg-primary/30 text-primary py-1.5 px-2 rounded-xl font-normal'>
                 Save ${savePrice}
-            </span>
+            </Typography>
         </div>
     )
 }

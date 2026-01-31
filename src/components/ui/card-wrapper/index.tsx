@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import Icon from '../icons';
 import { Button } from '../button';
+import { Typography } from '../typography';
 
 interface CardWrapperProps {
     children: React.ReactNode;
@@ -25,8 +26,8 @@ const CardWrapper: React.FC<CardWrapperProps> = ({ children, title, subtitle, re
         <div className='w-full flex flex-col gap-3'>
             <div className='flex items-center justify-between py-3'>
                 <div>
-                    <h2 className='text-lg font-semibold'>{title}</h2>
-                    <p className=" text-md text-muted">{subtitle}</p>
+                    <Typography variant='large'>{title}</Typography>
+                    <Typography variant='small'>{subtitle}</Typography>
                 </div>
                 {redirectLink && (
                     <div className='flex items-center gap-1 text-foreground hover:text-primary cursor-pointer'>

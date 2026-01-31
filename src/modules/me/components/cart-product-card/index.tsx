@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { Typography } from '@/components/ui/typography';
 import type { CartItemType } from '@/types/products'
 import React from 'react'
 
@@ -21,23 +22,23 @@ const CartProductCard: React.FC<cartProductCardProps> = ({ product }) => {
 
                 {/* Category & Title */}
                 <div className="flex flex-col gap-1">
-                    <p className="text-base font-medium text-muted uppercase">
+                    <Typography variant="muted" className="uppercase">
                         {product.product.name}
-                    </p>
-                    <p className="text-sm font-semibold text-foreground leading-snug">
+                    </Typography>
+                     <Typography className='font-semibold'>
                         {product.product.category}
-                    </p>
+                    </Typography>
                 </div>
 
                 <div className="flex gap-2 text-sm">
                     <div className="flex flex-col gap-2 text-muted">
-                        <span>Size :</span>
-                        <span>Color :</span>
+                        <Typography variant='small'>Size :</Typography>
+                        <Typography variant='small'>Color :</Typography>
                     </div>
 
                     <div className="flex flex-col gap-2 text-foreground">
-                        <span className="font-normal">{product.product.size}</span>
-                        <span className="font-normal">{product.product.color}</span>
+                        <Typography variant='small' className='text-black'>{product.product.size}</Typography>
+                        <Typography variant='small' className='text-black'>{product.product.color}</Typography>
                     </div>
                 </div>
 

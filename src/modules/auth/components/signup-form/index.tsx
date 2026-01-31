@@ -11,6 +11,7 @@ import { useUserLogin } from '../../apis/mutations'
 import { useAppDispatch } from '@/hooks/redux'
 import { setUserData } from '@/store/slices/userSlice'
 import type { User } from '@/modules/user/apis/types'
+import { Typography } from '@/components/ui/typography'
 
 
 const SignUpForm = () => {
@@ -117,7 +118,7 @@ const SignUpForm = () => {
           </Button>
           <div className='w-full h-full flex items-center justify-center'>
             <div className='w-fit h-full flex flex-col gap-2'>
-              <span className='text-xs text-primary'>Or sign in with</span>
+              <Typography variant='small' className='text-primary'>Or sign in with</Typography>
               <div className='py-2.5 px-6 rounded-2xl border flex items-center justify-center cursor-pointer'>
                 <Icon name="githubIcon" width={25} height={25} />
               </div>

@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import Label from '../label';
 import Icon, { type CombinedIconName } from '../../icons';
 import { Input } from '../../input'
+import { Typography } from '../../typography';
 
 interface TextfieldProps extends Omit<React.ComponentProps<"input">, "onChange" | "value"> {
     onChange: (value: string) => void;
@@ -53,7 +54,7 @@ const Textfield: React.FC<TextfieldProps> = ({
                     </div>
                 )}
             </div>
-            {error && <p className="text-sm text-red-500">{error}</p>}
+            {error && <Typography variant='small' className="text-red-500">{error}</Typography>}
         </div>
     )
 }

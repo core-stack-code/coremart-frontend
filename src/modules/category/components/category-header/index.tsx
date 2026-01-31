@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import SelectField from '@/components/ui/form/select-field';
 import { CATEGORY_SORT_OPTIONS } from '@/constants/product';
+import { Typography } from '@/components/ui/typography';
 
 interface CategoryPageHeaderProps {
     title?: string;
@@ -17,17 +18,17 @@ const CategoryPageHeader: React.FC<CategoryPageHeaderProps> = ({ productCount, t
     // most probably have to lift this state up
     // or have to lift select menu up
     // or move state to redux
-    
+
     return (
         <div className='flex items-center justify-between gap-2'>
             <div className='flex flex-col gap-2'>
-                <h2 className='text-lg font-semibold'>{title}</h2>
-                <p className=" text-md text-muted">{subtitle}</p>
+                <Typography variant='large'>{title}</Typography>
+                <Typography className='text-muted'>{subtitle}</Typography>
             </div>
             <div className='flex items-center gap-4'>
-                <p className="text-muted">Showing 1–15 of {productCount} Products</p>
+                <Typography className='text-muted'>Showing 1–15 of {productCount} Products</Typography>
                 <div className='flex items-center gap-2'>
-                    <p className="text-muted whitespace-nowrap">Sorted By:</p>
+                    <Typography className="text-muted whitespace-nowrap">Sorted By:</Typography>
                     <SelectField
                         value={sortValue}
                         options={CATEGORY_SORT_OPTIONS}

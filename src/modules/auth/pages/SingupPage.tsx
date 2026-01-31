@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import SignUpForm from "../../components/signup-form"
-import AuthHeading from '../../components/auth-heading'
+import SignUpForm from "../components/signup-form"
+import AuthHeading from '../components/auth-heading'
+import { Typography } from '@/components/ui/typography'
 
 const SignUpPage = () => {
     return (
@@ -10,9 +11,9 @@ const SignUpPage = () => {
                     title="Getting Started"
                     description={(
                         <div className='flex flex-col gap-0.5 text-secondary'>
-                            <span>Create an account and verify your details to start shopping.</span>
+                            <Typography>Create an account and verify your details to start shopping.</Typography>
                             <div className='flex gap-1'>
-                                <span>Already have an account?</span>
+                                <Typography>Already have an account?</Typography>
                                 <Link to="/auth" className='text-primary font-bold underline'>Log in here</Link>
                             </div>
                         </div>
