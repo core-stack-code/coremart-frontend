@@ -24,6 +24,7 @@ import SignUpPage from "@/modules/auth/pages/SingupPage";
 import ForgetPassword from "@/modules/auth/pages/ForgetPasswordPage";
 import ResetPassword from "@/modules/auth/pages/ResetPasswordPage";
 import OTPVerify from "@/modules/auth/pages/OTPVerifyPage";
+import OrderTestPage from "@/modules/order/pages/OrderTest";
 
 
 const router = createBrowserRouter([
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
                 path: 'order',
                 children: [
                     { index: true, element: <OrderHistory /> },
+                    { path: "test", element: <OrderTestPage /> },
                     { path: 'checkout', element: <CheckOut /> },
                     { path: 'trackingorder', element: <TrackingOrder /> }
                 ]
