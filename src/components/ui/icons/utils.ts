@@ -12,7 +12,8 @@ import {
     Info,
     TriangleAlert,
     Loader2,
-    PackageIcon
+    PackageIcon,
+    MoveUpRight
 } from "lucide-react"
 
 import EyeIcon from "./eye-icon";
@@ -87,6 +88,7 @@ import CategoriesIcon from "./customs/categories-icon";
 import FilterIcon from "./customs/filter-icon";
 import OutOfStockIcon from "./out-of-stock-icon";
 import RatingReviewStarIcon from "./rating-review-star-icon";
+import GoogleIcon from "./google-icon";
 
 
 export const LUCIDE_ICON_MAP = {
@@ -103,7 +105,8 @@ export const LUCIDE_ICON_MAP = {
     Info,
     TriangleAlert,
     Loader2,
-    PackageIcon
+    PackageIcon,
+    MoveUpRight    
 }
 
 export const CUSTOM_ICON_MAP = {
@@ -121,6 +124,8 @@ export const CUSTOM_ICON_MAP = {
     rightArrow: RightArrowIcon,
     categories: CategoriesIcon,
     filter: FilterIcon,
+    githubIcon: GithubIcon,
+    googleIcon: GoogleIcon,
 
     addCart: AddCartIcon,
     starHalf: StarHalfIcon,
@@ -134,7 +139,6 @@ export const CUSTOM_ICON_MAP = {
     eyeIcon: EyeIcon,
     crossIcon: CrossIcon,
     checkBoxIcon: CheckBoxIcon,
-    githubIcon: GithubIcon,
     userIcon: UserIcon,
     searchIcon: SearchIcon,
     notificationIcon: NotificationIcon,

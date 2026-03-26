@@ -1,7 +1,7 @@
-import {  useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import {   signupSchema, type SignupPayload } from '../../schemas/authSchema'
+import { signupSchema, type SignupPayload } from '../../schemas/authSchema'
 
 import Icon from '@/components/ui/icons'
 import InputComponent from '@/components/ui/form/input-component'
@@ -45,8 +45,8 @@ const SignUpForm = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className=' w-full flex flex-col gap-6 '>
-          <div className='w-full flex flex-col gap-1 '>
-              <Controller
+          <div className='w-full flex flex-col gap-3 '>
+            <Controller
               name='name'
               control={control}
               disabled={isPending}
@@ -54,9 +54,9 @@ const SignUpForm = () => {
                 <InputComponent
                   {...field}
                   type="text"
+                  label="UserName"
                   placeholder="Enter your userName"
                   error={fieldState.error?.message}
-                  leftIcon={<Icon name="userIcon" width={16} height={16} />}
                   wrapperClassName="w-full"
                 />
               )}
@@ -69,9 +69,9 @@ const SignUpForm = () => {
                 <InputComponent
                   {...field}
                   type="email"
-                  placeholder="Enter your email"
+                  label="Email Address"
+                  placeholder="name@coremart.com"
                   error={fieldState.error?.message}
-                  leftIcon={<Icon name="mailIcon" width={16} height={16} />}
                   wrapperClassName="w-full"
                 />
               )}
@@ -84,15 +84,15 @@ const SignUpForm = () => {
                 <InputComponent
                   {...field}
                   type="password"
-                  placeholder="Enter your password"
+                  label="Password"
+                  placeholder="********"
                   error={fieldState.error?.message}
                   togglePassword
-                  leftIcon={<Icon name="lockIcon" width={16} height={16} />}
                   wrapperClassName="w-full"
                 />
               )}
             />
-              <Controller
+            <Controller
               name='confirmPassword'
               control={control}
               disabled={isPending}
@@ -100,10 +100,10 @@ const SignUpForm = () => {
                 <InputComponent
                   {...field}
                   type="password"
-                  placeholder="Confirm password"
+                  label="Confirm Password"
+                  placeholder="********"
                   error={fieldState.error?.message}
                   togglePassword
-                  leftIcon={<Icon name="lockIcon" width={16} height={16} />}
                   wrapperClassName="w-full"
                 />
               )}
@@ -111,17 +111,28 @@ const SignUpForm = () => {
           </div>
           <Button
             type='submit'
-            className='w-full h-11 bg-primary text-white rounded-2xl'
+            className='w-full h-14 bg-primary text-white rounded-2xl'
             variant='default'
           >
             {isPending ? "Loading..." : "Continue"}
           </Button>
-          <div className='w-full h-full flex items-center justify-center'>
-            <div className='w-fit h-full flex flex-col gap-2'>
-              <Typography variant='small' className='text-primary'>Or sign in with</Typography>
-              <div className='py-2.5 px-6 rounded-2xl border flex items-center justify-center cursor-pointer'>
+
+          <div className='w-full flex justify-between items-center gap-1'>
+            <hr className='w-full text-primary/20 border-0.5' />
+            <Typography variant='small' className='w-full text-center'>OR CONTINUE WITH</Typography>
+            <hr className='w-full text-primary/20 border-0.5' />
+          </div>
+
+          <div className='w-full flex items-center justify-center'>
+            <div className='w-full h-full flex flex-col gap-4'>
+              <Button variant='link' className='w-full h-12 rounded-xl border border-border'>
                 <Icon name="githubIcon" width={25} height={25} />
-              </div>
+                <Typography variant='small' className='text-black'>Sign in with GitHub</Typography>
+              </Button>
+              <Button variant='link' className='w-full h-12 rounded-xl border border-border'>
+                <Icon name="googleIcon" width={25} height={25} />
+                <Typography variant='small' className='text-black'>Sign in with Google</Typography>
+              </Button>
             </div>
           </div>
         </div>

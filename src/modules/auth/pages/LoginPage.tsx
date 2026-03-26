@@ -6,23 +6,20 @@ import { Typography } from '@/components/ui/typography'
 const LoginPage: React.FC = () => {
     return (
         <>
-            <div className='w-full h-full flex flex-col gap-16 max-w-102'>
-                <AuthHeading
-                    title={ (
-                        <div className='flex flex-col gap-1'>
-                            <Typography variant='h1'>Hey,</Typography>
-                            <Typography variant='h1'>Welcome Back</Typography>
-                        </div>
-                    )}
-                />
-                <LoginForm />
+            <div className='w-full max-h-screen bg-[url(/login-avtar.svg)] bg-cover bg-no-repeat'>
+                <div className='w-full h-full flex flex-col justify-end gap-2 p-5'>
+                    <Typography variant='h3' className='text-white font-bold'>COREMART</Typography>
+                    <Typography variant='lead' className='text-white'>THE DIGITAL COUTURE EXPERIENCE</Typography>
+                </div>
             </div>
-            <div className='w-full h-full max-w-170'>
-                <img
-                    src="/login-section.svg"
-                    alt="Login Section"
-                    className="w-full h-full object-contain"
-                />
+            <div className='w-full min-h-full flex flex-col justify-center items-center'>
+                <div className='w-full flex flex-col gap-10 px-33'>
+                    <AuthHeading
+                        title={<Typography variant='h3' className='font-bold'>Welcome Back</Typography>}
+                        description={<Typography variant='small'>Please enter your details to access your atelier.</Typography>}
+                    />
+                    <LoginForm />
+                </div>
             </div>
         </>
     )

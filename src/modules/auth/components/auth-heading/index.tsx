@@ -8,8 +8,8 @@ interface AuthHeadingProps {
 
 const AuthHeading: React.FC<AuthHeadingProps> = ({ title, description, }) => {
     return (
-        <div className='w-full flex flex-col gap-3.5 text-primary'>
-            <Typography variant='h1'>
+        <div className='w-full flex flex-col gap-3.5'>
+            <Typography variant='h3'>
                 {title}
             </Typography>
             {description && <Typography>{description}</Typography>}

@@ -1573,7 +1573,7 @@ export const PRODUCT_DETAIL: ProductDetailsType = {
 
 
 
-export const WHISLIST_PRODUCT:ProductType[] = [
+export const WHISLIST_PRODUCT: ProductType[] = [
   {
     _id: "1",
     name: "Classic White Shirt",
@@ -2004,3 +2004,50 @@ export const reviews = [
     author: "Kunjesh Patadiya"
   }
 ];
+
+
+
+export const CLIENT_REVIEWS = [
+  {
+    avtar: '/profile_avtar.svg',
+    description: '“Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc.”',
+    accountName: 'accountname',
+    name: 'Putre Marrisa',
+    rate: 3.5
+  },
+  {
+    avtar: '/profile_avtar.svg',
+    description: '“Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc.”',
+    accountName: 'accountname',
+    name: 'Marisao Andre',
+    rate: 4.8
+  },
+  {
+    avtar: '/profile_avtar.svg',
+    description: '“Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc.”',
+    accountName: 'accountname',
+    name: 'Andrina Angel',
+    rate: 2.8
+  },
+  {
+    avtar: '/profile_avtar.svg',
+    description: '“Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc.”',
+    accountName: 'accountname',
+    name: 'gogoniya andi',
+    rate: 3.6
+  },
+  {
+    avtar: '/profile_avtar.svg',
+    description: '“Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc.”',
+    accountName: 'accountname',
+    name: 'Ellisa Wandai',
+    rate: 4.8
+  },
+  {
+    avtar: '/profile_avtar.svg',
+    description: '“Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc.”',
+    accountName: 'accountname',
+    name: 'George Maser',
+    rate: 2.8
+  },
+]

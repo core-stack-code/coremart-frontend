@@ -46,7 +46,7 @@ const ResetPasswordForm = () => {
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <div className=' w-full flex flex-col gap-6'>
-                    <div className='w-full flex flex-col gap-2'>
+                    <div className='w-full flex flex-col gap-3'>
                         <Controller
                             name='password'
                             control={control}
@@ -55,10 +55,10 @@ const ResetPasswordForm = () => {
                                 <InputComponent
                                     {...field}
                                     type="password"
-                                    placeholder="Enter your password"
+                                    label='Password'
+                                    placeholder="********"
                                     error={fieldState.error?.message}
                                     togglePassword
-                                    leftIcon={<Icon name="lockIcon" width={16} height={16} />}
                                     wrapperClassName="w-full"
                                 />
                             )}
@@ -71,10 +71,10 @@ const ResetPasswordForm = () => {
                                 <InputComponent
                                     {...field}
                                     type="password"
-                                    placeholder="Confirm password"
+                                    label="Confirm Password"
+                                    placeholder="********"
                                     error={fieldState.error?.message}
                                     togglePassword
-                                    leftIcon={<Icon name="lockIcon" width={16} height={16} />}
                                     wrapperClassName="w-full"
                                 />
                             )}
@@ -82,7 +82,7 @@ const ResetPasswordForm = () => {
                     </div>
                     <Button
                         type='submit'
-                        className='w-full h-11 bg-primary text-white rounded-2xl'
+                        className='w-full h-14 bg-primary text-white rounded-2xl'
                         variant='default'
                     >
                         {isPending ? "Loading..." : "Continue"}

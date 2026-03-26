@@ -25,6 +25,7 @@ import ForgetPassword from "@/modules/auth/pages/ForgetPasswordPage";
 import ResetPassword from "@/modules/auth/pages/ResetPasswordPage";
 import OTPVerify from "@/modules/auth/pages/OTPVerifyPage";
 import OrderTestPage from "@/modules/order/pages/OrderTest";
+import LandingPage from "@/pages/LandingPage";
 
 
 const router = createBrowserRouter([
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
         element: <RootLayout />,
         errorElement: <ErrorPage />,
         children: [
-            { index: true, element: <HomePage /> },
+            { index: true, element: <LandingPage /> }, 
             {
                 path: 'product',
                 children: [

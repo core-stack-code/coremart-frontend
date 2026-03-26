@@ -11,7 +11,6 @@ import type { User } from '@/modules/user/apis/types'
 import InputComponent from '@/components/ui/form/input-component'
 import Icon from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
 import { useUserLogin } from '../../apis/mutations'
 import { Typography } from '@/components/ui/typography'
 
@@ -46,7 +45,7 @@ const LoginForm: React.FC = () => {
             onSubmit={handleSubmit(onSubmit)}
         >
             <div className=' w-full flex flex-col gap-6'>
-                <div className='w-full flex flex-col gap-2'>
+                <div className='w-full flex flex-col gap-3'>
                     <Controller
                         name='email'
                         control={control}
@@ -55,9 +54,9 @@ const LoginForm: React.FC = () => {
                             <InputComponent
                                 {...field}
                                 type="email"
-                                placeholder="Enter your email"
+                                label='Email Address'
+                                placeholder="name@coremart.com"
                                 error={fieldState.error?.message}
-                                leftIcon={<Icon name="mailIcon" width={16} height={16} />}
                                 wrapperClassName="w-full"
                             />
                         )}
@@ -70,53 +69,50 @@ const LoginForm: React.FC = () => {
                             <InputComponent
                                 {...field}
                                 type="password"
-                                placeholder="Enter your password"
+                                label='Password'
+                                placeholder="*********"
                                 error={fieldState.error?.message}
                                 togglePassword
-                                leftIcon={<Icon name="lockIcon" width={16} height={16} />}
                                 wrapperClassName="w-full"
                             />
                         )}
                     />
-                    <div className='w-full h-full flex justify-between items-center'>
-                        <div className='flex items-center gap-1.5 h-full'>
-                            <Controller
-                                name='isRememberMe'
-                                control={control}
-                                disabled={isPending}
-                                render={({ field }) => (
-                                    <Checkbox
-                                        checked={field.value}
-                                        onCheckedChange={field.onChange}
-                                    />
-                                )}
-                            />
-                            <label htmlFor="remember-me" className='text-xs text-primary'>Remember me</label>
-                        </div>
+                    <div className='w-full h-full flex justify-end items-center'>
                         <a href="#" className='text-xs text-primary'>Forgot password?</a>
                     </div>
                 </div>
                 <Button
                     type='submit'
-                    className='w-full h-11 bg-primary text-white rounded-2xl'
+                    className='w-full h-14 bg-primary text-white rounded-xl'
                     variant='default'
                 >
                     {isPending ? "Loading..." : "Sign In"}
                 </Button>
+
+                <div className='w-full flex justify-between items-center gap-1'>
+                    <hr className='w-full text-primary/20 border-0.5' />
+                    <Typography variant='small' className='w-full text-center'>OR CONTINUE WITH</Typography>
+                    <hr className='w-full text-primary/20 border-0.5' />
+                </div>
+
                 <div className='w-full flex items-center justify-center'>
-                    <div className='w-fit h-full flex flex-col gap-2'>
-                        <Typography className='text-primary'>Or sign in with</Typography>
-                        <div className='py-2.5 px-6 rounded-2xl border border-border flex items-center justify-center'>
+                    <div className='w-full h-full flex flex-col gap-4'>
+                        <Button variant='link' className='w-full h-12 rounded-xl border border-border'>
                             <Icon name="githubIcon" width={25} height={25} />
-                        </div>
+                            <Typography variant='small' className='text-black'>Sign in with GitHub</Typography>
+                        </Button>
+                        <Button variant='link' className='w-full h-12 rounded-xl border border-border'>
+                            <Icon name="googleIcon" width={25} height={25} />
+                            <Typography variant='small' className='text-black'>Sign in with Google</Typography>
+                        </Button>
                     </div>
                 </div>
-                <div className='w-full flex justify-start items-center'>
-                    <Typography className='text-primary text-center'>
+                <div className='w-full flex justify-center items-center'>
+                    <Typography className='text-center'>
                         Don’t have an account?
                         <NavLink
                             to="/auth/signup"
-                            className='text-primary font-bold'
+                            className='ml-2 text-primary font-bold'
                             onClick={(e) => isPending && e.preventDefault()}
                         >
                             Sign Up

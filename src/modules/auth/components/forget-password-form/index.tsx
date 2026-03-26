@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { forgotPasswordSchema, type ForgotPasswordPayload,  } from '../../schemas/authSchema'
+import { forgotPasswordSchema, type ForgotPasswordPayload, } from '../../schemas/authSchema'
 import { Button } from '@/components/ui/button'
 import InputComponent from '@/components/ui/form/input-component'
 import Icon from '@/components/ui/icons'
@@ -53,29 +53,29 @@ const ForgetPasswordForm = () => {
               <InputComponent
                 {...field}
                 type="email"
-                placeholder="Enter your email"
+                placeholder="name@coremart.com"
                 error={fieldState.error?.message}
-                leftIcon={<Icon name="mailIcon" width={16} height={16} />}
+                label='Email Address'
                 wrapperClassName="w-full"
               />
             )}
           />
         </div>
-        <div className='flex'>
-          <Button
-            type='button'
-            className='w-50 h-11 bg-secondary text-white rounded-2xl'
-            variant='default'
-            onClick={() => navigate(-1)}
-          >
-            {isPending ? "Loading..." : "Back"}
-          </Button>
+        <div className='flex flex-col gap-4'>
           <Button
             type='submit'
-            className='w-50 h-11 ml-6 bg-primary text-white rounded-2xl'
+            className='w-full h-14 bg-primary text-background rounded-xl'
             variant='default'
           >
             {isPending ? "Loading..." : "Continue"}
+          </Button>
+          <Button
+            type='button'
+            className='w-full h-14 text-primary hover:bg-secondary hover:text-white rounded-xl'
+            variant='ghost'
+            onClick={() => navigate(-1)}
+          >
+            {isPending ? "Loading..." : "Back"}
           </Button>
         </div>
 

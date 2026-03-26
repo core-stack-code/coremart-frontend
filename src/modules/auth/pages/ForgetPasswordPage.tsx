@@ -5,24 +5,19 @@ import ForgetPasswordForm from "../components/forget-password-form"
 const ForgetPassword = () => {
     return (
         <>
-
-            <div className='w-full h-full flex flex-col gap-16 max-w-102'>
-                <AuthHeading
-                    title="Forget Password?"
-                    description={(
-                        <div className='flex flex-col gap-0.5 text-secondary'>
-                            <Typography>Enter your registered email address and we’ll send you a link to reset your password.</Typography>
-                        </div>
-                    )}
-                />
-                <ForgetPasswordForm />
+            <div className='w-full max-h-screen bg-[url(/forgetpassword-avtar.svg)] bg-cover bg-no-repeat'>
+                <div className='max-w-78 h-full flex flex-col justify-end gap-2 p-5'>
+                    <Typography variant='h3' className='text-white font-bold'>DEFINING THE MODERN SILHOUETTE.</Typography>
+                </div>
             </div>
-            <div className='w-full h-full max-w-170'>
-                <img
-                    src="/forgetpassword-section.svg"
-                    alt="Login Section"
-                    className="w-full h-full object-contain"
-                />
+            <div className='w-full min-h-full flex flex-col justify-center items-center'>
+                <div className='w-full flex flex-col gap-10 px-33'>
+                    <AuthHeading
+                        title={<Typography variant='h3' className='font-bold'>Forget Password?</Typography>}
+                        description={<Typography variant='small'>Enter your registered email address and we’ll send you a link to reset your password.</Typography>}
+                    />
+                    <ForgetPasswordForm />
+                </div>
             </div>
 
 

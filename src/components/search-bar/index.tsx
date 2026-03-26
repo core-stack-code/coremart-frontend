@@ -45,11 +45,11 @@ const SearchBar: React.FC = () => {
                         onChange={handleSearch}
                         value={searchText}
                         placeholder="Search"
-                        containerClass="min-w-70"
+                        containerClass="min-w-70 text-white"
                         className="rounded-2xl"
                     />
                 </div>
-            </PopoverTrigger> 
+            </PopoverTrigger>
             <PopoverContent className='rounded-2xl p-2 w-full'>
                 <div className='w-full h-full flex flex-col gap-2'>
                     {getContent()}

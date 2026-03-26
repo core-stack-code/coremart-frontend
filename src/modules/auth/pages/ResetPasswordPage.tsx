@@ -5,31 +5,20 @@ import ResetPasswordForm from "../components/reset-password-form"
 const ResetPassword = () => {
     return (
         <>
-            <div className='w-full h-full flex flex-col gap-16 max-w-102'>
-                <AuthHeading
-                    title="Reset Password"
-                    description={(
-                        <div className='flex flex-col gap-0.5 text-secondary'>
-                            <Typography>Create a new password to regain access to</Typography>
-                            <Typography>your account.</Typography>
-                        </div>
-                    )}
-                />
-                <ResetPasswordForm />
+            <div className='w-full max-h-screen bg-[url(/resetpassword-avtar.svg)] bg-cover bg-no-repeat'>
+                <div className='max-w-78 h-full flex flex-col justify-end gap-2 p-5'>
+                    <Typography variant='h3' className='text-white font-bold'>DEFINING THE MODERN SILHOUETTE.</Typography>
+                </div>
             </div>
-            <div className='w-full h-full max-w-170'>
-                <img
-                    src="/resetpassword-section.svg"
-                    alt="Login Section"
-                    className="w-full h-full object-contain"
-                />
+            <div className='w-full min-h-full flex flex-col justify-center items-center'>
+                <div className='w-full flex flex-col gap-10 px-33'>
+                    <AuthHeading
+                        title={<Typography variant='h3' className='font-bold'>Reset Password</Typography>}
+                        description={<Typography>Create a new password to regain access to your account.</Typography>}
+                    />
+                    <ResetPasswordForm />
+                </div>
             </div>
-
-
-
-
-
-
 
 
 

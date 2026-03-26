@@ -55,10 +55,10 @@ const ResetPasswordForm = () => {
                                 <InputComponent
                                     {...field}
                                     type="password"
-                                    placeholder="Enter your password"
+                                    label='Password'
+                                    placeholder="********"
                                     error={fieldState.error?.message}
                                     togglePassword
-                                    leftIcon={<Icon name="lockIcon" width={16} height={16} />}
                                     wrapperClassName="w-full"
                                 />
                             )}
@@ -71,10 +71,10 @@ const ResetPasswordForm = () => {
                                 <InputComponent
                                     {...field}
                                     type="password"
-                                    placeholder="Confirm password"
+                                    label="Confirm Password"
+                                    placeholder="********"
                                     error={fieldState.error?.message}
                                     togglePassword
-                                    leftIcon={<Icon name="lockIcon" width={16} height={16} />}
                                     wrapperClassName="w-full"
                                 />
                             )}
