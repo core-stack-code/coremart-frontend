@@ -1,9 +1,8 @@
 import { Button } from '@/components/ui/button'
 import Icon from '@/components/ui/icons'
 import { Typography } from '@/components/ui/typography'
-import { useAppDispatch } from '@/hooks/redux'
 import AddCartButton from '@/modules/product/components/add-cart-btn'
-import { getCardDetails } from '@/store/slices/productSlice'
+import { useProductState } from '@/store/state'
 import type { CartItemType, ProductType } from '@/types/products'
 import React from 'react'
 
@@ -18,7 +17,7 @@ const WhislistSavedCard: React.FC<WhislistSavedCardProps> = ({ product, variant 
 
     const isCardWhislist = variant === "whislist";
 
-    const dispatch = useAppDispatch();
+    const getCardDetails = useProductState(state => state.getCardDetails);
 
     const getCardData = () => {
         const payload: CartItemType = {
@@ -37,7 +36,7 @@ const WhislistSavedCard: React.FC<WhislistSavedCardProps> = ({ product, variant 
             itemTotal: product.price * 1
         };
 
-        dispatch(getCardDetails(payload))
+        getCardDetails(payload)
     }
 
     return (

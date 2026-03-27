@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import RootLayout from "@/layouts/RootLayout";
 import ErrorPage from "@/pages/ErrorPage";
-import HomePage from "@/pages/HomePage";
 import About from "@/pages/AboutPage";
 import Contact from "@/modules/contact/page";
 
@@ -34,7 +33,7 @@ const router = createBrowserRouter([
         element: <RootLayout />,
         errorElement: <ErrorPage />,
         children: [
-            { index: true, element: <LandingPage /> }, 
+            { index: true, element: <LandingPage /> },
             {
                 path: 'product',
                 children: [

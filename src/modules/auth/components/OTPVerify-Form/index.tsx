@@ -4,15 +4,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { otpVerifySchema, type OtpVerifyPayload } from "../../schemas/authSchema";
 import { Button } from "@/components/ui/button";
 import { useUserLogin } from "../../apis/mutations";
-import { useAppDispatch } from "@/hooks/redux";
-import { setUserData } from "@/store/slices/userSlice";
 import type { User } from "@/modules/user/apis/types";
 import { otpDefaultsValues } from "../../schemas/defaultValus";
 import { InputOTPPattern } from "@/components/ui/form/otp-component";
 import { Typography } from "@/components/ui/typography";
+import { useUserState } from "@/store/state";
 
 const OTPVerifyForm = () => {
-  const dispatch = useAppDispatch();
+
+  const setUserData = useUserState(state => state.setUserData)
   const navigate = useNavigate();
 
   const { handleSubmit, control } = useForm({
@@ -26,7 +26,7 @@ const OTPVerifyForm = () => {
     mutate(formData, {
       onSuccess: (data) => {
         console.log("OTP Send Successfully:", data);
-        dispatch(setUserData(data.data?.user as User));
+        setUserData(data.data?.user as User);
         navigate("/");
       },
       onError: (error) => {

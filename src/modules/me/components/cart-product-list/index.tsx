@@ -3,9 +3,8 @@ import OrderSummary from '../order-summary'
 import type { CartType } from '@/types/products';
 import CartProductCard from '../cart-product-card';
 import AddSubButton from '@/components/ui/add-sub-btn';
-import { useAppDispatch } from '@/hooks/redux';
-import { decreaseQuantity, increaseQuantity } from '@/store/slices/productSlice';
 import { Typography } from '@/components/ui/typography';
+import { useProductState } from '@/store/state';
 
 interface cartProductListProps {
     cartItems: CartType;
@@ -13,7 +12,8 @@ interface cartProductListProps {
 
 const CartProductList: React.FC<cartProductListProps> = ({ cartItems }) => {
 
-    const disPatch = useAppDispatch();
+    const increaseQuantity = useProductState(state => state.increaseQuantity);
+    const decreaseQuantity = useProductState(state => state.decreaseQuantity);
 
     return (
         <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row gap-15">
@@ -37,7 +37,7 @@ const CartProductList: React.FC<cartProductListProps> = ({ cartItems }) => {
                             <Typography className="mx-auto">$ {cartProduct.product.price}</Typography>
 
                             <div className="mx-auto">
-                                <AddSubButton count={cartProduct.quantity} addAction={() => { disPatch(increaseQuantity(cartProduct.product._id)) }} subAction={() => { disPatch(decreaseQuantity(cartProduct.product._id)) }} />
+                                <AddSubButton count={cartProduct.quantity} addAction={() => { increaseQuantity(cartProduct.product._id) }} subAction={() => { decreaseQuantity(cartProduct.product._id) }} />
                             </div>
 
                             <Typography className="mx-auto">$ {cartProduct.product.price * cartProduct.quantity}</Typography>

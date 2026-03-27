@@ -6,11 +6,10 @@ import ProductGrid from '../product-grid'
 import ProductCard from '../product-card'
 import ProductListCard from '../product-list-card'
 import Paggination from '@/components/ui/pagination-component'
-import { useAppDispatch, useAppSelector } from '@/hooks/redux'
-import { setCurrentPage, setTotalPages } from '@/store/slices/paginationSlice'
 import { useSearchParams } from 'react-router-dom'
 import { useDebounce } from '@/hooks/debounce'
 import type { FilterState } from '@/store/slices/productSlice'
+import { usePaginationState, useProductState } from '@/store/state'
 
 interface ProductGridListProps {
     view: ViewType
@@ -23,29 +22,31 @@ const ProductGridList: React.FC<ProductGridListProps> = ({ view }) => {
     // have to get filtes somehow, if from URL prams or redux state
 
     const [searchParam, setSearchParams] = useSearchParams();
-    const dispatch = useAppDispatch();
+
+    const currentPage = usePaginationState(state => state.currentPage);
+    const itemPerPage = usePaginationState(state => state.itemPerPage);
+    const totalPages = usePaginationState(state => state.totalPages);
+    const setCurrentPage = usePaginationState(state => state.setCurrentPage);
+    const setTotalPages = usePaginationState(state => state.setTotalPages);
 
 
-    const { currentPage, itemPerPage, totalPages } = useAppSelector((state) => state.pagination);
-
-    
     useEffect(() => {
         const params = new URLSearchParams(searchParam);
         const page = params.get('page');
         if (page) {
-            dispatch(setCurrentPage(Number(page)));
+            setCurrentPage(Number(page));
         }
 
         params.set('page', currentPage.toString());
         setSearchParams(params);
     }, [])
-    
-    const filters = useAppSelector((state) => state.product.filter);
+
+    const filters = useProductState((state) => state.filter);
 
     const debouncedPage = useDebounce(currentPage, 500);
 
     const totalPage = Math.ceil(data.length / itemPerPage); // assuming 5 items per page
-    dispatch(setTotalPages(totalPage));
+    setTotalPages(totalPage);
 
     const startIndex = (currentPage - 1) * itemPerPage;
     const endIndex = startIndex + itemPerPage;
@@ -90,7 +91,7 @@ const ProductGridList: React.FC<ProductGridListProps> = ({ view }) => {
             <Paggination
                 currentPage={currentPage}
                 totalPages={totalPages || 1}
-                setCurrentPage={(page) => dispatch(setCurrentPage(page))}
+                setCurrentPage={(page) => setCurrentPage(page)}
             />
         </div>
     )

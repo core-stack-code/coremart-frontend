@@ -1,135 +1,135 @@
-import type { Size } from "@/modules/product/components/product-filter";
-import type { CartItemType, Category } from "@/types/products";
-import { createSlice, current, type PayloadAction } from "@reduxjs/toolkit"
+// import type { Size } from "@/modules/product/components/product-filter";
+// import type { CartItemType, Category } from "@/types/products";
+// import { createSlice, current, type PayloadAction } from "@reduxjs/toolkit"
 
 
 
 
-export interface FilterState {
-    size: Size;
-    brand: string;
-    type: string;
-    style: string;
-    minPrice: number;
-    maxPrice: number;
-}
+// export interface FilterState {
+//     size: Size;
+//     brand: string;
+//     type: string;
+//     style: string;
+//     minPrice: number;
+//     maxPrice: number;
+// }
 
 
-interface ProductState {
-    category: Category;
-    cart: {
-        items: CartItemType[],
-        totalPrice: number;
-        totalQuantity: number;
-    },
-    filter: FilterState,
-    image: string
-}
+// interface ProductState {
+//     category: Category;
+//     cart: {
+//         items: CartItemType[],
+//         totalPrice: number;
+//         totalQuantity: number;
+//     },
+//     filter: FilterState,
+//     image: string
+// }
 
 
 
-const initialState: ProductState = {
-    category: "casual",
-    cart: {
-        items: [],
-        totalPrice: 0,
-        totalQuantity: 0
-    },
-    filter: {
-        size: 'L',
-        brand: "Puma",
-        type: "T-Shirts",
-        style: "Party Wear",
-        minPrice: 0,
-        maxPrice: 30000
-    },
-    image: "/Details-Image/45.jpg"
-}
+// const initialState: ProductState = {
+//     category: "casual",
+//     cart: {
+//         items: [],
+//         totalPrice: 0,
+//         totalQuantity: 0
+//     },
+//     filter: {
+//         size: 'L',
+//         brand: "Puma",
+//         type: "T-Shirts",
+//         style: "Party Wear",
+//         minPrice: 0,
+//         maxPrice: 30000
+//     },
+//     image: "/Details-Image/45.jpg"
+// }
 
-const productSlice = createSlice({
-    name: "product",
-    initialState,
-    reducers: {
-        setFilters: (state, action: PayloadAction<FilterState>) => {
-            state.filter = action.payload
-        },
-        getCardDetails: (state, action: PayloadAction<CartItemType>) => {
-            const newItem = action.payload;
-            let totalPrice = 0;
-            let totalQty = 0;
+// const productSlice = createSlice({
+//     name: "product",
+//     initialState,
+//     reducers: {
+//         setFilters: (state, action: PayloadAction<FilterState>) => {
+//             state.filter = action.payload
+//         },
+//         getCardDetails: (state, action: PayloadAction<CartItemType>) => {
+//             const newItem = action.payload;
+//             let totalPrice = 0;
+//             let totalQty = 0;
 
-            const existingItem = state.cart.items.find(
-                (item) => item.product._id === newItem.product._id
-            );
+//             const existingItem = state.cart.items.find(
+//                 (item) => item.product._id === newItem.product._id
+//             );
 
-            if (existingItem) {
+//             if (existingItem) {
 
-                existingItem.quantity += newItem.quantity;
+//                 existingItem.quantity += newItem.quantity;
 
-                existingItem.itemTotal = existingItem.quantity * existingItem.product.price;
+//                 existingItem.itemTotal = existingItem.quantity * existingItem.product.price;
 
-                state.cart.items.forEach((item) => {
-                    totalPrice += item.itemTotal;
-                    totalQty += item.quantity;
-                });
+//                 state.cart.items.forEach((item) => {
+//                     totalPrice += item.itemTotal;
+//                     totalQty += item.quantity;
+//                 });
 
-                state.cart.totalPrice = totalPrice;
-                state.cart.totalQuantity = totalQty;
+//                 state.cart.totalPrice = totalPrice;
+//                 state.cart.totalQuantity = totalQty;
 
-            } else {
+//             } else {
 
-                state.cart.items.push(newItem);
+//                 state.cart.items.push(newItem);
 
-                state.cart.items.forEach((item) => {
-                    totalPrice += item.itemTotal;
-                    totalQty += item.quantity;
-                });
+//                 state.cart.items.forEach((item) => {
+//                     totalPrice += item.itemTotal;
+//                     totalQty += item.quantity;
+//                 });
 
-                state.cart.totalPrice = totalPrice;
-                state.cart.totalQuantity = totalQty;
+//                 state.cart.totalPrice = totalPrice;
+//                 state.cart.totalQuantity = totalQty;
 
-            }
+//             }
 
-            console.log("Cart State:", current(state.cart));
-        },
-        increaseQuantity: (state, action: PayloadAction<string>) => {
-            const productId = action.payload;
-            const item = state.cart.items.find(item => item.product._id === productId);
-            if (item) {
-                item.quantity += 1;
-                item.itemTotal = item.quantity * item.product.price;
-                state.cart.totalQuantity += 1;
-                state.cart.totalPrice += item.product.price;
-            }
-        },
-        decreaseQuantity: (state, action: PayloadAction<string>) => {
-            const productId = action.payload;
-            const item = state.cart.items.find(item => item.product._id === productId);
-            if (item && item.quantity > 1) {
-                item.quantity -= 1;
-                item.itemTotal = item.quantity * item.product.price;
-                state.cart.totalQuantity -= 1;
-                state.cart.totalPrice -= item.product.price;
-            }
-        },
-        removeProduct: (state, action: PayloadAction<string>) => {
-            const productId = action.payload;
-            const itemIndex = state.cart.items.findIndex(item => item.product._id === productId);
-            if (itemIndex !== -1) {
-                const item = state.cart.items[itemIndex];
-                state.cart.totalQuantity -= item.quantity;
-                state.cart.totalPrice -= item.itemTotal;
-                state.cart.items.splice(itemIndex, 1);
-            }
-        },
-        setCategory: (state, action: PayloadAction<Category>) => {
-            state.category = action.payload
-        },
-        setImage: (state, action: PayloadAction<string>) => {
-            state.image = action.payload
-        }
-    }
-})
+//             console.log("Cart State:", current(state.cart));
+//         },
+//         increaseQuantity: (state, action: PayloadAction<string>) => {
+//             const productId = action.payload;
+//             const item = state.cart.items.find(item => item.product._id === productId);
+//             if (item) {
+//                 item.quantity += 1;
+//                 item.itemTotal = item.quantity * item.product.price;
+//                 state.cart.totalQuantity += 1;
+//                 state.cart.totalPrice += item.product.price;
+//             }
+//         },
+//         decreaseQuantity: (state, action: PayloadAction<string>) => {
+//             const productId = action.payload;
+//             const item = state.cart.items.find(item => item.product._id === productId);
+//             if (item && item.quantity > 1) {
+//                 item.quantity -= 1;
+//                 item.itemTotal = item.quantity * item.product.price;
+//                 state.cart.totalQuantity -= 1;
+//                 state.cart.totalPrice -= item.product.price;
+//             }
+//         },
+//         removeProduct: (state, action: PayloadAction<string>) => {
+//             const productId = action.payload;
+//             const itemIndex = state.cart.items.findIndex(item => item.product._id === productId);
+//             if (itemIndex !== -1) {
+//                 const item = state.cart.items[itemIndex];
+//                 state.cart.totalQuantity -= item.quantity;
+//                 state.cart.totalPrice -= item.itemTotal;
+//                 state.cart.items.splice(itemIndex, 1);
+//             }
+//         },
+//         setCategory: (state, action: PayloadAction<Category>) => {
+//             state.category = action.payload
+//         },
+//         setImage: (state, action: PayloadAction<string>) => {
+//             state.image = action.payload
+//         }
+//     }
+// })
 
-export const { setFilters, getCardDetails, increaseQuantity, decreaseQuantity, removeProduct, setCategory, setImage } = productSlice.actions
-export default productSlice.reducer
+// export const { setFilters, getCardDetails, increaseQuantity, decreaseQuantity, removeProduct, setCategory, setImage } = productSlice.actions
+// export default productSlice.reducer

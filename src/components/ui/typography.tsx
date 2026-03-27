@@ -42,7 +42,7 @@ const variantToElement = {
 
 interface TypographyProps
     extends React.HTMLAttributes<HTMLElement>,
-        VariantProps<typeof typographyVariants> {
+    VariantProps<typeof typographyVariants> {
     asChild?: boolean
 }
 
@@ -54,8 +54,8 @@ function Typography({
 }: TypographyProps) {
     const Comp =
         asChild
-        ? Slot
-        : variantToElement[variant as keyof typeof variantToElement] ?? "p"
+            ? Slot
+            : variantToElement[variant as keyof typeof variantToElement] ?? "p"
 
     return (
         <Comp

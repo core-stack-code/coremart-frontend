@@ -2,16 +2,15 @@ import type { CartItemType, ProductType } from '@/types/products'
 import React from 'react'
 import AddCartButton from '../add-cart-btn'
 import Icon from '@/components/ui/icons'
-import { useAppDispatch } from '@/hooks/redux'
-import { getCardDetails } from '@/store/slices/productSlice'
 import { Typography } from '@/components/ui/typography'
+import { useProductState } from '@/store/state'
 
 interface ProductListCardProps {
     product: ProductType
 }
 
 const ProductListCard: React.FC<ProductListCardProps> = ({ product }) => {
-    const disPatch = useAppDispatch();
+    const getCardDetails = useProductState(state => state.getCardDetails);
 
     const getCardData = () => {
         const data: CartItemType = {
@@ -30,7 +29,7 @@ const ProductListCard: React.FC<ProductListCardProps> = ({ product }) => {
             itemTotal: product.price * 1
         };
 
-        disPatch(getCardDetails(data))
+        getCardDetails(data)
     }
 
 

@@ -2,8 +2,6 @@ import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useAppDispatch } from '@/hooks/redux'
-import { setUserData } from '@/store/slices/userSlice'
 import { loginSchema, type LoginPayload } from '../../schemas/authSchema'
 import { loginFormDefaultValues } from '../../schemas/defaultValus'
 import type { User } from '@/modules/user/apis/types'
@@ -13,10 +11,11 @@ import Icon from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 import { useUserLogin } from '../../apis/mutations'
 import { Typography } from '@/components/ui/typography'
+import { useUserState } from '@/store/state'
 
 
 const LoginForm: React.FC = () => {
-    const dispatch = useAppDispatch()
+    const setUserData = useUserState(state => state.setUserData)
     const navigate = useNavigate();
 
     const { handleSubmit, control } = useForm({
@@ -30,7 +29,7 @@ const LoginForm: React.FC = () => {
         mutate(formData, {
             onSuccess: (data) => {
                 console.log('Login Successfully:', data)
-                dispatch(setUserData(data.data?.user as User))
+                setUserData(data.data?.user as User)
                 navigate('/')
             },
             onError: (error) => {

@@ -1,20 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { forgotPasswordSchema, type ForgotPasswordPayload,  } from '../../schemas/authSchema'
+import { forgotPasswordSchema, type ForgotPasswordPayload, } from '../../schemas/authSchema'
 import { Button } from '@/components/ui/button'
 import InputComponent from '@/components/ui/form/input-component'
-import Icon from '@/components/ui/icons'
 import { useUserLogin } from '../../apis/mutations'
-// import { useAppDispatch } from '@/hooks/redux'
-// import { setUserData } from '@/store/slices/userSlice'
-// import type { User } from '@/modules/user/apis/types'
 import { forgetPasswordFormDefaultValues } from '../../schemas/defaultValus'
 
 
 const ForgetPasswordForm = () => {
 
-  // const dispatch = useAppDispatch()
   const navigate = useNavigate();
 
   const { handleSubmit, control } = useForm({
@@ -26,16 +21,6 @@ const ForgetPasswordForm = () => {
 
   const onSubmit = (formData: ForgotPasswordPayload) => {
     console.log('Form Data:', formData)
-    // mutate(formData, {
-    //   onSuccess: (data) => {
-    //     console.log('Email Send Successfully:', data)
-    //     dispatch(setUserData(data.data?.user as User))
-    //     navigate('/')
-    //   },
-    //   onError: (error) => {
-    //     console.error('Login failed:', error)
-    //   }
-    // })
   }
 
 
@@ -56,7 +41,7 @@ const ForgetPasswordForm = () => {
                 type="email"
                 placeholder="Enter your email"
                 error={fieldState.error?.message}
-                leftIcon={<Icon name="mailIcon" width={16} height={16} />}
+                label='Email Address'
                 wrapperClassName="w-full"
               />
             )}

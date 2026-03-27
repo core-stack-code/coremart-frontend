@@ -3,11 +3,10 @@ import type { CartItemType, ProductType } from '@/types/products'
 import Icon from '@/components/ui/icons'
 import AddCartButton from '../add-cart-btn'
 import Ratting from '../ratting'
-import { getCardDetails } from '@/store/slices/productSlice'
-import { useAppDispatch } from '@/hooks/redux'
 import { useNavigate } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import { Typography } from '@/components/ui/typography'
+import { useProductState } from '@/store/state'
 
 type ProductCardType = "new" | "discount" | "ratting" | "normal"
 
@@ -19,7 +18,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal", isRedirect = false }) => {
     const navigate = useNavigate();
-    const disPatch = useAppDispatch();
+    const getCardDetails = useProductState(state => state.getCardDetails)
 
     const handleRedirect = () => {
         if (isRedirect) {
@@ -45,7 +44,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal",
             itemTotal: product.price * 1
         };
 
-        disPatch(getCardDetails(data))
+        getCardDetails(data)
     }
 
     const isRightBagde = cardType === "new" || cardType === "discount"

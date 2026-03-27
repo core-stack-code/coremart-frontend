@@ -5,17 +5,15 @@ import { resetPasswordSchema, type ResetPasswordPayload } from '../../schemas/au
 
 import { Button } from '@/components/ui/button'
 import InputComponent from '@/components/ui/form/input-component'
-import Icon from '@/components/ui/icons'
 import { resetPasswordFormDefaultValues } from '../../schemas/defaultValus'
 import { useUserLogin } from '../../apis/mutations'
-import { useAppDispatch } from '@/hooks/redux'
-import { setUserData } from '@/store/slices/userSlice'
 import type { User } from '@/modules/user/apis/types'
+import { useUserState } from '@/store/state'
 
 
 const ResetPasswordForm = () => {
 
-    const dispatch = useAppDispatch()
+    const setUserData = useUserState(state => state.setUserData)
     const navigate = useNavigate();
 
     const { handleSubmit, control } = useForm({
@@ -29,7 +27,7 @@ const ResetPasswordForm = () => {
         mutate(formData, {
             onSuccess: (data) => {
                 console.log('Password Reset Successfully:', data)
-                dispatch(setUserData(data.data?.user as User))
+                setUserData(data.data?.user as User)
                 navigate('/')
             },
             onError: (error) => {

@@ -7,18 +7,19 @@ import { Button } from '../ui/button';
 import Icon from '../ui/icons'
 import AddSubButton from '../ui/add-sub-btn';
 import ListItem from '../ui/list-item';
-import { useAppDispatch, useAppSelector } from '@/hooks/redux';
-import { decreaseQuantity, increaseQuantity, removeProduct } from '@/store/slices/productSlice';
 import { useNavigate } from 'react-router-dom';
 import { Typography } from '../ui/typography';
+import { useProductState } from '@/store/state';
 
 
 const CartPopover: React.FC = () => {
     const [open, setOpen] = React.useState<boolean>(false);
     const isLoading = false;
 
-    const cartProduct = useAppSelector(state => state.product.cart);
-    const disPatch = useAppDispatch();
+    const increaseQuantity = useProductState(state => state.increaseQuantity);
+    const decreaseQuantity = useProductState(state => state.decreaseQuantity);
+    const removeProduct = useProductState(state => state.removeProduct);
+    const cartProduct = useProductState(state => state.cart);
     const navigate = useNavigate();
 
     const getContent = () => {
@@ -38,8 +39,8 @@ const CartPopover: React.FC = () => {
                     {cartProduct.items.map(({ product, quantity }) => (
                         <ListItem
                             key={product._id}
-                            deleteIcon={<Icon name='delete' width={12} height={12} className='text-error hover:text-error/60 cursor-pointer' stroke='currentColor' fill='none' onClick={() => disPatch(removeProduct(product._id))} />}
-                            addSubBtn={<AddSubButton count={quantity} addAction={() => { disPatch(increaseQuantity(product._id)) }} subAction={() => { disPatch(decreaseQuantity(product._id)) }} />}
+                            deleteIcon={<Icon name='delete' width={12} height={12} className='text-error hover:text-error/60 cursor-pointer' stroke='currentColor' fill='none' onClick={() => removeProduct(product._id)} />}
+                            addSubBtn={<AddSubButton count={quantity} addAction={() => { increaseQuantity(product._id) }} subAction={() => { decreaseQuantity(product._id) }} />}
                             product={product}
                         />
                     ))}

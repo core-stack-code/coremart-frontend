@@ -1,14 +1,14 @@
-import { useAppSelector } from "@/hooks/redux"
 import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import CartProductList from "../components/cart-product-list"
 import { Typography } from "@/components/ui/typography"
+import { useProductState } from "@/store/state"
 
 
 const YourCart = () => {
 
     const navigate = useNavigate();
-    const cartProducts = useAppSelector(state => state.product.cart)
+    const cartProducts = useProductState(state => state.cart)
 
     const isCartEmpty = cartProducts.items.length === 0;
 

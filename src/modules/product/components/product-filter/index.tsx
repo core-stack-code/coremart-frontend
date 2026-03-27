@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icons'
@@ -6,9 +5,8 @@ import { cn } from '@/lib/utils';
 import SliderComponent from '@/components/ui/form/slider-component';
 import { useSearchParams } from 'react-router-dom';
 import { useDebounce } from '@/hooks/debounce';
-import { useAppDispatch, useAppSelector } from '@/hooks/redux';
-import { setFilters } from '@/store/slices/productSlice';
 import { Typography } from '@/components/ui/typography';
+import { useProductState } from '@/store/state';
 
 const SIZE = ['XS', 'S', 'M', 'L', 'XL', 'XXL'] as const;
 export type Size = typeof SIZE[number];
@@ -31,8 +29,8 @@ const SELECT_OPTIONS = [
 
 const ProductFilter: React.FC = () => {
 
-    const dispatch = useAppDispatch();
-    const allFilters = useAppSelector((state) => state.product.filter);
+    const setFilters = useProductState(state => state.setFilter);
+    const allFilters = useProductState((state) => state.filter);
 
     const [selectedSizes, setSelectedSizes] = React.useState<Size>("L");
 
@@ -76,7 +74,7 @@ const ProductFilter: React.FC = () => {
             maxPrice: Number(params.get("maxPrice") ?? allFilters.maxPrice),
         };
 
-        dispatch(setFilters(urlFilters));
+        setFilters(urlFilters);
 
         setSelectedSizes(urlFilters.size);
         setPriceRange([urlFilters.minPrice, urlFilters.maxPrice]);
@@ -98,7 +96,7 @@ const ProductFilter: React.FC = () => {
             params.set(key, String(value));
         });
 
-        dispatch(setFilters(debouncedFilters))
+        setFilters(debouncedFilters);
 
         setSearchParams(params);
 

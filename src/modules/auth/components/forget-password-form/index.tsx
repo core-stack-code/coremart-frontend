@@ -4,17 +4,15 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { forgotPasswordSchema, type ForgotPasswordPayload, } from '../../schemas/authSchema'
 import { Button } from '@/components/ui/button'
 import InputComponent from '@/components/ui/form/input-component'
-import Icon from '@/components/ui/icons'
 import { useUserLogin } from '../../apis/mutations'
-import { useAppDispatch } from '@/hooks/redux'
-import { setUserData } from '@/store/slices/userSlice'
 import type { User } from '@/modules/user/apis/types'
 import { forgetPasswordFormDefaultValues } from '../../schemas/defaultValus'
+import { useUserState } from '@/store/state'
 
 
 const ForgetPasswordForm = () => {
 
-  const dispatch = useAppDispatch()
+  const setUserData = useUserState(state => state.setUserData);
   const navigate = useNavigate();
 
   const { handleSubmit, control } = useForm({
@@ -28,7 +26,7 @@ const ForgetPasswordForm = () => {
     mutate(formData, {
       onSuccess: (data) => {
         console.log('Email Send Successfully:', data)
-        dispatch(setUserData(data.data?.user as User))
+        setUserData(data.data?.user as User)
         navigate('/')
       },
       onError: (error) => {

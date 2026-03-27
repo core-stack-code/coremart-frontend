@@ -6,10 +6,9 @@ import ProductAttributes from '../product-attributes'
 import StockStatus from '../stock-status'
 import AddCartButton from '../add-cart-btn'
 import { Button } from '@/components/ui/button'
-import { useAppDispatch } from '@/hooks/redux'
-import { getCardDetails } from '@/store/slices/productSlice'
 import ProductSpecification from '../product-specification'
 import { Typography } from '@/components/ui/typography'
+import { useProductState } from '@/store/state'
 
 
 interface productInfoProps {
@@ -20,7 +19,7 @@ const ProductInfo: React.FC<productInfoProps> = ({ product }) => {
 
     const isOutOfStock = product.stock === 0;
 
-    const disPatch = useAppDispatch();
+    const getCardDetails = useProductState(state => state.getCardDetails);
 
     const getDetailsData = () => {
         const data: CartItemType = {
@@ -39,7 +38,7 @@ const ProductInfo: React.FC<productInfoProps> = ({ product }) => {
             itemTotal: product.price * 1
         };
 
-        disPatch(getCardDetails(data))
+        getCardDetails(data)
     }
 
     return (

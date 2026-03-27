@@ -1,6 +1,5 @@
 import React, { useCallback, useMemo } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useAppDispatch } from '@/hooks/redux';
 import type { Category } from '@/types/products';
 import { CATEGORY_ENUM_MAP } from '@/constants/product';
 
@@ -42,13 +41,11 @@ const ContactItems: FooterLink[] = [
 
 
 const Footer: React.FC = () => {
-    const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
     const handleCategoryRedirect = useCallback((cate: Category) => {
-        // dispatch(setCategory(cate));
         navigate(`/category/${cate}`);
-    }, [dispatch, navigate]);
+    }, [navigate]);
 
     const shopItems: FooterLink[] = useMemo(() => [
         { text: "Casual", value: CATEGORY_ENUM_MAP.casual, onClick: handleCategoryRedirect },

@@ -39,7 +39,6 @@ import { Link } from 'react-router-dom'
 import Navbar from '@/components/ui/navbar'
 import Icon from '../ui/icons'
 import SearchBar from '../search-bar'
-import CartPopover from '../cart-popover'
 
 
 const Header: React.FC = () => {
@@ -53,8 +52,9 @@ const Header: React.FC = () => {
 
 
       <div className='flex gap-5 items-center'>
-        {/* <CartPopover /> */}
         <SearchBar />
+
+        {/* <CartPopover /> */}
 
         {/* <Icon name="bell" width={20} height={20} className='text-muted hover:text-primary/60 cursor-pointer' stroke='none' /> */}
 
