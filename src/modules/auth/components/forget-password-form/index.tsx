@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Button } from '@/components/ui/button'
 import InputComponent from '@/components/ui/form/input-component'
 import { useUserLogin } from '../../apis/mutations'
-import { forgetPasswordFormDefaultValues } from '../../schemas/defaultValus'
+import { forgetPasswordFormDefaultValues } from '../../schemas/defaultValues'
 import { forgetPasswordSchema, type ForgetPasswordPayload } from '../../schemas/authSchema'
 import { useToast } from '@/hooks/useToast'
 

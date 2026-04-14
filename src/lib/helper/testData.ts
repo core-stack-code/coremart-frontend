@@ -848,7 +848,7 @@ export const CART: CartType = {
   items: [
     {
       product: {
-        _id: "68641dc25b4c4aae182f8e1b",
+        id: "68641dc25b4c4aae182f8e1b",
         name: "Relaxed Pants",
         slug: "relaxed-pants",
         category: "outerwear",
@@ -863,7 +863,7 @@ export const CART: CartType = {
     },
     {
       product: {
-        _id: "68641dc25b4c4aae182f8e85",
+        id: "68641dc25b4c4aae182f8e85",
         name: "Relaxed Shorts",
         slug: "relaxed-shorts-3",
         category: "outerwear",
@@ -878,7 +878,7 @@ export const CART: CartType = {
     },
     {
       product: {
-        _id: "68641dc25b4c4aae182f8f53",
+        id: "68641dc25b4c4aae182f8f53",
         name: "Essential Skirt",
         slug: "essential-skirt-4",
         category: "sportswear",

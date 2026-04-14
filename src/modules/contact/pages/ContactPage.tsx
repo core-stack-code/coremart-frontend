@@ -1,7 +1,7 @@
 import React from "react"
-import ContactInfo from "./components/contact-info"
-import ContactForm from "./components/contact-form"
 import { Typography } from "@/components/ui/typography"
+import ContactInfo from "../components/contact-info"
+import ContactForm from "../components/contact-form"
 
 const Contact: React.FC = () => {
   return (

@@ -5,7 +5,7 @@ import { resetPasswordSchema, type ResetPasswordPayload } from '../../schemas/au
 
 import { Button } from '@/components/ui/button'
 import InputComponent from '@/components/ui/form/input-component'
-import { resetPasswordFormDefaultValues } from '../../schemas/defaultValus'
+import { resetPasswordFormDefaultValues } from '../../schemas/defaultValues'
 import { useUserResetPassword } from '../../apis/mutations'
 import { useToast } from '@/hooks/useToast'
 import { flatZodError } from '@/lib/zod/flatZodError'

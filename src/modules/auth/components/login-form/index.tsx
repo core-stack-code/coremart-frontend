@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { loginSchema, type LoginPayload } from '../../schemas/authSchema'
-import { loginFormDefaultValues } from '../../schemas/defaultValus'
+import { loginFormDefaultValues } from '../../schemas/defaultValues'
 
 import InputComponent from '@/components/ui/form/input-component'
 import Icon from '@/components/ui/icons'

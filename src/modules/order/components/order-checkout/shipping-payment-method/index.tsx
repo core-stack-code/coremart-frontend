@@ -4,8 +4,8 @@ import { RadioGroupItem, RadioGroup } from '@/components/ui/radio-group'
 
 interface ShippingPaymentMethodProps {
     Methods: {
-        id:string,
-        name:string
+        id: string,
+        name: string
     }[],
     defaultSelect?: string
 }

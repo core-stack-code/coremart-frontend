@@ -1,4 +1,4 @@
-import OrderHistoryCard from "../../components/order-history"
+import OrderHistoryCard from "../components/order-history"
 
 
 

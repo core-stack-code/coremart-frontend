@@ -6,7 +6,7 @@ import { useUserLogin } from "../../apis/mutations";
 import { InputOTPPattern } from "@/components/ui/form/otp-component";
 import { Typography } from "@/components/ui/typography";
 import { verifyOtpSchema, type VerifyOtpPayload } from "../../schemas/authSchema";
-import { verifyOtpDefaultsValues } from "../../schemas/defaultValus";
+import { verifyOtpDefaultsValues } from "../../schemas/defaultValues";
 import { useToast } from "@/hooks/useToast";
 import Icon from "@/components/ui/icons";
 

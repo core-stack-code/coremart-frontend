@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import TextareaComponent from "@/components/ui/form/textarea-component"
-import AddAddressForm from "../../../me/components/address-form"
-import ShippingPaymentMethod from "../../components/order-checkout/shipping-payment-method"
-import DeliveryDateTime from "../../components/order-checkout/delivery-date-time"
-import CheckoutProductCard from "../../components/order-checkout/checkout-productcard"
-import TotalAmonut from "../../components/total-amount"
+import AddAddressForm from "../../me/components/address-form"
+import ShippingPaymentMethod from "../components/order-checkout/shipping-payment-method"
+import DeliveryDateTime from "../components/order-checkout/delivery-date-time"
+import CheckoutProductCard from "../components/order-checkout/checkout-productcard"
+import TotalAmonut from "../components/total-amount"
 
 
 const shippingMethod = [
@@ -20,20 +20,20 @@ const shippingMethod = [
 ]
 const paymentsMethod = [
     {
-        id:"payUPI",
-        name:"UPI"
+        id: "payUPI",
+        name: "UPI"
     },
     {
-        id:"payCD",
-        name:"Credit or Debit Card",
+        id: "payCD",
+        name: "Credit or Debit Card",
     },
     {
-        id:"payBanking",
-        name:"Net Banking",
+        id: "payBanking",
+        name: "Net Banking",
     },
     {
-        id:"payCash",
-        name:"Cash On Delivery"
+        id: "payCash",
+        name: "Cash On Delivery"
     }
 ]
 
@@ -55,13 +55,13 @@ const CheckOut = () => {
 
                     <div className="w-full flex flex-col sm:flex-col md:flex-col lg:flex-row lg:justify-between lg:gap-15">
 
-                        <div className="border w-[75%] h-fit border-[var(--color-border)] rounded-[var(--border-radius)] space-y-3 p-6">
+                        <div className="border w-[75%] h-fit border-border rounded-rad space-y-3 p-6">
 
                             {
                                 !address ?
-                                    <div className="w-1/2 p-6 border border-[var(--color-border)] rounded-[var(--border-radius)] space-y-5">
+                                    <div className="w-1/2 p-6 border border-border rounded-rad space-y-5">
                                         <h1 className="font-bold text-[20px]">Shipping Address</h1>
-                                        <div className="space-y-1 text-[var(--color-muted)]">
+                                        <div className="space-y-1 text-muted">
                                             <p className="font-bold">John Doe</p>
                                             <p>123 Main Street</p>
                                             <p>Apt 4B</p>
@@ -69,7 +69,7 @@ const CheckOut = () => {
                                             <p>United States</p>
                                         </div>
                                         <div>
-                                            <Button className="w-full bg-[var(--color-primary)] font-normal text-[var(--color-background)] rounded-[var(--border-radius)] hover:bg-[var(--color-primary-hover)]" onClick={() => setAddress(true)}>Add/Change Address</Button>
+                                            <Button className="w-full bg-primary font-normal text-background rounded-rad hover:bg-primary" onClick={() => setAddress(true)}>Add/Change Address</Button>
                                         </div>
                                     </div> :
                                     <AddAddressForm setAddress={setAddress} setEditAddress={setEditAddress} />
@@ -78,13 +78,13 @@ const CheckOut = () => {
 
                             <div className="space-y-4">
                                 <h1 className="font-bold text-[20px]">Shipping Method</h1>
-                                <div className="text-[var(--color-muted)]">
+                                <div className="text-muted">
                                     <ShippingPaymentMethod Methods={shippingMethod} />
                                 </div>
                             </div>
                             <div className="space-y-4">
                                 <h1 className="font-bold text-[20px]">payment Method</h1>
-                                <div className="text-[var(--color-muted)]">
+                                <div className="text-muted">
                                     <ShippingPaymentMethod Methods={paymentsMethod} defaultSelect="UPI" />
                                 </div>
                             </div>
@@ -114,7 +114,7 @@ const CheckOut = () => {
 
                             <DeliveryDateTime />
 
-                            <div className="w-full border-[var(--color-border)] border rounded-[var(--border-radius)] py-6 px-10 h-fit">
+                            <div className="w-full border-border border rounded-rad py-6 px-10 h-fit">
                                 <TotalAmonut />
                             </div>
                         </div>

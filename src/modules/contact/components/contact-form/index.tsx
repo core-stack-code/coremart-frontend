@@ -1,12 +1,13 @@
 import React from "react"
 import { Controller, useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { contactFormDefaultValues, contactSchema, type ContactPayload } from "@/modules/contact/utils/contactSchema"
+import { contactSchema, type ContactPayload } from "@/modules/contact/schemas/contactSchema"
 
 import InputComponent from "@/components/ui/form/input-component"
 import TextareaComponent from "@/components/ui/form/textarea-component"
 import Label from "@/components/ui/form/label"
 import { Button } from "@/components/ui/button"
+import { contactFormDefaultValues } from "../../schemas/defaultValues"
 
 
 const ContactForm: React.FC = () => {
@@ -42,7 +43,7 @@ const ContactForm: React.FC = () => {
 
                     <div className="flex flex-col gap-2">
                         <Label>Your Email</Label>
-                            <Controller
+                        <Controller
                             name="email"
                             control={control}
                             render={({ field, fieldState }) => (
@@ -81,12 +82,12 @@ const ContactForm: React.FC = () => {
                         name="message"
                         control={control}
                         render={({ field, fieldState }) => (
-                        <TextareaComponent
-                            {...field}
-                            placeholder="Write your message here..."
-                            error={fieldState.error?.message}
-                            wrapperClassName="min-h-35"
-                        />
+                            <TextareaComponent
+                                {...field}
+                                placeholder="Write your message here..."
+                                error={fieldState.error?.message}
+                                wrapperClassName="min-h-35"
+                            />
                         )}
                     />
                 </div>
