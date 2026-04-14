@@ -1,12 +1,12 @@
-export const categoryEnum = ['casual', 'formal', 'sportswear', 'sleepwear', 'outerwear', 'workoutwear'] as const;
+export const categoryEnum = ['men', 'women', 'casual-wear', 'formal-wear', 'sports-wear', 'winter-wear'] as const;
 
 export const CATEGORY_ENUM_MAP = {
-    casual: 'casual',
-    formal: 'formal',
-    sportswear: 'sportswear',
-    sleepwear: 'sleepwear',
-    outerwear: 'outerwear',
-    workoutwear: 'workoutwear',
+    men: 'men',
+    women: 'women',
+    casualwear: 'casual-wear',
+    formalwear: 'formal-wear',
+    sportswear: 'sports-wear',
+    winterwear: 'winter-wear',
 }
 
 

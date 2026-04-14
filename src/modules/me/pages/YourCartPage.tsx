@@ -24,9 +24,9 @@ const YourCart = () => {
     }
 
     return (
-        <div className="flex flex-col gap-7">
+        <div className="flex flex-col gap-7 bg-accent/5">
             <div className="flex flex-col gap-3">
-                <Typography variant='h4' className="text-xl font-semibold">Your Cart</Typography>
+                <Typography variant='h1' className="font-bold">Shopping Cart</Typography>
                 {!isCartEmpty && <Typography className="text-muted">{cartProducts.items.length} items in your cart.</Typography>}
             </div>
             {getContent()}

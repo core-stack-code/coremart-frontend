@@ -38,9 +38,9 @@ const CartPopover: React.FC = () => {
                 <>
                     {cartProduct.items.map(({ product, quantity }) => (
                         <ListItem
-                            key={product._id}
-                            deleteIcon={<Icon name='delete' width={12} height={12} className='text-error hover:text-error/60 cursor-pointer' stroke='currentColor' fill='none' onClick={() => removeProduct(product._id)} />}
-                            addSubBtn={<AddSubButton count={quantity} addAction={() => { increaseQuantity(product._id) }} subAction={() => { decreaseQuantity(product._id) }} />}
+                            key={product.id}
+                            deleteIcon={<Icon name='delete' width={12} height={12} className='text-error hover:text-error/60 cursor-pointer' stroke='currentColor' fill='none' onClick={() => removeProduct(product.id)} />}
+                            addSubBtn={<AddSubButton count={quantity} addAction={() => { increaseQuantity(product.id) }} subAction={() => { decreaseQuantity(product.id) }} />}
                             product={product}
                         />
                     ))}

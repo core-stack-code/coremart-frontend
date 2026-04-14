@@ -1,71 +1,59 @@
 import { z } from 'zod';
-
-const passwordSchema = z.string()
-    .min(8, 'Password must be at least 8 characters')
-    .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
-    .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
-    .regex(/[0-9]/, 'Password must contain at least one number')
-    .regex(/[^a-zA-Z0-9]/, 'Password must contain at least one special character')
+import { passwordSchema } from '@/lib/zod/common';
+import type { OtpSessionType } from '@/types/enum';
 
 
+const otpSessionEnum: OtpSessionType[] = [
+    "EMAIL_VERIFICATION", "PASSWORD_RESET"
+]
 
-export const optSchema = z.string()
-    .min(6, "OTP must be 6 digits")
-    .max(6, "OTP must be 6 digits")
-    .regex(/^\d+$/, "OTP must contain only numbers");
-
-
-const emailPasswordSchema = z.object({
-    email: z.string().email('Invalid email address'),
+export const loginSchema = z.object({
+    email: z.email('Invalid email address'),
     password: passwordSchema
-}).strict();
-
-
-export const signupSchema = z.object({
-    name: z.string().min(0,),
-    email: z.string().email('Email already exists '),
-    password: passwordSchema,
-    confirmPassword: z.string(),
-}).refine((data) => data.password === data.confirmPassword, {
-    path: ['confirmPassword'],
-    message: 'Passwords do not match',
 })
 
+export const signupSchema = z.object({
+    name: z.string().min(2, 'Name is required'),
+    email: z.email('Invalid email address'),
+    password: passwordSchema,
+    confirmPassword: passwordSchema.optional(),
+})
 
-export const loginSchema = emailPasswordSchema.extend({
-    isRememberMe: z.boolean().optional(),
-}).strict();
+export const setPasswordSchema = z.object({
+    password: passwordSchema,
+});
 
+export const generateOtpSchema = z.object({
+    sessionType: z.enum(otpSessionEnum),
+});
 
-export const verifySchema = z.object({
-    otp: optSchema,
-    email: z.string(),
-    isRememberMe: z.boolean().optional(),
-}).strict();
+export const verifyOtpSchema = z.object({
+    otp: z.string().length(6, 'OTP must be 6 characters long'),
+    sessionType: z.enum(otpSessionEnum),
+    newPassword: passwordSchema.optional(),
+});
 
+export const resendOtpSchema = z.object({
+    sessionType: z.enum(otpSessionEnum),
+});
 
-export const forgotPasswordSchema = z.object({
-    email: z.string().email('No account found with that email'),
-}).strict();
-
-// export const resetPasswordSchema = emailPasswordSchema;
+export const forgetPasswordSchema = z.object({
+    email: z.email('Invalid email address'),
+});
 
 export const resetPasswordSchema = z.object({
     password: passwordSchema,
-    confirmPassword: z.string().min(1, "Passwords does not match")
-}).refine((data) => data.password == data.confirmPassword, {
-    path: ["confirmPassword"],
-    message: "Passwords does not match"
+    confirmPassword: passwordSchema,
 });
 
-export const otpVerifySchema = z.object({
-    otp: optSchema
-})
 
 
-export type SignupPayload = z.infer<typeof signupSchema>;
+
 export type LoginPayload = z.infer<typeof loginSchema>;
-export type VerifyPayload = z.infer<typeof verifySchema>;
-export type ForgotPasswordPayload = z.infer<typeof forgotPasswordSchema>;
+export type SignupPayload = z.infer<typeof signupSchema>;
+export type SetPasswordPayload = z.infer<typeof setPasswordSchema>;
+export type ForgetPasswordPayload = z.infer<typeof forgetPasswordSchema>;
 export type ResetPasswordPayload = z.infer<typeof resetPasswordSchema>;
-export type OtpVerifyPayload = z.infer<typeof otpVerifySchema>
+export type GenerateOtpPayload = z.infer<typeof generateOtpSchema>;
+export type VerifyOtpPayload = z.infer<typeof verifyOtpSchema>;
+export type ResendOtpPayload = z.infer<typeof resendOtpSchema>;

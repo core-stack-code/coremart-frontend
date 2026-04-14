@@ -1,20 +1,38 @@
-import type { ApiResponse, ApiError } from '@/lib/axios/types';
-import { useMutation, type UseMutationOptions } from '@tanstack/react-query';
-import type { LoginResponse } from './types';
-import { userLogin } from './api';
-import type { LoginPayload } from '../schemas/authSchema';
+import type { MutationOptions } from '@/lib/axios/types';
+import { useMutation } from '@tanstack/react-query';
+import type { LoginResponse, ResetPasswordResponse, SignUpResponse } from './types';
+import { userLogin, userResetPassword, userSignUp } from './api';
+import type { LoginPayload, ResetPasswordPayload, SignupPayload } from '../schemas/authSchema';
+import { MUTATION_REGISTRY } from '@/constants/api-registery';
 
 export const useUserLogin = (
-    options?: UseMutationOptions<
-        ApiResponse<LoginResponse>,
-        ApiError,
-        LoginPayload
-    >
+    options?: MutationOptions<LoginResponse, LoginPayload>
 ) => {
-    
     return useMutation({
-        mutationKey: ['userLogin'],
-        mutationFn: (paylod) => userLogin(paylod),
+        mutationKey: [MUTATION_REGISTRY.login],
+        mutationFn: (payload) => userLogin(payload),
+        ...options,
+    });
+};
+
+
+export const useUserSignUp = (
+    options?: MutationOptions<SignUpResponse, SignupPayload>
+) => {
+    return useMutation({
+        mutationKey: [MUTATION_REGISTRY.userSignUp],
+        mutationFn: (paylod) => userSignUp(paylod),
+        ...options,
+    });
+};
+
+
+export const useUserResetPassword = (
+    options?: MutationOptions<ResetPasswordResponse, ResetPasswordPayload>
+) => {
+    return useMutation({
+        mutationKey: [MUTATION_REGISTRY.userResetPassword],
+        mutationFn: (paylod) => userResetPassword(paylod),
         ...options,
     });
 };

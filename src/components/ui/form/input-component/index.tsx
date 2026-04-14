@@ -109,7 +109,7 @@ import { Label } from "../../label";
 
 interface InputComponentProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "value"> {
-  label: string,
+  label?: string,
   rightIcon?: React.ReactNode;
   error?: string;
   wrapperClassName?: string;

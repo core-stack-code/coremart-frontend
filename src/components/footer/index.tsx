@@ -48,12 +48,12 @@ const Footer: React.FC = () => {
     }, [navigate]);
 
     const shopItems: FooterLink[] = useMemo(() => [
-        { text: "Casual", value: CATEGORY_ENUM_MAP.casual, onClick: handleCategoryRedirect },
-        { text: "Formal", value: CATEGORY_ENUM_MAP.formal, onClick: handleCategoryRedirect },
+        { text: "Men", value: CATEGORY_ENUM_MAP.men, onClick: handleCategoryRedirect },
+        { text: "Women", value: CATEGORY_ENUM_MAP.women, onClick: handleCategoryRedirect },
+        { text: "Casual", value: CATEGORY_ENUM_MAP.casualwear, onClick: handleCategoryRedirect },
+        { text: "Formal", value: CATEGORY_ENUM_MAP.formalwear, onClick: handleCategoryRedirect },
         { text: "Sports Wear", value: CATEGORY_ENUM_MAP.sportswear, onClick: handleCategoryRedirect },
-        { text: "Sleep Wear", value: CATEGORY_ENUM_MAP.sleepwear, onClick: handleCategoryRedirect },
-        { text: "Outer Wear", value: CATEGORY_ENUM_MAP.outerwear, onClick: handleCategoryRedirect },
-        { text: "Workout Wear", value: CATEGORY_ENUM_MAP.workoutwear, onClick: handleCategoryRedirect },
+        { text: "Winter Wear", value: CATEGORY_ENUM_MAP.winterwear, onClick: handleCategoryRedirect },
     ], [handleCategoryRedirect]);
 
 

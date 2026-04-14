@@ -21,11 +21,10 @@ const ProrductCategoryGrid: React.FC = () => {
             <CategoryPageHeader
                 title="All Products"
                 subtitle="Explore our diverse range of products across various categories."
-                productCount={200}
             />
             <ProductGrid columns={4} rows={3} className="gap-x-18 gap-y-15">
                 {data.map((product) => (
-                    <ProductCard key={product._id} product={product} cardType="normal" />
+                    <ProductCard key={product.id} product={product} cardType="normal" />
                 ))}
             </ProductGrid>
         </div>

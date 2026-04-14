@@ -1,38 +1,28 @@
 import { useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { forgotPasswordSchema, type ForgotPasswordPayload, } from '../../schemas/authSchema'
 import { Button } from '@/components/ui/button'
 import InputComponent from '@/components/ui/form/input-component'
 import { useUserLogin } from '../../apis/mutations'
-import type { User } from '@/modules/user/apis/types'
 import { forgetPasswordFormDefaultValues } from '../../schemas/defaultValus'
-import { useUserState } from '@/store/state'
+import { forgetPasswordSchema, type ForgetPasswordPayload } from '../../schemas/authSchema'
+import { useToast } from '@/hooks/useToast'
 
 
-const ForgetPasswordForm = () => {
+const ForgetPasswordForm: React.FC = () => {
 
-  const setUserData = useUserState(state => state.setUserData);
   const navigate = useNavigate();
+  const toast = useToast();
 
   const { handleSubmit, control } = useForm({
-    resolver: zodResolver(forgotPasswordSchema),
+    resolver: zodResolver(forgetPasswordSchema),
     defaultValues: forgetPasswordFormDefaultValues
   })
 
   const { mutate, isPending } = useUserLogin()
 
-  const onSubmit = (formData: ForgotPasswordPayload) => {
-    mutate(formData, {
-      onSuccess: (data) => {
-        console.log('Email Send Successfully:', data)
-        setUserData(data.data?.user as User)
-        navigate('/')
-      },
-      onError: (error) => {
-        console.error('Login failed:', error)
-      }
-    })
+  const onSubmit = (formData: ForgetPasswordPayload) => {
+    console.log('Form Data:', formData)
   }
 
 

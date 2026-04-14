@@ -24,14 +24,14 @@ export type Category = (typeof categoryEnum)[number];
 
 export type CartItemType = {
     product: {
-        _id: string,
+        id: string,
         name: string,
         slug: string,
-        category: string,
+        // category: string,
         price: number,
         image: string,
-        color: string,
-        size: string,
+        // color: string,
+        // size: string,
         description: string,
     },
     quantity: number
@@ -70,5 +70,4 @@ export interface ProductDetailsType {
     isActive: boolean,
     createdAt: Date,
     updatedAt: Date
-
 }

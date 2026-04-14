@@ -20,6 +20,7 @@ interface productState {
     filter: FilterState,
     image: string;
     setFilter: (action: FilterState) => void;
+    resetFilter: () => void;
     getCardDetails: (action: CartItemType) => void;
     increaseQuantity: (productId: string) => void;
     decreaseQuantity: (productId: string) => void;
@@ -36,15 +37,16 @@ export const useProductState = create<productState>((set, get) => ({
     },
     filter: {
         size: 'L',
-        brand: "Puma",
-        type: "T-Shirts",
-        style: "Party Wear",
+        brand: "",
+        type: "",
+        style: "",
         minPrice: 0,
         maxPrice: 30000
     },
     image: "/Details-Image/45.jpg",
 
     setFilter: (action: FilterState) => set({ filter: action }),
+    resetFilter: () => set({}),
     getCardDetails: (action: CartItemType) => {
         const newItem = action;
         let totalPrice = 0;
@@ -52,7 +54,7 @@ export const useProductState = create<productState>((set, get) => ({
 
         const { cart } = get();
         const existingItem = cart.items.find(
-            (item) => item.product._id === newItem.product._id
+            (item) => item.product.id === newItem.product.id
         );
 
         if (existingItem) {
@@ -83,7 +85,7 @@ export const useProductState = create<productState>((set, get) => ({
     },
     increaseQuantity: (productId: string) => {
         const { cart } = get();
-        const item = cart.items.find(item => item.product._id === productId);
+        const item = cart.items.find(item => item.product.id === productId);
         if (item) {
             item.quantity += 1;
             item.itemTotal = item.quantity * item.product.price;
@@ -94,7 +96,7 @@ export const useProductState = create<productState>((set, get) => ({
     },
     decreaseQuantity: (productId: string) => {
         const { cart } = get();
-        const item = cart.items.find(item => item.product._id === productId);
+        const item = cart.items.find(item => item.product.id === productId);
         if (item && item.quantity > 1) {
             item.quantity -= 1;
             item.itemTotal = item.quantity * item.product.price;
@@ -105,7 +107,7 @@ export const useProductState = create<productState>((set, get) => ({
     },
     removeProduct: (productId: string) => {
         const { cart } = get();
-        const itemIndex = cart.items.findIndex(item => item.product._id === productId);
+        const itemIndex = cart.items.findIndex(item => item.product.id === productId);
         if (itemIndex !== -1) {
             const item = cart.items[itemIndex];
             cart.totalQuantity -= item.quantity;

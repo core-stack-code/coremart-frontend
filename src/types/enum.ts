@@ -1,0 +1,1 @@
+export type OtpSessionType  =  "EMAIL_VERIFICATION" | "PASSWORD_RESET"

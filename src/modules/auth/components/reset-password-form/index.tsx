@@ -6,88 +6,110 @@ import { resetPasswordSchema, type ResetPasswordPayload } from '../../schemas/au
 import { Button } from '@/components/ui/button'
 import InputComponent from '@/components/ui/form/input-component'
 import { resetPasswordFormDefaultValues } from '../../schemas/defaultValus'
-import { useUserLogin } from '../../apis/mutations'
-import type { User } from '@/modules/user/apis/types'
-import { useUserState } from '@/store/state'
+import { useUserResetPassword } from '../../apis/mutations'
+import { useToast } from '@/hooks/useToast'
+import { flatZodError } from '@/lib/zod/flatZodError'
+import React, { useEffect } from 'react'
 
 
-const ResetPasswordForm = () => {
+const ResetPasswordForm: React.FC = () => {
 
-    const setUserData = useUserState(state => state.setUserData)
     const navigate = useNavigate();
+    const toast = useToast();
 
-    const { handleSubmit, control } = useForm({
+    const { handleSubmit, control, getValues, formState: { errors } } = useForm({
         resolver: zodResolver(resetPasswordSchema),
         defaultValues: resetPasswordFormDefaultValues
     })
 
-    const { mutate, isPending } = useUserLogin()
+    const { mutate, isPending } = useUserResetPassword()
 
     const onSubmit = (formData: ResetPasswordPayload) => {
         mutate(formData, {
             onSuccess: (data) => {
-                console.log('Password Reset Successfully:', data)
-                setUserData(data.data?.user as User)
-                navigate('/')
+                toast.success(data.message)
+                navigate('/me')
             },
             onError: (error) => {
-                console.error('Login failed:', error)
+                toast.error(error.message)
             }
         })
     }
 
+    useEffect(() => {
+        if (Object.entries(errors).length > 0) {
+            const errMsg = flatZodError(resetPasswordSchema, getValues())
+            if (errMsg) toast.error(errMsg)
+        }
+    }, [errors])
 
     return (
-        <>
-            <form
-                className='w-full h-full'
-                onSubmit={handleSubmit(onSubmit)}
-            >
-                <div className=' w-full flex flex-col gap-6'>
-                    <div className='w-full flex flex-col gap-3'>
-                        <Controller
-                            name='password'
-                            control={control}
-                            disabled={isPending}
-                            render={({ field, fieldState }) => (
-                                <InputComponent
-                                    {...field}
-                                    type="password"
-                                    label='Password'
-                                    placeholder="********"
-                                    error={fieldState.error?.message}
-                                    togglePassword
-                                    wrapperClassName="w-full"
-                                />
-                            )}
-                        />
-                        <Controller
-                            name='password'
-                            control={control}
-                            disabled={isPending}
-                            render={({ field, fieldState }) => (
-                                <InputComponent
-                                    {...field}
-                                    type="password"
-                                    label="Confirm Password"
-                                    placeholder="********"
-                                    error={fieldState.error?.message}
-                                    togglePassword
-                                    wrapperClassName="w-full"
-                                />
-                            )}
-                        />
-                    </div>
-                    <Button
-                        type='submit'
-                        className='w-full h-14 bg-primary text-white rounded-2xl'
-                        variant='default'
-                    >
-                        {isPending ? "Loading..." : "Continue"}
-                    </Button>
+        <form
+            className='w-full h-full'
+            onSubmit={handleSubmit(onSubmit)}
+        >
+            <div className=' w-full flex flex-col gap-6'>
+                <div className='w-full flex flex-col gap-3'>
+                    <Controller
+                        name='password'
+                        control={control}
+                        disabled={isPending}
+                        render={({ field, fieldState }) => (
+                            <InputComponent
+                                {...field}
+                                type="password"
+                                label='Current Password'
+                                placeholder="********"
+                                error={fieldState.error?.message}
+                                togglePassword
+                                wrapperClassName="w-full"
+                            />
+                        )}
+                    />
+                    <Controller
+                        name='password'
+                        control={control}
+                        disabled={isPending}
+                        render={({ field, fieldState }) => (
+                            <InputComponent
+                                {...field}
+                                type="password"
+                                label='Password'
+                                placeholder="********"
+                                error={fieldState.error?.message}
+                                togglePassword
+                                wrapperClassName="w-full"
+                            />
+                        )}
+                    />
+                    <Controller
+                        name='password'
+                        control={control}
+                        disabled={isPending}
+                        render={({ field, fieldState }) => (
+                            <InputComponent
+                                {...field}
+                                type="password"
+                                label="Confirm Password"
+                                placeholder="********"
+                                error={fieldState.error?.message}
+                                togglePassword
+                                wrapperClassName="w-full"
+                                disabled={isPending}
+                            />
+                        )}
+                    />
                 </div>
-            </form>
-        </>
+                <Button
+                    type='submit'
+                    className='w-full h-14 bg-primary text-white rounded-2xl'
+                    variant='default'
+                    disabled={isPending}
+                >
+                    {isPending ? "Loading..." : "Continue"}
+                </Button>
+            </div>
+        </form>
     )
 }
 

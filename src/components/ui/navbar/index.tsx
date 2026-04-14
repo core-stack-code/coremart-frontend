@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
             key={index}
             to={nav.path}
             className={({ isActive }) => isActive || isCategoryPage
-              ? "text-white"
+              ? "text-primary"
               : "text-white hover:text-primary"}
             end
           >

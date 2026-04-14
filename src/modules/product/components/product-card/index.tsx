@@ -1,5 +1,5 @@
 import React from 'react'
-import type { CartItemType, ProductType } from '@/types/products'
+import type { CartItemType } from '@/types/products'
 import Icon from '@/components/ui/icons'
 import AddCartButton from '../add-cart-btn'
 import Ratting from '../ratting'
@@ -7,16 +7,18 @@ import { useNavigate } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import { Typography } from '@/components/ui/typography'
 import { useProductState } from '@/store/state'
+import type { productItem } from '../../apis/types'
 
 type ProductCardType = "new" | "discount" | "ratting" | "normal"
 
 interface ProductCardProps {
-    product: ProductType
+    product: productItem
     cardType?: ProductCardType
     isRedirect?: boolean
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal", isRedirect = false }) => {
+
     const navigate = useNavigate();
     const getCardDetails = useProductState(state => state.getCardDetails)
 
@@ -26,18 +28,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal",
         }
     }
 
-
     const getCardData = () => {
         const data: CartItemType = {
             product: {
-                _id: product._id,
+                id: product.id,
                 name: product.name,
                 slug: product.slug,
-                category: product.category,
                 price: product.price,
-                color: product.color,
-                size: product.size,
-                image: product.images[0],
+                image: product.thumbnail.url,
                 description: product.description,
             },
             quantity: 1,
@@ -51,11 +49,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal",
     const rightBadge = cardType === "new"
         ? "New"
         : ((product.price - 100) * 100) / 1000 // discount % logic (have to change)
+    const isNotRatting = cardType !== 'ratting'
+    const isLeftBadge = cardType === "ratting"
 
     const getContent: Record<ProductCardType, React.ReactNode> = {
         new: null,
         discount: <DiscountSection originalPrice={1000} price={product.price} />,
-        normal: <PriceBtnSections id={product._id} price={product.price} getCardData={getCardData} />,
+        normal: <PriceBtnSections id={product.id} price={product.price} getCardData={getCardData} />,
         ratting: <RateSection rate={product.rating} />
     }
 
@@ -64,41 +64,54 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, cardType = "normal",
             onClick={handleRedirect}
             className={cn(
                 'w-full max-h-fit min-h-fit flex items-center justify-center',
-                isRedirect && 'cursor-pointer hover:shadow-lg rounded-3xl transition-shadow duration-200'
+                isRedirect && 'cursor-pointer hover:shadow-lg transition-shadow duration-200'
             )}
         >
             <div className='flex flex-col w-full h-full rounded-3xl'>
                 <div className='relative w-full h-70 rounded-3xl'>
                     <img
-                        src={product.images[0]}
-                        alt={product.name}
-                        className='w-full h-full object-cover rounded-t-3xl overflow-hidden'
+                        src={product.thumbnail.url}
+                        alt={product.thumbnail.altText}
+                        className='w-full h-full object-cover overflow-hidden'
                     />
 
-                    <div className='absolute top-3 right-3 text-muted'>
-                        <Icon
-                            name='Heart'
-                            width={24}
-                            height={24}
-                            stroke={product.isFav ? "#EF4444" : 'currentColor'}
-                            strokeWidth={2}
-                            fill={product.isFav ? "#EF4444" : "none"}
-                            className='cursor-pointer'
-                        />
-                    </div>
+                    {isNotRatting && (
+                        <div className='absolute top-2 right-2 text-primary'>
+                            <Icon
+                                name='Heart'
+                                width={20}
+                                height={20}
+                                stroke={product.isFavorite ? "#EF4444" : 'currentColor'}
+                                strokeWidth={2}
+                                fill={product.isFavorite ? "#EF4444" : "none"}
+                                className='cursor-pointer'
+                                onClick={(e) => { e.stopPropagation() }}
+                            />
+                        </div>
+                    )}
+
+                    {isLeftBadge && (
+                        <div className='absolute top-2 right-2'>
+                            <Typography className='flex gap-1 bg-white py-1.5 px-2 rounded-xl text-[0.625rem] items-center justify-center'>
+                                <Icon name='star' width={12} height={12} className='text-primary' />
+                                {product.rating}
+                            </Typography>
+                        </div>
+                    )}
+
 
                     {isRightBagde && (
-                        <div className='absolute top-3 left-3'>
-                            <Typography className='bg-primary py-1.5 px-4 rounded-xl text-white text-xs flex items-center justify-center'>
-                                {rightBadge}
+                        <div className='absolute top-2 left-2'>
+                            <Typography className='bg-primary py-1.5 px-2 rounded-xl text-white text-[0.625rem] flex items-center justify-center'>
+                                {rightBadge}% OFF
                             </Typography>
                         </div>
                     )}
                 </div>
-                <div className='flex h-full flex-col gap-3 p-3.5 border-b border-x border-border rounded-b-3xl bg-white'>
+                <div className='flex h-full flex-col gap-3 p-3.5 bg-white'>
                     <div className='flex flex-col gap-2'>
-                        <Typography variant='large'>{product.name}</Typography>
-                        <Typography variant='small'>{product.category}</Typography>
+                        <Typography variant='body' className='font-bold'>{product.name}</Typography>
+                        {/* <Typography variant='small'>{product.category}</Typography> */}
                     </div>
                     {getContent[cardType]}
                 </div>
@@ -114,10 +127,9 @@ export default ProductCard
 const RateSection: React.FC<{ rate: number }> = function ({ rate }) {
     return (
         <div className='flex flex-col gap-1.5'>
-            <Typography>{rate}</Typography>
-            <div className='flex w-full items-center gap-2'>
+            <div className='w-full flex items-center gap-2'>
                 <Ratting rate={rate} />
-                <Typography variant='muted'>({rate}/5)</Typography>
+                <Typography variant='muted'>({rate} Reviews)</Typography>
             </div>
         </div>
     )
@@ -135,12 +147,12 @@ const PriceBtnSections: React.FC<{ price: number; id: string, getCardData: () =>
 const DiscountSection: React.FC<{ price: number; originalPrice: number }> = ({ price, originalPrice }) => {
     const savePrice = originalPrice - price;
     return (
-        <div className='flex items-center justify-between'>
-            <div className='flex items-center gap-2'>
-                <Typography variant='small' className='font-semibold text-accent'>${price}</Typography>
+        <div className='flex flex-col items-start gap-3'>
+            <div className='flex items-center gap-3'>
+                <Typography variant='lead' className='font-extrabold text-primary'>${price}</Typography>
                 <Typography variant='small' className='font-thin text-muted line-through'>${originalPrice}</Typography>
             </div>
-            <Typography variant='small' className='text-[0.625rem] bg-primary/30 text-primary py-1.5 px-2 rounded-xl font-normal'>
+            <Typography variant='small' className='text-[0.625rem] bg-primary/10 text-primary py-1.5 px-2 rounded-md font-bold'>
                 Save ${savePrice}
             </Typography>
         </div>

@@ -7,7 +7,7 @@ const CategoryLandingPage: React.FC = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        navigate(`/category/${CATEGORY_ENUM_MAP.casual}`, { replace: true });
+        navigate(`/category/${CATEGORY_ENUM_MAP.casualwear}`, { replace: true });
     }, [])
 
     return (

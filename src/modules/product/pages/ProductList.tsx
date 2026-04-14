@@ -15,23 +15,23 @@ const ProductList: React.FC = () => {
     return (
         <div className="w-full flex flex-col gap-8 pt-8">
             <div className="w-full flex items-center justify-end gap-4">
-                <CategoryPageHeader productCount={200} />
+                <CategoryPageHeader />
                 <div className="flex items-center gap-2">
-                    <Button 
+                    <Button
                         variant={view === "grid" ? "default" : "outline"}
                         size="icon"
                         type="button"
                         onClick={() => setView("grid")}
                     >
-                        <Icon name="LayoutGrid"/>
+                        <Icon name="LayoutGrid" />
                     </Button>
-                    <Button 
+                    <Button
                         variant={view === "list" ? "default" : "outline"}
                         size="icon"
                         type="button"
                         onClick={() => setView("list")}
                     >
-                        <Icon name="List"/>
+                        <Icon name="List" />
                     </Button>
                 </div>
             </div>

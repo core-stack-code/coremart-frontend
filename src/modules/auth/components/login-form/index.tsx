@@ -1,24 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { loginSchema, type LoginPayload } from '../../schemas/authSchema'
 import { loginFormDefaultValues } from '../../schemas/defaultValus'
-import type { User } from '@/modules/user/apis/types'
 
 import InputComponent from '@/components/ui/form/input-component'
 import Icon from '@/components/ui/icons'
 import { Button } from '@/components/ui/button'
 import { useUserLogin } from '../../apis/mutations'
 import { Typography } from '@/components/ui/typography'
-import { useUserState } from '@/store/state'
+import { useToast } from '@/hooks/useToast'
+import { flatZodError } from '@/lib/zod/flatZodError'
 
 
 const LoginForm: React.FC = () => {
-    const setUserData = useUserState(state => state.setUserData)
+    
     const navigate = useNavigate();
+    const toast = useToast();
 
-    const { handleSubmit, control } = useForm({
+    const { handleSubmit, getValues, control, formState: { errors } } = useForm({
         resolver: zodResolver(loginSchema),
         defaultValues: loginFormDefaultValues
     })
@@ -28,15 +29,24 @@ const LoginForm: React.FC = () => {
     const onSubmit = (formData: LoginPayload) => {
         mutate(formData, {
             onSuccess: (data) => {
-                console.log('Login Successfully:', data)
-                setUserData(data.data?.user as User)
-                navigate('/')
+                if (data?.code === 'OK') {
+                    toast.success("Login Successfully")
+                    navigate('/')
+                }
             },
             onError: (error) => {
-                console.error('Login failed:', error)
+                toast.error(error?.message || "Invalid credentials");
             }
         })
     }
+
+
+    useEffect(() => {
+        if (Object.entries(errors).length > 0) {
+            const errMsg = flatZodError(loginSchema, getValues())
+            if (errMsg) toast.error(errMsg)
+        }
+    }, [errors])
 
     return (
         <form
@@ -77,7 +87,11 @@ const LoginForm: React.FC = () => {
                         )}
                     />
                     <div className='w-full h-full flex justify-end items-center'>
-                        <a href="#" className='text-xs text-primary'>Forgot password?</a>
+                        <NavLink
+                            to="/auth/forgetpassword"
+                            className='text-xs text-primary'>
+                            Forgot password?
+                        </NavLink>
                     </div>
                 </div>
                 <Button

@@ -28,7 +28,7 @@
 //     inputsRef.current[0]?.focus();
 //   }, []);
 
-  
+
 
 //   const handleChange = (val: string, index: number) => {
 //     const newValue = valueStr.split("");
@@ -87,7 +87,7 @@
 
 // export default OtpInput;
 
-import {  REGEXP_ONLY_DIGITS } from "input-otp"
+import { REGEXP_ONLY_DIGITS } from "input-otp"
 
 import {
   InputOTP,
@@ -97,7 +97,7 @@ import {
 
 export function InputOTPPattern() {
   return (
-    <InputOTP maxLength={6} pattern={ REGEXP_ONLY_DIGITS}>
+    <InputOTP maxLength={6} pattern={REGEXP_ONLY_DIGITS}>
       <InputOTPGroup>
         <InputOTPSlot index={0} />
         <InputOTPSlot index={1} />

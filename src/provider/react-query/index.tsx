@@ -1,7 +1,47 @@
 import React from 'react'
-import { QueryClient, QueryClientProvider  } from '@tanstack/react-query';
+import { MutationCache, QueryCache, QueryClient, QueryClientProvider  } from '@tanstack/react-query';
+import { useToast } from '@/hooks/useToast';
 
-const queryClient = new QueryClient();
+
+const queryClient = new QueryClient({
+    queryCache: new QueryCache({
+        onError: (error: any) => {
+            if (error?.status === 401 || error?.code === "UNAUTHORIZED") {
+                return;
+            }
+            useToast().error(error?.message || 'Something went wrong');
+        },
+    }),
+
+    mutationCache: new MutationCache({
+        onError: (error: any, _variables, _context, mutation) => {
+            if (!mutation.options.onError) {
+                if (error?.status === 401 || error?.code === "UNAUTHORIZED") {
+                    useToast().error(error?.message || 'Session has expired');
+                }
+            }
+        },
+    }),
+
+    defaultOptions: {
+        queries: {
+            retry: (failureCount, error: any) => {
+                if (error?.status >= 400 && error?.status < 500) {
+                    return false;
+                }
+                return failureCount < 2;
+            },
+            refetchOnWindowFocus: false,
+            refetchOnReconnect: false,
+            staleTime: 1000 * 60 * 5,
+            gcTime: 1000 * 60 * 10,
+        },
+        mutations: {
+            retry: false,
+        },
+    },
+})
+
 
 const QueryProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

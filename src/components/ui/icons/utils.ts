@@ -13,7 +13,8 @@ import {
     TriangleAlert,
     Loader2,
     PackageIcon,
-    MoveUpRight
+    MoveUpRight,
+    ShieldCheck
 } from "lucide-react"
 
 import EyeIcon from "./eye-icon";
@@ -57,16 +58,6 @@ import ShileldRightIcon from "./shield-right-icon";
 // import OrderShippedBadge from "./order-badges/shipped";
 // import OrderDeliveredBadge from "./order-badges/delivered";
 // import OrderCanceledBadge from "./order-badges/canceled";
-// import DashboardSliderDashBoardIcon from "./dashboard-slider/dashboard-icon";
-// import DashboardSliderProductsIcon from "./dashboard-slider/products-icon";
-// import DashboardSliderOrderListsIcon from "./dashboard-slider/order-lists-icon";
-// import DashboardSliderCustomersIcon from "./dashboard-slider/customers-icon";
-// import DashboardSliderCategoriesIcon from "./dashboard-slider/categories-icon";
-// import DashboardSliderInventoryIcon from "./dashboard-slider/inventory-icon";
-// import DashboardSliderMessagesIcon from "./dashboard-slider/messages-icon";
-// import DashboardSliderReportsIcon from "./dashboard-slider/reports-icon";
-// import dashboardSliderSettingsIcon from "./dashboard-slider/settings-icon";
-// import dashboardSliderLogoutIcon from "./dashboard-slider/logout-icon";
 // import ProfitDownIcon from "./profit-down-icon";
 // import WhislistIcon from "./productlist-whislist-icon";
 // import PlusIcon from "./plus-icon";
@@ -106,7 +97,7 @@ export const LUCIDE_ICON_MAP = {
     TriangleAlert,
     Loader2,
     PackageIcon,
-    MoveUpRight    
+    MoveUpRight
 }
 
 export const CUSTOM_ICON_MAP = {
@@ -165,7 +156,8 @@ export const CUSTOM_ICON_MAP = {
     totalsalesIcon: TotalSalesIcon,
     profitupIcon: ProfitUPIcon,
     paidIcon: PaidIcon,
-    outStockIcon : OutOfStockIcon
+    outStockIcon: OutOfStockIcon,
+    shield: ShieldCheck
     // whislistIcon: WhislistIcon,
     // ordershippedBadge:OrderShippedBadge,
     // orderdeliveredBadge:OrderDeliveredBadge,
