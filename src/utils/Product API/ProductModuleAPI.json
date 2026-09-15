@@ -1,0 +1,174 @@
+{
+    "status": 200,
+    "message": "Product list of new arriavals fetched successfully.",
+    "data": {
+        "products": [
+            {
+                "_id": "68641dc25b4c4aae182f8f0b",
+                "name": "Chic Sneakers",
+                "slug": "chic-sneakers-6",
+                "description": "Voluntarius peccatus adipisci conqueror quis utpote reprehenderit acidus succurro. Bestia ocer delicate deprimo uberrime calco comprehendo sui thymum. Bestia caste volva ad mollitia.\n    This durable outfit is perfect for casual outings.",
+                "brand": "Forever 21",
+                "price": 4214.19,
+                "sizes": [
+                    "XL",
+                    "XS",
+                    "M",
+                    "S",
+                    "XXL"
+                ],
+                "category": "sleepwear",
+                "dressType": "shoes",
+                "images": [
+                    "https://picsum.photos/seed/8YUZexBdO/640/480?grayscale&blur=10"
+                ],
+                "createdAt": "2025-07-01T16:31:47.407Z",
+                "isFav": false
+            },
+            {
+                "_id": "68641dc25b4c4aae182f8e4f",
+                "name": "Modern Skirt",
+                "slug": "modern-skirt-1",
+                "description": "Valetudo sursum arma tabesco tabula tui. Vomer cito accusantium sublime centum arceo aliquam ceno. Viscus porro magnam quidem officiis vilicus.\n    This lightweight outfit is a must-have for summer days.",
+                "brand": "Uniqlo",
+                "price": 1586.99,
+                "sizes": [
+                    "XXXL",
+                    "XXL",
+                    "L",
+                    "XL"
+                ],
+                "category": "formal",
+                "dressType": "shoes",
+                "images": [
+                    "https://picsum.photos/seed/8asUe/640/480?blur=6"
+                ],
+                "createdAt": "2025-07-01T15:51:03.030Z",
+                "isFav": false
+            },
+            {
+                "_id": "68641dc25b4c4aae182f8e6b",
+                "name": "Essential Sneakers",
+                "slug": "essential-sneakers-3",
+                "description": "Facilis abeo adficio quibusdam allatus anser suadeo cetera cunae. Comptus amita neque antea. Apto fugiat viduo calamitas desidero defendo.\n    This durable outfit is crafted for daily comfort.",
+                "brand": "Bershka",
+                "price": 5283.25,
+                "sizes": [
+                    "L"
+                ],
+                "category": "formal",
+                "dressType": "jacket",
+                "images": [
+                    "https://picsum.photos/seed/RrVt9k6/640/480"
+                ],
+                "createdAt": "2025-07-01T12:45:33.500Z",
+                "isFav": false
+            },
+            {
+                "_id": "68641dc25b4c4aae182f8f3d",
+                "name": "Athletic Hoodie",
+                "slug": "athletic-hoodie-2",
+                "description": "Viridis trucido stillicidium cernuus crinis addo angustus. Cursus cubo subiungo deporto verumtamen fugiat carcer maxime comptus. Tres vehemens vereor avaritia.\n    This trendy outfit is a must-have for summer days.",
+                "brand": "Gucci",
+                "price": 3738.75,
+                "sizes": [
+                    "S",
+                    "M",
+                    "XXL",
+                    "XS",
+                    "L",
+                    "XL",
+                    "XXXL"
+                ],
+                "category": "sportswear",
+                "dressType": "t-shirt",
+                "images": [
+                    "https://picsum.photos/seed/71OcMAHTeB/640/480?blur=6"
+                ],
+                "createdAt": "2025-07-01T11:48:43.346Z",
+                "isFav": false
+            },
+            {
+                "_id": "68641dc25b4c4aae182f8ea8",
+                "name": "Oversized Blouse",
+                "slug": "oversized-blouse-1",
+                "description": "Concido capto delego cariosus vetus stips placeat a depulso terra. Centum fugit civis vir vacuus agnitio careo aveho decerno appositus. Subito video depromo.\n    This comfortable outfit is a must-have for summer days.",
+                "brand": "Gucci",
+                "price": 1304.45,
+                "sizes": [
+                    "M"
+                ],
+                "category": "workoutwear",
+                "dressType": "dress",
+                "images": [
+                    "https://picsum.photos/seed/WTqd7pI7/640/480?grayscale"
+                ],
+                "createdAt": "2025-07-01T07:01:55.229Z",
+                "isFav": false
+            },
+            {
+                "_id": "68641dc25b4c4aae182f8e4c",
+                "name": "Chic Sneakers",
+                "slug": "chic-sneakers-1",
+                "description": "Quaerat vomito solio tantillus accendo ventosus demum voco ambitus. Excepturi tepesco timidus caries voveo culpo sortitus comis aetas. Damno summa carcer quo.\n    This sleek outfit is a must-have for summer days.",
+                "brand": "Forever 21",
+                "price": 6822.89,
+                "sizes": [
+                    "XL",
+                    "L",
+                    "M",
+                    "XXXL",
+                    "XXL",
+                    "S"
+                ],
+                "category": "workoutwear",
+                "dressType": "pant",
+                "images": [
+                    "https://picsum.photos/seed/ppeygqzr6m/640/480?blur=5"
+                ],
+                "createdAt": "2025-07-01T07:00:32.558Z",
+                "isFav": false
+            },
+            {
+                "_id": "68641dc25b4c4aae182f8f1d",
+                "name": "Athletic Sneakers",
+                "slug": "athletic-sneakers-2",
+                "description": "Culpa utrimque torrens defero concedo comedo suspendo curtus tener conculco. Utrum convoco ager curriculum deripio defendo ter vetus addo. Quos caveo asperiores dapifer undique.\n    This sleek outfit is ideal for winter wear.",
+                "brand": "Adidas",
+                "price": 1044,
+                "sizes": [
+                    "S",
+                    "XL",
+                    "XXL",
+                    "XXXL"
+                ],
+                "category": "outerwear",
+                "dressType": "sweater",
+                "images": [
+                    "https://picsum.photos/seed/vcvFTPm6q/640/480?grayscale&blur=6"
+                ],
+                "createdAt": "2025-07-01T03:31:51.098Z",
+                "isFav": false
+            },
+            {
+                "_id": "68641dc25b4c4aae182f8ebe",
+                "name": "Classic Hoodie",
+                "slug": "classic-hoodie-2",
+                "description": "Defungo deduco magnam dolores cruciamentum tumultus tenus molestiae tubineus vetus. Validus autus arca texo caveo aeger adinventitias vitae sperno. Tollo reiciendis harum.\n    This sleek outfit is crafted for daily comfort.",
+                "brand": "Zara",
+                "price": 2638.89,
+                "sizes": [
+                    "L",
+                    "M"
+                ],
+                "category": "casual",
+                "dressType": "t-shirt",
+                "images": [
+                    "https://picsum.photos/seed/TPkTr1YHqW/640/480?blur=4"
+                ],
+                "createdAt": "2025-07-01T02:14:24.279Z",
+                "isFav": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+
+.scrollbar-hidden {
+  scrollbar-width: none;        
+  -ms-overflow-style: none;     
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+
+:active{
+ color: '#9333EA' 
+}
+
+
+
+.mySwiper .swiper-wrapper {
+  margin-right: 0 !important;
+}
+.mySwiper .swiper-slide:last-child {
+  margin-right: 0 !important;
+}
