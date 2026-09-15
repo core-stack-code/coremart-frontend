@@ -1,0 +1,57 @@
+{
+    "status": 200,
+    "message": "Product fetched successfully.",
+    "data": {
+        "reviews": [
+            {
+                "_id": "686427a1fae6a9e60a1d87ff",
+                "productId": "68641dc25b4c4aae182f8eb8",
+                "rating": 4,
+                "title": "Great product!",
+                "description": "The quality was better than I expected. Highly recommended.",
+                "createdAt": "2025-07-01T18:23:29.332Z",
+                "updatedAt": "2025-07-01T18:23:29.332Z",
+                "userName": "Test Name"
+            }
+        ],
+        "product": {
+            "_id": "68641dc25b4c4aae182f8eb8",
+            "name": "Classic Pants",
+            "slug": "classic-pants",
+            "description": "Curvo vir quia crebro solitudo dolorum dens vilitas magnam. Complectus ut atque defero turbo canto temperantia. Totus vulgus antea solus decor vestigium bis similique asporto.\n    This comfortable outfit is crafted for daily comfort.",
+            "brand": "Nike",
+            "price": 4608.35,
+            "sizes": [
+                "XL",
+                "XXL",
+                "S",
+                "XS",
+                "M",
+                "XXXL",
+                "L"
+            ],
+            "category": "formal",
+            "dressType": "sweater",
+            "images": [
+                "https://picsum.photos/seed/G49HVuuTs/640/480?grayscale&blur=3",
+                "https://picsum.photos/seed/tjfqjON/640/480?grayscale&blur=4",
+                "https://picsum.photos/seed/Aa5kHh/640/480?grayscale&blur=9"
+            ],
+            "stock": 71,
+            "sold": 14,
+            "rating": 4,
+            "numReviews": 1,
+            "attributes": {
+                "neckStyle": "round",
+                "washCare": "dry clean only",
+                "fit": "slim",
+                "material": "polyester",
+                "sleeveLength": "sleeveless"
+            },
+            "isActive": true,
+            "createdAt": "2025-06-20T14:25:39.972Z",
+            "updatedAt": "2025-07-01T18:23:29.353Z",
+            "isFav": false
+        }
+    }
+}

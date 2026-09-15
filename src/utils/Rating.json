@@ -1,0 +1,32 @@
+[
+    {
+        "stars": 5,
+        "count": 3324,
+        "color": "bg-green-500 ",
+        "width": "w-[95%] "
+    },
+    {
+        "stars": 4,
+        "count": 1251,
+        "color": "bg-green-400 ",
+        "width": "w-[70%] "
+    },
+    {
+        "stars": 3,
+        "count": 225,
+        "color": "bg-green-300 ",
+        "width": "w-[55%] "
+    },
+    {
+        "stars": 2,
+        "count": 150,
+        "color": "bg-yellow-400 ",
+        "width": "w-[30%] "
+    },
+    {
+        "stars": 1,
+        "count": 80,
+        "color": "bg-red-400 ",
+        "width": "w-[15%] "
+    }
+]
