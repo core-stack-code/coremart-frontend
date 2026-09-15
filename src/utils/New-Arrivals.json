@@ -1,0 +1,27 @@
+[
+   {
+    "image_url": "/All-Category/Bottom-Wear/115.jpg",
+    "category_name": "Straight Kurta",
+    "category_type": "kurta",
+    "category_Price": "800"
+  },
+  {
+    "image_url": "/All-Category/Bottom-Wear/116.jpg",
+    "category_name": "Embroidered Lehenga",
+    "category_type": "Lehenga",
+    "category_Price": "5000"
+  },
+  {
+    "image_url": "/All-Category/Bottom-Wear/116.jpg",
+    "category_name": "Embroidered Lehenga",
+    "category_type": "Lehenga",
+    "category_Price": "5000"
+  },
+
+  {
+    "image_url": "/All-Category/Bottom-Wear/117.jpg",
+    "category_name": "Silk Blouse",
+    "category_type": "Blouse",
+    "category_Price": "500"
+  }
+]
